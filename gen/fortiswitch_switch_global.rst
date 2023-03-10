@@ -41,9 +41,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.1 </code></td>
  <td><code class="docutils literal notranslate">v7.0.2 </code></td>
  <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.6 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_global</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -70,10 +76,12 @@ Parameters
         <li> <span class="li-head">auto_isl</span> - Enable/Disable automatic inter switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_isl_port_group</span> - Configure global automatic inter-switch link port groups (overrides port level port groups). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">auto_stp_priority</span> - Automatic assignment of STP priority for tier1 and tier2 switches. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">bpdu_learn</span> - Enable/disable BPDU learn. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dhcp_snooping_database_export</span> - Enable/disable DHCP snoop database export to file. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dmi_global_all</span> - Enable/disable DMI global status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">flapguard_retain_trigger</span> - Enable/disable retention of triggered state upon reboot. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">flood_unknown_multicast</span> - Enable/disable unknown mcast flood in the vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">flood_vtp</span> - Enable/disable Cisco VTP flood in the vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">forti_trunk_dmac</span> - Destination MAC address to be used for FortiTrunk heartbeat packets. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">fortilink_heartbeat_timeout</span> - Max fortilinkd echo replies that can be missed before fortilink is considered down. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">fortilink_p2p_native_vlan</span> - FortiLink point to point native VLAN. <span class="li-normal">type: int</span> </li>
@@ -141,50 +149,52 @@ Examples
             auto_isl: "enable"
             auto_isl_port_group: "5"
             auto_stp_priority: "enable"
+            bpdu_learn: "enable"
             dhcp_snooping_database_export: "enable"
             dmi_global_all: "enable"
             flapguard_retain_trigger: "enable"
             flood_unknown_multicast: "enable"
+            flood_vtp: "enable"
             forti_trunk_dmac: "<your_own_value>"
-            fortilink_heartbeat_timeout: "12"
-            fortilink_p2p_native_vlan: "13"
-            fortilink_p2p_tpid: "14"
+            fortilink_heartbeat_timeout: "14"
+            fortilink_p2p_native_vlan: "15"
+            fortilink_p2p_tpid: "16"
             fortilink_vlan_optimization: "enable"
             ip_mac_binding: "enable"
             l2_memory_check: "enable"
-            l2_memory_check_interval: "18"
+            l2_memory_check_interval: "20"
             log_mac_limit_violations: "enable"
-            loop_guard_tx_interval: "20"
-            mac_address: "21"
+            loop_guard_tx_interval: "22"
+            mac_address: "23"
             mac_address_algorithm: "auto"
-            mac_aging_interval: "23"
-            mac_violation_timer: "24"
-            max_path_in_ecmp_group: "25"
+            mac_aging_interval: "25"
+            mac_violation_timer: "26"
+            max_path_in_ecmp_group: "27"
             mclag_igmpsnooping_aware: "enable"
-            mclag_peer_info_timeout: "27"
-            mclag_port_base: "28"
+            mclag_peer_info_timeout: "29"
+            mclag_port_base: "30"
             mclag_split_brain_all_ports_down: "disable"
             mclag_split_brain_detect: "enable"
-            mclag_split_brain_priority: "31"
+            mclag_split_brain_priority: "33"
             mclag_stp_aware: "enable"
-            mirror_qos: "33"
-            name: "default_name_34"
-            poe_alarm_threshold: "35"
-            poe_guard_band: "36"
-            poe_power_budget: "37"
+            mirror_qos: "35"
+            name: "default_name_36"
+            poe_alarm_threshold: "37"
+            poe_guard_band: "38"
+            poe_power_budget: "39"
             poe_power_mode: "priority"
             poe_pre_standard_detect: "enable"
             port_security:
                 link_down_auth: "set-unauth"
                 mab_reauth: "disable"
-                max_reauth_attempt: "43"
+                max_reauth_attempt: "45"
                 quarantine_vlan: "disable"
-                reauth_period: "45"
-                tx_period: "46"
+                reauth_period: "47"
+                tx_period: "48"
             trunk_hash_mode: "default"
             trunk_hash_unicast_src_port: "enable"
             trunk_hash_unkunicast_src_dst: "enable"
-            virtual_wire_tpid: "50"
+            virtual_wire_tpid: "52"
     
 
 

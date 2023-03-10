@@ -41,9 +41,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.1 </code></td>
  <td><code class="docutils literal notranslate">v7.0.2 </code></td>
  <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.6 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_admin</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -71,8 +77,8 @@ Parameters
         <li> <span class="li-head">accprofile_override</span> - Enable/disable remote authentication server to override access profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">allow_remove_admin_session</span> - Enable/disable privileged administrative users to remove administrative sessions. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">comments</span> - Comment. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">Email address.</span> - Email address. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">First name.</span> - First name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">email_address</span> - Email address. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">first_name</span> - First name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">force_password_change</span> - Enable/disable forcing of password change on next login. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">hidden</span> - Administrative user hidden attribute. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ip6_trusthost1</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
@@ -86,15 +92,15 @@ Parameters
         <li> <span class="li-head">ip6_trusthost8</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip6_trusthost9</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">is_admin</span> - User has administrative privileges. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">Last name.</span> - Last name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">Mobile number.</span> - Mobile number. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">last_name</span> - Last name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">mobile_number</span> - Mobile number. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - Adminstrative user name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">Pager number.</span> - Pager number. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">pager_number</span> - Pager number. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">password</span> - Remote authentication password. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">password_expire</span> - Password expire time. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">peer_auth</span> - Enable/disable peer authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">peer_group</span> - Peer group name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">Phone number.</span> - Phone number. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">phone_number</span> - Phone number. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">remote_auth</span> - Enable/disable remote authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">remote_group</span> - Remote authentication group name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">schedule</span> - Schedule name. <span class="li-normal">type: str</span> </li>
@@ -139,8 +145,8 @@ Examples
             accprofile_override: "enable"
             allow_remove_admin_session: "enable"
             comments: "<your_own_value>"
-            Email address.: "<your_own_value>"
-            First name.: "<your_own_value>"
+            email_address: "<your_own_value>"
+            first_name: "<your_own_value>"
             force_password_change: "enable"
             hidden: "10"
             ip6_trusthost1: "<your_own_value>"
@@ -154,15 +160,15 @@ Examples
             ip6_trusthost8: "<your_own_value>"
             ip6_trusthost9: "<your_own_value>"
             is_admin: "21"
-            Last name.: "<your_own_value>"
-            Mobile number.: "<your_own_value>"
+            last_name: "<your_own_value>"
+            mobile_number: "<your_own_value>"
             name: "default_name_24"
-            Pager number.: "<your_own_value>"
+            pager_number: "<your_own_value>"
             password: "<your_own_value>"
             password_expire: "<your_own_value>"
             peer_auth: "enable"
             peer_group: "<your_own_value>"
-            Phone number.: "<your_own_value>"
+            phone_number: "<your_own_value>"
             remote_auth: "enable"
             remote_group: "<your_own_value>"
             schedule: "<your_own_value>"

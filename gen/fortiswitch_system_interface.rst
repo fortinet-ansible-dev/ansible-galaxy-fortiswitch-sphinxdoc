@@ -41,9 +41,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.1 </code></td>
  <td><code class="docutils literal notranslate">v7.0.2 </code></td>
  <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.6 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_interface</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -101,7 +107,7 @@ Parameters
             <li> <span class="li-head">autoconf</span> - Enable/disable address automatic config. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">dhcp6_information_request</span> - Enable/disable DHCPv6 information request. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_address</span> - Primary IPv6 address prefix of interface. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
+            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: list</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
             <li> <span class="li-head">ip6_default_life</span> - IPv6 default life (sec). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">ip6_dns_server_override</span> - Enable/disable using the DNS server acquired by DHCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_extra_addr</span> - Extra IPv6 address prefixes of interface. <span class="li-normal">type: list</span> </li>
@@ -154,7 +160,7 @@ Parameters
         <li> <span class="li-head">secondary_IP</span> - Enable/disable use of secondary IP address. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">secondaryip</span> - Second IP address of interface. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
+            <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
             <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
             <li> <span class="li-head">detectserver</span> - IP address to PING for gateway detection. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">gwdetect</span> - Enable/disable gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>

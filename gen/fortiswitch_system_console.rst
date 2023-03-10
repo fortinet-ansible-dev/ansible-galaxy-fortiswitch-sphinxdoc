@@ -41,9 +41,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.1 </code></td>
  <td><code class="docutils literal notranslate">v7.0.2 </code></td>
  <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.6 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_console</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -68,6 +74,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">baudrate</span> - Console baud rate. <span class="li-normal">type: str</span> <span class="li-normal">choices: 9600, 19200, 38400, 57600, 115200</span> </li>
         <li> <span class="li-head">hostname_display_length</span> - CLI prompt hostname display length. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">login</span> - Enable/disable console login. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">mode</span> - Console mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: batch, line</span> </li>
         <li> <span class="li-head">output</span> - Console output mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: standard, more</span> </li>
         </ul>
@@ -93,6 +100,7 @@ Examples
           system_console:
             baudrate: "9600"
             hostname_display_length: "4"
+            login: "enable"
             mode: "batch"
             output: "standard"
     

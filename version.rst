@@ -20,7 +20,8 @@ are expected to find the version compatibility information for each module and i
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 | unified       | 1.1.2               | 2022/8/17      | ``ansible-galaxy collection install fortinet.fortiswitch:1.1.2``    |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
-
+| unified       | 1.1.3               | 2023/2/22      | ``ansible-galaxy collection install fortinet.fortiswitch:1.1.3``    |
++---------------+---------------------+----------------+---------------------------------------------------------------------+
 
 **Note**: Use ``-f`` option (i.e.
 ``ansible-galaxy collection install -f fortinet.fortiswitch:x.x.x``) to renew your existing local installation.

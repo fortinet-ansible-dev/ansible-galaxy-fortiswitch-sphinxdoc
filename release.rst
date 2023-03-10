@@ -4,6 +4,25 @@ Release Notes
 
 |
 
+Release Galaxy 1.1.3
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.1.3 is based on 1.1.2
+
+Features
+^^^^^^^^^^^^^^^
+- Support new FortiSwitch versions 7.0.4, 7.0.5 and 7.0.6.
+
+Bug Fixes
+^^^^^^^^^^^^^^^
+- Fix Github issues #4 and #5.
+- Fix errors when deleting an object.
+- Fix multiple values issue in the module ``fortiswitch_system_interface``.
+- Fix sanity-test errors.
+
 Release Galaxy 1.1.2
 --------------------
 

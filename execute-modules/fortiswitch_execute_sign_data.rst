@@ -80,7 +80,7 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
     <li> <span class="li-return">serial</span> - Serial number of the unit <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: FS1D243Z13000122</span></li>
     <li> <span class="li-return">status</span> - Indication of the operation's result <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: success</span></li>
     <li> <span class="li-return">version</span> - Version of the FortiSwitch <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: v7.0.0</span></li>
-    <li> <span class="li-return">results</span> - the main output of the execution <span class="li-normal">returned: only for successful calls</span> <span class="li-normal">type: json</span></li>
+    <li> <span class="li-return">results</span> - the main output of the execution <span class="li-normal">returned: only for successful calls</span> <span class="li-normal">type: str</span></li>
     </ul>
 
 Status

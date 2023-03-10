@@ -41,9 +41,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.1 </code></td>
  <td><code class="docutils literal notranslate">v7.0.2 </code></td>
  <td><code class="docutils literal notranslate">v7.0.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.6 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_sysinfo</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -71,6 +77,7 @@ Parameters
         <li> <span class="li-head">engine_id</span> - Local snmp engineID string (max 24 char). <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">location</span> - System location. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable snmp. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">trap_high_cpu_interval</span> - Time period over which the CPU usage is calculated. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1min, 10min, 30min, 1hr, 12hr, 24hr</span> </li>
         <li> <span class="li-head">trap_high_cpu_threshold</span> - CPU usage when trap is sent. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">trap_log_full_threshold</span> - Log disk usage when trap is sent. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">trap_low_memory_threshold</span> - Memory usage when trap is sent. <span class="li-normal">type: int</span> </li>
@@ -102,11 +109,12 @@ Examples
             engine_id: "<your_own_value>"
             location: "<your_own_value>"
             status: "enable"
-            trap_high_cpu_threshold: "8"
-            trap_log_full_threshold: "9"
-            trap_low_memory_threshold: "10"
-            trap_temp_alarm_threshold: "11"
-            trap_temp_warning_threshold: "12"
+            trap_high_cpu_interval: "1min"
+            trap_high_cpu_threshold: "9"
+            trap_log_full_threshold: "10"
+            trap_low_memory_threshold: "11"
+            trap_temp_alarm_threshold: "12"
+            trap_temp_warning_threshold: "13"
     
 
 
