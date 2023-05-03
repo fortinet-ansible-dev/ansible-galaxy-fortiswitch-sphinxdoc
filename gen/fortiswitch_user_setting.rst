@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_user_setting</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -85,7 +91,7 @@ Parameters
             </ul>
         <li> <span class="li-head">auth_secure_http</span> - Enable/disable use of HTTPS for HTTP authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auth_timeout</span> - Firewall user authentication timeout (1 - 480). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">auth_timeout_type</span> - Authenticated policy expiration behavior. <span class="li-normal">type: str</span> <span class="li-normal">choices: idle-timeout, hard-timeout, new-session</span> </li>
+        <li> <span class="li-head">auth_timeout_type</span> - Authenticated policy expiration behavior. <span class="li-normal">type: str</span> <span class="li-normal">choices: idle_timeout, hard_timeout, new_session</span> </li>
         <li> <span class="li-head">auth_type</span> - Allowed firewall policy authentication methods. <span class="li-normal">type: str</span> <span class="li-normal">choices: http, https, ftp, telnet</span> </li>
         </ul>
     </ul>

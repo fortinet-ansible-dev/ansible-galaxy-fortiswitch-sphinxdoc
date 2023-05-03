@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_alias_command</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -79,7 +85,7 @@ Parameters
         <li> <span class="li-head">limit_shown_attributes</span> - Enable/disable limiting of config displayed in show and get. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">name</span> - Alias name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">path</span> - Path to configuration object or table. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">permission</span> - Allow read and write operations, or only read operations on this path. <span class="li-normal">type: str</span> <span class="li-normal">choices: read, read-write</span> </li>
+        <li> <span class="li-head">permission</span> - Allow read and write operations, or only read operations on this path. <span class="li-normal">type: str</span> <span class="li-normal">choices: read, read_write</span> </li>
         <li> <span class="li-head">read_only_attributes</span> - Additional attributes allowed in get/show output when limit-shown-attributes is enabled. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">attribute_name</span> - Attribute name. <span class="li-normal">type: str</span> </li>
@@ -97,7 +103,7 @@ Parameters
             <li> <span class="li-head">range</span> - Enable/disable the option to pass a range, or list, of values for this argument. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">range_delay</span> - When running against a range of values, delay this many seconds between values when executing. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">table_path</span> - Path to configuration object or table. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">type</span> - Argument data type. <span class="li-normal">type: str</span> <span class="li-normal">choices: string, integer, table-id</span> </li>
+            <li> <span class="li-head">type</span> - Argument data type. <span class="li-normal">type: str</span> <span class="li-normal">choices: string, integer, table_id</span> </li>
             </ul>
         <li> <span class="li-head">table_entry_create</span> - Allow/prevent this script from creating new entries in config tables. <span class="li-normal">type: str</span> <span class="li-normal">choices: allow, deny</span> </li>
         <li> <span class="li-head">table_ids_allowed</span> - Table entries this command is limited to. <span class="li-normal">type: list</span> </li>

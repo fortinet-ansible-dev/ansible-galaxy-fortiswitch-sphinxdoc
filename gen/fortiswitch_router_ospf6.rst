@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_ospf6</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -78,7 +84,7 @@ Parameters
                 <ul class="ul-self">
                 <li> <span class="li-head">direction</span> - Direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
                 <li> <span class="li-head">id</span> - Filter list entry ID. <span class="li-normal">type: int</span> </li>
-                <li> <span class="li-head">list</span> - Access-list or prefix-list name. Source router.access-list6.name router.prefix-list6.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">list</span> - Access-list or prefix-list name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">id</span> - Area entry ip address. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">range</span> - OSPF6 area range configuration. <span class="li-normal">type: list</span> </li>
@@ -87,7 +93,7 @@ Parameters
                 <li> <span class="li-head">id</span> - Range entry id. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">prefix6</span> - <prefix6>   IPv6 prefix <span class="li-normal">type: str</span> </li>
                 </ul>
-            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
+            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_summary, summary</span> </li>
             <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, stub</span> </li>
             </ul>
         <li> <span class="li-head">interface</span> - OSPF6 interface configuration. <span class="li-normal">type: list</span> </li>
@@ -97,7 +103,7 @@ Parameters
             <li> <span class="li-head">cost</span> - The cost of the interface. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">dead_interval</span> - Dead interval. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">hello_interval</span> - Hello interval. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">name</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">passive</span> - Enable/disable passive interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">priority</span> - Router priority. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">retransmit_interval</span> - Time between retransmitting lost link state advertisements. <span class="li-normal">type: int</span> </li>
@@ -110,7 +116,7 @@ Parameters
             <li> <span class="li-head">metric</span> - Redistribute metric setting. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">metric_type</span> - metric type <span class="li-normal">type: str</span> <span class="li-normal">choices: 1, 2</span> </li>
             <li> <span class="li-head">name</span> - Redistribute name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">routemap</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">routemap</span> - Route map name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - status <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">router_id</span> - A.B.C.D, in IPv4 address format. <span class="li-normal">type: str</span> </li>
@@ -142,7 +148,7 @@ Examples
                  -
                     direction: "in"
                     id:  "6"
-                    list: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
+                    list: "<your_own_value> (source router.access_list6.name router.prefix_list6.name)"
                 id:  "8"
                 range:
                  -
@@ -170,7 +176,7 @@ Examples
                 metric: "29"
                 metric_type: "1"
                 name: "default_name_31"
-                routemap: "<your_own_value> (source router.route-map.name)"
+                routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
             router_id: "<your_own_value>"
             spf_timers: "<your_own_value>"

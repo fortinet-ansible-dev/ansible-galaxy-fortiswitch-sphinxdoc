@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_log_fortianalyzer_override_setting</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,13 +79,13 @@ Parameters
     <li> <span class="li-head">log_fortianalyzer_override_setting</span> - Setting for FortiAnalyzer. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">__change_ip</span> - Hidden attribute. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">address_mode</span> - FortiAnalyzer IP addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, auto-discovery</span> </li>
+        <li> <span class="li-head">address_mode</span> - FortiAnalyzer IP addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, auto_discovery</span> </li>
         <li> <span class="li-head">buffer_max_send</span> - Maximum log transmission rate for buffered logs. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">conn_timeout</span> - FortiAnalyzer connection time-out in seconds (for status and log buffer). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">enc_algorithm</span> - Whether to send FortiAnalyzer log data with SSL encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, high, low, disable</span> </li>
         <li> <span class="li-head">encrypt</span> - Whether to send FortiAnalyzer log data in IPsec tunnel. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">fdp_device</span> - Serial number of FortiAnalyzer to connect to. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">fdp_interface</span> - Interface for FortiAnalyzer auto-discovery. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">fdp_interface</span> - Interface for FortiAnalyzer auto-discovery. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">hmac_algorithm</span> - FortiAnalyzer IPsec tunnel HMAC algorithm. <span class="li-normal">type: str</span> <span class="li-normal">choices: sha256, sha1</span> </li>
         <li> <span class="li-head">ips_archive</span> - Whether to enable IPS packet archive. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">localid</span> - Local id for IPsec tunnel to FortiAnalyzer. <span class="li-normal">type: str</span> </li>

@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_certificate_ocsp</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -72,7 +78,7 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_certificate_ocsp</span> - Ocsp configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">cert</span> - OCSP server certificate. Source system.certificate.remote.name system.certificate.ca.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">cert</span> - OCSP server certificate. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">unavail_action</span> - Action when server is unavailable. <span class="li-normal">type: str</span> <span class="li-normal">choices: revoke, ignore</span> </li>
         <li> <span class="li-head">url</span> - URL to OCSP server. <span class="li-normal">type: str</span> </li>
         </ul>

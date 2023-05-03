@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_quarantine</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,12 +79,12 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_quarantine</span> - Configure quarantine devices on the switch. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">acl_id</span> - Associated ingress acl for the quarantine MAC. Source switch.acl.ingress.id. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">acl_id</span> - Associated ingress acl for the quarantine MAC. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">cos_queue</span> - COS queue for the quarantine device traffic from range (0 - 7) or unset to disable. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">description</span> - Description for the quarantine MAC. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">drop</span> - Drop setting for the quarantine device traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">mac</span> - Quarantine MAC. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">policer</span> - ACL policer for the quarantine device traffic. Source switch.acl.policer.id. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">policer</span> - ACL policer for the quarantine device traffic. <span class="li-normal">type: int</span> </li>
         </ul>
     </ul>
 

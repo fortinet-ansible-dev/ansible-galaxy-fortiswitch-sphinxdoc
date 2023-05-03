@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_prelookup</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -88,7 +94,7 @@ Parameters
             <li> <span class="li-head">dst_ip_prefix</span> - Destination-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">dst_mac</span> - Destination mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ether_type</span> - Ether type to be matched. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">service</span> - Service name. Source switch.acl.service.custom.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">service</span> - Service name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_ip_prefix</span> - Source-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_mac</span> - Source mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">vlan_id</span> - Vlan id to be matched. <span class="li-normal">type: int</span> </li>
@@ -96,10 +102,10 @@ Parameters
         <li> <span class="li-head">description</span> - Description of the policy. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">group</span> - Group ID of the policy. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">id</span> - Prelookup policy ID. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">interface</span> - Interface to which policy is bound in the pre-lookup. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">interface</span> - Interface to which policy is bound in the pre-lookup. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">schedule</span> - schedule list. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">schedule_name</span> - Schedule name. Source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">schedule_name</span> - Schedule name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">status</span> - Set policy status. <span class="li-normal">type: str</span> <span class="li-normal">choices: active, inactive</span> </li>
         </ul>
@@ -143,7 +149,7 @@ Examples
             description: "<your_own_value>"
             group: "20"
             id:  "21"
-            interface: "<your_own_value> (source switch.physical-port.name)"
+            interface: "<your_own_value> (source switch.physical_port.name)"
             schedule:
              -
                 schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"

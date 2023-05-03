@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_rip</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -77,7 +83,7 @@ Parameters
         <li> <span class="li-head">default_metric</span> - Default metric of redistribute routes (Except connected). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">distance</span> - Set admin distance based on route source ip. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">access_list</span> - Access list for route destination. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">access_list</span> - Access list for route destination. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">distance</span> - Distance. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">id</span> - Distance id. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">prefix</span> - IP source prefix. <span class="li-normal">type: str</span> </li>
@@ -86,18 +92,18 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">direction</span> - Distribute list direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
             <li> <span class="li-head">id</span> - Distribute-list id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">interface</span> - Distribute list interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">listname</span> - Distribute access/prefix list name. Source router.access-list.name router.prefix-list.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">interface</span> - Distribute list interface name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">listname</span> - Distribute access/prefix list name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">garbage_timer</span> - Garbage collection timer. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">interface</span> - RIP interface configuration <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">auth_keychain</span> - Authentication keychain name. Source router.key-chain.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">auth_keychain</span> - Authentication keychain name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">auth_mode</span> - Authentication mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, text, md5</span> </li>
             <li> <span class="li-head">auth_string</span> - Authentication string/password. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">flags</span> - flags <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">name</span> - interface name Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - interface name <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">receive_version</span> - Receive version. <span class="li-normal">type: str</span> <span class="li-normal">choices: global, 1, 2, both</span> </li>
             <li> <span class="li-head">send_version</span> - Send version. <span class="li-normal">type: str</span> <span class="li-normal">choices: global, 1, 2, both</span> </li>
             <li> <span class="li-head">send_version2_broadcast</span> - broadcast version 1 compatible packets <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
@@ -117,16 +123,16 @@ Parameters
             </ul>
         <li> <span class="li-head">offset_list</span> - Offset list to modify RIP metric. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">access_list</span> - Access list name. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">access_list</span> - Access list name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">direction</span> - Offset list direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
             <li> <span class="li-head">id</span> - Offset-list id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">interface</span> - Interface to match. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">interface</span> - Interface to match. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">offset</span> - Metric value. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">passive_interface</span> - Passive interface configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - Passive interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Passive interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">recv_buffer_size</span> - receiving buffer size <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">redistribute</span> - Redistribute configuration. <span class="li-normal">type: list</span> </li>
@@ -134,7 +140,7 @@ Parameters
             <li> <span class="li-head">flags</span> - flags <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">metric</span> - Redistribute metric setting. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">name</span> - Redistribute name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">routemap</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">routemap</span> - Route map name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - status <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">timeout_timer</span> - Routing information timeout timer. <span class="li-normal">type: int</span> </li>
@@ -146,7 +152,7 @@ Parameters
             <li> <span class="li-head">default_metric</span> - Default metric of redistribute routes (Except connected). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">distance</span> - Set admin distance based on route source ip. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">access_list</span> - Access list for route destination. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">access_list</span> - Access list for route destination. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">distance</span> - Distance. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">id</span> - Distance id. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">prefix</span> - IP source prefix. <span class="li-normal">type: str</span> </li>
@@ -155,25 +161,25 @@ Parameters
                 <ul class="ul-self">
                 <li> <span class="li-head">direction</span> - Distribute list direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
                 <li> <span class="li-head">id</span> - Distribute-list id. <span class="li-normal">type: int</span> </li>
-                <li> <span class="li-head">interface</span> - Distribute list interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
-                <li> <span class="li-head">listname</span> - Distribute access/prefix list name. Source router.access-list.name router.prefix-list.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">interface</span> - Distribute list interface name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">listname</span> - Distribute access/prefix list name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 </ul>
             <li> <span class="li-head">garbage_timer</span> - Garbage collection timer. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">interface</span> - RIP interface configuration <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">auth_keychain</span> - Authentication keychain name. Source router.key-chain.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">auth_keychain</span> - Authentication keychain name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">auth_mode</span> - Authentication mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, text, md5</span> </li>
                 <li> <span class="li-head">auth_string</span> - Authentication string/password. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">flags</span> - flags <span class="li-normal">type: int</span> </li>
-                <li> <span class="li-head">name</span> - interface name Source system.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">name</span> - interface name <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">receive_version</span> - Receive version. <span class="li-normal">type: str</span> <span class="li-normal">choices: global, 1, 2, both</span> </li>
                 <li> <span class="li-head">send_version</span> - Send version. <span class="li-normal">type: str</span> <span class="li-normal">choices: global, 1, 2, both</span> </li>
                 <li> <span class="li-head">send_version2_broadcast</span> - broadcast version 1 compatible packets <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
                 <li> <span class="li-head">split_horizon</span> - Split horizon method. <span class="li-normal">type: str</span> <span class="li-normal">choices: poisoned, regular</span> </li>
                 <li> <span class="li-head">split_horizon_status</span> - Split horizon status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 </ul>
-            <li> <span class="li-head">name</span> - Vrf name. Source router.vrf.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Vrf name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">neighbor</span> - Specify a neighbor router. Required only for non-multicast networks. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
                 <li> <span class="li-head">id</span> - Neighbor entry id. <span class="li-normal">type: int</span> </li>
@@ -186,16 +192,16 @@ Parameters
                 </ul>
             <li> <span class="li-head">offset_list</span> - Offset list to modify RIP metric. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">access_list</span> - Access list name. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">access_list</span> - Access list name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">direction</span> - Offset list direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
                 <li> <span class="li-head">id</span> - Offset-list id. <span class="li-normal">type: int</span> </li>
-                <li> <span class="li-head">interface</span> - Interface to match. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">interface</span> - Interface to match. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">offset</span> - Metric value. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 </ul>
             <li> <span class="li-head">passive_interface</span> - Passive interface configuration. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">name</span> - Passive interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">name</span> - Passive interface name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">recv_buffer_size</span> - receiving buffer size <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">redistribute</span> - Redistribute configuration. <span class="li-normal">type: list</span> </li>
@@ -203,7 +209,7 @@ Parameters
                 <li> <span class="li-head">flags</span> - flags <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">metric</span> - Redistribute metric setting. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">name</span> - Redistribute name. <span class="li-normal">type: str</span> </li>
-                <li> <span class="li-head">routemap</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">routemap</span> - Route map name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">status</span> - status <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 </ul>
             <li> <span class="li-head">timeout_timer</span> - Routing information timeout timer. <span class="li-normal">type: int</span> </li>
@@ -236,7 +242,7 @@ Examples
             default_metric: "5"
             distance:
              -
-                access_list: "<your_own_value> (source router.access-list.name)"
+                access_list: "<your_own_value> (source router.access_list.name)"
                 distance: "8"
                 id:  "9"
                 prefix: "<your_own_value>"
@@ -245,12 +251,12 @@ Examples
                 direction: "in"
                 id:  "13"
                 interface: "<your_own_value> (source system.interface.name)"
-                listname: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                listname: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
                 status: "enable"
             garbage_timer: "17"
             interface:
              -
-                auth_keychain: "<your_own_value> (source router.key-chain.name)"
+                auth_keychain: "<your_own_value> (source router.key_chain.name)"
                 auth_mode: "none"
                 auth_string: "<your_own_value>"
                 flags: "22"
@@ -271,7 +277,7 @@ Examples
                 prefix: "<your_own_value>"
             offset_list:
              -
-                access_list: "<your_own_value> (source router.access-list.name)"
+                access_list: "<your_own_value> (source router.access_list.name)"
                 direction: "in"
                 id:  "39"
                 interface: "<your_own_value> (source system.interface.name)"
@@ -286,7 +292,7 @@ Examples
                 flags: "47"
                 metric: "48"
                 name: "default_name_49"
-                routemap: "<your_own_value> (source router.route-map.name)"
+                routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
             timeout_timer: "52"
             update_timer: "53"
@@ -297,7 +303,7 @@ Examples
                 default_metric: "57"
                 distance:
                  -
-                    access_list: "<your_own_value> (source router.access-list.name)"
+                    access_list: "<your_own_value> (source router.access_list.name)"
                     distance: "60"
                     id:  "61"
                     prefix: "<your_own_value>"
@@ -306,12 +312,12 @@ Examples
                     direction: "in"
                     id:  "65"
                     interface: "<your_own_value> (source system.interface.name)"
-                    listname: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                    listname: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
                     status: "enable"
                 garbage_timer: "69"
                 interface:
                  -
-                    auth_keychain: "<your_own_value> (source router.key-chain.name)"
+                    auth_keychain: "<your_own_value> (source router.key_chain.name)"
                     auth_mode: "none"
                     auth_string: "<your_own_value>"
                     flags: "74"
@@ -332,7 +338,7 @@ Examples
                     prefix: "<your_own_value>"
                 offset_list:
                  -
-                    access_list: "<your_own_value> (source router.access-list.name)"
+                    access_list: "<your_own_value> (source router.access_list.name)"
                     direction: "in"
                     id:  "91"
                     interface: "<your_own_value> (source system.interface.name)"
@@ -347,7 +353,7 @@ Examples
                     flags: "99"
                     metric: "100"
                     name: "default_name_101"
-                    routemap: "<your_own_value> (source router.route-map.name)"
+                    routemap: "<your_own_value> (source router.route_map.name)"
                     status: "enable"
                 timeout_timer: "104"
                 update_timer: "105"

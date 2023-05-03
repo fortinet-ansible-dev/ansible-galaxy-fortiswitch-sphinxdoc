@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_raguard_policy</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,8 +81,8 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">device_role</span> - Device-role. <span class="li-normal">type: str</span> <span class="li-normal">choices: host, router</span> </li>
         <li> <span class="li-head">managed_flag</span> - Managed flag. <span class="li-normal">type: str</span> <span class="li-normal">choices: on, off</span> </li>
-        <li> <span class="li-head">match_prefix</span> - Match prefix permitted by Prefix-list. Source router.prefix-list6.name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">match_src_addr</span> - Match src ip address permitted by access-list. Source router.access-list6.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">match_prefix</span> - Match prefix permitted by Prefix-list. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">match_src_addr</span> - Match src ip address permitted by access-list. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">max_hop_limit</span> - Max hop limit. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">max_router_preference</span> - Max-router-preference. <span class="li-normal">type: str</span> <span class="li-normal">choices: high, medium, low</span> </li>
         <li> <span class="li-head">min_hop_limit</span> - Min hop limit. <span class="li-normal">type: int</span> </li>
@@ -106,8 +112,8 @@ Examples
           switch_raguard_policy:
             device_role: "host"
             managed_flag: "on"
-            match_prefix: "<your_own_value> (source router.prefix-list6.name)"
-            match_src_addr: "<your_own_value> (source router.access-list6.name)"
+            match_prefix: "<your_own_value> (source router.prefix_list6.name)"
+            match_src_addr: "<your_own_value> (source router.access_list6.name)"
             max_hop_limit: "7"
             max_router_preference: "high"
             min_hop_limit: "9"

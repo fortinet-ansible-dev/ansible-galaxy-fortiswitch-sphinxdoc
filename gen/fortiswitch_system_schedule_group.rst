@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_schedule_group</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,7 +81,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">member</span> - Schedule group member. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - set schedule name Source system.schedule.onetime.name system.schedule.recurring.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - set schedule name <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">name</span> - Schedule group name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         </ul>

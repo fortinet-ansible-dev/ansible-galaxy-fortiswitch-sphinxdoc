@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_link_monitor</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -84,12 +90,12 @@ Parameters
         <li> <span class="li-head">packet_size</span> - Packet size of a twamp test session,. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">password</span> - Twamp controller password in authentication mode. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">port</span> - Port number to poll. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: str</span> <span class="li-normal">choices: arp, ping, ping6</span> </li>
+        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: list</span> <span class="li-normal">choices: arp, ping, ping6</span> </li>
         <li> <span class="li-head">recoverytime</span> - Number of retry attempts before bringing server up. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">security_mode</span> - Twamp controller security mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, authentication</span> </li>
         <li> <span class="li-head">source_ip</span> - Source IP used in packet to the server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip6</span> - Source IPv6 address used in packet to the server. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">srcintf</span> - Interface where the monitor traffic is sent. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">srcintf</span> - Interface where the monitor traffic is sent. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable link monitor administrative status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">timeout</span> - Detect request timeout. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">update_cascade_interface</span> - Enable/disable update cascade interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>

@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_dns_server</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,8 +79,8 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_dns_server</span> - Dns-server. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">mode</span> - Dns server mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: recursive, non-recursive, forward-only</span> </li>
-        <li> <span class="li-head">name</span> - Dns server name. Source system.interface.name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">mode</span> - Dns server mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: recursive, non_recursive, forward_only</span> </li>
+        <li> <span class="li-head">name</span> - Dns server name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         </ul>
     </ul>
 

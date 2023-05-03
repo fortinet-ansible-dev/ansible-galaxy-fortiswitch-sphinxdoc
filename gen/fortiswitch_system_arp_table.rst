@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_arp_table</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -74,7 +80,7 @@ Parameters
     <li> <span class="li-head">system_arp_table</span> - Configure arp table. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">id</span> - Unique ID. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">interface</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">interface</span> - Interface name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip</span> - IPv4 address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">mac</span> - MAC address. <span class="li-normal">type: str</span> </li>
         </ul>

@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_settings</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -81,11 +87,11 @@ Parameters
         <li> <span class="li-head">bfd_dont_enforce_src_port</span> - Verify Source Port of BFD Packets. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">bfd_required_min_rx</span> - BFD required minimal rx interval. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">comments</span> - Vd comments. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">device</span> - Interface. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">device</span> - Interface. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ecmp_max_paths</span> - Maximum number of ECMP next-hops. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">gateway</span> - Default gateway ip address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip</span> - IP address and netmask. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">ip_ecmp_mode</span> - IP ecmp mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: source-ip-based, dst-ip-based, port-based</span> </li>
+        <li> <span class="li-head">ip_ecmp_mode</span> - IP ecmp mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: source_ip_based, dst_ip_based, port_based</span> </li>
         <li> <span class="li-head">manageip</span> - IP address and netmask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">multicast_forward</span> - Multicast forwarding. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">multicast_skip_policy</span> - Skip policy check, and allow multicast through. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>

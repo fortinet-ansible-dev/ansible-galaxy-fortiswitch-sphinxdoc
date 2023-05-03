@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_gwdetect</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,9 +81,9 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">failtime</span> - Fail-times for ping server lost . <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ha_priority</span> - HA election priority (1-50). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">interface</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">interface</span> - Interface name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">interval</span> - Detection interval. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
+        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
         <li> <span class="li-head">server</span> - Server address(es). <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">address</span> - Server address. <span class="li-normal">type: str</span> </li>

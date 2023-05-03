@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_user_peer</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,12 +79,12 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">user_peer</span> - config peer user <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">ca</span> - peer certificate CA (CA name in local) Source system.certificate.ca.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">ca</span> - peer certificate CA (CA name in local) <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cn</span> - peer certificate common name <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cn_type</span> - peer certificate common name type <span class="li-normal">type: str</span> <span class="li-normal">choices: string, email, FQDN, ipv4, ipv6</span> </li>
-        <li> <span class="li-head">ldap_mode</span> - peer ldap mode <span class="li-normal">type: str</span> <span class="li-normal">choices: password, principal-name</span> </li>
+        <li> <span class="li-head">ldap_mode</span> - peer ldap mode <span class="li-normal">type: str</span> <span class="li-normal">choices: password, principal_name</span> </li>
         <li> <span class="li-head">ldap_password</span> - password for LDAP server bind <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">ldap_server</span> - LDAP server for access rights check Source user.ldap.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">ldap_server</span> - LDAP server for access rights check <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ldap_username</span> - username for LDAP server bind <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">mandatory_ca_verify</span> - mandatory CA verify <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">name</span> - peer name <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>

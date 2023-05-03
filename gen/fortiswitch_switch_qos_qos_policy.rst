@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_qos_qos_policy</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -76,7 +82,7 @@ Parameters
         <li> <span class="li-head">cos_queue</span> - COS queue configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">description</span> - Description of the COS queue. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">drop_policy</span> - COS queue drop policy. <span class="li-normal">type: str</span> <span class="li-normal">choices: taildrop, weighted-random-early-detection</span> </li>
+            <li> <span class="li-head">drop_policy</span> - COS queue drop policy. <span class="li-normal">type: str</span> <span class="li-normal">choices: taildrop, weighted_random_early_detection</span> </li>
             <li> <span class="li-head">ecn</span> - Update frame IP ECN field in lieu of packet drop. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">max_rate</span> - Maximum rate (kbps). 0 to disable. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">max_rate_percent</span> - Maximum rate (% of link speed). <span class="li-normal">type: int</span> </li>
@@ -88,7 +94,7 @@ Parameters
             </ul>
         <li> <span class="li-head">name</span> - QOS policy name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">rate_by</span> - COS queue rate by kbps or percent. <span class="li-normal">type: str</span> <span class="li-normal">choices: kbps, percent</span> </li>
-        <li> <span class="li-head">schedule</span> - COS queue scheduling. <span class="li-normal">type: str</span> <span class="li-normal">choices: strict, round-robin, weighted</span> </li>
+        <li> <span class="li-head">schedule</span> - COS queue scheduling. <span class="li-normal">type: str</span> <span class="li-normal">choices: strict, round_robin, weighted</span> </li>
         </ul>
     </ul>
 

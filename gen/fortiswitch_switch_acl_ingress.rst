@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_ingress</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -77,21 +83,22 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">cos_queue</span> - COS queue number (0 - 7), or unset to disable. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">count</span> - Count enable/disable action. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">count_type</span> - Count-type(two colors): all, green, yellow, or red. <span class="li-normal">type: str</span> <span class="li-normal">choices: all, green, yellow, red</span> </li>
             <li> <span class="li-head">cpu_cos_queue</span> - CPU COS queue number(17 - 25). Only if packets reach to CPU. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">drop</span> - Drop enable/disable action. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">egress_mask</span> - List of physical ports to be configured in egress mask. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">member_name</span> - Physical port name. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">member_name</span> - Physical port name. <span class="li-normal">type: str</span> </li>
                 </ul>
-            <li> <span class="li-head">mirror</span> - Mirror session name. Source switch.mirror.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">mirror</span> - Mirror session name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">outer_vlan_tag</span> - Outer vlan tag. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">policer</span> - Policer id. Source switch.acl.policer.id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">redirect</span> - Redirect interface name. Source switch.physical-port.name switch.trunk.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">policer</span> - Policer id. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">redirect</span> - Redirect interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">redirect_bcast_cpu</span> - Redirect broadcast to all ports including CPU. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">redirect_bcast_no_cpu</span> - Redirect broadcast to all ports excluding CPU. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">redirect_physical_port</span> - List of physical ports to redirect. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">member_name</span> - Physical port name. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">member_name</span> - Physical port name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">remark_cos</span> - Remark CoS value (0 - 7), or unset to disable. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">remark_dscp</span> - Remark DSCP value (0 - 63), or unset to disable. <span class="li-normal">type: int</span> </li>
@@ -100,10 +107,12 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">cos</span> - 802.1Q CoS value to be matched. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">dscp</span> - DSCP value to be matched. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">dst_ip6_prefix</span> - Destination-ip6 address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">dst_ip_prefix</span> - Destination-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">dst_mac</span> - Destination mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ether_type</span> - Ether type to be matched. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">service</span> - Service name. Source switch.acl.service.custom.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">service</span> - Service name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">src_ip6_prefix</span> - Source-ip6 address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_ip_prefix</span> - Source-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_mac</span> - Source mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">vlan_id</span> - Vlan id to be matched. <span class="li-normal">type: int</span> </li>
@@ -113,12 +122,12 @@ Parameters
         <li> <span class="li-head">id</span> - Ingress policy ID. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">ingress_interface</span> - Interface list to which policy is bound on the ingress. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">member_name</span> - Interface name. Source switch.physical-port.name switch.trunk.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">ingress_interface_all</span> - Select all interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">schedule</span> - schedule list. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">schedule_name</span> - Schedule name. Source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">schedule_name</span> - Schedule name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">status</span> - Set policy status. <span class="li-normal">type: str</span> <span class="li-normal">choices: active, inactive</span> </li>
         </ul>
@@ -146,38 +155,41 @@ Examples
             action:
                 cos_queue: "4"
                 count: "enable"
-                cpu_cos_queue: "6"
+                count_type: "all"
+                cpu_cos_queue: "7"
                 drop: "enable"
                 egress_mask:
                  -
-                    member_name: "<your_own_value> (source switch.physical-port.name)"
+                    member_name: "<your_own_value> (source switch.physical_port.name)"
                 mirror: "<your_own_value> (source switch.mirror.name)"
-                outer_vlan_tag: "11"
-                policer: "12 (source switch.acl.policer.id)"
-                redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
+                outer_vlan_tag: "12"
+                policer: "13 (source switch.acl.policer.id)"
+                redirect: "<your_own_value> (source switch.physical_port.name switch.trunk.name)"
                 redirect_bcast_cpu: "enable"
                 redirect_bcast_no_cpu: "enable"
                 redirect_physical_port:
                  -
-                    member_name: "<your_own_value> (source switch.physical-port.name)"
-                remark_cos: "18"
-                remark_dscp: "19"
+                    member_name: "<your_own_value> (source switch.physical_port.name)"
+                remark_cos: "19"
+                remark_dscp: "20"
             classifier:
-                cos: "21"
-                dscp: "22"
+                cos: "22"
+                dscp: "23"
                 dst_ip_prefix: "<your_own_value>"
+                dst_ip6_prefix: "<your_own_value>"
                 dst_mac: "<your_own_value>"
-                ether_type: "25"
+                ether_type: "27"
                 service: "<your_own_value> (source switch.acl.service.custom.name)"
                 src_ip_prefix: "<your_own_value>"
+                src_ip6_prefix: "<your_own_value>"
                 src_mac: "<your_own_value>"
-                vlan_id: "29"
+                vlan_id: "32"
             description: "<your_own_value>"
-            group: "31"
-            id:  "32"
+            group: "34"
+            id:  "35"
             ingress_interface:
              -
-                member_name: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
+                member_name: "<your_own_value> (source switch.physical_port.name switch.trunk.name)"
             ingress_interface_all: "enable"
             schedule:
              -

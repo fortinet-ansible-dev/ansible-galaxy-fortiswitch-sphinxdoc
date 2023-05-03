@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_user_local</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,12 +79,12 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">user_local</span> - Local user configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">ldap_server</span> - LDAP server name. Source user.ldap.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">ldap_server</span> - LDAP server name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - User name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">passwd</span> - User password. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">radius_server</span> - RADIUS server name. Source user.radius.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">radius_server</span> - RADIUS server name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable user status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">tacacsplus_server</span> - TACACS+ server name. Source user.tacacs+.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">tacacsplus_server</span> - TACACS+ server name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">type</span> - Authentication type. <span class="li-normal">type: str</span> <span class="li-normal">choices: password, radius, tacacs+, ldap</span> </li>
         </ul>
     </ul>
@@ -107,7 +113,7 @@ Examples
             passwd: "<your_own_value>"
             radius_server: "<your_own_value> (source user.radius.name)"
             status: "enable"
-            tacacsplus_server: "<your_own_value> (source user.tacacs+.name)"
+            tacacs+_server: "<your_own_value> (source user.tacacs+.name)"
             type: "password"
     
 

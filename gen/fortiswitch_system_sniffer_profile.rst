@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_sniffer_profile</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,12 +79,12 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_sniffer_profile</span> - Show packet sniffer configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">filter</span> - Flexible logical filters for sniffer (or "none")                    For example:  To print udp 1812 traffic between forti1 and either forti2 or forti3                    "udp and port 1812 and host forti1 and \( forti2 or forti3 \)." <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">filter</span> - Flexible logical filters for sniffer (or "none") <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">max_pkt_count</span> - Maximum number of packet to be captured on the interface  (1-INT_MAX). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">max_pkt_len</span> - Maximum packet length to be captured on the interface  (64-1534). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">profile_name</span> - Give name to the sniffer profile. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">switch_interface</span> - Select switch-interface name on which packets are to be captured. Source switch.interface.name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">system_interface</span> - Select system-interface name on which packets are to be captured. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">profile_name</span> - Give name to the sniffer profile. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">switch_interface</span> - Select switch-interface name on which packets are to be captured. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">system_interface</span> - Select system-interface name on which packets are to be captured. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
 

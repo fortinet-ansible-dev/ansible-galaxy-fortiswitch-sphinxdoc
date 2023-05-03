@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_vlan</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -78,6 +84,7 @@ Parameters
         <li> <span class="li-head">community_vlans</span> - Communities within this private VLAN. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cos_queue</span> - Set cos(0-7) on the VLAN traffic or unset to disable. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">dhcp6_snooping</span> - Enable/Disable DHCPv6 snooping on this vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">dhcp_server_access_list</span> - Configure dhcp server access list. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">name</span> - User given name for dhcp-server. <span class="li-normal">type: str</span> </li>
@@ -86,8 +93,14 @@ Parameters
             </ul>
         <li> <span class="li-head">dhcp_snooping</span> - Enable/Disable dhcp snooping on this vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">dhcp_snooping_option82</span> - Enable/Disable inserting option82. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
+        <li> <span class="li-head">dhcp_snooping_static_client</span> - DHCP Snooping static clients. <span class="li-normal">type: list</span> </li>
+            <ul class="ul-self">
+            <li> <span class="li-head">ip_addr</span> - Client IPv4 address. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">mac_addr</span> - Client MAC address. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Client Name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">switch_interface</span> - Interface name. <span class="li-normal">type: str</span> </li>
+            </ul>
         <li> <span class="li-head">dhcp_snooping_verify_mac</span> - Enable/Disable verify source mac. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
-        <li> <span class="li-head">dhcp6_snooping</span> - Enable/Disable DHCPv6 snooping on this vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">id</span> - VLAN ID. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">igmp_snooping</span> - Enable/disable IGMP-snooping for the VLAN interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">igmp_snooping_fast_leave</span> - Enable/disable IGMP snooping fast leave. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -97,10 +110,11 @@ Parameters
         <li> <span class="li-head">igmp_snooping_querier_version</span> - IGMP-snooping-querier version. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">igmp_snooping_static_group</span> - IGMP static groups. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
+            <li> <span class="li-head">ignore_reports</span> - Enable/disable to ignore all IGMP membership reports received for this group. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">mcast_addr</span> - Multicast address for static-group. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">members</span> - Member interfaces. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">member_name</span> - Interface name. Source switch.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">name</span> - Group name. <span class="li-normal">type: str</span> </li>
             </ul>
@@ -143,10 +157,11 @@ Parameters
         <li> <span class="li-head">mld_snooping_querier_addr</span> - MLD-querier address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">mld_snooping_static_group</span> - MLD static groups. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
+            <li> <span class="li-head">ignore_reports</span> - Enable/disable to ignore all MLD membership reports received for this group. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">mcast_addr</span> - IPv6 Multicast address for static-group. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">members</span> - Member interfaces. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">member_name</span> - Interface name. Source switch.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">name</span> - Group name. <span class="li-normal">type: str</span> </li>
             </ul>
@@ -154,7 +169,7 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
-        <li> <span class="li-head">policer</span> - Set policer on the VLAN traffic. Source switch.acl.policer.id. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">policer</span> - Set policer on the VLAN traffic. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">primary_vlan</span> - Primary VLAN ID. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">private_vlan</span> - Enable/disable private VLAN. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">private_vlan_type</span> - Private VLAN type. <span class="li-normal">type: int</span> </li>
@@ -193,50 +208,57 @@ Examples
                 server_ip6: "<your_own_value>"
             dhcp_snooping: "disable"
             dhcp_snooping_option82: "disable"
+            dhcp_snooping_static_client:
+             -
+                ip_addr: "<your_own_value>"
+                mac_addr: "<your_own_value>"
+                name: "default_name_17"
+                switch_interface: "<your_own_value>"
             dhcp_snooping_verify_mac: "disable"
             dhcp6_snooping: "disable"
-            id:  "16"
+            id:  "21"
             igmp_snooping: "enable"
             igmp_snooping_fast_leave: "enable"
             igmp_snooping_proxy: "enable"
             igmp_snooping_querier: "enable"
             igmp_snooping_querier_addr: "<your_own_value>"
-            igmp_snooping_querier_version: "22"
+            igmp_snooping_querier_version: "27"
             igmp_snooping_static_group:
              -
+                ignore_reports: "enable"
                 mcast_addr: "<your_own_value>"
                 members:
                  -
                     member_name: "<your_own_value> (source switch.interface.name)"
-                name: "default_name_27"
-            isolated_vlan: "28"
+                name: "default_name_33"
+            isolated_vlan: "34"
             lan_segment: "enable"
-            lan_segment_primary_vlan: "30"
-            lan_segment_type: "31"
+            lan_segment_primary_vlan: "36"
+            lan_segment_type: "37"
             lan_subvlans: "<your_own_value>"
             learning: "disable"
-            learning_limit: "34"
+            learning_limit: "40"
             member_by_ipv4:
              -
                 address: "<your_own_value>"
                 description: "<your_own_value>"
-                id:  "38"
+                id:  "44"
             member_by_ipv6:
              -
                 description: "<your_own_value>"
-                id:  "41"
+                id:  "47"
                 prefix: "<your_own_value>"
             member_by_mac:
              -
                 description: "<your_own_value>"
-                id:  "45"
+                id:  "51"
                 mac: "<your_own_value>"
             member_by_proto:
              -
                 description: "<your_own_value>"
                 frametypes: "ethernet2"
-                id:  "50"
-                protocol: "51"
+                id:  "56"
+                protocol: "57"
             mld_snooping: "enable"
             mld_snooping_fast_leave: "enable"
             mld_snooping_proxy: "enable"
@@ -244,18 +266,19 @@ Examples
             mld_snooping_querier_addr: "<your_own_value>"
             mld_snooping_static_group:
              -
+                ignore_reports: "enable"
                 mcast_addr: "<your_own_value>"
                 members:
                  -
                     member_name: "<your_own_value> (source switch.interface.name)"
-                name: "default_name_61"
+                name: "default_name_68"
             mrouter_ports:
              -
                 member_name: "<your_own_value>"
-            policer: "64 (source switch.acl.policer.id)"
-            primary_vlan: "65"
+            policer: "71 (source switch.acl.policer.id)"
+            primary_vlan: "72"
             private_vlan: "enable"
-            private_vlan_type: "67"
+            private_vlan_type: "74"
             rspan_mode: "enable"
     
 

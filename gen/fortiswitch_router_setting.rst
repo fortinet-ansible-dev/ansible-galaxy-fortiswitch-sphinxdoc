@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_setting</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -76,7 +82,7 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Filter list entry ID. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">protocol</span> - Protocol type. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, static6, rip, ripng, ospf, ospf6, isis, isis6, bgp, bgp6, any, any6</span> </li>
-            <li> <span class="li-head">route_map</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_map</span> - Route map name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">hostname</span> - Set hostname for this virtual domain router. <span class="li-normal">type: str</span> </li>
         </ul>
@@ -104,7 +110,7 @@ Examples
              -
                 id:  "4"
                 protocol: "static"
-                route_map: "<your_own_value> (source router.route-map.name)"
+                route_map: "<your_own_value> (source router.route_map.name)"
             hostname: "myhostname"
     
 

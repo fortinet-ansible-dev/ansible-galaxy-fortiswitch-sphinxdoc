@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_admin</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,7 +79,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_admin</span> - Administrative user configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">accprofile</span> - Administrative user access profile. Source system.accprofile.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">accprofile</span> - Administrative user access profile. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">accprofile_override</span> - Enable/disable remote authentication server to override access profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">allow_remove_admin_session</span> - Enable/disable privileged administrative users to remove administrative sessions. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">comments</span> - Comment. <span class="li-normal">type: str</span> </li>
@@ -117,7 +123,7 @@ Parameters
         <li> <span class="li-head">trusthost7</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">trusthost8</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">trusthost9</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">vdom</span> - Virtual domain name. Source system.vdom.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">vdom</span> - Virtual domain name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">wildcard</span> - Enable/disable wildcard RADIUS authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>
@@ -145,8 +151,8 @@ Examples
             accprofile_override: "enable"
             allow_remove_admin_session: "enable"
             comments: "<your_own_value>"
-            email_address: "<your_own_value>"
-            first_name: "<your_own_value>"
+            Email address.: "<your_own_value>"
+            First name.: "<your_own_value>"
             force_password_change: "enable"
             hidden: "10"
             ip6_trusthost1: "<your_own_value>"
@@ -160,15 +166,15 @@ Examples
             ip6_trusthost8: "<your_own_value>"
             ip6_trusthost9: "<your_own_value>"
             is_admin: "21"
-            last_name: "<your_own_value>"
-            mobile_number: "<your_own_value>"
+            Last name.: "<your_own_value>"
+            Mobile number.: "<your_own_value>"
             name: "default_name_24"
-            pager_number: "<your_own_value>"
+            Pager number.: "<your_own_value>"
             password: "<your_own_value>"
             password_expire: "<your_own_value>"
             peer_auth: "enable"
             peer_group: "<your_own_value>"
-            phone_number: "<your_own_value>"
+            Phone number.: "<your_own_value>"
             remote_auth: "enable"
             remote_group: "<your_own_value>"
             schedule: "<your_own_value>"

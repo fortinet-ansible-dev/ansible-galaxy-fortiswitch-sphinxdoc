@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_controller_global</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,11 +81,12 @@ Parameters
         <li> <span class="li-head">ac_data_port</span> - Switch controller data port [1024, 49150]. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ac_dhcp_option_code</span> - DHCP option code for CAPUTP AC. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ac_discovery_mc_addr</span> - Discovery multicast address <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">ac_discovery_type</span> - AC discovery type. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, dhcp, broadcast, multicast</span> </li>
+        <li> <span class="li-head">ac_discovery_type</span> - AC discovery type. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, dhcp, broadcast, multicast, auto, disable</span> </li>
         <li> <span class="li-head">ac_list</span> - AC list. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Id. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">ipv4_address</span> - IP addr. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">ipv6_address</span> - IPv6 address. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">ac_port</span> - Switch controller ctl port [1024, 49150]. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">echo_interval</span> - Interval before SWTP sends Echo Request after joining AC. [1, 600] default = 30s. <span class="li-normal">type: int</span> </li>
@@ -117,12 +124,13 @@ Examples
              -
                 id:  "8"
                 ipv4_address: "<your_own_value>"
-            ac_port: "10"
-            echo_interval: "11"
+                ipv6_address: "<your_own_value>"
+            ac_port: "11"
+            echo_interval: "12"
             location: "<your_own_value>"
-            max_discoveries: "13"
-            max_retransmit: "14"
-            name: "default_name_15"
+            max_discoveries: "14"
+            max_retransmit: "15"
+            name: "default_name_16"
             tunnel_mode: "compatible"
     
 

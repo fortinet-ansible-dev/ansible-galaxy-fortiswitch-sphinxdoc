@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_global</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -72,11 +78,9 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_global</span> - Configure global range attributes. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">ca_certificate_802dot1x</span> - CA certificate for Port Security (802.1x). <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">certificate_802dot1x</span> - Certificate for Port Security (802.1x). <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">admin_concurrent</span> - Enable/disable concurrent login of adminstrative users. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">admin_https_pki_required</span> - Enable/disable HTTPS login page when PKI is enabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">admin_https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1-0, tlsv1-1, tlsv1-2, tlsv1-3</span> </li>
+        <li> <span class="li-head">admin_https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1_0, tlsv1_1, tlsv1_2, tlsv1_3</span> </li>
         <li> <span class="li-head">admin_lockout_duration</span> - Lockout duration for FortiSwitch administration (1 - 2147483647 sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_lockout_threshold</span> - Lockout threshold for FortiSwitch administration. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_port</span> - Administrative access HTTP port (1 - 65535). <span class="li-normal">type: int</span> </li>
@@ -94,6 +98,8 @@ Parameters
         <li> <span class="li-head">arp_timeout</span> - ARP timeout value in seconds. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">asset_tag</span> - Asset tag. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auto_isl</span> - Enable/disable automatic inter-switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">ca_certificate_802dot1x</span> - CA certificate for Port Security (802.1x). <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">certificate_802dot1x</span> - Certificate for Port Security (802.1x). <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cfg_revert_timeout</span> - Time-out for reverting to the last saved configuration (10 - 2147483647). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">cfg_save</span> - Configure configuration saving mode (valid only for changes made in the CLI). <span class="li-normal">type: str</span> <span class="li-normal">choices: automatic, manual, revert</span> </li>
         <li> <span class="li-head">clt_cert_req</span> - Enable the requirement of client certificate for GUI login. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -101,11 +107,12 @@ Parameters
         <li> <span class="li-head">daily_restart</span> - Enable/disable FortiSwitch daily reboot. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">detect_ip_conflict</span> - Enable/disable detection of IP address conflicts. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dh_params</span> - Minimum size of Diffie-Hellman prime for HTTPS/SSH (bits). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">dhcp_circuit_id</span> - List the parameters to be included to inform about client identification. <span class="li-normal">type: str</span> <span class="li-normal">choices: intfname, vlan, hostname, mode, description</span> </li>
         <li> <span class="li-head">dhcp_client_location</span> - List the parameters to be included to inform about client location. <span class="li-normal">type: str</span> <span class="li-normal">choices: intfname, vlan, hostname, mode, description</span> </li>
         <li> <span class="li-head">dhcp_option_format</span> - DHCP Option format string. <span class="li-normal">type: str</span> <span class="li-normal">choices: legacy, ascii</span> </li>
         <li> <span class="li-head">dhcp_remote_id</span> - List the parameters to be included in remote-id field. <span class="li-normal">type: str</span> <span class="li-normal">choices: mac, hostname, ip</span> </li>
         <li> <span class="li-head">dhcp_server_access_list</span> - Enable/Disable trusted DHCP Server list. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">dhcp_snoop_client_req</span> - Client DHCP packet broadcast mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: forward-untrusted, drop-untrusted</span> </li>
+        <li> <span class="li-head">dhcp_snoop_client_req</span> - Client DHCP packet broadcast mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: forward_untrusted, drop_untrusted</span> </li>
         <li> <span class="li-head">dhcps_db_exp</span> - Expiry time for dhcp-snoop server-db entry (300-259200 sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dhcps_db_per_port_learn_limit</span> - Per Interface dhcp-server entries learn limit . <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dst</span> - Enable/disable daylight saving time. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -115,7 +122,7 @@ Parameters
         <li> <span class="li-head">image_rotation</span> - Enable/disable image upgrade partition rotation. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">interval</span> - Dead gateway detection interval. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ip_conflict_ignore_default</span> - Enable/disable IP conflict detection for default IP address. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">ipv6_accept_dad</span> - Whether to accept ipv6 DAD (Duplicate Address Detection). 0: Disable DAD; 1: Enable DAD (default); 2: Enable DAD, and disable IPv6 operation if MAC-based duplicate link-local address has been found. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">ipv6_accept_dad</span> - Whether to accept ipv6 DAD (Duplicate Address Detection). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ipv6_all_forwarding</span> - Enable/disable ipv6 all forwarding. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">kernel_crashlog</span> - Enable/disable capture of kernel error messages to crash log. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">kernel_devicelog</span> - Enable/disable capture of kernel device messages to log. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -133,8 +140,8 @@ Parameters
         <li> <span class="li-head">revision_backup_on_upgrade</span> - Enable/disable automatic revision backup upon upgrade of system image. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">strong_crypto</span> - Enable/disable strong cryptography for HTTPS/SSH access. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">switch_mgmt_mode</span> - Switch mode setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: local, fortilink</span> </li>
-        <li> <span class="li-head">tcp_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tcp6_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">tcp_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tftp</span> - Enable/disable TFTP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">timezone</span> - Time zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76</span> </li>
         </ul>
@@ -158,8 +165,8 @@ Examples
       - name: Configure global range attributes.
         fortiswitch_system_global:
           system_global:
-            ca_certificate_802dot1x: "<your_own_value>"
-            certificate_802dot1x: "<your_own_value>"
+            802.1x_ca_certificate: "<your_own_value>"
+            802.1x_certificate: "<your_own_value>"
             admin_concurrent: "enable"
             admin_https_pki_required: "enable"
             admin_https_ssl_versions: "tlsv1-0"
@@ -187,40 +194,41 @@ Examples
             daily_restart: "enable"
             detect_ip_conflict: "enable"
             dh_params: "31"
+            dhcp_circuit_id: "intfname"
             dhcp_client_location: "intfname"
             dhcp_option_format: "legacy"
             dhcp_remote_id: "mac"
             dhcp_server_access_list: "enable"
             dhcp_snoop_client_req: "forward-untrusted"
-            dhcps_db_exp: "37"
-            dhcps_db_per_port_learn_limit: "38"
+            dhcps_db_exp: "38"
+            dhcps_db_per_port_learn_limit: "39"
             dst: "enable"
-            failtime: "40"
+            failtime: "41"
             fortilink_auto_discovery: "enable"
             hostname: "myhostname"
             image_rotation: "disable"
-            interval: "44"
+            interval: "45"
             ip_conflict_ignore_default: "enable"
-            ipv6_accept_dad: "46"
+            ipv6_accept_dad: "47"
             ipv6_all_forwarding: "enable"
             kernel_crashlog: "enable"
             kernel_devicelog: "enable"
             l3_host_expiry: "enable"
             language: "browser"
-            ldapconntimeout: "52"
+            ldapconntimeout: "53"
             post_login_banner: "<your_own_value>"
             pre_login_banner: "<your_own_value>"
             private_data_encryption: "disable"
-            radius_coa_port: "56"
-            radius_port: "57"
-            remoteauthtimeout: "58"
+            radius_coa_port: "57"
+            radius_port: "58"
+            remoteauthtimeout: "59"
             restart_time: "<your_own_value>"
             revision_backup_on_logout: "enable"
             revision_backup_on_upgrade: "enable"
             strong_crypto: "enable"
             switch_mgmt_mode: "local"
-            tcp_mss_min: "64"
-            tcp6_mss_min: "65"
+            tcp_mss_min: "65"
+            tcp6_mss_min: "66"
             tftp: "enable"
             timezone: "01"
     

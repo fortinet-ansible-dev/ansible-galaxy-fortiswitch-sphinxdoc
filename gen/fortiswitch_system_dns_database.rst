@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_dns_database</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,7 +81,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">allow_transfer</span> - Dns zone transfer ip address list. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">authoritative</span> - Authoritative zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">contact</span> - Email address of the administrator for this zone  you can specify only the username (e.g. admin)or full email address (e.g. admin .ca@test.com)   when using simple username, the domain of the email will be this zone. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">contact</span> - Email address of the administrator for this zone <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dns_entry</span> - Dns entry. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">canonical_name</span> - Canonical name. <span class="li-normal">type: str</span> </li>

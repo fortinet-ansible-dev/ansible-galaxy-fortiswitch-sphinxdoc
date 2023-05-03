@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_ripng</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -84,25 +90,25 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">direction</span> - Distribute list direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
             <li> <span class="li-head">id</span> - Distribute-list id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">interface</span> - Distribute list interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">listname</span> - Distribute access/prefix list name. Source router.access-list6.name router.prefix-list6.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">interface</span> - Distribute list interface name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">listname</span> - Distribute access/prefix list name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">garbage_timer</span> - Garbage collection timer. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">interface</span> - RIPng interface configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">flags</span> - Flags. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">name</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">passive</span> - Suppress routing updates on an interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">split_horizon</span> - Split horizon type. <span class="li-normal">type: str</span> <span class="li-normal">choices: poisoned, regular</span> </li>
             <li> <span class="li-head">split_horizon_status</span> - Enable/disable split horizon. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">offset_list</span> - Offset list to modify RIPng metric. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">access_list6</span> - Ipv6 access list name. Source router.access-list6.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">access_list6</span> - Ipv6 access list name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">direction</span> - Offset list direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
             <li> <span class="li-head">id</span> - Offset-list id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">interface</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">interface</span> - Interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">offset</span> - Metric offset. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
@@ -111,7 +117,7 @@ Parameters
             <li> <span class="li-head">flags</span> - Flags <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">metric</span> - Redistribute metric setting. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">name</span> - Redistribute name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">routemap</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">routemap</span> - Route map name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - status <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">timeout_timer</span> - Routing information timeout timer. <span class="li-normal">type: int</span> </li>
@@ -149,7 +155,7 @@ Examples
                 direction: "in"
                 id:  "11"
                 interface: "<your_own_value> (source system.interface.name)"
-                listname: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
+                listname: "<your_own_value> (source router.access_list6.name router.prefix_list6.name)"
                 status: "enable"
             garbage_timer: "15"
             interface:
@@ -161,7 +167,7 @@ Examples
                 split_horizon_status: "enable"
             offset_list:
              -
-                access_list6: "<your_own_value> (source router.access-list6.name)"
+                access_list6: "<your_own_value> (source router.access_list6.name)"
                 direction: "in"
                 id:  "25"
                 interface: "<your_own_value> (source system.interface.name)"
@@ -172,7 +178,7 @@ Examples
                 flags: "30"
                 metric: "31"
                 name: "default_name_32"
-                routemap: "<your_own_value> (source router.route-map.name)"
+                routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
             timeout_timer: "35"
             update_timer: "36"

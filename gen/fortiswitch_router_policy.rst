@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_policy</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -77,10 +83,10 @@ Parameters
         <li> <span class="li-head">dst</span> - Destination ip and mask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">end_port</span> - End port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">gateway</span> - IP address of gateway. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">input_device</span> - Incoming interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">input_device</span> - Incoming interface name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">interface</span> - Interface configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - Interface name Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface name <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">pbr_map_name</span> - PBR policy map name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">nexthop_group</span> - Nexthop group (ECMP) configuration. <span class="li-normal">type: list</span> </li>
@@ -90,10 +96,10 @@ Parameters
                 <ul class="ul-self">
                 <li> <span class="li-head">id</span> - Id (1-64). <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">nexthop_ip</span> - IP address of nexthop. <span class="li-normal">type: str</span> </li>
-                <li> <span class="li-head">nexthop_vrf_name</span> - VRF name. Source router.vrf.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">nexthop_vrf_name</span> - VRF name. <span class="li-normal">type: str</span> </li>
                 </ul>
             </ul>
-        <li> <span class="li-head">output_device</span> - Outgoing interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">output_device</span> - Outgoing interface name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">pbr_map</span> - PBR map configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">comments</span> - Description/comments. <span class="li-normal">type: str</span> </li>
@@ -103,13 +109,13 @@ Parameters
                 <li> <span class="li-head">dst</span> - Destination ip and mask. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">nexthop_group_name</span> - Nexthop group name. Used for ECMP. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">nexthop_ip</span> - IP address of nexthop. <span class="li-normal">type: str</span> </li>
-                <li> <span class="li-head">nexthop_vrf_name</span> - Nexthop vrf name. Source router.vrf.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">nexthop_vrf_name</span> - Nexthop vrf name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">seq_num</span> - Rule seq-num (1-10000). <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">src</span> - Source ip and mask. <span class="li-normal">type: str</span> </li>
                 </ul>
             </ul>
         <li> <span class="li-head">protocol</span> - Protocol number. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">seq_num</span> - Sequence number. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">seq_num</span> - Sequence number. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">src</span> - Source ip and mask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">start_port</span> - Start port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tos</span> - Terms of service bit pattern. <span class="li-normal">type: str</span> </li>

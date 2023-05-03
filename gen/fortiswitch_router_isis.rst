@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_isis</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -72,16 +78,16 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_isis</span> - ISIS configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">auth_keychain_area</span> - IS-IS area authentication key-chain. Applicable when area"s auth mode is md5. Source router.key-chain.name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">auth_keychain_domain</span> - IS-IS domain authentication key-chain. Applicable when domain"s auth mode is md5. Source router.key-chain.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">auth_keychain_area</span> - IS-IS area authentication key-chain. Applicable when area"s auth mode is md5. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">auth_keychain_domain</span> - IS-IS domain authentication key-chain. Applicable when domain"s auth mode is md5. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auth_mode_area</span> - IS-IS area(level-1) authentication mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: password, md5</span> </li>
         <li> <span class="li-head">auth_mode_domain</span> - ISIS domain(level-2) authentication mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: password, md5</span> </li>
         <li> <span class="li-head">auth_password_area</span> - IS-IS area(level-1) authentication password. Applicable when area"s auth mode is password. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auth_password_domain</span> - IS-IS domain(level-2) authentication password. Applicable when domain"s auth mode is password. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auth_sendonly_area</span> - Enable authentication send-only for level 1 SNP PDUs. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auth_sendonly_domain</span> - Enable authentication send-only for level 2 SNP PDUs. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">default_information_level</span> - Distribute default route into level"s LSP. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
-        <li> <span class="li-head">default_information_level6</span> - Distribute ipv6 default route into level"s LSP. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
+        <li> <span class="li-head">default_information_level</span> - Distribute default route into level"s LSP. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
+        <li> <span class="li-head">default_information_level6</span> - Distribute ipv6 default route into level"s LSP. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
         <li> <span class="li-head">default_information_metric</span> - Default information metric. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">default_information_metric6</span> - Default ipv6 route metric. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">default_information_originate</span> - Enable/disable generation of default route. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, always, disable</span> </li>
@@ -89,12 +95,12 @@ Parameters
         <li> <span class="li-head">ignore_attached_bit</span> - Ignore Attached bit on incoming L1 LSP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">interface</span> - IS-IS interface configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">auth_keychain_hello</span> - Hello PDU authentication key-chain. Applicable when hello"s auth mode is md5. Source router.key-chain.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">auth_keychain_hello</span> - Hello PDU authentication key-chain. Applicable when hello"s auth mode is md5. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">auth_mode_hello</span> - Hello PDU authentication mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: md5, password</span> </li>
             <li> <span class="li-head">auth_password_hello</span> - Hello PDU authentication password. Applicable when hello"s auth mode is password. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">bfd</span> - Bidirectional Forwarding Detection (BFD). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">bfd6</span> - Ipv6 Bidirectional Forwarding Detection (BFD). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-            <li> <span class="li-head">circuit_type</span> - IS-IS interface"s circuit type. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
+            <li> <span class="li-head">circuit_type</span> - IS-IS interface"s circuit type. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
             <li> <span class="li-head">csnp_interval_l1</span> - Level 1 CSNP interval. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">csnp_interval_l2</span> - Level 2 CSNP interval. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">hello_interval_l1</span> - Level 1 hello interval. <span class="li-normal">type: int</span> </li>
@@ -104,7 +110,7 @@ Parameters
             <li> <span class="li-head">hello_padding</span> - Enable padding to IS-IS hello packets. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">metric_l1</span> - Level 1 metric for interface. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">metric_l2</span> - Level 2 metric for interface. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">name</span> - IS-IS interface name Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - IS-IS interface name <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">passive</span> - Set this interface as passive. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">priority_l1</span> - Level 1 priority. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">priority_l2</span> - Level 2 priority. <span class="li-normal">type: int</span> </li>
@@ -113,7 +119,7 @@ Parameters
             <li> <span class="li-head">wide_metric_l1</span> - Level 1 wide metric for interface. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">wide_metric_l2</span> - Level 2 wide metric for interface. <span class="li-normal">type: int</span> </li>
             </ul>
-        <li> <span class="li-head">is_type</span> - IS-type. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2-only</span> </li>
+        <li> <span class="li-head">is_type</span> - IS-type. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2_only</span> </li>
         <li> <span class="li-head">log_neighbour_changes</span> - Enable logging of ISIS neighbour"s changes <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">lsp_gen_interval_l1</span> - Minimum interval for level 1 LSP regenerating. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">lsp_gen_interval_l2</span> - Minimum interval for level 2 LSP regenerating. <span class="li-normal">type: int</span> </li>
@@ -127,38 +133,38 @@ Parameters
         <li> <span class="li-head">overload_bit</span> - Signal other routers not to use us in SPF. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">redistribute</span> - IS-IS redistribute protocols. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">level</span> - level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
+            <li> <span class="li-head">level</span> - level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
             <li> <span class="li-head">metric</span> - metric. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">metric_type</span> - metric type. <span class="li-normal">type: str</span> <span class="li-normal">choices: external, internal</span> </li>
             <li> <span class="li-head">protocol</span> - protocol name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">routemap</span> - routemap name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">routemap</span> - routemap name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
-        <li> <span class="li-head">redistribute_l1</span> - Redistribute level 1 routes into level 2. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">redistribute_l1_list</span> - Access-list for redistribute l1 to l2. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">redistribute6</span> - IS-IS redistribute v6 protocols. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">level</span> - level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
+            <li> <span class="li-head">level</span> - level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
             <li> <span class="li-head">metric</span> - metric. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">protocol</span> - protocol name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">routemap</span> - routemap name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">routemap</span> - routemap name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
         <li> <span class="li-head">redistribute6_l1</span> - Redistribute level 1 v6 routes into level 2. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">redistribute6_l1_list</span> - Access-list for redistribute v6 routes from l1 to l2. Source router.access-list6.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">redistribute6_l1_list</span> - Access-list for redistribute v6 routes from l1 to l2. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">redistribute_l1</span> - Redistribute level 1 routes into level 2. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">redistribute_l1_list</span> - Access-list for redistribute l1 to l2. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">router_id</span> - Router ID. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">spf_interval_exp_l1</span> - Level 1 SPF minimum calculation delay in secs. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">spf_interval_exp_l2</span> - Level 2 SPF minimum calculation delay in secs. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">summary_address</span> - IS-IS summary addresses. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Summary address entry id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">level</span> - Level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
+            <li> <span class="li-head">level</span> - Level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
             <li> <span class="li-head">prefix</span> - prefix. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">summary_address6</span> - IS-IS summary ipv6 addresses. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Summary address entry id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">level</span> - Level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level-1-2, level-1, level-2</span> </li>
+            <li> <span class="li-head">level</span> - Level. <span class="li-normal">type: str</span> <span class="li-normal">choices: level_1_2, level_1, level_2</span> </li>
             <li> <span class="li-head">prefix6</span> - IPv6 prefix <span class="li-normal">type: str</span> </li>
             </ul>
         </ul>
@@ -182,8 +188,8 @@ Examples
       - name: ISIS configuration.
         fortiswitch_router_isis:
           router_isis:
-            auth_keychain_area: "<your_own_value> (source router.key-chain.name)"
-            auth_keychain_domain: "<your_own_value> (source router.key-chain.name)"
+            auth_keychain_area: "<your_own_value> (source router.key_chain.name)"
+            auth_keychain_domain: "<your_own_value> (source router.key_chain.name)"
             auth_mode_area: "password"
             auth_mode_domain: "password"
             auth_password_area: "<your_own_value>"
@@ -199,7 +205,7 @@ Examples
             ignore_attached_bit: "enable"
             interface:
              -
-                auth_keychain_hello: "<your_own_value> (source router.key-chain.name)"
+                auth_keychain_hello: "<your_own_value> (source router.key_chain.name)"
                 auth_mode_hello: "md5"
                 auth_password_hello: "<your_own_value>"
                 bfd: "enable"
@@ -239,19 +245,19 @@ Examples
                 metric: "54"
                 metric_type: "external"
                 protocol: "<your_own_value>"
-                routemap: "<your_own_value> (source router.route-map.name)"
+                routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
             redistribute_l1: "enable"
-            redistribute_l1_list: "<your_own_value> (source router.access-list.name)"
+            redistribute_l1_list: "<your_own_value> (source router.access_list.name)"
             redistribute6:
              -
                 level: "level-1-2"
                 metric: "63"
                 protocol: "<your_own_value>"
-                routemap: "<your_own_value> (source router.route-map.name)"
+                routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
             redistribute6_l1: "enable"
-            redistribute6_l1_list: "<your_own_value> (source router.access-list6.name)"
+            redistribute6_l1_list: "<your_own_value> (source router.access_list6.name)"
             router_id: "<your_own_value>"
             spf_interval_exp_l1: "70"
             spf_interval_exp_l2: "71"

@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_auth_path</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,7 +79,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_auth_path</span> - Auth-based routing configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">device</span> - Output interface. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">device</span> - Output interface. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">gateway</span> - Gateway IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - Name of the entry. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         </ul>

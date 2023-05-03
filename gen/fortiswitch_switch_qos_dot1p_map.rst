@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_qos_dot1p_map</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -76,14 +82,14 @@ Parameters
         <li> <span class="li-head">description</span> - Description of the 802.1p name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">egress_pri_tagging</span> - Enable/disable egress priority-tag frame. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">name</span> - Dot1p map name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">priority_0</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_1</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_2</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_3</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_4</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_5</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_6</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
-        <li> <span class="li-head">priority_7</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue-0, queue-1, queue-2, queue-3, queue-4, queue-5, queue-6, queue-7</span> </li>
+        <li> <span class="li-head">priority_0</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_1</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_2</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_3</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_4</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_5</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_6</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
+        <li> <span class="li-head">priority_7</span> - COS queue mapped by priority number (PCP in 802.1q). <span class="li-normal">type: str</span> <span class="li-normal">choices: queue_0, queue_1, queue_2, queue_3, queue_4, queue_5, queue_6, queue_7</span> </li>
         </ul>
     </ul>
 

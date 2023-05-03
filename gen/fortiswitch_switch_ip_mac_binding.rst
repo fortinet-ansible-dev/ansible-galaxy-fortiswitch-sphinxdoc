@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_ip_mac_binding</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,7 +81,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">ip</span> - Source ip and mask for this rule. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">mac</span> - MAC address value. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">status</span> - Is the binding now enabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>

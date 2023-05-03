@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_qos_ip_dscp_map</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -79,7 +85,7 @@ Parameters
             <li> <span class="li-head">cos_queue</span> - COS queue number. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">diffserv</span> - Differentiated service. <span class="li-normal">type: str</span> <span class="li-normal">choices: CS0, CS1, AF11, AF12, AF13, CS2, AF21, AF22, AF23, CS3, AF31, AF32, AF33, CS4, AF41, AF42, AF43, CS5, EF, CS6, CS7</span> </li>
             <li> <span class="li-head">entry_name</span> - Mapping entry. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">ip_precedence</span> - IP precedence. <span class="li-normal">type: str</span> <span class="li-normal">choices: Network-Control, Internetwork-Control, Critic/ECP, FlashOverride, Flash, Immediate, Priority, Routine</span> </li>
+            <li> <span class="li-head">ip_precedence</span> - IP precedence. <span class="li-normal">type: str</span> <span class="li-normal">choices: Network_Control, Internetwork_Control, Critic/ECP, FlashOverride, Flash, Immediate, Priority, Routine</span> </li>
             <li> <span class="li-head">type</span> - type <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">value</span> - Raw values of DSCP (0 - 63). <span class="li-normal">type: str</span> </li>
             </ul>

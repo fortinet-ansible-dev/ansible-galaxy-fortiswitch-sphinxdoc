@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_community</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,18 +79,18 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_snmp_community</span> - SNMP community configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">events</span> - Trap snmp events. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv</span> </li>
+        <li> <span class="li-head">events</span> - Trap snmp events. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu_high, mem_low, log_full, intf_ip, ent_conf_change, llv, l2mac, sensor_fault, sensor_alarm, fan_detect, psu_status, ip_conflict, tkmem_hb_oo_sync</span> </li>
         <li> <span class="li-head">hosts</span> - Allow hosts configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Host entry id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">interface</span> - Allow interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">interface</span> - Allow interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ip</span> - Allow host ip address and netmask. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">source_ip</span> - Source ip for snmp trap. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">hosts6</span> - Allow hosts configuration for IPv6. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Host6 entry id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">interface</span> - Allow interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">interface</span> - Allow interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ipv6</span> - Allow host ipv6 address. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">source_ipv6</span> - Source ipv6 for snmp trap. <span class="li-normal">type: str</span> </li>
             </ul>

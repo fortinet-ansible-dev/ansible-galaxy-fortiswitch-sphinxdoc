@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_log_syslogd3_setting</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -72,11 +78,11 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">log_syslogd3_setting</span> - Settings for remote syslog server. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">certificate</span> - Certificate used to communicate with Syslog server. Source system.certificate.local.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">certificate</span> - Certificate used to communicate with Syslog server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">csv</span> - Whether to enable CSV. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">enc_algorithm</span> - Enable/disable reliable syslogging with TLS encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: high-medium, high, low, disable</span> </li>
+        <li> <span class="li-head">enc_algorithm</span> - Enable/disable reliable syslogging with TLS encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: high_medium, high, low, disable</span> </li>
         <li> <span class="li-head">facility</span> - Which facility for remote syslog. <span class="li-normal">type: str</span> <span class="li-normal">choices: kernel, user, mail, daemon, auth, syslog, lpr, news, uucp, cron, authpriv, ftp, ntp, audit, alert, clock, local0, local1, local2, local3, local4, local5, local6, local7</span> </li>
-        <li> <span class="li-head">mode</span> - Remote syslog logging over UDP/Reliable TCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: udp, legacy-reliable, reliable</span> </li>
+        <li> <span class="li-head">mode</span> - Remote syslog logging over UDP/Reliable TCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: udp, legacy_reliable, reliable</span> </li>
         <li> <span class="li-head">override</span> - Override syslog settings or use the global settings. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">port</span> - Port that the server listens at. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">server</span> - Address of the remote syslog server. <span class="li-normal">type: str</span> </li>

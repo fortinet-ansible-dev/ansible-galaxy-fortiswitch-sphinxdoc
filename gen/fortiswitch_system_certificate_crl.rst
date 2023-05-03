@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_certificate_crl</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -82,7 +88,7 @@ Parameters
         <li> <span class="li-head">scep_cert</span> - Local certificate used for CRL update via SCEP. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">scep_url</span> - URL of CA server for CRL update via SCEP. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">update_interval</span> - Second between updates, 0=disabled. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">update_vdom</span> - Virtual domain for CRL update. Source system.vdom.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">update_vdom</span> - Virtual domain for CRL update. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
 

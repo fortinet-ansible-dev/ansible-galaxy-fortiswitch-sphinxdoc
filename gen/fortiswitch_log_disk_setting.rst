@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_log_disk_setting</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -87,7 +93,7 @@ Parameters
         <li> <span class="li-head">status</span> - Enable/disable local disk log. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">upload</span> - Whether to upload the log file when rolling. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">upload_delete_files</span> - Delete log files after uploading . <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">upload_destination</span> - Server type. <span class="li-normal">type: str</span> <span class="li-normal">choices: ftp-server</span> </li>
+        <li> <span class="li-head">upload_destination</span> - Server type. <span class="li-normal">type: str</span> <span class="li-normal">choices: ftp_server</span> </li>
         <li> <span class="li-head">upload_format</span> - Upload compact/text logs. <span class="li-normal">type: str</span> <span class="li-normal">choices: compact, text</span> </li>
         <li> <span class="li-head">upload_ssl_conn</span> - Enable/disable SSL communication when uploading. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, high, low, disable</span> </li>
         <li> <span class="li-head">uploaddir</span> - Log file uploading remote directory. <span class="li-normal">type: str</span> </li>
@@ -96,7 +102,7 @@ Parameters
         <li> <span class="li-head">uploadport</span> - Port of the log uploading server. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">uploadsched</span> - Scheduled upload (disable=upload when rolling). <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">uploadtime</span> - Time of scheduled upload. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">uploadtype</span> - Types of log files that need to be uploaded. <span class="li-normal">type: str</span> <span class="li-normal">choices: traffic, event, virus, webfilter, attack, spamfilter, dlp-archive, dlp, app-ctrl</span> </li>
+        <li> <span class="li-head">uploadtype</span> - Types of log files that need to be uploaded. <span class="li-normal">type: str</span> <span class="li-normal">choices: traffic, event, virus, webfilter, attack, spamfilter, dlp_archive, dlp, app_ctrl</span> </li>
         <li> <span class="li-head">uploaduser</span> - User account in the uploading server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">uploadzip</span> - Compress upload logs. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         </ul>

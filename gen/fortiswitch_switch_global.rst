@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_global</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -93,7 +99,7 @@ Parameters
         <li> <span class="li-head">log_mac_limit_violations</span> - Enable/disable logs for Learning Limit Violations globally. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">loop_guard_tx_interval</span> - Loop guard packet Tx interval (sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mac_address</span> - Manually configured MAC address when mac-address-algorithm is set to manual. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">mac_address_algorithm</span> - Method to configure the fifth byte of the MAC address (12:34:56:78:XX:XX, sixth byte automatically generated from managmenet MAC, channel, and port information). <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, manual</span> </li>
+        <li> <span class="li-head">mac_address_algorithm</span> - Method to configure the fifth byte of the MAC address <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, manual</span> </li>
         <li> <span class="li-head">mac_aging_interval</span> - MAC address aging interval (sec; remove any MAC addresses unused since the the last check. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mac_violation_timer</span> - Set a global timeout for Learning Limit Violations (0 = disabled). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">max_path_in_ecmp_group</span> - Set max path in one ecmp group. <span class="li-normal">type: int</span> </li>
@@ -109,11 +115,11 @@ Parameters
         <li> <span class="li-head">poe_alarm_threshold</span> - Threshold (% of total power budget) above which an alarm event is generated. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">poe_guard_band</span> - Reserves power (W) in case of a spike in PoE consumption. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">poe_power_budget</span> - Set/override maximum power budget. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">poe_power_mode</span> - Set poe power mode to priority based or first come first served. <span class="li-normal">type: str</span> <span class="li-normal">choices: priority, first-come-first-served</span> </li>
+        <li> <span class="li-head">poe_power_mode</span> - Set poe power mode to priority based or first come first served. <span class="li-normal">type: str</span> <span class="li-normal">choices: priority, first_come_first_served</span> </li>
         <li> <span class="li-head">poe_pre_standard_detect</span> - set poe-pre-standard-detect <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">port_security</span> - Global parameters for port-security. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">link_down_auth</span> - If link down detected, "set-unauth" reverts to un-authorized state. <span class="li-normal">type: str</span> <span class="li-normal">choices: set-unauth, no-action</span> </li>
+            <li> <span class="li-head">link_down_auth</span> - If link down detected, "set-unauth" reverts to un-authorized state. <span class="li-normal">type: str</span> <span class="li-normal">choices: set_unauth, no_action</span> </li>
             <li> <span class="li-head">mab_reauth</span> - Enable or disable MAB reauthentication settings. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">max_reauth_attempt</span> - 802.1X/MAB maximum reauthorization attempt. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">quarantine_vlan</span> - Enable or disable Quarantine VLAN detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
@@ -124,6 +130,9 @@ Parameters
         <li> <span class="li-head">trunk_hash_unicast_src_port</span> - Enable/disable source port in Unicast trunk hashing. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">trunk_hash_unkunicast_src_dst</span> - Enable/disable trunk hash for unknown unicast src-dst. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">virtual_wire_tpid</span> - TPID value used by virtual-wires. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">vxlan_port</span> - VXLAN destination UDP port. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">vxlan_stp_virtual_mac</span> - Virtual STP root MAC address <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">vxlan_stp_virtual_root</span> - Enable/disable automatically making local switch the STP root for STP instances containing configured VXLAN"s access vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>
 
@@ -195,6 +204,9 @@ Examples
             trunk_hash_unicast_src_port: "enable"
             trunk_hash_unkunicast_src_dst: "enable"
             virtual_wire_tpid: "52"
+            vxlan_port: "53"
+            vxlan_stp_virtual_mac: "<your_own_value>"
+            vxlan_stp_virtual_root: "enable"
     
 
 

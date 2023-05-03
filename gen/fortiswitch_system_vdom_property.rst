@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_vdom_property</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -82,7 +88,7 @@ Parameters
         <li> <span class="li-head">ipsec_phase1</span> - Maximum number [guaranteed number] of vpn ipsec phase1 tunnels. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ipsec_phase2</span> - Maximum number [guaranteed number] of vpn ipsec phase2 tunnels. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">log_disk_quota</span> - Log disk quota in MB. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">name</span> - Vdom name. Source system.vdom.name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">name</span> - Vdom name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">onetime_schedule</span> - Maximum number [guaranteed number] of firewall one-time schedules. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">proxy</span> - Maximum number [guaranteed number] of concurrent proxy users. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">recurring_schedule</span> - Maximum number [guaranteed number] of firewall recurring schedules. <span class="li-normal">type: str</span> </li>

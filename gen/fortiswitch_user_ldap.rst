@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_user_ldap</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,10 +79,10 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">user_ldap</span> - LDAP server entry configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">ca_cert</span> - CA certificate name. Source system.certificate.ca.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">ca_cert</span> - CA certificate name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cnid</span> - Common Name identifier . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dn</span> - Distinguished name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">group_member_check</span> - Group member checking options. <span class="li-normal">type: str</span> <span class="li-normal">choices: user-attr, group-object</span> </li>
+        <li> <span class="li-head">group_member_check</span> - Group member checking options. <span class="li-normal">type: str</span> <span class="li-normal">choices: user_attr, group_object</span> </li>
         <li> <span class="li-head">group_object_filter</span> - Group searching filter. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">member_attr</span> - Name of attribute from which to get group membership. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - LDAP server entry name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>

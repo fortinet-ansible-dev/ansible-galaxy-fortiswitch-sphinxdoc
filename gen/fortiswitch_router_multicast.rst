@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_multicast</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -81,9 +87,9 @@ Parameters
                 <li> <span class="li-head">query_interval</span> - Interval between queries to IGMP hosts(sec). <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">query_max_response_time</span> - Maximum time to wait for a IGMP query response(sec). <span class="li-normal">type: int</span> </li>
                 </ul>
-            <li> <span class="li-head">multicast_flow</span> - Config acceptable source for multicast group. Source router.multicast-flow.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">name</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">pim_mode</span> - PIM operation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: ssm-mode</span> </li>
+            <li> <span class="li-head">multicast_flow</span> - Config acceptable source for multicast group. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">pim_mode</span> - PIM operation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: ssm_mode</span> </li>
             </ul>
         <li> <span class="li-head">multicast_routing</span> - Enable multicast routing. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
@@ -114,7 +120,7 @@ Examples
                 igmp:
                     query_interval: "7"
                     query_max_response_time: "8"
-                multicast_flow: "<your_own_value> (source router.multicast-flow.name)"
+                multicast_flow: "<your_own_value> (source router.multicast_flow.name)"
                 name: "default_name_10 (source system.interface.name)"
                 pim_mode: "ssm-mode"
             multicast_routing: "enable"

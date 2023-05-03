@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_trunk</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -95,14 +101,14 @@ Parameters
         <li> <span class="li-head">member_withdrawal_behavior</span> - Port behaviors after it withdraws because of loss of control packets. <span class="li-normal">type: str</span> <span class="li-normal">choices: forward, block</span> </li>
         <li> <span class="li-head">members</span> - Aggregated interfaces. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">member_name</span> - Interface name. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">min_bundle</span> - Minimum size of bundle. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">mode</span> - Link Aggreation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, lacp-passive, lacp-active, fortinet-trunk</span> </li>
+        <li> <span class="li-head">mode</span> - Link Aggreation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, lacp_passive, lacp_active, fortinet_trunk</span> </li>
         <li> <span class="li-head">name</span> - Trunk name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">port_extension</span> - Port extension enable. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">port_extension_trigger</span> - Number of failed port to trigger the whole trunk down. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">port_selection_criteria</span> - Algorithm for aggregate port selection. <span class="li-normal">type: str</span> <span class="li-normal">choices: src-mac, dst-mac, src-dst-mac, src-ip, dst-ip, src-dst-ip</span> </li>
+        <li> <span class="li-head">port_selection_criteria</span> - Algorithm for aggregate port selection. <span class="li-normal">type: str</span> <span class="li-normal">choices: src_mac, dst_mac, src_dst_mac, src_ip, dst_ip, src_dst_ip</span> </li>
         <li> <span class="li-head">static_isl</span> - Static ISL. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">static_isl_auto_vlan</span> - User ISL auto VLAN. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">trunk_id</span> - Internal id. <span class="li-normal">type: int</span> </li>
@@ -150,7 +156,7 @@ Examples
             member_withdrawal_behavior: "forward"
             members:
              -
-                member_name: "<your_own_value> (source switch.physical-port.name)"
+                member_name: "<your_own_value> (source switch.physical_port.name)"
             min_bundle: "25"
             mode: "static"
             name: "default_name_27"

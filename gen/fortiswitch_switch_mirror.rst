@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_mirror</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,7 +79,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_mirror</span> - Packet mirror. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">dst</span> - Destination interface. Source switch.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">dst</span> - Destination interface. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">encap_gre_protocol</span> - Protocol value in the ERSPAN GRE header. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">encap_ipv4_src</span> - IPv4 source address in the ERSPAN IP header. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">encap_ipv4_tos</span> - TOS, or DSCP and ECN, values in the ERSPAN IP header. <span class="li-normal">type: int</span> </li>
@@ -86,16 +92,16 @@ Parameters
         <li> <span class="li-head">encap_vlan_priority</span> - Priority code point value in the ERSPAN or RSPAN VLAN header. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">encap_vlan_tpid</span> - TPID in the ERSPAN or RSPAN VLAN header. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">erspan_collector_ip</span> - ERSPAN collector IP address. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">mode</span> - Mirroring mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: SPAN, RSPAN, ERSPAN-manual, ERSPAN-auto</span> </li>
+        <li> <span class="li-head">mode</span> - Mirroring mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: SPAN, RSPAN, ERSPAN_manual, ERSPAN_auto, RSPAN_manual, RSPAN_auto</span> </li>
         <li> <span class="li-head">name</span> - Mirror session name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">rspan_ip</span> - RSPAN destination IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">src_egress</span> - Source egress interfaces. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - Interface name. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">src_ingress</span> - Source ingress interfaces. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - Interface name. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: active, inactive</span> </li>
         <li> <span class="li-head">strip_mirrored_traffic_tags</span> - Enable/disable stripping of VLAN tags from mirrored traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -140,10 +146,10 @@ Examples
             rspan_ip: "<your_own_value>"
             src_egress:
              -
-                name: "default_name_20 (source switch.physical-port.name)"
+                name: "default_name_20 (source switch.physical_port.name)"
             src_ingress:
              -
-                name: "default_name_22 (source switch.physical-port.name)"
+                name: "default_name_22 (source switch.physical_port.name)"
             status: "active"
             strip_mirrored_traffic_tags: "enable"
             switching_packet: "enable"

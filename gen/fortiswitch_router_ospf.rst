@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_ospf</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -80,7 +86,7 @@ Parameters
                 <ul class="ul-self">
                 <li> <span class="li-head">direction</span> - Direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
                 <li> <span class="li-head">id</span> - Filter list entry ID. <span class="li-normal">type: int</span> </li>
-                <li> <span class="li-head">list</span> - Access-list or prefix-list name. Source router.access-list.name router.prefix-list.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">list</span> - Access-list or prefix-list name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">id</span> - Area entry IP address. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">nssa_translator_role</span> - NSSA translator role type. <span class="li-normal">type: str</span> <span class="li-normal">choices: candidate, never, always</span> </li>
@@ -93,7 +99,7 @@ Parameters
                 <li> <span class="li-head">substitute_status</span> - Enable/disable substitute status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 </ul>
             <li> <span class="li-head">shortcut</span> - Enable/disable shortcut option. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable, default</span> </li>
-            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
+            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_summary, summary</span> </li>
             <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, nssa, stub</span> </li>
             <li> <span class="li-head">virtual_link</span> - OSPF virtual link configuration. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
@@ -124,7 +130,7 @@ Parameters
         <li> <span class="li-head">distance_intra_area</span> - Administrative intra-area route distance. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">distribute_list</span> - Redistribute routes filter. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">access_list</span> - Access list name. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">access_list</span> - Access list name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">id</span> - Distribute list entry ID. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">protocol</span> - Protocol type. <span class="li-normal">type: str</span> <span class="li-normal">choices: connected, static, rip, bgp, isis</span> </li>
             </ul>
@@ -144,10 +150,11 @@ Parameters
                 </ul>
             <li> <span class="li-head">mtu</span> - Interface MTU. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">mtu_ignore</span> - Disable MTU mismatch detection on this interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-            <li> <span class="li-head">name</span> - Interface entry name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Interface entry name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">priority</span> - Router priority. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">retransmit_interval</span> - Time between retransmitting lost link state advertisements. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">transmit_delay</span> - Link state transmit delay. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">ttl</span> - TTL. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">ucast_ttl</span> - Unicast TTL. <span class="li-normal">type: int</span> </li>
             </ul>
         <li> <span class="li-head">log_neighbour_changes</span> - Enable logging of OSPF neighbour"s changes <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -160,14 +167,14 @@ Parameters
             </ul>
         <li> <span class="li-head">passive_interface</span> - Passive interface configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - Passive interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Passive interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">redistribute</span> - Redistribute configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">metric</span> - Redistribute metric setting. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">metric_type</span> - Metric type. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1, 2</span> </li>
             <li> <span class="li-head">name</span> - Redistribute name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">routemap</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">routemap</span> - Route map name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - status <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">tag</span> - Tag value. <span class="li-normal">type: int</span> </li>
             </ul>
@@ -190,7 +197,7 @@ Parameters
                     <ul class="ul-self">
                     <li> <span class="li-head">direction</span> - Direction. <span class="li-normal">type: str</span> <span class="li-normal">choices: in, out</span> </li>
                     <li> <span class="li-head">id</span> - Filter list entry ID. <span class="li-normal">type: int</span> </li>
-                    <li> <span class="li-head">list</span> - Access-list or prefix-list name. Source router.access-list.name router.prefix-list.name. <span class="li-normal">type: str</span> </li>
+                    <li> <span class="li-head">list</span> - Access-list or prefix-list name. <span class="li-normal">type: str</span> </li>
                     </ul>
                 <li> <span class="li-head">id</span> - Area entry IP address. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">nssa_translator_role</span> - NSSA translator role type. <span class="li-normal">type: str</span> <span class="li-normal">choices: candidate, never, always</span> </li>
@@ -203,7 +210,7 @@ Parameters
                     <li> <span class="li-head">substitute_status</span> - Enable/disable substitute status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                     </ul>
                 <li> <span class="li-head">shortcut</span> - Enable/disable shortcut option. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable, default</span> </li>
-                <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
+                <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_summary, summary</span> </li>
                 <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, nssa, stub</span> </li>
                 <li> <span class="li-head">virtual_link</span> - OSPF virtual link configuration. <span class="li-normal">type: list</span> </li>
                     <ul class="ul-self">
@@ -229,7 +236,7 @@ Parameters
             <li> <span class="li-head">distance_intra_area</span> - Administrative intra-area route distance. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">distribute_list</span> - Redistribute routes filter. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">access_list</span> - Access list name. Source router.access-list.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">access_list</span> - Access list name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">id</span> - Distribute list entry ID. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">protocol</span> - Protocol type. <span class="li-normal">type: str</span> <span class="li-normal">choices: connected, static, rip, bgp, isis</span> </li>
                 </ul>
@@ -248,14 +255,15 @@ Parameters
                     </ul>
                 <li> <span class="li-head">mtu</span> - Interface MTU. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">mtu_ignore</span> - Disable MTU mismatch detection on this interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-                <li> <span class="li-head">name</span> - Interface entry name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">name</span> - Interface entry name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">priority</span> - Router priority. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">retransmit_interval</span> - Time between retransmitting lost link state advertisements. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">transmit_delay</span> - Link state transmit delay. <span class="li-normal">type: int</span> </li>
+                <li> <span class="li-head">ttl</span> - TTL. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">ucast_ttl</span> - Unicast TTL. <span class="li-normal">type: int</span> </li>
                 </ul>
             <li> <span class="li-head">log_neighbour_changes</span> - Enable logging of OSPF neighbour"s changes <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-            <li> <span class="li-head">name</span> - Vrf name. Source router.vrf.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Vrf name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">network</span> - Enable OSPF on an IP network. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
                 <li> <span class="li-head">area</span> - Attach the network to area. <span class="li-normal">type: str</span> </li>
@@ -264,14 +272,14 @@ Parameters
                 </ul>
             <li> <span class="li-head">passive_interface</span> - Passive interface configuration. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">name</span> - Passive interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">name</span> - Passive interface name. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">redistribute</span> - Redistribute configuration. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
                 <li> <span class="li-head">metric</span> - Redistribute metric setting. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">metric_type</span> - Metric type. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1, 2</span> </li>
                 <li> <span class="li-head">name</span> - Redistribute name. <span class="li-normal">type: str</span> </li>
-                <li> <span class="li-head">routemap</span> - Route map name. Source router.route-map.name. <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">routemap</span> - Route map name. <span class="li-normal">type: str</span> </li>
                 <li> <span class="li-head">status</span> - status <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 <li> <span class="li-head">tag</span> - Tag value. <span class="li-normal">type: int</span> </li>
                 </ul>
@@ -314,7 +322,7 @@ Examples
                  -
                     direction: "in"
                     id:  "8"
-                    list: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                    list: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
                 id:  "10"
                 nssa_translator_role: "candidate"
                 range:
@@ -353,7 +361,7 @@ Examples
             distance_intra_area: "42"
             distribute_list:
              -
-                access_list: "<your_own_value> (source router.access-list.name)"
+                access_list: "<your_own_value> (source router.access_list.name)"
                 id:  "45"
                 protocol: "connected"
             interface:
@@ -375,50 +383,51 @@ Examples
                 priority: "61"
                 retransmit_interval: "62"
                 transmit_delay: "63"
-                ucast_ttl: "64"
+                ttl: "64"
+                ucast_ttl: "65"
             log_neighbour_changes: "enable"
-            name: "default_name_66"
+            name: "default_name_67"
             network:
              -
                 area: "<your_own_value>"
-                id:  "69"
+                id:  "70"
                 prefix: "<your_own_value>"
             passive_interface:
              -
-                name: "default_name_72 (source system.interface.name)"
+                name: "default_name_73 (source system.interface.name)"
             redistribute:
              -
-                metric: "74"
+                metric: "75"
                 metric_type: "1"
-                name: "default_name_76"
-                routemap: "<your_own_value> (source router.route-map.name)"
+                name: "default_name_77"
+                routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
-                tag: "79"
+                tag: "80"
             rfc1583_compatible: "enable"
             router_id: "<your_own_value>"
             spf_timers: "<your_own_value>"
             summary_address:
              -
-                id:  "84"
+                id:  "85"
                 prefix: "<your_own_value>"
-                tag: "86"
+                tag: "87"
             vrf:
              -
                 abr_type: "cisco"
                 area:
                  -
-                    default_cost: "90"
+                    default_cost: "91"
                     filter_list:
                      -
                         direction: "in"
-                        id:  "93"
-                        list: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
-                    id:  "95"
+                        id:  "94"
+                        list: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
+                    id:  "96"
                     nssa_translator_role: "candidate"
                     range:
                      -
                         advertise: "disable"
-                        id:  "99"
+                        id:  "100"
                         prefix: "<your_own_value>"
                         substitute: "<your_own_value>"
                         substitute_status: "enable"
@@ -429,72 +438,73 @@ Examples
                      -
                         authentication: "none"
                         authentication_key: "<your_own_value>"
-                        dead_interval: "109"
-                        hello_interval: "110"
-                        name: "default_name_111"
+                        dead_interval: "110"
+                        hello_interval: "111"
+                        name: "default_name_112"
                         peer: "<your_own_value>"
-                        retransmit_interval: "113"
-                        transmit_delay: "114"
+                        retransmit_interval: "114"
+                        transmit_delay: "115"
                 database_overflow: "enable"
-                database_overflow_max_external_lsa: "116"
-                database_overflow_time_to_recover: "117"
-                default_information_metric: "118"
+                database_overflow_max_external_lsa: "117"
+                database_overflow_time_to_recover: "118"
+                default_information_metric: "119"
                 default_information_metric_type: "1"
                 default_information_originate: "enable"
-                distance: "121"
-                distance_external: "122"
-                distance_inter_area: "123"
-                distance_intra_area: "124"
+                distance: "122"
+                distance_external: "123"
+                distance_inter_area: "124"
+                distance_intra_area: "125"
                 distribute_list:
                  -
-                    access_list: "<your_own_value> (source router.access-list.name)"
-                    id:  "127"
+                    access_list: "<your_own_value> (source router.access_list.name)"
+                    id:  "128"
                     protocol: "connected"
                 interface:
                  -
                     authentication: "none"
                     authentication_key: "<your_own_value>"
-                    cost: "132"
-                    dead_interval: "133"
-                    hello_interval: "134"
-                    hello_multiplier: "135"
+                    cost: "133"
+                    dead_interval: "134"
+                    hello_interval: "135"
+                    hello_multiplier: "136"
                     md5_keys:
                      -
-                        id:  "137"
+                        id:  "138"
                         key: "<your_own_value>"
-                    mtu: "139"
+                    mtu: "140"
                     mtu_ignore: "enable"
-                    name: "default_name_141 (source system.interface.name)"
-                    priority: "142"
-                    retransmit_interval: "143"
-                    transmit_delay: "144"
-                    ucast_ttl: "145"
+                    name: "default_name_142 (source system.interface.name)"
+                    priority: "143"
+                    retransmit_interval: "144"
+                    transmit_delay: "145"
+                    ttl: "146"
+                    ucast_ttl: "147"
                 log_neighbour_changes: "enable"
-                name: "default_name_147 (source router.vrf.name)"
+                name: "default_name_149 (source router.vrf.name)"
                 network:
                  -
                     area: "<your_own_value>"
-                    id:  "150"
+                    id:  "152"
                     prefix: "<your_own_value>"
                 passive_interface:
                  -
-                    name: "default_name_153 (source system.interface.name)"
+                    name: "default_name_155 (source system.interface.name)"
                 redistribute:
                  -
-                    metric: "155"
+                    metric: "157"
                     metric_type: "1"
-                    name: "default_name_157"
-                    routemap: "<your_own_value> (source router.route-map.name)"
+                    name: "default_name_159"
+                    routemap: "<your_own_value> (source router.route_map.name)"
                     status: "enable"
-                    tag: "160"
+                    tag: "162"
                 rfc1583_compatible: "enable"
                 router_id: "<your_own_value>"
                 spf_timers: "<your_own_value>"
                 summary_address:
                  -
-                    id:  "165"
+                    id:  "167"
                     prefix: "<your_own_value>"
-                    tag: "167"
+                    tag: "169"
     
 
 

@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_egress</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -76,11 +82,12 @@ Parameters
         <li> <span class="li-head">action</span> - Actions for the policy. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">count</span> - Count enable/disable action. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">count_type</span> - Count-type(two colors): all, green, yellow. <span class="li-normal">type: str</span> <span class="li-normal">choices: all, green, yellow</span> </li>
             <li> <span class="li-head">drop</span> - Drop enable/disable action. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-            <li> <span class="li-head">mirror</span> - Mirror session name. Source switch.mirror.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">mirror</span> - Mirror session name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">outer_vlan_tag</span> - Outer vlan tag. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">policer</span> - Policer id. Source switch.acl.policer.id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">redirect</span> - Redirect interface name. Source switch.physical-port.name switch.trunk.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">policer</span> - Policer id. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">redirect</span> - Redirect interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">remark_dscp</span> - Remark DSCP value (0 - 63), or unset to disable. <span class="li-normal">type: int</span> </li>
             </ul>
         <li> <span class="li-head">classifier</span> - Match-conditions for the policy. <span class="li-normal">type: dict</span> </li>
@@ -90,7 +97,7 @@ Parameters
             <li> <span class="li-head">dst_ip_prefix</span> - Destination-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">dst_mac</span> - Destination mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ether_type</span> - Ether type to be matched. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">service</span> - Service name. Source switch.acl.service.custom.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">service</span> - Service name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_ip_prefix</span> - Source-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_mac</span> - Source mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">vlan_id</span> - Vlan id to be matched. <span class="li-normal">type: int</span> </li>
@@ -98,10 +105,10 @@ Parameters
         <li> <span class="li-head">description</span> - Description of the policy. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">group</span> - Group ID of the policy. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">id</span> - Egress policy ID. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">interface</span> - Interface to which policy is bound on the egress. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">interface</span> - Interface to which policy is bound on the egress. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">schedule</span> - schedule list. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">schedule_name</span> - Schedule name. Source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">schedule_name</span> - Schedule name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">status</span> - Set policy status. <span class="li-normal">type: str</span> <span class="li-normal">choices: active, inactive</span> </li>
         </ul>
@@ -128,26 +135,27 @@ Examples
           switch_acl_egress:
             action:
                 count: "enable"
+                count_type: "all"
                 drop: "enable"
                 mirror: "<your_own_value> (source switch.mirror.name)"
-                outer_vlan_tag: "7"
-                policer: "8 (source switch.acl.policer.id)"
-                redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
-                remark_dscp: "10"
+                outer_vlan_tag: "8"
+                policer: "9 (source switch.acl.policer.id)"
+                redirect: "<your_own_value> (source switch.physical_port.name switch.trunk.name)"
+                remark_dscp: "11"
             classifier:
-                cos: "12"
-                dscp: "13"
+                cos: "13"
+                dscp: "14"
                 dst_ip_prefix: "<your_own_value>"
                 dst_mac: "<your_own_value>"
-                ether_type: "16"
+                ether_type: "17"
                 service: "<your_own_value> (source switch.acl.service.custom.name)"
                 src_ip_prefix: "<your_own_value>"
                 src_mac: "<your_own_value>"
-                vlan_id: "20"
+                vlan_id: "21"
             description: "<your_own_value>"
-            group: "22"
-            id:  "23"
-            interface: "<your_own_value> (source switch.physical-port.name)"
+            group: "23"
+            id:  "24"
+            interface: "<your_own_value> (source switch.physical_port.name)"
             schedule:
              -
                 schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"

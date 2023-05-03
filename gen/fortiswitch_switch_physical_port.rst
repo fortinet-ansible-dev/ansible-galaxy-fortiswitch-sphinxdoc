@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_physical_port</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,7 +79,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_physical_port</span> - Physical port specific configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">cdp_status</span> - CDP transmit and receive status (LLDP must be enabled in LLDP settings). <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, rx-only, tx-only, tx-rx</span> </li>
+        <li> <span class="li-head">cdp_status</span> - CDP transmit and receive status (LLDP must be enabled in LLDP settings). <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, rx_only, tx_only, tx_rx</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dmi_status</span> - DMI status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable, global</span> </li>
         <li> <span class="li-head">eee_tx_idle_time</span> - EEE Transmit idle time (microseconds)(0-2560). <span class="li-normal">type: int</span> </li>
@@ -91,22 +97,22 @@ Parameters
         <li> <span class="li-head">l2_learning</span> - Enable / disable dynamic MAC address learning. <span class="li-normal">type: str</span> <span class="li-normal">choices: enabled, disabled</span> </li>
         <li> <span class="li-head">l2_sa_unknown</span> - Forward / drop unknown(SMAC) packets when dynamic MAC address learning is disabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: forward, drop</span> </li>
         <li> <span class="li-head">link_status</span> - Physical link status. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">lldp_profile</span> - LLDP port TLV profile. Source switch.lldp.profile.name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">lldp_status</span> - LLDP transmit and receive status. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, rx-only, tx-only, tx-rx</span> </li>
+        <li> <span class="li-head">lldp_profile</span> - LLDP port TLV profile. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">lldp_status</span> - LLDP transmit and receive status. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, rx_only, tx_only, tx_rx</span> </li>
         <li> <span class="li-head">loopback</span> - Phy Port Loopback. <span class="li-normal">type: str</span> <span class="li-normal">choices: local, remote, disable</span> </li>
         <li> <span class="li-head">max_frame_size</span> - Maximum frame size. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">medium</span> - Configure port preference for shared ports. <span class="li-normal">type: str</span> <span class="li-normal">choices: fiber-preferred, copper-preferred, fiber-forced, copper-forced</span> </li>
+        <li> <span class="li-head">medium</span> - Configure port preference for shared ports. <span class="li-normal">type: str</span> <span class="li-normal">choices: fiber_preferred, copper_preferred, fiber_forced, copper_forced</span> </li>
         <li> <span class="li-head">name</span> - Port name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">owning_interface</span> - Trunk interface. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">pause_meter_rate</span> - Configure ingress metering rate. In kbits. 0 = disabled. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">pause_resume</span> - Resume threshold for resuming reception on pause metering of an ingress port. <span class="li-normal">type: str</span> <span class="li-normal">choices: 75%, 50%, 25%</span> </li>
         <li> <span class="li-head">poe_port_mode</span> - IEEE802.3AF/IEEE802.3AT <span class="li-normal">type: str</span> <span class="li-normal">choices: IEEE802_3AF, IEEE802_3AT</span> </li>
-        <li> <span class="li-head">poe_port_priority</span> - Configure port priority <span class="li-normal">type: str</span> <span class="li-normal">choices: low-priority, high-priority, critical-priority</span> </li>
+        <li> <span class="li-head">poe_port_priority</span> - Configure port priority <span class="li-normal">type: str</span> <span class="li-normal">choices: low_priority, high_priority, critical_priority</span> </li>
         <li> <span class="li-head">poe_status</span> - Enable/disable PSE. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">port_index</span> - Port index. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">priority_based_flow_control</span> - Enable / disable priority-based flow control. 802.3 flow control will be applied when disabled <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">qsfp_low_power_mode</span> - Enable/Disable QSFP low power mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enabled, disabled</span> </li>
-        <li> <span class="li-head">speed</span> - Configure interface speed and duplex. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, 10half, 10full, 100half, 100full, 100FX-half, 100FX-full, 1000full, 2500auto, 5000auto, 10000full, 10000cr, 10000sr, 40000full, 40000sr4, 40000cr4, 100000full, 100000cr4, 100000sr4, auto-module, 1000full-fiber, 1000auto, 25000full, 25000cr, 25000sr, 50000full, 50000cr, 50000sr</span> </li>
+        <li> <span class="li-head">speed</span> - Configure interface speed and duplex. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, 10half, 10full, 100half, 100full, 100FX_half, 100FX_full, 1000full, 2500auto, 5000auto, 10000full, 10000cr, 10000sr, 40000full, 40000sr4, 40000cr4, 100000full, 100000cr4, 100000sr4, auto_module, 1000full_fiber, 1000auto, 25000full, 25000cr, 25000sr, 50000full, 50000cr, 50000sr</span> </li>
         <li> <span class="li-head">status</span> - Administrative status. <span class="li-normal">type: str</span> <span class="li-normal">choices: up, down</span> </li>
         <li> <span class="li-head">storm_control</span> - Storm control. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">

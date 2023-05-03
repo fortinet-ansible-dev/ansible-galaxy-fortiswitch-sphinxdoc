@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_interface</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -74,7 +80,7 @@ Parameters
     <li> <span class="li-head">system_interface</span> - Configure interfaces. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">alias</span> - Alias. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
+        <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius_acct</span> </li>
         <li> <span class="li-head">auth_type</span> - PPP authentication type. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, pap, chap, mschapv1, mschapv2</span> </li>
         <li> <span class="li-head">bfd</span> - Bidirectional Forwarding Detection (BFD). <span class="li-normal">type: str</span> <span class="li-normal">choices: global, enable, disable</span> </li>
         <li> <span class="li-head">bfd_desired_min_tx</span> - BFD desired minimal transmit interval. <span class="li-normal">type: int</span> </li>
@@ -83,14 +89,14 @@ Parameters
         <li> <span class="li-head">cli_conn_status</span> - CLI connection status. <span class="li-normal">type: str</span> <span class="li-normal">choices: initial, connecting, connected, failed</span> </li>
         <li> <span class="li-head">defaultgw</span> - Enable/disable default gateway. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
+        <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
         <li> <span class="li-head">detectserver</span> - IP address to PING for gateway detection. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dhcp_client_identifier</span> - DHCP client identifier. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">dhcp_expire</span> - DHCP client expiration. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dhcp_relay_ip</span> - DHCP relay IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dhcp_relay_option82</span> - Enable / Disable DHCP relay option-82 insertion. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">dhcp_relay_service</span> - Enable/disable use DHCP relay service. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">dhcp_vendor_specific_option</span> - DHCP Vendor specific option 43. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">dhcp_expire</span> - DHCP client expiration. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">distance</span> - Distance of learned routes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dns_server_override</span> - Enable/disable use of DNS server aquired by DHCP or PPPoE. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dynamic_dns1</span> - Primary dynamic DNS server. <span class="li-normal">type: str</span> </li>
@@ -100,14 +106,14 @@ Parameters
         <li> <span class="li-head">gwdetect</span> - Enable/disable gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">ha_priority</span> - PING server HA election priority (1 - 50). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">icmp_redirect</span> - Enable/disable ICMP rediect. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">interface</span> - Interface name. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">interface</span> - Interface name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip</span> - Interface IPv4 address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ipv6</span> - IPv6 address. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">autoconf</span> - Enable/disable address automatic config. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">dhcp6_information_request</span> - Enable/disable DHCPv6 information request. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_address</span> - Primary IPv6 address prefix of interface. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: list</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
+            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: list</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius_acct</span> </li>
             <li> <span class="li-head">ip6_default_life</span> - IPv6 default life (sec). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">ip6_dns_server_override</span> - Enable/disable using the DNS server acquired by DHCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_extra_addr</span> - Extra IPv6 address prefixes of interface. <span class="li-normal">type: list</span> </li>
@@ -134,7 +140,6 @@ Parameters
             <li> <span class="li-head">ip6_send_adv</span> - Enable/disable sending of IPv6 Router advertisement. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_unknown_mcast_to_cpu</span> - Enable/disable unknown mcast to cpu. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">vrip6_link_local</span> - Link-local IPv6 address of virtual router. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">vrrp_virtual_mac6</span> - Enable/disable virtual MAC for VRRP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">vrrp6</span> - IPv6 VRRP configuration. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
                 <li> <span class="li-head">accept_mode</span> - Enable/disable accept mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -148,7 +153,9 @@ Parameters
                 <li> <span class="li-head">vrid</span> - Virtual router identifier (1 - 255). <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">vrip6</span> - IPv6 address of the virtual router. <span class="li-normal">type: str</span> </li>
                 </ul>
+            <li> <span class="li-head">vrrp_virtual_mac6</span> - Enable/disable virtual MAC for VRRP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             </ul>
+        <li> <span class="li-head">l2_interface</span> - L2 interface name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">macaddr</span> - MAC address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">mode</span> - Interface addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, dhcp</span> </li>
         <li> <span class="li-head">mtu</span> - Maximum transportation unit (MTU). <span class="li-normal">type: int</span> </li>
@@ -160,8 +167,8 @@ Parameters
         <li> <span class="li-head">secondary_IP</span> - Enable/disable use of secondary IP address. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">secondaryip</span> - Second IP address of interface. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
-            <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
+            <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius_acct</span> </li>
+            <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
             <li> <span class="li-head">detectserver</span> - IP address to PING for gateway detection. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">gwdetect</span> - Enable/disable gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ha_priority</span> - PING server HA election priority (1 - 50). <span class="li-normal">type: int</span> </li>
@@ -177,13 +184,13 @@ Parameters
         <li> <span class="li-head">switch</span> - Contained in switch. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">switch_members</span> - Switch interfaces. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">member_name</span> - Interface name. Source switch.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
-        <li> <span class="li-head">type</span> - Interface type. <span class="li-normal">type: str</span> <span class="li-normal">choices: physical, vlan, tunnel, loopback, switch, hard-switch, vap-switch, hdlc</span> </li>
-        <li> <span class="li-head">vdom</span> - Virtual domain name. Source system.vdom.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">type</span> - Interface type. <span class="li-normal">type: str</span> <span class="li-normal">choices: physical, vlan, tunnel, loopback, switch, hard_switch, vap_switch, hdlc, vxlan</span> </li>
+        <li> <span class="li-head">vdom</span> - Virtual domain name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vlanforward</span> - Enable/disable VLAN forwarding. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">vlanid</span> - VLAN ID. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">vrf</span> - VRF. Source router.vrf.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">vrf</span> - VRF. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vrrp</span> - VRRP configuration <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">adv_interval</span> - Advertisement interval (1 - 255 seconds). <span class="li-normal">type: int</span> </li>
@@ -293,13 +300,14 @@ Examples
                     vrgrp: "68"
                     vrid: "69"
                     vrip6: "<your_own_value>"
+            l2_interface: "<your_own_value> (source switch.interface.name)"
             macaddr: "<your_own_value>"
             mode: "static"
-            mtu: "73"
+            mtu: "74"
             mtu_override: "enable"
-            name: "default_name_75"
-            ping_serv_status: "76"
-            priority: "77"
+            name: "default_name_76"
+            ping_serv_status: "77"
+            priority: "78"
             remote_ip: "<your_own_value>"
             secondary_IP: "enable"
             secondaryip:
@@ -308,11 +316,11 @@ Examples
                 detectprotocol: "ping"
                 detectserver: "<your_own_value>"
                 gwdetect: "enable"
-                ha_priority: "85"
-                id:  "86"
+                ha_priority: "86"
+                id:  "87"
                 ip: "<your_own_value>"
-                ping_serv_status: "88"
-            snmp_index: "89"
+                ping_serv_status: "89"
+            snmp_index: "90"
             speed: "auto"
             src_check: "disable"
             src_check_allow_default: "enable"
@@ -324,23 +332,23 @@ Examples
             type: "physical"
             vdom: "<your_own_value> (source system.vdom.name)"
             vlanforward: "enable"
-            vlanid: "100"
+            vlanid: "101"
             vrf: "<your_own_value> (source router.vrf.name)"
             vrrp:
              -
-                adv_interval: "103"
+                adv_interval: "104"
                 backup_vmac_fwd: "enable"
                 preempt: "enable"
-                priority: "106"
-                start_time: "107"
+                priority: "107"
+                start_time: "108"
                 status: "enable"
                 version: "2"
                 vrdst: "<your_own_value>"
-                vrgrp: "111"
-                vrid: "112"
+                vrgrp: "112"
+                vrid: "113"
                 vrip: "<your_own_value>"
             vrrp_virtual_mac: "enable"
-            weight: "115"
+            weight: "116"
     
 
 

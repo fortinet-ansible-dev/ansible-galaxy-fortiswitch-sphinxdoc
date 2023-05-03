@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_user_group</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -80,11 +86,11 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">group_name</span> - Name of matching group on remote authentication server. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">id</span> - ID. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">server_name</span> - Name of remote authentication server. Source user.radius.name user.ldap.name user.tacacs+.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">server_name</span> - Name of remote authentication server. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">member</span> - Group members. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">name</span> - Group member name. Source user.peer.name user.local.name user.radius.name user.tacacs+.name user.ldap.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Group member name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">name</span> - Group name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         </ul>

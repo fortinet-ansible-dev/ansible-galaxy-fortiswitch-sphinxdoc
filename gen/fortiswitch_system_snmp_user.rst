@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_user</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -75,14 +81,14 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">auth_proto</span> - Authentication protocol. <span class="li-normal">type: str</span> <span class="li-normal">choices: md5, sha1, sha224, sha256, sha384, sha512</span> </li>
         <li> <span class="li-head">auth_pwd</span> - Password for authentication protocol. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">events</span> - SNMP notifications (traps) to send. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv</span> </li>
+        <li> <span class="li-head">events</span> - SNMP notifications (traps) to send. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu_high, mem_low, log_full, intf_ip, ent_conf_change, llv, l2mac, sensor_fault, sensor_alarm, fan_detect, psu_status, ip_conflict, tkmem_hb_oo_sync</span> </li>
         <li> <span class="li-head">name</span> - SNMP user name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">notify_hosts</span> - Send notifications (traps) to these hosts. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">priv_proto</span> - Privacy (encryption) protocol. <span class="li-normal">type: str</span> <span class="li-normal">choices: aes128, aes192, aes192c, aes256, aes256c, des</span> </li>
         <li> <span class="li-head">priv_pwd</span> - Password for privacy (encryption) protocol. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">queries</span> - Enable/disable queries for this user. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">query_port</span> - SNMPv3 query port. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">security_level</span> - Security level for message authentication and encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-auth-no-priv, auth-no-priv, auth-priv</span> </li>
+        <li> <span class="li-head">security_level</span> - Security level for message authentication and encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_auth_no_priv, auth_no_priv, auth_priv</span> </li>
         </ul>
     </ul>
 

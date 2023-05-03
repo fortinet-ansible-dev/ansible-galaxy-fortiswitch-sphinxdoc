@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_virtual_wire</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,9 +79,9 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_virtual_wire</span> - Configure virtual wire. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">first_member</span> - First member of virtual wire pair. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">first_member</span> - First member of virtual wire pair. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - Virtual wire name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">second_member</span> - Second member of virtual wire pair. Source switch.physical-port.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">second_member</span> - Second member of virtual wire pair. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vlan</span> - VLAN (can be shared between virtual wires and non-virtual wire ports). <span class="li-normal">type: int</span> </li>
         </ul>
     </ul>
@@ -99,9 +105,9 @@ Examples
         fortiswitch_switch_virtual_wire:
           state: "present"
           switch_virtual_wire:
-            first_member: "<your_own_value> (source switch.physical-port.name)"
+            first_member: "<your_own_value> (source switch.physical_port.name)"
             name: "default_name_4"
-            second_member: "<your_own_value> (source switch.physical-port.name)"
+            second_member: "<your_own_value> (source switch.physical_port.name)"
             vlan: "6"
     
 

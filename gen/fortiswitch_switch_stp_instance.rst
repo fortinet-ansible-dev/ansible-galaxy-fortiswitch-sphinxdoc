@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_stp_instance</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -78,7 +84,7 @@ Parameters
         <li> <span class="li-head">stp_port</span> - Port configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">cost</span> - Port cost, 0 means to select a value for the path cost based on linkspeed. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">name</span> - Port name. Source switch.interface.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">name</span> - Port name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">priority</span> - Port priority. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0, 16, 32, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240</span> </li>
             </ul>
         <li> <span class="li-head">vlan_range</span> - Vlan-range. <span class="li-normal">type: str</span> </li>

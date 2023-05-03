@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_lldp_settings</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -74,7 +80,8 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">device_detection</span> - Enable/disable dynamic updates of LLDP neighbor devices to fortilink. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">fast_start_interval</span> - Frequency of LLDP PDU transmit for the first 4 packets on link up(seconds). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">management_interface</span> - Primary management interface to be advertised. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">management_address</span> - Advertise IPv4 and/or IPv6 address. <span class="li-normal">type: str</span> <span class="li-normal">choices: ipv4, ipv6, none</span> </li>
+        <li> <span class="li-head">management_interface</span> - Primary management interface to be advertised. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable LLDP. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">tx_hold</span> - Number of TX intervals before local LLDP data expires(tx-hold x tx-interval = packet TTL). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tx_interval</span> - Frequency of LLDP PDU transmit (seconds). <span class="li-normal">type: int</span> </li>
@@ -101,10 +108,11 @@ Examples
           switch_lldp_settings:
             device_detection: "disable"
             fast_start_interval: "4"
+            management_address: "ipv4"
             management_interface: "<your_own_value> (source system.interface.name)"
             status: "disable"
-            tx_hold: "7"
-            tx_interval: "8"
+            tx_hold: "8"
+            tx_interval: "9"
     
 
 

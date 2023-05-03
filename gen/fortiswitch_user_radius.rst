@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_user_radius</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -99,7 +105,7 @@ Parameters
         <li> <span class="li-head">secondary_server</span> - Secondary RADIUS domain name or IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">secret</span> - Secret key to access the primary server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">server</span> - Primary server domain name or IP address. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">service_type</span> - Radius Service Type. <span class="li-normal">type: str</span> <span class="li-normal">choices: login, framed, callback-login, callback-framed, outbound, administrative, nas-prompt, authenticate-only, callback-nas-prompt, call-check, callback-administrative</span> </li>
+        <li> <span class="li-head">service_type</span> - Radius Service Type. <span class="li-normal">type: str</span> <span class="li-normal">choices: login, framed, callback_login, callback_framed, outbound, administrative, nas_prompt, authenticate_only, callback_nas_prompt, call_check, callback_administrative</span> </li>
         <li> <span class="li-head">source_ip</span> - Source IPv4 for communications to RADIUS server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip6</span> - Source IPv6 for communications to RADIUS server. <span class="li-normal">type: str</span> </li>
         </ul>

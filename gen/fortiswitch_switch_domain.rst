@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_domain</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -73,8 +79,8 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_domain</span> - Switch forwarding domains. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">ha_block</span> - Select port types to be blocked if domain becomes ha slave. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor-ports, blade-ports, misc-ports</span> </li>
-        <li> <span class="li-head">ha_L2_clear_on_role_change</span> - Select port types have their L2 tables cleared when changing HA roles. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor-ports, blade-ports, misc-ports</span> </li>
+        <li> <span class="li-head">ha_block</span> - Select port types to be blocked if domain becomes ha slave. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor_ports, blade_ports, misc_ports</span> </li>
+        <li> <span class="li-head">ha_L2_clear_on_role_change</span> - Select port types have their L2 tables cleared when changing HA roles. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor_ports, blade_ports, misc_ports</span> </li>
         <li> <span class="li-head">inter_front_panel_traffic</span> - Traffic flow between front panel ports (eg. f1<->f2). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">name</span> - Domain name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">priority</span> - Priority value(0-255). <span class="li-normal">type: int</span> </li>

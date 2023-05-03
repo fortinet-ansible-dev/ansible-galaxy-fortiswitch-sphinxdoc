@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_static</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -76,15 +82,15 @@ Parameters
         <li> <span class="li-head">bfd</span> - Bidirectional Forwarding Detection (BFD). <span class="li-normal">type: str</span> <span class="li-normal">choices: global, enable, disable</span> </li>
         <li> <span class="li-head">blackhole</span> - Blackhole. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">comment</span> - Comment. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">device</span> - Gateway out interface. Source system.interface.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">device</span> - Gateway out interface. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">distance</span> - Administrative distance (1-255). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dst</span> - Destination ip and mask for this route. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dynamic_gateway</span> - Dynamic-gateway. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">gateway</span> - Gateway ip for this route. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">priority</span> - Administrative priority (0-4294967295). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">vrf</span> - VRF. Source router.vrf.name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">vrf</span> - VRF. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">weight</span> - Administrative weight (0-255). <span class="li-normal">type: int</span> </li>
         </ul>
     </ul>

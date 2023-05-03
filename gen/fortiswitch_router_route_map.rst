@@ -44,9 +44,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.0.4 </code></td>
  <td><code class="docutils literal notranslate">v7.0.5 </code></td>
  <td><code class="docutils literal notranslate">v7.0.6 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.2 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.3 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_route_map</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -80,14 +86,14 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">action</span> - Action. <span class="li-normal">type: str</span> <span class="li-normal">choices: permit, deny</span> </li>
             <li> <span class="li-head">id</span> - Rule id. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">match_as_path</span> - Match BGP AS path list. Source router.aspath-list.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">match_community</span> - Match BGP community list. Source router.community-list.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">match_as_path</span> - Match BGP AS path list. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">match_community</span> - Match BGP community list. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">match_community_exact</span> - Do exact matching of communities. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">match_flags</span> - Match-flags. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">match_interface</span> - Match interface configuration. Source system.interface.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">match_ip_address</span> - Match ip address permitted by access-list or prefix-list. Source router.access-list.name router.prefix-list.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">match_ip_nexthop</span> - Match next hop ip address passed by access-list or prefix-list. Source router.access-list.name router.prefix-list.name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">match_ip6_address</span> - Match ipv6 address permitted by access-list6 or prefix-list6. Source router.access-list6.name router.prefix-list6.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">match_interface</span> - Match interface configuration. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">match_ip6_address</span> - Match ipv6 address permitted by access-list6 or prefix-list6. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">match_ip_address</span> - Match ip address permitted by access-list or prefix-list. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">match_ip_nexthop</span> - Match next hop ip address passed by access-list or prefix-list. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">match_metric</span> - Match metric for redistribute routes. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">match_origin</span> - Match BGP origin code. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, egp, igp, incomplete</span> </li>
             <li> <span class="li-head">match_route_type</span> - Match route type. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1, 2</span> </li>
@@ -96,7 +102,7 @@ Parameters
             <li> <span class="li-head">set_aggregator_ip</span> - Set BGP aggregator IP. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_aspath</span> - Prepend BGP AS path attribute. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
-                <li> <span class="li-head">as</span> - AS number, value range from 0 to 4294967295NOTE: Use quotes for repeating numbers, e.g.: "1 1 2". <span class="li-normal">type: str</span> </li>
+                <li> <span class="li-head">as</span> - AS number, value range from 0 to 4294967295 <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">set_atomic_aggregate</span> - BGP atomic aggregate attribute. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">set_community</span> - Set BGP community attribute. <span class="li-normal">type: list</span> </li>
@@ -104,7 +110,7 @@ Parameters
                 <li> <span class="li-head">community</span> - AA|AA:NN|internet|local-AS|no-advertise|no-export. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">set_community_additive</span> - Add set-community to existing community. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-            <li> <span class="li-head">set_community_delete</span> - Delete communities matching community list. Source router.community-list.name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">set_community_delete</span> - Delete communities matching community list. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_extcommunity_rt</span> - Set Route Target extended community. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
                 <li> <span class="li-head">community</span> - AA:NN. <span class="li-normal">type: str</span> </li>
@@ -114,9 +120,9 @@ Parameters
                 <li> <span class="li-head">community</span> - AA:NN. <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">set_flags</span> - Set-flags. <span class="li-normal">type: int</span> </li>
-            <li> <span class="li-head">set_ip_nexthop</span> - Set ip address of next hop. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_ip6_nexthop</span> - Set ipv6 global address of next hop. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_ip6_nexthop_local</span> - Set ipv6 local address of next hop. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">set_ip_nexthop</span> - Set ip address of next hop. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_local_preference</span> - Set BGP local preference path attribute. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">set_metric</span> - Set the metric value. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">set_metric_type</span> - Set the metric type. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1, 2</span> </li>
@@ -154,14 +160,14 @@ Examples
              -
                 action: "permit"
                 id:  "8"
-                match_as_path: "<your_own_value> (source router.aspath-list.name)"
-                match_community: "<your_own_value> (source router.community-list.name)"
+                match_as_path: "<your_own_value> (source router.aspath_list.name)"
+                match_community: "<your_own_value> (source router.community_list.name)"
                 match_community_exact: "enable"
                 match_flags: "12"
                 match_interface: "<your_own_value> (source system.interface.name)"
-                match_ip_address: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
-                match_ip_nexthop: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
-                match_ip6_address: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
+                match_ip_address: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
+                match_ip_nexthop: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
+                match_ip6_address: "<your_own_value> (source router.access_list6.name router.prefix_list6.name)"
                 match_metric: "17"
                 match_origin: "none"
                 match_route_type: "1"
@@ -176,7 +182,7 @@ Examples
                  -
                     community: "<your_own_value>"
                 set_community_additive: "enable"
-                set_community_delete: "<your_own_value> (source router.community-list.name)"
+                set_community_delete: "<your_own_value> (source router.community_list.name)"
                 set_extcommunity_rt:
                  -
                     community: "<your_own_value>"
