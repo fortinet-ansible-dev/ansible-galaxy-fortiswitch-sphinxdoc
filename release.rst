@@ -4,6 +4,19 @@ Release Notes
 
 |
 
+Release Galaxy 1.2.1
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.2.1 is based on 1.2.0
+
+Features
+^^^^^^^^^^^^^^^
+- Support new FortiSwitch versions 7.2.4, 7.2.5 and 7.4.0.
+- Add a ``readthedocs`` configuration file
+
 Release Galaxy 1.2.0
 --------------------
 

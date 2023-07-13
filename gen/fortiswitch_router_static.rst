@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_static</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -87,6 +93,7 @@ Parameters
         <li> <span class="li-head">dst</span> - Destination ip and mask for this route. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dynamic_gateway</span> - Dynamic-gateway. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">gateway</span> - Gateway ip for this route. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">gw_l2_switch</span> - Enable/disable L2 gateway. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">priority</span> - Administrative priority (0-4294967295). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -122,11 +129,12 @@ Examples
             dst: "<your_own_value>"
             dynamic_gateway: "enable"
             gateway: "<your_own_value>"
-            priority: "11"
-            seq_num: "12"
+            gw_l2_switch: "enable"
+            priority: "12"
+            seq_num: "13"
             status: "enable"
             vrf: "<your_own_value> (source router.vrf.name)"
-            weight: "15"
+            weight: "16"
     
 
 

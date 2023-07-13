@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_interface</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -148,6 +154,7 @@ Parameters
         <li> <span class="li-head">private_vlan</span> - Configure private VLAN. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, promiscuous, sub_vlan</span> </li>
         <li> <span class="li-head">private_vlan_port_type</span> - Private VLAN or sub-VLAN based port type. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ptp_policy</span> - PTP policy. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">ptp_status</span> - PTP Admin. Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">qnq</span> - Configure QinQ. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">add_inner</span> - Add inner-tag for untagged packets upon ingress. <span class="li-normal">type: int</span> </li>
@@ -295,42 +302,43 @@ Examples
             private_vlan: "disable"
             private_vlan_port_type: "66"
             ptp_policy: "<your_own_value> (source switch.ptp.policy.name)"
+            ptp_status: "enable"
             qnq:
-                add_inner: "69"
+                add_inner: "70"
                 edge_type: "customer"
                 priority: "follow-c-tag"
                 remove_inner: "disable"
-                s_tag_priority: "73"
+                s_tag_priority: "74"
                 status: "disable"
                 stp_qnq_admin: "disable"
-                untagged_s_vlan: "76"
+                untagged_s_vlan: "77"
                 vlan_mapping:
                  -
                     description: "<your_own_value>"
-                    id:  "79"
-                    match_c_vlan: "80"
-                    new_s_vlan: "81"
+                    id:  "80"
+                    match_c_vlan: "81"
+                    new_s_vlan: "82"
                 vlan_mapping_miss_drop: "disable"
             qos_policy: "<your_own_value> (source switch.qos.qos_policy.name)"
             raguard:
              -
-                id:  "85"
+                id:  "86"
                 raguard_policy: "<your_own_value> (source switch.raguard_policy.name)"
                 vlan_list: "<your_own_value>"
             rpvst_port: "enabled"
             sample_direction: "tx"
             security_groups:
              -
-                name: "default_name_91"
-            sflow_counter_interval: "92"
-            snmp_index: "93"
+                name: "default_name_92"
+            sflow_counter_interval: "93"
+            snmp_index: "94"
             sticky_mac: "enable"
             stp_bpdu_guard: "enabled"
-            stp_bpdu_guard_timeout: "96"
+            stp_bpdu_guard_timeout: "97"
             stp_loop_protection: "enabled"
             stp_root_guard: "enabled"
             stp_state: "enabled"
-            sub_vlan: "100 (source switch.vlan.id)"
+            sub_vlan: "101 (source switch.vlan.id)"
             switch_port_mode: "disable"
             trust_dot1p_map: "<your_own_value> (source switch.qos.dot1p_map.name)"
             trust_ip_dscp_map: "<your_own_value> (source switch.qos.ip_dscp_map.name)"
@@ -341,10 +349,10 @@ Examples
                 action: "add"
                 description: "<your_own_value>"
                 direction: "ingress"
-                id:  "110"
-                match_c_vlan: "111"
-                match_s_vlan: "112"
-                new_s_vlan: "113"
+                id:  "111"
+                match_c_vlan: "112"
+                match_s_vlan: "113"
+                new_s_vlan: "114"
             vlan_mapping_miss_drop: "disable"
             vlan_tpid: "<your_own_value> (source switch.vlan_tpid.name)"
             vlan_traffic_type: "untagged"

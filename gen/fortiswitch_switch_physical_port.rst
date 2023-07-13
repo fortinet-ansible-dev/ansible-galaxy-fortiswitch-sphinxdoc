@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_physical_port</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -100,6 +106,8 @@ Parameters
         <li> <span class="li-head">lldp_profile</span> - LLDP port TLV profile. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">lldp_status</span> - LLDP transmit and receive status. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, rx_only, tx_only, tx_rx</span> </li>
         <li> <span class="li-head">loopback</span> - Phy Port Loopback. <span class="li-normal">type: str</span> <span class="li-normal">choices: local, remote, disable</span> </li>
+        <li> <span class="li-head">macsec_pae_mode</span> - Assign PAE mode to a MACSEC interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, supp, auth</span> </li>
+        <li> <span class="li-head">macsec_profile</span> - macsec port profile. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">max_frame_size</span> - Maximum frame size. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">medium</span> - Configure port preference for shared ports. <span class="li-normal">type: str</span> <span class="li-normal">choices: fiber_preferred, copper_preferred, fiber_forced, copper_forced</span> </li>
         <li> <span class="li-head">name</span> - Port name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
@@ -112,7 +120,8 @@ Parameters
         <li> <span class="li-head">port_index</span> - Port index. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">priority_based_flow_control</span> - Enable / disable priority-based flow control. 802.3 flow control will be applied when disabled <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">qsfp_low_power_mode</span> - Enable/Disable QSFP low power mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enabled, disabled</span> </li>
-        <li> <span class="li-head">speed</span> - Configure interface speed and duplex. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, 10half, 10full, 100half, 100full, 100FX_half, 100FX_full, 1000full, 2500auto, 5000auto, 10000full, 10000cr, 10000sr, 40000full, 40000sr4, 40000cr4, 100000full, 100000cr4, 100000sr4, auto_module, 1000full_fiber, 1000auto, 25000full, 25000cr, 25000sr, 50000full, 50000cr, 50000sr</span> </li>
+        <li> <span class="li-head">security_mode</span> - Security mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, macsec</span> </li>
+        <li> <span class="li-head">speed</span> - Configure interface speed and duplex. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, 10half, 10full, 100half, 100full, 100FX_half, 100FX_full, 1000full, 2500auto, 5000auto, 10000full, 10000cr, 10000sr, 40000full, 40000sr4, 40000cr4, 100000full, 100000cr4, 100000sr4, auto_module, 1000full_fiber, 1000auto, 25000full, 25000cr, 25000sr, 50000full, 50000cr, 50000sr, 2500full</span> </li>
         <li> <span class="li-head">status</span> - Administrative status. <span class="li-normal">type: str</span> <span class="li-normal">choices: up, down</span> </li>
         <li> <span class="li-head">storm_control</span> - Storm control. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
@@ -166,24 +175,27 @@ Examples
             lldp_profile: "<your_own_value> (source switch.lldp.profile.name)"
             lldp_status: "disable"
             loopback: "local"
-            max_frame_size: "24"
+            macsec_pae_mode: "none"
+            macsec_profile: "<your_own_value> (source switch.macsec.profile.name)"
+            max_frame_size: "26"
             medium: "fiber-preferred"
-            name: "default_name_26"
+            name: "default_name_28"
             owning_interface: "<your_own_value>"
-            pause_meter_rate: "28"
+            pause_meter_rate: "30"
             pause_resume: "75%"
             poe_port_mode: "IEEE802_3AF"
             poe_port_priority: "low-priority"
             poe_status: "enable"
-            port_index: "33"
+            port_index: "35"
             priority_based_flow_control: "disable"
             qsfp_low_power_mode: "enabled"
+            security_mode: "none"
             speed: "auto"
             status: "up"
             storm_control:
                 broadcast: "enable"
-                burst_size_level: "40"
-                rate: "41"
+                burst_size_level: "43"
+                rate: "44"
                 unknown_multicast: "enable"
                 unknown_unicast: "enable"
             storm_control_mode: "global"

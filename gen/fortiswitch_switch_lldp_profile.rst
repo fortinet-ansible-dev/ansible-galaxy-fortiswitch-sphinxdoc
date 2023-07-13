@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_lldp_profile</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -80,6 +86,12 @@ Parameters
     <li> <span class="li-head">switch_lldp_profile</span> - LLDP configuration profiles. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">auto_isl</span> - Enable/disable automatic inter-switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">auto_isl_auth</span> - Automatic inter-switch LAG authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: legacy, strict, relax</span> </li>
+        <li> <span class="li-head">auto_isl_auth_encrypt</span> - Automatic inter-switch LAG authentication encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: none</span> </li>
+        <li> <span class="li-head">auto_isl_auth_identity</span> - Automatic authentication identity. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">auto_isl_auth_macsec_profile</span> - Fortilink LLDP macsec port profile. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">auto_isl_auth_reauth</span> - Automatic authentication reauth period (10 - 3600 mins). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">auto_isl_auth_user</span> - Automatic authentication User certificate. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auto_isl_hello_timer</span> - Automatic ISL hello timer (1 - 30 sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">auto_isl_port_group</span> - Automatic inter-switch LAG port group. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">auto_isl_receive_timeout</span> - Automatic ISL timeout (0 - 300 sec). <span class="li-normal">type: int</span> </li>
@@ -136,31 +148,37 @@ Examples
             802.1_tlvs: "port-vlan-id"
             802.3_tlvs: "max-frame-size"
             auto_isl: "enable"
-            auto_isl_hello_timer: "6"
-            auto_isl_port_group: "7"
-            auto_isl_receive_timeout: "8"
+            auto_isl_auth: "legacy"
+            auto_isl_auth_encrypt: "none"
+            auto_isl_auth_identity: "<your_own_value>"
+            auto_isl_auth_macsec_profile: "<your_own_value>"
+            auto_isl_auth_reauth: "10"
+            auto_isl_auth_user: "<your_own_value> (source system.certificate.local.name)"
+            auto_isl_hello_timer: "12"
+            auto_isl_port_group: "13"
+            auto_isl_receive_timeout: "14"
             auto_mclag_icl: "enable"
             custom_tlvs:
              -
                 information_string: "<your_own_value>"
-                name: "default_name_12"
+                name: "default_name_18"
                 oui: "<your_own_value>"
-                subtype: "14"
+                subtype: "20"
             med_location_service:
              -
-                name: "default_name_16"
+                name: "default_name_22"
                 status: "disable"
                 sys_location_id: "<your_own_value> (source system.location.name)"
             med_network_policy:
              -
                 assign_vlan: "disable"
-                dscp: "21"
-                name: "default_name_22"
-                priority: "23"
+                dscp: "27"
+                name: "default_name_28"
+                priority: "29"
                 status: "disable"
-                vlan: "25"
+                vlan: "31"
             med_tlvs: "inventory-management"
-            name: "default_name_27"
+            name: "default_name_33"
             vlan_name_map: "<your_own_value>"
     
 

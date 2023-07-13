@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_certificate_ca</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -82,6 +88,7 @@ Parameters
         <li> <span class="li-head">auto_update_days</span> - Days to auto-update before expired, 0=disabled. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">auto_update_days_warning</span> - Days to send update before auto-update, 0=disabled. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ca</span> - CA certificate. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">Info</span> - Info about name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">scep_url</span> - URL of SCEP server. <span class="li-normal">type: str</span> </li>
         </ul>
@@ -109,7 +116,8 @@ Examples
             auto_update_days: "3"
             auto_update_days_warning: "4"
             ca: "<your_own_value>"
-            name: "default_name_6"
+            Info: "<your_own_value>"
+            name: "default_name_7"
             scep_url: "<your_own_value>"
     
 

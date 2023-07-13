@@ -1,11 +1,11 @@
-:source: fortiswitch_system_tos_based_priority.py
+:source: fortiswitch_system_ptp_profile.py
 
 :orphan:
 
-.. fortiswitch_system_tos_based_priority:
+.. fortiswitch_system_ptp_profile:
 
-fortiswitch_system_tos_based_priority -- Configure tos based priority table in Fortinet's FortiSwitch
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fortiswitch_system_ptp_profile -- PTP policy configuration in Fortinet's FortiSwitch
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.0
 
@@ -16,7 +16,7 @@ fortiswitch_system_tos_based_priority -- Configure tos based priority table in F
 
 Synopsis
 --------
-- This module is able to configure a FortiSwitch device by allowing the user to set and modify system feature and tos_based_priority category. Examples include all parameters and values need to be adjusted to datasources before usage. Tested with FOS v7.0.0
+- This module is able to configure a FortiSwitch device by allowing the user to set and modify system_ptp feature and profile category. Examples include all parameters and values need to be adjusted to datasources before usage. Tested with FOS v7.0.0
 
 
 
@@ -37,33 +37,11 @@ FortiSW Version Compatibility
  <table>
  <tr>
  <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
- <td>fortiswitch_system_tos_based_priority</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td>fortiswitch_system_ptp_profile</td>
  <td>yes</td>
  <td>yes</td>
  </tr>
@@ -83,11 +61,15 @@ Parameters
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
-    <li> <span class="li-head">system_tos_based_priority</span> - Configure tos based priority table. <span class="li-normal">type: dict</span> </li>
+    <li> <span class="li-head">system_ptp_profile</span> - PTP policy configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">id</span> - Item id. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">priority</span> - Tos based priority level. <span class="li-normal">type: str</span> <span class="li-normal">choices: low, medium, high</span> </li>
-        <li> <span class="li-head">tos</span> - IP tos value [0-15]. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">domain</span> - PTP domain (0-255) <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">mode</span> - Select PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: transparent_e2e</span> </li>
+        <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">pdelay_req_interval</span> - PDelay Request interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
+        <li> <span class="li-head">ptp_profile</span> - Select PTP profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: C37.238_2017</span> </li>
+        <li> <span class="li-head">transport</span> - Select PTP transport. <span class="li-normal">type: str</span> <span class="li-normal">choices: l2_mcast</span> </li>
         </ul>
     </ul>
 
@@ -106,13 +88,17 @@ Examples
        ansible_httpapi_validate_certs: no
        ansible_httpapi_port: 443
       tasks:
-      - name: Configure tos based priority table.
-        fortiswitch_system_tos_based_priority:
+      - name: PTP policy configuration.
+        fortiswitch_system_ptp_profile:
           state: "present"
-          system_tos_based_priority:
-            id:  "3"
-            priority: "low"
-            tos: "5"
+          system_ptp_profile:
+            description: "<your_own_value>"
+            domain: "4"
+            mode: "transparent-e2e"
+            name: "default_name_6"
+            pdelay_req_interval: "0.25sec"
+            ptp_profile: "C37.238-2017"
+            transport: "l2-mcast"
     
 
 

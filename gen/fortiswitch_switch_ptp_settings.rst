@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_ptp_settings</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -79,6 +85,8 @@ Parameters
     <li> <span class="li-head">switch_ptp_settings</span> - Global PTP configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">mode</span> - Disable/enable PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, transparent_e2e, transparent_p2p</span> </li>
+        <li> <span class="li-head">profile</span> - Selected PTP Profile <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">status</span> - Select PTP status. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         </ul>
     </ul>
 
@@ -101,6 +109,8 @@ Examples
         fortiswitch_switch_ptp_settings:
           switch_ptp_settings:
             mode: "disable"
+            profile: "<your_own_value> (source system.ptp.profile.name)"
+            status: "disable"
     
 
 

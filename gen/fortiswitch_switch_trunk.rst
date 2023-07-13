@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_trunk</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -83,6 +89,7 @@ Parameters
         <li> <span class="li-head">auto_isl</span> - Trunk with auto-isl. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">bundle</span> - Enable bundle. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">fallback_port</span> - LACP fallback port. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">fortilink</span> - FortiLink trunk. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">hb_dst_ip</span> - Destination IP address of heartbeat packet. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">hb_dst_udp_port</span> - Destination UDP port of heartbeat packet. <span class="li-normal">type: int</span> </li>
@@ -138,18 +145,19 @@ Examples
             auto_isl: "4"
             bundle: "enable"
             description: "<your_own_value>"
-            fortilink: "7"
+            fallback_port: "<your_own_value>"
+            fortilink: "8"
             hb_dst_ip: "<your_own_value>"
-            hb_dst_udp_port: "9"
-            hb_in_vlan: "10"
-            hb_out_vlan: "11"
+            hb_dst_udp_port: "10"
+            hb_in_vlan: "11"
+            hb_out_vlan: "12"
             hb_src_ip: "<your_own_value>"
-            hb_src_udp_port: "13"
+            hb_src_udp_port: "14"
             hb_verify: "enable"
-            isl_fortilink: "15"
+            isl_fortilink: "16"
             lacp_speed: "slow"
-            max_bundle: "17"
-            max_miss_heartbeats: "18"
+            max_bundle: "18"
+            max_miss_heartbeats: "19"
             mclag: "enable"
             mclag_icl: "enable"
             mclag_mac_address: "<your_own_value>"
@@ -157,15 +165,15 @@ Examples
             members:
              -
                 member_name: "<your_own_value> (source switch.physical_port.name)"
-            min_bundle: "25"
+            min_bundle: "26"
             mode: "static"
-            name: "default_name_27"
+            name: "default_name_28"
             port_extension: "enable"
-            port_extension_trigger: "29"
+            port_extension_trigger: "30"
             port_selection_criteria: "src-mac"
             static_isl: "enable"
             static_isl_auto_vlan: "enable"
-            trunk_id: "33"
+            trunk_id: "34"
     
 
 

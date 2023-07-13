@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_global</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -83,6 +89,7 @@ Parameters
         <li> <span class="li-head">admin_https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1_0, tlsv1_1, tlsv1_2, tlsv1_3</span> </li>
         <li> <span class="li-head">admin_lockout_duration</span> - Lockout duration for FortiSwitch administration (1 - 2147483647 sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_lockout_threshold</span> - Lockout threshold for FortiSwitch administration. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">admin_password_hash</span> - Admin password hash algorithm. (sha1, sha256, pbkdf2) <span class="li-normal">type: str</span> <span class="li-normal">choices: sha1, sha256, pbkdf2, pbkdf2_high</span> </li>
         <li> <span class="li-head">admin_port</span> - Administrative access HTTP port (1 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_scp</span> - Enable/disable downloading of system configuraiton using SCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">admin_server_cert</span> - Administrative HTTPS server certificate. <span class="li-normal">type: str</span> </li>
@@ -172,63 +179,64 @@ Examples
             admin_https_ssl_versions: "tlsv1-0"
             admin_lockout_duration: "8"
             admin_lockout_threshold: "9"
-            admin_port: "10"
+            admin_password_hash: "sha1"
+            admin_port: "11"
             admin_scp: "enable"
             admin_server_cert: "<your_own_value>"
-            admin_sport: "13"
-            admin_ssh_grace_time: "14"
-            admin_ssh_port: "15"
+            admin_sport: "14"
+            admin_ssh_grace_time: "15"
+            admin_ssh_port: "16"
             admin_ssh_v1: "enable"
-            admin_telnet_port: "17"
-            admintimeout: "18"
-            alert_interval: "19"
+            admin_telnet_port: "18"
+            admintimeout: "19"
+            alert_interval: "20"
             alertd_relog: "enable"
             allow_subnet_overlap: "enable"
-            arp_timeout: "22"
+            arp_timeout: "23"
             asset_tag: "<your_own_value>"
             auto_isl: "enable"
-            cfg_revert_timeout: "25"
+            cfg_revert_timeout: "26"
             cfg_save: "automatic"
             clt_cert_req: "enable"
             csr_ca_attribute: "enable"
             daily_restart: "enable"
             detect_ip_conflict: "enable"
-            dh_params: "31"
+            dh_params: "32"
             dhcp_circuit_id: "intfname"
             dhcp_client_location: "intfname"
             dhcp_option_format: "legacy"
             dhcp_remote_id: "mac"
             dhcp_server_access_list: "enable"
             dhcp_snoop_client_req: "forward-untrusted"
-            dhcps_db_exp: "38"
-            dhcps_db_per_port_learn_limit: "39"
+            dhcps_db_exp: "39"
+            dhcps_db_per_port_learn_limit: "40"
             dst: "enable"
-            failtime: "41"
+            failtime: "42"
             fortilink_auto_discovery: "enable"
             hostname: "myhostname"
             image_rotation: "disable"
-            interval: "45"
+            interval: "46"
             ip_conflict_ignore_default: "enable"
-            ipv6_accept_dad: "47"
+            ipv6_accept_dad: "48"
             ipv6_all_forwarding: "enable"
             kernel_crashlog: "enable"
             kernel_devicelog: "enable"
             l3_host_expiry: "enable"
             language: "browser"
-            ldapconntimeout: "53"
+            ldapconntimeout: "54"
             post_login_banner: "<your_own_value>"
             pre_login_banner: "<your_own_value>"
             private_data_encryption: "disable"
-            radius_coa_port: "57"
-            radius_port: "58"
-            remoteauthtimeout: "59"
+            radius_coa_port: "58"
+            radius_port: "59"
+            remoteauthtimeout: "60"
             restart_time: "<your_own_value>"
             revision_backup_on_logout: "enable"
             revision_backup_on_upgrade: "enable"
             strong_crypto: "enable"
             switch_mgmt_mode: "local"
-            tcp_mss_min: "65"
-            tcp6_mss_min: "66"
+            tcp_mss_min: "66"
+            tcp6_mss_min: "67"
             tftp: "enable"
             timezone: "01"
     

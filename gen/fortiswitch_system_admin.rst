@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_admin</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -125,6 +131,7 @@ Parameters
         <li> <span class="li-head">trusthost9</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vdom</span> - Virtual domain name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">wildcard</span> - Enable/disable wildcard RADIUS authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">wildcard_fallback</span> - Enable/disable attempting authentication against wildcard accounts if authenticating this account fails. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>
 
@@ -193,6 +200,7 @@ Examples
             trusthost9: "<your_own_value>"
             vdom: "<your_own_value> (source system.vdom.name)"
             wildcard: "enable"
+            wildcard_fallback: "enable"
     
 
 

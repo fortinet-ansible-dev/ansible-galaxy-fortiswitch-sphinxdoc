@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_certificate_local</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -84,6 +90,7 @@ Parameters
         <li> <span class="li-head">certificate</span> - Certificate. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">comments</span> - Comments. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">csr</span> - Certificate Signing Request. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">Info</span> - Info about name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">name_encoding</span> - Name encoding for auto-regeneration. <span class="li-normal">type: str</span> <span class="li-normal">choices: printable, utf8</span> </li>
         <li> <span class="li-head">password</span> - Password. <span class="li-normal">type: str</span> </li>
@@ -117,7 +124,8 @@ Examples
             certificate: "<your_own_value>"
             comments: "<your_own_value>"
             csr: "<your_own_value>"
-            name: "default_name_8"
+            Info: "<your_own_value>"
+            name: "default_name_9"
             name_encoding: "printable"
             password: "<your_own_value>"
             private_key: "<your_own_value>"

@@ -47,9 +47,15 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.1 </code></td>
  <td><code class="docutils literal notranslate">v7.2.2 </code></td>
  <td><code class="docutils literal notranslate">v7.2.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.4 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.5 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_prelookup</td>
+ <td>yes</td>
+ <td>yes</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -103,6 +109,7 @@ Parameters
         <li> <span class="li-head">group</span> - Group ID of the policy. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">id</span> - Prelookup policy ID. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">interface</span> - Interface to which policy is bound in the pre-lookup. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">interface_all</span> - Select all interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">schedule</span> - schedule list. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">schedule_name</span> - Schedule name. <span class="li-normal">type: str</span> </li>
@@ -150,6 +157,7 @@ Examples
             group: "20"
             id:  "21"
             interface: "<your_own_value> (source switch.physical_port.name)"
+            interface_all: "enable"
             schedule:
              -
                 schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
