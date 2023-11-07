@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_global</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -112,6 +114,7 @@ Parameters
         <li> <span class="li-head">clt_cert_req</span> - Enable the requirement of client certificate for GUI login. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">csr_ca_attribute</span> - Enable/disable CA attribute in CSR. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">daily_restart</span> - Enable/disable FortiSwitch daily reboot. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">delaycli_timeout_cleanup</span> - Time-out for cleaning up the delay cli execution completion data (1-1440 minutes). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">detect_ip_conflict</span> - Enable/disable detection of IP address conflicts. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dh_params</span> - Minimum size of Diffie-Hellman prime for HTTPS/SSH (bits). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dhcp_circuit_id</span> - List the parameters to be included to inform about client identification. <span class="li-normal">type: str</span> <span class="li-normal">choices: intfname, vlan, hostname, mode, description</span> </li>
@@ -149,6 +152,7 @@ Parameters
         <li> <span class="li-head">switch_mgmt_mode</span> - Switch mode setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: local, fortilink</span> </li>
         <li> <span class="li-head">tcp6_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tcp_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">tcp_options</span> - Enable/disable TCP options (timestamps, SACK, window scaling). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">tftp</span> - Enable/disable TFTP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">timezone</span> - Time zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76</span> </li>
         </ul>
@@ -200,43 +204,45 @@ Examples
             clt_cert_req: "enable"
             csr_ca_attribute: "enable"
             daily_restart: "enable"
+            delaycli_timeout_cleanup: "31"
             detect_ip_conflict: "enable"
-            dh_params: "32"
+            dh_params: "33"
             dhcp_circuit_id: "intfname"
             dhcp_client_location: "intfname"
             dhcp_option_format: "legacy"
             dhcp_remote_id: "mac"
             dhcp_server_access_list: "enable"
             dhcp_snoop_client_req: "forward-untrusted"
-            dhcps_db_exp: "39"
-            dhcps_db_per_port_learn_limit: "40"
+            dhcps_db_exp: "40"
+            dhcps_db_per_port_learn_limit: "41"
             dst: "enable"
-            failtime: "42"
+            failtime: "43"
             fortilink_auto_discovery: "enable"
             hostname: "myhostname"
             image_rotation: "disable"
-            interval: "46"
+            interval: "47"
             ip_conflict_ignore_default: "enable"
-            ipv6_accept_dad: "48"
+            ipv6_accept_dad: "49"
             ipv6_all_forwarding: "enable"
             kernel_crashlog: "enable"
             kernel_devicelog: "enable"
             l3_host_expiry: "enable"
             language: "browser"
-            ldapconntimeout: "54"
+            ldapconntimeout: "55"
             post_login_banner: "<your_own_value>"
             pre_login_banner: "<your_own_value>"
             private_data_encryption: "disable"
-            radius_coa_port: "58"
-            radius_port: "59"
-            remoteauthtimeout: "60"
+            radius_coa_port: "59"
+            radius_port: "60"
+            remoteauthtimeout: "61"
             restart_time: "<your_own_value>"
             revision_backup_on_logout: "enable"
             revision_backup_on_upgrade: "enable"
             strong_crypto: "enable"
             switch_mgmt_mode: "local"
-            tcp_mss_min: "66"
-            tcp6_mss_min: "67"
+            tcp_mss_min: "67"
+            tcp_options: "enable"
+            tcp6_mss_min: "69"
             tftp: "enable"
             timezone: "01"
     

@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_lldp_profile</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -87,7 +89,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">auto_isl</span> - Enable/disable automatic inter-switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_isl_auth</span> - Automatic inter-switch LAG authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: legacy, strict, relax</span> </li>
-        <li> <span class="li-head">auto_isl_auth_encrypt</span> - Automatic inter-switch LAG authentication encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: none</span> </li>
+        <li> <span class="li-head">auto_isl_auth_encrypt</span> - Automatic inter-switch LAG authentication encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, must, mixed</span> </li>
         <li> <span class="li-head">auto_isl_auth_identity</span> - Automatic authentication identity. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auto_isl_auth_macsec_profile</span> - Fortilink LLDP macsec port profile. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auto_isl_auth_reauth</span> - Automatic authentication reauth period (10 - 3600 mins). <span class="li-normal">type: int</span> </li>
@@ -151,7 +153,7 @@ Examples
             auto_isl_auth: "legacy"
             auto_isl_auth_encrypt: "none"
             auto_isl_auth_identity: "<your_own_value>"
-            auto_isl_auth_macsec_profile: "<your_own_value>"
+            auto_isl_auth_macsec_profile: "<your_own_value> (source switch.macsec.profile.name)"
             auto_isl_auth_reauth: "10"
             auto_isl_auth_user: "<your_own_value> (source system.certificate.local.name)"
             auto_isl_hello_timer: "12"

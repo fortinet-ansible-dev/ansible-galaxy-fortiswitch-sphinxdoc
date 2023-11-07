@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_global</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -84,6 +86,7 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_global</span> - Configure global settings. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
+        <li> <span class="li-head">access_vlan_mode</span> - Intra VLAN traffic behavior with loss of connection to the FortiGate. <span class="li-normal">type: str</span> <span class="li-normal">choices: legacy, fail_open, fail_close</span> </li>
         <li> <span class="li-head">auto_fortilink_discovery</span> - Enable/disable automatic FortiLink discovery. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_isl</span> - Enable/Disable automatic inter switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_isl_port_group</span> - Configure global automatic inter-switch link port groups (overrides port level port groups). <span class="li-normal">type: int</span> </li>
@@ -126,7 +129,13 @@ Parameters
         <li> <span class="li-head">port_security</span> - Global parameters for port-security. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">link_down_auth</span> - If link down detected, "set-unauth" reverts to un-authorized state. <span class="li-normal">type: str</span> <span class="li-normal">choices: set_unauth, no_action</span> </li>
+            <li> <span class="li-head">mab_entry_as</span> - Confgure MAB MAC entry as static or dynamic. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, dynamic</span> </li>
             <li> <span class="li-head">mab_reauth</span> - Enable or disable MAB reauthentication settings. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
+            <li> <span class="li-head">mac_called_station_delimiter</span> - MAC called station delimiter . <span class="li-normal">type: str</span> <span class="li-normal">choices: hyphen, single_hyphen, colon, none</span> </li>
+            <li> <span class="li-head">mac_calling_station_delimiter</span> - MAC calling station delimiter . <span class="li-normal">type: str</span> <span class="li-normal">choices: hyphen, single_hyphen, colon, none</span> </li>
+            <li> <span class="li-head">mac_case</span> - MAC case . <span class="li-normal">type: str</span> <span class="li-normal">choices: uppercase, lowercase</span> </li>
+            <li> <span class="li-head">mac_password_delimiter</span> - MAC authentication password delimiter . <span class="li-normal">type: str</span> <span class="li-normal">choices: hyphen, single_hyphen, colon, none</span> </li>
+            <li> <span class="li-head">mac_username_delimiter</span> - MAC authentication username delimiter . <span class="li-normal">type: str</span> <span class="li-normal">choices: hyphen, single_hyphen, colon, none</span> </li>
             <li> <span class="li-head">max_reauth_attempt</span> - 802.1X/MAB maximum reauthorization attempt. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">quarantine_vlan</span> - Enable or disable Quarantine VLAN detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">reauth_period</span> - 802.1X/MAB reauthentication period ( minute ). <span class="li-normal">type: int</span> </li>
@@ -136,7 +145,9 @@ Parameters
         <li> <span class="li-head">trunk_hash_unicast_src_port</span> - Enable/disable source port in Unicast trunk hashing. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">trunk_hash_unkunicast_src_dst</span> - Enable/disable trunk hash for unknown unicast src-dst. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">virtual_wire_tpid</span> - TPID value used by virtual-wires. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">vxlan_dport</span> - VXLAN destination UDP port. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">vxlan_port</span> - VXLAN destination UDP port. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">vxlan_sport</span> - VXLAN source UDP port (0 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">vxlan_stp_virtual_mac</span> - Virtual STP root MAC address <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vxlan_stp_virtual_root</span> - Enable/disable automatically making local switch the STP root for STP instances containing configured VXLAN"s access vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
@@ -160,9 +171,10 @@ Examples
       - name: Configure global settings.
         fortiswitch_switch_global:
           switch_global:
+            access_vlan_mode: "legacy"
             auto_fortilink_discovery: "enable"
             auto_isl: "enable"
-            auto_isl_port_group: "5"
+            auto_isl_port_group: "6"
             auto_stp_priority: "enable"
             bpdu_learn: "enable"
             dhcp_snooping_database_export: "enable"
@@ -171,46 +183,54 @@ Examples
             flood_unknown_multicast: "enable"
             flood_vtp: "enable"
             forti_trunk_dmac: "<your_own_value>"
-            fortilink_heartbeat_timeout: "14"
-            fortilink_p2p_native_vlan: "15"
-            fortilink_p2p_tpid: "16"
+            fortilink_heartbeat_timeout: "15"
+            fortilink_p2p_native_vlan: "16"
+            fortilink_p2p_tpid: "17"
             fortilink_vlan_optimization: "enable"
             ip_mac_binding: "enable"
             l2_memory_check: "enable"
-            l2_memory_check_interval: "20"
+            l2_memory_check_interval: "21"
             log_mac_limit_violations: "enable"
-            loop_guard_tx_interval: "22"
-            mac_address: "23"
+            loop_guard_tx_interval: "23"
+            mac_address: "24"
             mac_address_algorithm: "auto"
-            mac_aging_interval: "25"
-            mac_violation_timer: "26"
-            max_path_in_ecmp_group: "27"
+            mac_aging_interval: "26"
+            mac_violation_timer: "27"
+            max_path_in_ecmp_group: "28"
             mclag_igmpsnooping_aware: "enable"
-            mclag_peer_info_timeout: "29"
-            mclag_port_base: "30"
+            mclag_peer_info_timeout: "30"
+            mclag_port_base: "31"
             mclag_split_brain_all_ports_down: "disable"
             mclag_split_brain_detect: "enable"
-            mclag_split_brain_priority: "33"
+            mclag_split_brain_priority: "34"
             mclag_stp_aware: "enable"
-            mirror_qos: "35"
-            name: "default_name_36"
-            poe_alarm_threshold: "37"
-            poe_guard_band: "38"
-            poe_power_budget: "39"
+            mirror_qos: "36"
+            name: "default_name_37"
+            poe_alarm_threshold: "38"
+            poe_guard_band: "39"
+            poe_power_budget: "40"
             poe_power_mode: "priority"
             poe_pre_standard_detect: "enable"
             port_security:
                 link_down_auth: "set-unauth"
+                mab_entry_as: "static"
                 mab_reauth: "disable"
-                max_reauth_attempt: "45"
+                mac_called_station_delimiter: "hyphen"
+                mac_calling_station_delimiter: "hyphen"
+                mac_case: "uppercase"
+                mac_password_delimiter: "hyphen"
+                mac_username_delimiter: "hyphen"
+                max_reauth_attempt: "52"
                 quarantine_vlan: "disable"
-                reauth_period: "47"
-                tx_period: "48"
+                reauth_period: "54"
+                tx_period: "55"
             trunk_hash_mode: "default"
             trunk_hash_unicast_src_port: "enable"
             trunk_hash_unkunicast_src_dst: "enable"
-            virtual_wire_tpid: "52"
-            vxlan_port: "53"
+            virtual_wire_tpid: "59"
+            vxlan_dport: "60"
+            vxlan_port: "61"
+            vxlan_sport: "62"
             vxlan_stp_virtual_mac: "<your_own_value>"
             vxlan_stp_virtual_root: "enable"
     

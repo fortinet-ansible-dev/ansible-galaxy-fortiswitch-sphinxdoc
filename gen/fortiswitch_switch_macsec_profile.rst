@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_macsec_profile</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -111,6 +113,7 @@ Parameters
         <li> <span class="li-head">status</span> - Enable/disable this Profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">traffic_policy</span> - MACsec traffic policy configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
+            <li> <span class="li-head">exclude_protocol</span> - Exclude protocols that should not be MACsec-secured. <span class="li-normal">type: str</span> <span class="li-normal">choices: ipv4, ipv6, dot1q, qinq, fortilink, arp, stp, lldp, lacp</span> </li>
             <li> <span class="li-head">name</span> - Traffic policy type name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">security_policy</span> - Must/Should secure the traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: must_secure</span> </li>
             <li> <span class="li-head">status</span> - Enable/disable this Traffic policy. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable</span> </li>
@@ -123,7 +126,7 @@ Examples
 --------
 
 .. code-block:: yaml+jinja
-    
+
     - hosts: fortiswitch01
       collections:
         - fortinet.fortiswitch
@@ -138,7 +141,6 @@ Examples
           state: "present"
           switch_macsec_profile:
             cipher_suite: "GCM-AES-128"
-            cipher_suite: "GCM_AES_128"
             confident_offset: "0"
             eap_tls_ca_cert: "<your_own_value>"
             eap_tls_cert: "<your_own_value>"
@@ -163,10 +165,11 @@ Examples
             status: "enable"
             traffic_policy:
              -
-                name: "default_name_27"
+                exclude_protocol: "ipv4"
+                name: "default_name_28"
                 security_policy: "must-secure"
                 status: "enable"
-    
+
 
 
 Return Values

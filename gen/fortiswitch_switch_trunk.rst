@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_switch_trunk</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -116,6 +118,7 @@ Parameters
         <li> <span class="li-head">port_extension</span> - Port extension enable. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">port_extension_trigger</span> - Number of failed port to trigger the whole trunk down. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">port_selection_criteria</span> - Algorithm for aggregate port selection. <span class="li-normal">type: str</span> <span class="li-normal">choices: src_mac, dst_mac, src_dst_mac, src_ip, dst_ip, src_dst_ip</span> </li>
+        <li> <span class="li-head">restricted</span> - Restricted ISL ICL trunk. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">static_isl</span> - Static ISL. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">static_isl_auto_vlan</span> - User ISL auto VLAN. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">trunk_id</span> - Internal id. <span class="li-normal">type: int</span> </li>
@@ -171,9 +174,10 @@ Examples
             port_extension: "enable"
             port_extension_trigger: "30"
             port_selection_criteria: "src-mac"
+            restricted: "32"
             static_isl: "enable"
             static_isl_auto_vlan: "enable"
-            trunk_id: "34"
+            trunk_id: "35"
     
 
 

@@ -4,6 +4,21 @@ Release Notes
 
 |
 
+Release Galaxy 1.2.2
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.2.2 is based on 1.2.1
+
+Features
+^^^^^^^^^^^^^^^
+- Support new FortiSwitch version 7.4.1.
+- Update the requirement.txt file to specify the sphinx_rtd_theme==1.3.0.
+- Update Ansible version from 2.9.0 to 2.14.0 in the runtime.yml file.
+- Format the contents in the changelog.yaml.
+
 Release Galaxy 1.2.1
 --------------------
 

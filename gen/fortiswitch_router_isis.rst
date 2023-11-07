@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_router_isis</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -134,6 +136,7 @@ Parameters
         <li> <span class="li-head">metric_style</span> - Use old-style (ISO 10589) or new-style packet formats. <span class="li-normal">type: str</span> <span class="li-normal">choices: narrow, wide, transition</span> </li>
         <li> <span class="li-head">net</span> - IS-IS net configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
+            <li> <span class="li-head">id</span> - ISIS net ID <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">net</span> - isis net xx.xxxx. ... .xxxx.xx <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">overload_bit</span> - Signal other routers not to use us in SPF. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -243,12 +246,13 @@ Examples
             metric_style: "narrow"
             net:
              -
+                id:  "50"
                 net: "<your_own_value>"
             overload_bit: "enable"
             redistribute:
              -
                 level: "level-1-2"
-                metric: "54"
+                metric: "55"
                 metric_type: "external"
                 protocol: "<your_own_value>"
                 routemap: "<your_own_value> (source router.route_map.name)"
@@ -258,23 +262,23 @@ Examples
             redistribute6:
              -
                 level: "level-1-2"
-                metric: "63"
+                metric: "64"
                 protocol: "<your_own_value>"
                 routemap: "<your_own_value> (source router.route_map.name)"
                 status: "enable"
             redistribute6_l1: "enable"
             redistribute6_l1_list: "<your_own_value> (source router.access_list6.name)"
             router_id: "<your_own_value>"
-            spf_interval_exp_l1: "70"
-            spf_interval_exp_l2: "71"
+            spf_interval_exp_l1: "71"
+            spf_interval_exp_l2: "72"
             summary_address:
              -
-                id:  "73"
+                id:  "74"
                 level: "level-1-2"
                 prefix: "<your_own_value>"
             summary_address6:
              -
-                id:  "77"
+                id:  "78"
                 level: "level-1-2"
                 prefix6: "<your_own_value>"
     

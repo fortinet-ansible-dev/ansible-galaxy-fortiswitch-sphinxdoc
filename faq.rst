@@ -7,6 +7,7 @@ Frequently Asked Questions (FAQ)
 **TABLE OF CONTENTS:**
  - `How to export the current settings of a module into a playbook?`_
  - `How to backup full config or default config?`_
+ - `Resolution for Ansible Always Sending GET/PUT Requests as POST Requests`_
 
 |
 
@@ -39,8 +40,8 @@ The following example will show you how fortiswitch_export_config_playbook modul
             name: "internal"
         output_path: "./"
 
-There will be a new generated playbook called system_interface_playbook.yml at the current path. 
-Feel free to assign a output_path where you want the playbook is saved. 
+There will be a new generated playbook called system_interface_playbook.yml at the current path.
+Feel free to assign a output_path where you want the playbook is saved.
 
 How to backup full config or default config?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,5 +69,13 @@ How to backup full config or default config?
         enable_log: yes
         execute_backup_default_config:
           config: test
+
+Resolution for Ansible Always Sending GET/PUT Requests as POST Requests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We have been inundated with complaints regarding older Ansible versions consistently sending GET/PUT requests as POST requests due to a bug in the ansible.netcommon module. To prevent such issues, please ensure that you have installed the latest Ansible version.
+
+To upgrade to the latest version of ansible.netcommon, use the following command:
+ansible-galaxy collection install ansible.netcommon --force
 
 .. _Run Your Playbook: playbook.html

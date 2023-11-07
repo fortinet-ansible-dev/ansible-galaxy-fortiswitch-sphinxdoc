@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.11
+- ansible>=2.14
 
 
 FortiSW Version Compatibility
@@ -50,9 +50,11 @@ FortiSW Version Compatibility
  <td><code class="docutils literal notranslate">v7.2.4 </code></td>
  <td><code class="docutils literal notranslate">v7.2.5 </code></td>
  <td><code class="docutils literal notranslate">v7.4.0 </code></td>
+ <td><code class="docutils literal notranslate">v7.4.1 </code></td>
  </tr>
  <tr>
  <td>fortiswitch_system_interface</td>
+ <td>yes</td>
  <td>yes</td>
  <td>yes</td>
  <td>yes</td>
@@ -98,6 +100,7 @@ Parameters
         <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
         <li> <span class="li-head">detectserver</span> - IP address to PING for gateway detection. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dhcp_client_identifier</span> - DHCP client identifier. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">dhcp_client_status</span> - DHCP client connection status. <span class="li-normal">type: str</span> <span class="li-normal">choices: initial, stopped, connected, rebooting, selecting, requesting, binding, renewing, rebinding</span> </li>
         <li> <span class="li-head">dhcp_expire</span> - DHCP client expiration. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dhcp_relay_ip</span> - DHCP relay IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dhcp_relay_option82</span> - Enable / Disable DHCP relay option-82 insertion. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
@@ -248,19 +251,20 @@ Examples
             detectprotocol: "ping"
             detectserver: "<your_own_value>"
             dhcp_client_identifier:  "myId_15"
+            dhcp_client_status: "initial"
             dhcp_relay_ip: "<your_own_value>"
             dhcp_relay_option82: "disable"
             dhcp_relay_service: "disable"
             dhcp_vendor_specific_option: "<your_own_value>"
-            dhcp_expire: "20"
-            distance: "21"
+            dhcp_expire: "21"
+            distance: "22"
             dns_server_override: "enable"
             dynamic_dns1: "<your_own_value>"
             dynamic_dns2: "<your_own_value>"
             dynamicgw: "<your_own_value>"
-            forward_domain: "26"
+            forward_domain: "27"
             gwdetect: "enable"
-            ha_priority: "28"
+            ha_priority: "29"
             icmp_redirect: "enable"
             interface: "<your_own_value> (source system.interface.name)"
             ip: "<your_own_value>"
@@ -269,27 +273,27 @@ Examples
                 dhcp6_information_request: "enable"
                 ip6_address: "<your_own_value>"
                 ip6_allowaccess: "any"
-                ip6_default_life: "37"
+                ip6_default_life: "38"
                 ip6_dns_server_override: "enable"
                 ip6_extra_addr:
                  -
                     prefix: "<your_own_value>"
-                ip6_hop_limit: "41"
-                ip6_link_mtu: "42"
+                ip6_hop_limit: "42"
+                ip6_link_mtu: "43"
                 ip6_manage_flag: "enable"
-                ip6_max_interval: "44"
-                ip6_min_interval: "45"
+                ip6_max_interval: "45"
+                ip6_min_interval: "46"
                 ip6_mode: "static"
                 ip6_other_flag: "enable"
                 ip6_prefix_list:
                  -
                     autonomous_flag: "enable"
                     onlink_flag: "enable"
-                    preferred_life_time: "51"
+                    preferred_life_time: "52"
                     prefix: "<your_own_value>"
-                    valid_life_time: "53"
-                ip6_reachable_time: "54"
-                ip6_retrans_time: "55"
+                    valid_life_time: "54"
+                ip6_reachable_time: "55"
+                ip6_retrans_time: "56"
                 ip6_send_adv: "enable"
                 ip6_unknown_mcast_to_cpu: "enable"
                 vrip6_link_local: "<your_own_value>"
@@ -297,23 +301,23 @@ Examples
                 vrrp6:
                  -
                     accept_mode: "enable"
-                    adv_interval: "62"
+                    adv_interval: "63"
                     preempt: "enable"
-                    priority: "64"
-                    start_time: "65"
+                    priority: "65"
+                    start_time: "66"
                     status: "enable"
                     vrdst6: "<your_own_value>"
-                    vrgrp: "68"
-                    vrid: "69"
+                    vrgrp: "69"
+                    vrid: "70"
                     vrip6: "<your_own_value>"
             l2_interface: "<your_own_value> (source switch.interface.name)"
             macaddr: "<your_own_value>"
             mode: "static"
-            mtu: "74"
+            mtu: "75"
             mtu_override: "enable"
-            name: "default_name_76"
-            ping_serv_status: "77"
-            priority: "78"
+            name: "default_name_77"
+            ping_serv_status: "78"
+            priority: "79"
             remote_ip: "<your_own_value>"
             secondary_IP: "enable"
             secondaryip:
@@ -322,11 +326,11 @@ Examples
                 detectprotocol: "ping"
                 detectserver: "<your_own_value>"
                 gwdetect: "enable"
-                ha_priority: "86"
-                id:  "87"
+                ha_priority: "87"
+                id:  "88"
                 ip: "<your_own_value>"
-                ping_serv_status: "89"
-            snmp_index: "90"
+                ping_serv_status: "90"
+            snmp_index: "91"
             speed: "auto"
             src_check: "disable"
             src_check_allow_default: "enable"
@@ -338,23 +342,23 @@ Examples
             type: "physical"
             vdom: "<your_own_value> (source system.vdom.name)"
             vlanforward: "enable"
-            vlanid: "101"
+            vlanid: "102"
             vrf: "<your_own_value> (source router.vrf.name)"
             vrrp:
              -
-                adv_interval: "104"
+                adv_interval: "105"
                 backup_vmac_fwd: "enable"
                 preempt: "enable"
-                priority: "107"
-                start_time: "108"
+                priority: "108"
+                start_time: "109"
                 status: "enable"
                 version: "2"
                 vrdst: "<your_own_value>"
-                vrgrp: "112"
-                vrid: "113"
+                vrgrp: "113"
+                vrid: "114"
                 vrip: "<your_own_value>"
             vrrp_virtual_mac: "enable"
-            weight: "116"
+            weight: "117"
     
 
 
