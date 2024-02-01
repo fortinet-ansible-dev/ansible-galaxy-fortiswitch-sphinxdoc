@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_ospf</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -107,7 +80,7 @@ Parameters
                 <li> <span class="li-head">substitute_status</span> - Enable/disable substitute status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 </ul>
             <li> <span class="li-head">shortcut</span> - Enable/disable shortcut option. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable, default</span> </li>
-            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_summary, summary</span> </li>
+            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
             <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, nssa, stub</span> </li>
             <li> <span class="li-head">virtual_link</span> - OSPF virtual link configuration. <span class="li-normal">type: list</span> </li>
                 <ul class="ul-self">
@@ -218,7 +191,7 @@ Parameters
                     <li> <span class="li-head">substitute_status</span> - Enable/disable substitute status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                     </ul>
                 <li> <span class="li-head">shortcut</span> - Enable/disable shortcut option. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable, default</span> </li>
-                <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_summary, summary</span> </li>
+                <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
                 <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, nssa, stub</span> </li>
                 <li> <span class="li-head">virtual_link</span> - OSPF virtual link configuration. <span class="li-normal">type: list</span> </li>
                     <ul class="ul-self">
@@ -310,210 +283,200 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: OSPF configuration.
-        fortiswitch_router_ospf:
+    - name: OSPF configuration.
+      fortinet.fortiswitch.fortiswitch_router_ospf:
           router_ospf:
-            abr_type: "cisco"
-            area:
-             -
-                default_cost: "5"
-                filter_list:
-                 -
-                    direction: "in"
-                    id:  "8"
-                    list: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
-                id:  "10"
-                nssa_translator_role: "candidate"
-                range:
-                 -
-                    advertise: "disable"
-                    id:  "14"
-                    prefix: "<your_own_value>"
-                    substitute: "<your_own_value>"
-                    substitute_status: "enable"
-                shortcut: "disable"
-                stub_type: "no-summary"
-                type: "regular"
-                virtual_link:
-                 -
-                    authentication: "none"
-                    authentication_key: "<your_own_value>"
-                    dead_interval: "24"
-                    hello_interval: "25"
-                    md5_keys:
-                     -
-                        id:  "27"
-                        key: "<your_own_value>"
-                    name: "default_name_29"
-                    peer: "<your_own_value>"
-                    retransmit_interval: "31"
-                    transmit_delay: "32"
-            database_overflow: "enable"
-            database_overflow_max_external_lsa: "34"
-            database_overflow_time_to_recover: "35"
-            default_information_metric: "36"
-            default_information_metric_type: "1"
-            default_information_originate: "enable"
-            distance: "39"
-            distance_external: "40"
-            distance_inter_area: "41"
-            distance_intra_area: "42"
-            distribute_list:
-             -
-                access_list: "<your_own_value> (source router.access_list.name)"
-                id:  "45"
-                protocol: "connected"
-            interface:
-             -
-                authentication: "none"
-                authentication_key: "<your_own_value>"
-                bfd: "enable"
-                cost: "51"
-                dead_interval: "52"
-                hello_interval: "53"
-                hello_multiplier: "54"
-                md5_keys:
-                 -
-                    id:  "56"
-                    key: "<your_own_value>"
-                mtu: "58"
-                mtu_ignore: "enable"
-                name: "default_name_60 (source system.interface.name)"
-                priority: "61"
-                retransmit_interval: "62"
-                transmit_delay: "63"
-                ttl: "64"
-                ucast_ttl: "65"
-            log_neighbour_changes: "enable"
-            name: "default_name_67"
-            network:
-             -
-                area: "<your_own_value>"
-                id:  "70"
-                prefix: "<your_own_value>"
-            passive_interface:
-             -
-                name: "default_name_73 (source system.interface.name)"
-            redistribute:
-             -
-                metric: "75"
-                metric_type: "1"
-                name: "default_name_77"
-                routemap: "<your_own_value> (source router.route_map.name)"
-                status: "enable"
-                tag: "80"
-            rfc1583_compatible: "enable"
-            router_id: "<your_own_value>"
-            spf_timers: "<your_own_value>"
-            summary_address:
-             -
-                id:  "85"
-                prefix: "<your_own_value>"
-                tag: "87"
-            vrf:
-             -
-                abr_type: "cisco"
-                area:
-                 -
-                    default_cost: "91"
-                    filter_list:
-                     -
-                        direction: "in"
-                        id:  "94"
-                        list: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
-                    id:  "96"
-                    nssa_translator_role: "candidate"
-                    range:
-                     -
-                        advertise: "disable"
-                        id:  "100"
-                        prefix: "<your_own_value>"
-                        substitute: "<your_own_value>"
-                        substitute_status: "enable"
-                    shortcut: "disable"
-                    stub_type: "no-summary"
-                    type: "regular"
-                    virtual_link:
-                     -
-                        authentication: "none"
-                        authentication_key: "<your_own_value>"
-                        dead_interval: "110"
-                        hello_interval: "111"
-                        name: "default_name_112"
-                        peer: "<your_own_value>"
-                        retransmit_interval: "114"
-                        transmit_delay: "115"
-                database_overflow: "enable"
-                database_overflow_max_external_lsa: "117"
-                database_overflow_time_to_recover: "118"
-                default_information_metric: "119"
-                default_information_metric_type: "1"
-                default_information_originate: "enable"
-                distance: "122"
-                distance_external: "123"
-                distance_inter_area: "124"
-                distance_intra_area: "125"
-                distribute_list:
-                 -
-                    access_list: "<your_own_value> (source router.access_list.name)"
-                    id:  "128"
-                    protocol: "connected"
-                interface:
-                 -
-                    authentication: "none"
-                    authentication_key: "<your_own_value>"
-                    cost: "133"
-                    dead_interval: "134"
-                    hello_interval: "135"
-                    hello_multiplier: "136"
-                    md5_keys:
-                     -
-                        id:  "138"
-                        key: "<your_own_value>"
-                    mtu: "140"
-                    mtu_ignore: "enable"
-                    name: "default_name_142 (source system.interface.name)"
-                    priority: "143"
-                    retransmit_interval: "144"
-                    transmit_delay: "145"
-                    ttl: "146"
-                    ucast_ttl: "147"
-                log_neighbour_changes: "enable"
-                name: "default_name_149 (source router.vrf.name)"
-                network:
-                 -
-                    area: "<your_own_value>"
-                    id:  "152"
-                    prefix: "<your_own_value>"
-                passive_interface:
-                 -
-                    name: "default_name_155 (source system.interface.name)"
-                redistribute:
-                 -
-                    metric: "157"
-                    metric_type: "1"
-                    name: "default_name_159"
-                    routemap: "<your_own_value> (source router.route_map.name)"
-                    status: "enable"
-                    tag: "162"
-                rfc1583_compatible: "enable"
-                router_id: "<your_own_value>"
-                spf_timers: "<your_own_value>"
-                summary_address:
-                 -
-                    id:  "167"
-                    prefix: "<your_own_value>"
-                    tag: "169"
-    
+              abr_type: "cisco"
+              area:
+                  -
+                      default_cost: "5"
+                      filter_list:
+                          -
+                              direction: "in"
+                              id: "8"
+                              list: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                      id: "10"
+                      nssa_translator_role: "candidate"
+                      range:
+                          -
+                              advertise: "disable"
+                              id: "14"
+                              prefix: "<your_own_value>"
+                              substitute: "<your_own_value>"
+                              substitute_status: "enable"
+                      shortcut: "disable"
+                      stub_type: "no-summary"
+                      type: "regular"
+                      virtual_link:
+                          -
+                              authentication: "none"
+                              authentication_key: "<your_own_value>"
+                              dead_interval: "24"
+                              hello_interval: "25"
+                              md5_keys:
+                                  -
+                                      id: "27"
+                                      key: "<your_own_value>"
+                              name: "default_name_29"
+                              peer: "<your_own_value>"
+                              retransmit_interval: "31"
+                              transmit_delay: "32"
+              database_overflow: "enable"
+              database_overflow_max_external_lsa: "34"
+              database_overflow_time_to_recover: "35"
+              default_information_metric: "36"
+              default_information_metric_type: "1"
+              default_information_originate: "enable"
+              distance: "39"
+              distance_external: "40"
+              distance_inter_area: "41"
+              distance_intra_area: "42"
+              distribute_list:
+                  -
+                      access_list: "<your_own_value> (source router.access-list.name)"
+                      id: "45"
+                      protocol: "connected"
+              interface:
+                  -
+                      authentication: "none"
+                      authentication_key: "<your_own_value>"
+                      bfd: "enable"
+                      cost: "51"
+                      dead_interval: "52"
+                      hello_interval: "53"
+                      hello_multiplier: "54"
+                      md5_keys:
+                          -
+                              id: "56"
+                              key: "<your_own_value>"
+                      mtu: "58"
+                      mtu_ignore: "enable"
+                      name: "default_name_60 (source system.interface.name)"
+                      priority: "61"
+                      retransmit_interval: "62"
+                      transmit_delay: "63"
+                      ttl: "64"
+                      ucast_ttl: "65"
+              log_neighbour_changes: "enable"
+              name: "default_name_67"
+              network:
+                  -
+                      area: "<your_own_value>"
+                      id: "70"
+                      prefix: "<your_own_value>"
+              passive_interface:
+                  -
+                      name: "default_name_73 (source system.interface.name)"
+              redistribute:
+                  -
+                      metric: "75"
+                      metric_type: "1"
+                      name: "default_name_77"
+                      routemap: "<your_own_value> (source router.route-map.name)"
+                      status: "enable"
+                      tag: "80"
+              rfc1583_compatible: "enable"
+              router_id: "<your_own_value>"
+              spf_timers: "<your_own_value>"
+              summary_address:
+                  -
+                      id: "85"
+                      prefix: "<your_own_value>"
+                      tag: "87"
+              vrf:
+                  -
+                      abr_type: "cisco"
+                      area:
+                          -
+                              default_cost: "91"
+                              filter_list:
+                                  -
+                                      direction: "in"
+                                      id: "94"
+                                      list: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                              id: "96"
+                              nssa_translator_role: "candidate"
+                              range:
+                                  -
+                                      advertise: "disable"
+                                      id: "100"
+                                      prefix: "<your_own_value>"
+                                      substitute: "<your_own_value>"
+                                      substitute_status: "enable"
+                              shortcut: "disable"
+                              stub_type: "no-summary"
+                              type: "regular"
+                              virtual_link:
+                                  -
+                                      authentication: "none"
+                                      authentication_key: "<your_own_value>"
+                                      dead_interval: "110"
+                                      hello_interval: "111"
+                                      name: "default_name_112"
+                                      peer: "<your_own_value>"
+                                      retransmit_interval: "114"
+                                      transmit_delay: "115"
+                      database_overflow: "enable"
+                      database_overflow_max_external_lsa: "117"
+                      database_overflow_time_to_recover: "118"
+                      default_information_metric: "119"
+                      default_information_metric_type: "1"
+                      default_information_originate: "enable"
+                      distance: "122"
+                      distance_external: "123"
+                      distance_inter_area: "124"
+                      distance_intra_area: "125"
+                      distribute_list:
+                          -
+                              access_list: "<your_own_value> (source router.access-list.name)"
+                              id: "128"
+                              protocol: "connected"
+                      interface:
+                          -
+                              authentication: "none"
+                              authentication_key: "<your_own_value>"
+                              cost: "133"
+                              dead_interval: "134"
+                              hello_interval: "135"
+                              hello_multiplier: "136"
+                              md5_keys:
+                                  -
+                                      id: "138"
+                                      key: "<your_own_value>"
+                              mtu: "140"
+                              mtu_ignore: "enable"
+                              name: "default_name_142 (source system.interface.name)"
+                              priority: "143"
+                              retransmit_interval: "144"
+                              transmit_delay: "145"
+                              ttl: "146"
+                              ucast_ttl: "147"
+                      log_neighbour_changes: "enable"
+                      name: "default_name_149 (source router.vrf.name)"
+                      network:
+                          -
+                              area: "<your_own_value>"
+                              id: "152"
+                              prefix: "<your_own_value>"
+                      passive_interface:
+                          -
+                              name: "default_name_155 (source system.interface.name)"
+                      redistribute:
+                          -
+                              metric: "157"
+                              metric_type: "1"
+                              name: "default_name_159"
+                              routemap: "<your_own_value> (source router.route-map.name)"
+                              status: "enable"
+                              tag: "162"
+                      rfc1583_compatible: "enable"
+                      router_id: "<your_own_value>"
+                      spf_timers: "<your_own_value>"
+                      summary_address:
+                          -
+                              id: "167"
+                              prefix: "<your_own_value>"
+                              tag: "169"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_alarm</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -122,44 +95,34 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Alarm configuration.
-        fortiswitch_system_alarm:
+    - name: Alarm configuration.
+      fortinet.fortiswitch.fortiswitch_system_alarm:
           system_alarm:
-            audible: "enable"
-            groups:
-             -
-                admin_auth_failure_threshold: "5"
-                admin_auth_lockout_threshold: "6"
-                decryption_failure_threshold: "7"
-                encryption_failure_threshold: "8"
-                fw_policy_id: "9"
-                fw_policy_id_threshold: "10"
-                fw_policy_violations:
-                 -
-                    dst_ip: "<your_own_value>"
-                    dst_port: "13"
-                    src_ip: "<your_own_value>"
-                    src_port: "15"
-                    threshold: "16"
-                id:  "17"
-                log_full_warning_threshold: "18"
-                period: "19"
-                replay_attempt_threshold: "20"
-                self_test_failure_threshold: "21"
-                user_auth_failure_threshold: "22"
-                user_auth_lockout_threshold: "23"
-            sequence: "24"
-            status: "enable"
-    
+              audible: "enable"
+              groups:
+                  -
+                      admin_auth_failure_threshold: "5"
+                      admin_auth_lockout_threshold: "6"
+                      decryption_failure_threshold: "7"
+                      encryption_failure_threshold: "8"
+                      fw_policy_id: "9"
+                      fw_policy_id_threshold: "10"
+                      fw_policy_violations:
+                          -
+                              dst_ip: "<your_own_value>"
+                              dst_port: "13"
+                              src_ip: "<your_own_value>"
+                              src_port: "15"
+                              threshold: "16"
+                      id: "17"
+                      log_full_warning_threshold: "18"
+                      period: "19"
+                      replay_attempt_threshold: "20"
+                      self_test_failure_threshold: "21"
+                      user_auth_failure_threshold: "22"
+                      user_auth_lockout_threshold: "23"
+              sequence: "24"
+              status: "enable"
 
 
 Return Values

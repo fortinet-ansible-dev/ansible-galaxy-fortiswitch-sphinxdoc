@@ -47,19 +47,10 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Backup Switch's Standalone Configuration.
-        execute_backup_standalone_config:
+    - name: Backup Switch's Standalone Configuration.
+      fortinet.fortiswitch.execute_backup_standalone_config:
           backup_standalone_config:
-            config: "<your_own_value>"
+              config: "<your_own_value>"
 
 
 Return Values

@@ -34,26 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_automation_destination</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -79,7 +66,7 @@ Parameters
             </ul>
         <li> <span class="li-head">ha_group_id</span> - Cluster group ID set for this destination . <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">type</span> - Destination type. <span class="li-normal">type: str</span> <span class="li-normal">choices: fortigate, ha_cluster</span> </li>
+        <li> <span class="li-head">type</span> - Destination type. <span class="li-normal">type: str</span> <span class="li-normal">choices: fortigate, ha-cluster</span> </li>
         </ul>
     </ul>
 
@@ -89,26 +76,16 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Automation destinations.
-        fortiswitch_system_automation_destination:
+    - name: Automation destinations.
+      fortinet.fortiswitch.fortiswitch_system_automation_destination:
           state: "present"
           system_automation_destination:
-            destination:
-             -
-                name: "default_name_4"
-            ha_group_id: "5"
-            name: "default_name_6"
-            type: "fortigate"
-    
+              destination:
+                  -
+                      name: "default_name_4"
+              ha_group_id: "5"
+              name: "default_name_6"
+              type: "fortigate"
 
 
 Return Values

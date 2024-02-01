@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_fortianalyzer</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -87,7 +60,7 @@ Parameters
     <li> <span class="li-head">system_fortianalyzer</span> - Setting for FortiAnalyzer. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">__change_ip</span> - Hidden attribute. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">address_mode</span> - FortiAnalyzer IP addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, auto_discovery</span> </li>
+        <li> <span class="li-head">address_mode</span> - FortiAnalyzer IP addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, auto-discovery</span> </li>
         <li> <span class="li-head">conn_timeout</span> - FortiAnalyzer connection time-out in seconds (for status and log buffer). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">encrypt</span> - Whether to send FortiAnalyzer log data in IPsec tunnel. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">fdp_device</span> - Serial number of FortiAnalyzer to connect to. <span class="li-normal">type: str</span> </li>
@@ -106,30 +79,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Setting for FortiAnalyzer.
-        fortiswitch_system_fortianalyzer:
+    - name: Setting for FortiAnalyzer.
+      fortinet.fortiswitch.fortiswitch_system_fortianalyzer:
           system_fortianalyzer:
-            __change_ip: "3"
-            address_mode: "static"
-            conn_timeout: "5"
-            encrypt: "disable"
-            fdp_device: "<your_own_value>"
-            fdp_interface: "<your_own_value>"
-            localid: "<your_own_value>"
-            mgmt_name: "<your_own_value>"
-            psksecret: "<your_own_value>"
-            server: "192.168.100.40"
-            status: "enable"
-    
+              __change_ip: "3"
+              address_mode: "static"
+              conn_timeout: "5"
+              encrypt: "disable"
+              fdp_device: "<your_own_value>"
+              fdp_interface: "<your_own_value>"
+              localid: "<your_own_value>"
+              mgmt_name: "<your_own_value>"
+              psksecret: "<your_own_value>"
+              server: "192.168.100.40"
+              status: "enable"
 
 
 Return Values

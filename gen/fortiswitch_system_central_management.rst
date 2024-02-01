@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_central_management</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -108,32 +81,22 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Central management configuration.
-        fortiswitch_system_central_management:
+    - name: Central management configuration.
+      fortinet.fortiswitch.fortiswitch_system_central_management:
           system_central_management:
-            allow_monitor: "enable"
-            allow_push_configuration: "enable"
-            allow_pushd_firmware: "enable"
-            allow_remote_firmware_upgrade: "enable"
-            enc_algorithm: "default"
-            fmg: "<your_own_value>"
-            fmg_source_ip: "<your_own_value>"
-            mode: "normal"
-            schedule_config_restore: "enable"
-            schedule_script_restore: "enable"
-            serial_number: "<your_own_value>"
-            status: "enable"
-            type: "fortimanager"
-    
+              allow_monitor: "enable"
+              allow_push_configuration: "enable"
+              allow_pushd_firmware: "enable"
+              allow_remote_firmware_upgrade: "enable"
+              enc_algorithm: "default"
+              fmg: "<your_own_value>"
+              fmg_source_ip: "<your_own_value>"
+              mode: "normal"
+              schedule_config_restore: "enable"
+              schedule_script_restore: "enable"
+              serial_number: "<your_own_value>"
+              status: "enable"
+              type: "fortimanager"
 
 
 Return Values

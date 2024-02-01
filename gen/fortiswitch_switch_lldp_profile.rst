@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_lldp_profile</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -120,10 +93,10 @@ Parameters
             <li> <span class="li-head">status</span> - Enable/disable this TLV. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">vlan</span> - VLAN to advertise (if configured on port). <span class="li-normal">type: int</span> </li>
             </ul>
-        <li> <span class="li-head">med_tlvs</span> - Transmitted LLDP-MED TLVs. <span class="li-normal">type: str</span> <span class="li-normal">choices: inventory_management, network_policy, location_identification, power_management</span> </li>
+        <li> <span class="li-head">med_tlvs</span> - Transmitted LLDP-MED TLVs. <span class="li-normal">type: str</span> <span class="li-normal">choices: inventory-management, network-policy, location-identification, power-management</span> </li>
         <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">tlvs_802dot1</span> - Transmitted IEEE 802.1 TLVs. <span class="li-normal">type: str</span> <span class="li-normal">choices: port_vlan_id, vlan_name</span> </li>
-        <li> <span class="li-head">tlvs_802dot3</span> - Transmitted IEEE 802.3 TLVs. <span class="li-normal">type: str</span> <span class="li-normal">choices: max_frame_size, power_negotiation, eee_config</span> </li>
+        <li> <span class="li-head">tlvs_802dot1</span> - Transmitted IEEE 802.1 TLVs. <span class="li-normal">type: str</span> <span class="li-normal">choices: port-vlan-id, vlan-name</span> </li>
+        <li> <span class="li-head">tlvs_802dot3</span> - Transmitted IEEE 802.3 TLVs. <span class="li-normal">type: str</span> <span class="li-normal">choices: max-frame-size, power-negotiation, eee-config</span> </li>
         <li> <span class="li-head">vlan_name_map</span> - VLANs that advertise Vlan Names <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
@@ -134,55 +107,45 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: LLDP configuration profiles.
-        fortiswitch_switch_lldp_profile:
+    - name: LLDP configuration profiles.
+      fortinet.fortiswitch.fortiswitch_switch_lldp_profile:
           state: "present"
           switch_lldp_profile:
-            802.1_tlvs: "port-vlan-id"
-            802.3_tlvs: "max-frame-size"
-            auto_isl: "enable"
-            auto_isl_auth: "legacy"
-            auto_isl_auth_encrypt: "none"
-            auto_isl_auth_identity: "<your_own_value>"
-            auto_isl_auth_macsec_profile: "<your_own_value> (source switch.macsec.profile.name)"
-            auto_isl_auth_reauth: "10"
-            auto_isl_auth_user: "<your_own_value> (source system.certificate.local.name)"
-            auto_isl_hello_timer: "12"
-            auto_isl_port_group: "13"
-            auto_isl_receive_timeout: "14"
-            auto_mclag_icl: "enable"
-            custom_tlvs:
-             -
-                information_string: "<your_own_value>"
-                name: "default_name_18"
-                oui: "<your_own_value>"
-                subtype: "20"
-            med_location_service:
-             -
-                name: "default_name_22"
-                status: "disable"
-                sys_location_id: "<your_own_value> (source system.location.name)"
-            med_network_policy:
-             -
-                assign_vlan: "disable"
-                dscp: "27"
-                name: "default_name_28"
-                priority: "29"
-                status: "disable"
-                vlan: "31"
-            med_tlvs: "inventory-management"
-            name: "default_name_33"
-            vlan_name_map: "<your_own_value>"
-    
+              802.1_tlvs: "port-vlan-id"
+              802.3_tlvs: "max-frame-size"
+              auto_isl: "enable"
+              auto_isl_auth: "legacy"
+              auto_isl_auth_encrypt: "none"
+              auto_isl_auth_identity: "<your_own_value>"
+              auto_isl_auth_macsec_profile: "<your_own_value> (source switch.macsec.profile.name)"
+              auto_isl_auth_reauth: "10"
+              auto_isl_auth_user: "<your_own_value> (source system.certificate.local.name)"
+              auto_isl_hello_timer: "12"
+              auto_isl_port_group: "13"
+              auto_isl_receive_timeout: "14"
+              auto_mclag_icl: "enable"
+              custom_tlvs:
+                  -
+                      information_string: "<your_own_value>"
+                      name: "default_name_18"
+                      oui: "<your_own_value>"
+                      subtype: "20"
+              med_location_service:
+                  -
+                      name: "default_name_22"
+                      status: "disable"
+                      sys_location_id: "<your_own_value> (source system.location.name)"
+              med_network_policy:
+                  -
+                      assign_vlan: "disable"
+                      dscp: "27"
+                      name: "default_name_28"
+                      priority: "29"
+                      status: "disable"
+                      vlan: "31"
+              med_tlvs: "inventory-management"
+              name: "default_name_33"
+              vlan_name_map: "<your_own_value>"
 
 
 Return Values

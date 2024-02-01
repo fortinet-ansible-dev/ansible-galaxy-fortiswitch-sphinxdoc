@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_admin</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -143,67 +116,57 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Administrative user configuration.
-        fortiswitch_system_admin:
+    - name: Administrative user configuration.
+      fortinet.fortiswitch.fortiswitch_system_admin:
           state: "present"
           system_admin:
-            accprofile: "<your_own_value> (source system.accprofile.name)"
-            accprofile_override: "enable"
-            allow_remove_admin_session: "enable"
-            comments: "<your_own_value>"
-            Email address.: "<your_own_value>"
-            First name.: "<your_own_value>"
-            force_password_change: "enable"
-            hidden: "10"
-            ip6_trusthost1: "<your_own_value>"
-            ip6_trusthost10: "<your_own_value>"
-            ip6_trusthost2: "<your_own_value>"
-            ip6_trusthost3: "<your_own_value>"
-            ip6_trusthost4: "<your_own_value>"
-            ip6_trusthost5: "<your_own_value>"
-            ip6_trusthost6: "<your_own_value>"
-            ip6_trusthost7: "<your_own_value>"
-            ip6_trusthost8: "<your_own_value>"
-            ip6_trusthost9: "<your_own_value>"
-            is_admin: "21"
-            Last name.: "<your_own_value>"
-            Mobile number.: "<your_own_value>"
-            name: "default_name_24"
-            Pager number.: "<your_own_value>"
-            password: "<your_own_value>"
-            password_expire: "<your_own_value>"
-            peer_auth: "enable"
-            peer_group: "<your_own_value>"
-            Phone number.: "<your_own_value>"
-            remote_auth: "enable"
-            remote_group: "<your_own_value>"
-            schedule: "<your_own_value>"
-            ssh_public_key1: "<your_own_value>"
-            ssh_public_key2: "<your_own_value>"
-            ssh_public_key3: "<your_own_value>"
-            trusthost1: "<your_own_value>"
-            trusthost10: "<your_own_value>"
-            trusthost2: "<your_own_value>"
-            trusthost3: "<your_own_value>"
-            trusthost4: "<your_own_value>"
-            trusthost5: "<your_own_value>"
-            trusthost6: "<your_own_value>"
-            trusthost7: "<your_own_value>"
-            trusthost8: "<your_own_value>"
-            trusthost9: "<your_own_value>"
-            vdom: "<your_own_value> (source system.vdom.name)"
-            wildcard: "enable"
-            wildcard_fallback: "enable"
-    
+              accprofile: "<your_own_value> (source system.accprofile.name)"
+              accprofile_override: "enable"
+              allow_remove_admin_session: "enable"
+              comments: "<your_own_value>"
+              Email address.: "<your_own_value>"
+              First name.: "<your_own_value>"
+              force_password_change: "enable"
+              hidden: "10"
+              ip6_trusthost1: "<your_own_value>"
+              ip6_trusthost10: "<your_own_value>"
+              ip6_trusthost2: "<your_own_value>"
+              ip6_trusthost3: "<your_own_value>"
+              ip6_trusthost4: "<your_own_value>"
+              ip6_trusthost5: "<your_own_value>"
+              ip6_trusthost6: "<your_own_value>"
+              ip6_trusthost7: "<your_own_value>"
+              ip6_trusthost8: "<your_own_value>"
+              ip6_trusthost9: "<your_own_value>"
+              is_admin: "21"
+              Last name.: "<your_own_value>"
+              Mobile number.: "<your_own_value>"
+              name: "default_name_24"
+              Pager number.: "<your_own_value>"
+              password: "<your_own_value>"
+              password_expire: "<your_own_value>"
+              peer_auth: "enable"
+              peer_group: "<your_own_value>"
+              Phone number.: "<your_own_value>"
+              remote_auth: "enable"
+              remote_group: "<your_own_value>"
+              schedule: "<your_own_value>"
+              ssh_public_key1: "<your_own_value>"
+              ssh_public_key2: "<your_own_value>"
+              ssh_public_key3: "<your_own_value>"
+              trusthost1: "<your_own_value>"
+              trusthost10: "<your_own_value>"
+              trusthost2: "<your_own_value>"
+              trusthost3: "<your_own_value>"
+              trusthost4: "<your_own_value>"
+              trusthost5: "<your_own_value>"
+              trusthost6: "<your_own_value>"
+              trusthost7: "<your_own_value>"
+              trusthost8: "<your_own_value>"
+              trusthost9: "<your_own_value>"
+              vdom: "<your_own_value> (source system.vdom.name)"
+              wildcard: "enable"
+              wildcard_fallback: "enable"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_flow_export</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -120,42 +93,32 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: System Flow Export settings.
-        fortiswitch_system_flow_export:
+    - name: System Flow Export settings.
+      fortinet.fortiswitch.fortiswitch_system_flow_export:
           system_flow_export:
-            aggregates:
-             -
-                id:  "4"
-                ip: "<your_own_value>"
-            collectors:
-             -
-                ip: "<your_own_value>"
-                name: "default_name_8"
-                port: "9"
-                transport: "udp"
-            filter: "<your_own_value>"
-            format: "netflow1"
-            identity: "13"
-            level: "mac"
-            max_export_pkt_size: "15"
-            template_export_period: "16"
-            timeout_general: "17"
-            timeout_icmp: "18"
-            timeout_max: "19"
-            timeout_tcp: "20"
-            timeout_tcp_fin: "21"
-            timeout_tcp_rst: "22"
-            timeout_udp: "23"
-    
+              aggregates:
+                  -
+                      id: "4"
+                      ip: "<your_own_value>"
+              collectors:
+                  -
+                      ip: "<your_own_value>"
+                      name: "default_name_8"
+                      port: "9"
+                      transport: "udp"
+              filter: "<your_own_value>"
+              format: "netflow1"
+              identity: "13"
+              level: "mac"
+              max_export_pkt_size: "15"
+              template_export_period: "16"
+              timeout_general: "17"
+              timeout_icmp: "18"
+              timeout_max: "19"
+              timeout_tcp: "20"
+              timeout_tcp_fin: "21"
+              timeout_tcp_rst: "22"
+              timeout_udp: "23"
 
 
 Return Values

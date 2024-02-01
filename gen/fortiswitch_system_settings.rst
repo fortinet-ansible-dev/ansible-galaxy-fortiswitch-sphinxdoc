@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_settings</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -99,7 +72,7 @@ Parameters
         <li> <span class="li-head">ecmp_max_paths</span> - Maximum number of ECMP next-hops. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">gateway</span> - Default gateway ip address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip</span> - IP address and netmask. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">ip_ecmp_mode</span> - IP ecmp mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: source_ip_based, dst_ip_based, port_based</span> </li>
+        <li> <span class="li-head">ip_ecmp_mode</span> - IP ecmp mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: source-ip-based, dst-ip-based, port-based</span> </li>
         <li> <span class="li-head">manageip</span> - IP address and netmask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">multicast_forward</span> - Multicast forwarding. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">multicast_skip_policy</span> - Skip policy check, and allow multicast through. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -126,50 +99,40 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Settings.
-        fortiswitch_system_settings:
+    - name: Settings.
+      fortinet.fortiswitch.fortiswitch_system_settings:
           system_settings:
-            allow_subnet_overlap: "enable"
-            asymroute: "enable"
-            asymroute6: "enable"
-            bfd: "enable"
-            bfd_desired_min_tx: "7"
-            bfd_detect_mult: "8"
-            bfd_dont_enforce_src_port: "enable"
-            bfd_required_min_rx: "10"
-            comments: "<your_own_value>"
-            device: "<your_own_value> (source system.interface.name)"
-            ecmp_max_paths: "13"
-            gateway: "<your_own_value>"
-            ip: "<your_own_value>"
-            ip_ecmp_mode: "source-ip-based"
-            manageip: "<your_own_value>"
-            multicast_forward: "enable"
-            multicast_skip_policy: "enable"
-            multicast_ttl_notchange: "enable"
-            opmode: "nat"
-            per_ip_bandwidth: "disable"
-            sccp_port: "23"
-            sip_helper: "enable"
-            sip_nat_trace: "enable"
-            sip_tcp_port: "26"
-            sip_udp_port: "27"
-            status: "enable"
-            strict_src_check: "enable"
-            utf8_spam_tagging: "enable"
-            vpn_stats_log: "ipsec"
-            vpn_stats_period: "32"
-            wccp_cache_engine: "enable"
-    
+              allow_subnet_overlap: "enable"
+              asymroute: "enable"
+              asymroute6: "enable"
+              bfd: "enable"
+              bfd_desired_min_tx: "7"
+              bfd_detect_mult: "8"
+              bfd_dont_enforce_src_port: "enable"
+              bfd_required_min_rx: "10"
+              comments: "<your_own_value>"
+              device: "<your_own_value> (source system.interface.name)"
+              ecmp_max_paths: "13"
+              gateway: "<your_own_value>"
+              ip: "<your_own_value>"
+              ip_ecmp_mode: "source-ip-based"
+              manageip: "<your_own_value>"
+              multicast_forward: "enable"
+              multicast_skip_policy: "enable"
+              multicast_ttl_notchange: "enable"
+              opmode: "nat"
+              per_ip_bandwidth: "disable"
+              sccp_port: "23"
+              sip_helper: "enable"
+              sip_nat_trace: "enable"
+              sip_tcp_port: "26"
+              sip_udp_port: "27"
+              status: "enable"
+              strict_src_check: "enable"
+              utf8_spam_tagging: "enable"
+              vpn_stats_log: "ipsec"
+              vpn_stats_period: "32"
+              wccp_cache_engine: "enable"
 
 
 Return Values

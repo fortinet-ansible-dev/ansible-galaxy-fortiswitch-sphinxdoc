@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_mirror</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -100,7 +73,7 @@ Parameters
         <li> <span class="li-head">encap_vlan_priority</span> - Priority code point value in the ERSPAN or RSPAN VLAN header. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">encap_vlan_tpid</span> - TPID in the ERSPAN or RSPAN VLAN header. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">erspan_collector_ip</span> - ERSPAN collector IP address. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">mode</span> - Mirroring mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: SPAN, RSPAN, ERSPAN_manual, ERSPAN_auto, RSPAN_manual, RSPAN_auto</span> </li>
+        <li> <span class="li-head">mode</span> - Mirroring mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: SPAN, RSPAN, ERSPAN-manual, ERSPAN-auto, RSPAN-manual, RSPAN-auto</span> </li>
         <li> <span class="li-head">name</span> - Mirror session name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">rspan_ip</span> - RSPAN destination IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">src_egress</span> - Source egress interfaces. <span class="li-normal">type: list</span> </li>
@@ -123,45 +96,35 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Packet mirror.
-        fortiswitch_switch_mirror:
+    - name: Packet mirror.
+      fortinet.fortiswitch.fortiswitch_switch_mirror:
           state: "present"
           switch_mirror:
-            dst: "<your_own_value> (source switch.interface.name)"
-            encap_gre_protocol: "4"
-            encap_ipv4_src: "<your_own_value>"
-            encap_ipv4_tos: "6"
-            encap_ipv4_ttl: "7"
-            encap_mac_dst: "<your_own_value>"
-            encap_mac_src: "<your_own_value>"
-            encap_vlan: "tagged"
-            encap_vlan_cfi: "11"
-            encap_vlan_id: "12"
-            encap_vlan_priority: "13"
-            encap_vlan_tpid: "14"
-            erspan_collector_ip: "<your_own_value>"
-            mode: "SPAN"
-            name: "default_name_17"
-            rspan_ip: "<your_own_value>"
-            src_egress:
-             -
-                name: "default_name_20 (source switch.physical_port.name)"
-            src_ingress:
-             -
-                name: "default_name_22 (source switch.physical_port.name)"
-            status: "active"
-            strip_mirrored_traffic_tags: "enable"
-            switching_packet: "enable"
-    
+              dst: "<your_own_value> (source switch.interface.name)"
+              encap_gre_protocol: "4"
+              encap_ipv4_src: "<your_own_value>"
+              encap_ipv4_tos: "6"
+              encap_ipv4_ttl: "7"
+              encap_mac_dst: "<your_own_value>"
+              encap_mac_src: "<your_own_value>"
+              encap_vlan: "tagged"
+              encap_vlan_cfi: "11"
+              encap_vlan_id: "12"
+              encap_vlan_priority: "13"
+              encap_vlan_tpid: "14"
+              erspan_collector_ip: "<your_own_value>"
+              mode: "SPAN"
+              name: "default_name_17"
+              rspan_ip: "<your_own_value>"
+              src_egress:
+                  -
+                      name: "default_name_20 (source switch.physical-port.name)"
+              src_ingress:
+                  -
+                      name: "default_name_22 (source switch.physical-port.name)"
+              status: "active"
+              strip_mirrored_traffic_tags: "enable"
+              switching_packet: "enable"
 
 
 Return Values

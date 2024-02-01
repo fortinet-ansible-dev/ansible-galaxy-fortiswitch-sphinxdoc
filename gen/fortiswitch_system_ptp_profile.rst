@@ -34,18 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_ptp_profile</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.4.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -67,11 +62,11 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">domain</span> - PTP domain (0-255) <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">mode</span> - Select PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: transparent_e2e</span> </li>
+        <li> <span class="li-head">mode</span> - Select PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: transparent-e2e</span> </li>
         <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">pdelay_req_interval</span> - PDelay Request interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
-        <li> <span class="li-head">ptp_profile</span> - Select PTP profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: C37.238_2017</span> </li>
-        <li> <span class="li-head">transport</span> - Select PTP transport. <span class="li-normal">type: str</span> <span class="li-normal">choices: l2_mcast</span> </li>
+        <li> <span class="li-head">ptp_profile</span> - Select PTP profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: C37.238-2017</span> </li>
+        <li> <span class="li-head">transport</span> - Select PTP transport. <span class="li-normal">type: str</span> <span class="li-normal">choices: l2-mcast</span> </li>
         </ul>
     </ul>
 
@@ -81,27 +76,17 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: PTP policy configuration.
-        fortiswitch_system_ptp_profile:
+    - name: PTP policy configuration.
+      fortinet.fortiswitch.fortiswitch_system_ptp_profile:
           state: "present"
           system_ptp_profile:
-            description: "<your_own_value>"
-            domain: "4"
-            mode: "transparent-e2e"
-            name: "default_name_6"
-            pdelay_req_interval: "0.25sec"
-            ptp_profile: "C37.238-2017"
-            transport: "l2-mcast"
-    
+              description: "<your_own_value>"
+              domain: "4"
+              mode: "transparent-e2e"
+              name: "default_name_6"
+              pdelay_req_interval: "0.25sec"
+              ptp_profile: "C37.238-2017"
+              transport: "l2-mcast"
 
 
 Return Values

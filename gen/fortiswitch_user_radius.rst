@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_user_radius</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -113,7 +86,7 @@ Parameters
         <li> <span class="li-head">secondary_server</span> - Secondary RADIUS domain name or IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">secret</span> - Secret key to access the primary server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">server</span> - Primary server domain name or IP address. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">service_type</span> - Radius Service Type. <span class="li-normal">type: str</span> <span class="li-normal">choices: login, framed, callback_login, callback_framed, outbound, administrative, nas_prompt, authenticate_only, callback_nas_prompt, call_check, callback_administrative</span> </li>
+        <li> <span class="li-head">service_type</span> - Radius Service Type. <span class="li-normal">type: str</span> <span class="li-normal">choices: login, framed, callback-login, callback-framed, outbound, administrative, nas-prompt, authenticate-only, callback-nas-prompt, call-check, callback-administrative</span> </li>
         <li> <span class="li-head">source_ip</span> - Source IPv4 for communications to RADIUS server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip6</span> - Source IPv6 for communications to RADIUS server. <span class="li-normal">type: str</span> </li>
         </ul>
@@ -125,48 +98,38 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: RADIUS server entry configuration.
-        fortiswitch_user_radius:
+    - name: RADIUS server entry configuration.
+      fortinet.fortiswitch.fortiswitch_user_radius:
           state: "present"
           user_radius:
-            acct_fast_framedip_detect: "3"
-            acct_interim_interval: "4"
-            acct_server:
-             -
-                id:  "6"
-                port: "7"
-                secret: "<your_own_value>"
-                server: "192.168.100.40"
-                status: "enable"
-            addr_mode: "ipv4"
-            all_usergroup: "disable"
-            auth_type: "auto"
-            frame_mtu_size: "14"
-            link_monitor: "disable"
-            link_monitor_interval: "16"
-            name: "default_name_17"
-            nas_ip: "<your_own_value>"
-            nas_ip6: "<your_own_value>"
-            radius_coa: "disable"
-            radius_coa_secret: "<your_own_value>"
-            radius_port: "22"
-            secondary_secret: "<your_own_value>"
-            secondary_server: "<your_own_value>"
-            secret: "<your_own_value>"
-            server: "192.168.100.40"
-            service_type: "login"
-            source_ip: "84.230.14.43"
-            source_ip6: "<your_own_value>"
-    
+              acct_fast_framedip_detect: "3"
+              acct_interim_interval: "4"
+              acct_server:
+                  -
+                      id: "6"
+                      port: "7"
+                      secret: "<your_own_value>"
+                      server: "192.168.100.40"
+                      status: "enable"
+              addr_mode: "ipv4"
+              all_usergroup: "disable"
+              auth_type: "auto"
+              frame_mtu_size: "14"
+              link_monitor: "disable"
+              link_monitor_interval: "16"
+              name: "default_name_17"
+              nas_ip: "<your_own_value>"
+              nas_ip6: "<your_own_value>"
+              radius_coa: "disable"
+              radius_coa_secret: "<your_own_value>"
+              radius_port: "22"
+              secondary_secret: "<your_own_value>"
+              secondary_server: "<your_own_value>"
+              secret: "<your_own_value>"
+              server: "192.168.100.40"
+              service_type: "login"
+              source_ip: "<your_own_value>"
+              source_ip6: "<your_own_value>"
 
 
 Return Values

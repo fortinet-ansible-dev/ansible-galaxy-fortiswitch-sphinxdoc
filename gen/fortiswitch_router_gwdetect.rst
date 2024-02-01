@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_gwdetect</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -91,7 +64,7 @@ Parameters
         <li> <span class="li-head">ha_priority</span> - HA election priority (1-50). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">interface</span> - Interface name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">interval</span> - Detection interval. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
+        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
         <li> <span class="li-head">server</span> - Server address(es). <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">address</span> - Server address. <span class="li-normal">type: str</span> </li>
@@ -107,30 +80,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Gwdetect.
-        fortiswitch_router_gwdetect:
+    - name: Gwdetect.
+      fortinet.fortiswitch.fortiswitch_router_gwdetect:
           state: "present"
           router_gwdetect:
-            failtime: "3"
-            ha_priority: "4"
-            interface: "<your_own_value> (source system.interface.name)"
-            interval: "6"
-            protocol: "ping"
-            server:
-             -
-                address: "<your_own_value>"
-            source_ip: "84.230.14.43"
-            status: "11"
-    
+              failtime: "3"
+              ha_priority: "4"
+              interface: "<your_own_value> (source system.interface.name)"
+              interval: "6"
+              protocol: "ping"
+              server:
+                  -
+                      address: "<your_own_value>"
+              source_ip: "<your_own_value>"
+              status: "11"
 
 
 Return Values

@@ -34,26 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_web</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -77,7 +64,7 @@ Parameters
         <li> <span class="li-head">https_pki_required</span> - Enable/disable HTTPS login page when PKI is enabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">https_port</span> - Administrative access HTTPS port (1 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">https_server_cert</span> - Administrative HTTPS server certificate. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1_0, tlsv1_1, tlsv1_2, tlsv1_3</span> </li>
+        <li> <span class="li-head">https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1-0, tlsv1-1, tlsv1-2, tlsv1-3</span> </li>
         </ul>
     </ul>
 
@@ -87,25 +74,15 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure web attributes.
-        fortiswitch_system_web:
+    - name: Configure web attributes.
+      fortinet.fortiswitch.fortiswitch_system_web:
           system_web:
-            gui_language: "browser"
-            http_port: "4"
-            https_pki_required: "enable"
-            https_port: "6"
-            https_server_cert: "<your_own_value>"
-            https_ssl_versions: "tlsv1-0"
-    
+              gui_language: "browser"
+              http_port: "4"
+              https_pki_required: "enable"
+              https_port: "6"
+              https_server_cert: "<your_own_value>"
+              https_ssl_versions: "tlsv1-0"
 
 
 Return Values

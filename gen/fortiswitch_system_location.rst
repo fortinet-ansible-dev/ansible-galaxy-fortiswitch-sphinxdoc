@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_location</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -145,63 +118,53 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure Location table.
-        fortiswitch_system_location:
+    - name: Configure Location table.
+      fortinet.fortiswitch.fortiswitch_system_location:
           state: "present"
           system_location:
-            address_civic:
-                additional: "<your_own_value>"
-                additional_code: "<your_own_value>"
-                block: "<your_own_value>"
-                branch_road: "<your_own_value>"
-                building: "<your_own_value>"
-                city: "<your_own_value>"
-                city_division: "<your_own_value>"
-                country: "<your_own_value>"
-                country_subdivision: "<your_own_value>"
-                county: "<your_own_value>"
-                direction: "<your_own_value>"
-                floor: "<your_own_value>"
-                landmark: "<your_own_value>"
-                language: "<your_own_value>"
-                name: "default_name_18"
-                number: "<your_own_value>"
-                number_suffix: "<your_own_value>"
-                place_type: "<your_own_value>"
-                post_office_box: "<your_own_value>"
-                postal_community: "<your_own_value>"
-                primary_road: "<your_own_value>"
-                road_section: "<your_own_value>"
-                room: "<your_own_value>"
-                script: "<your_own_value>"
-                seat: "<your_own_value>"
-                street: "<your_own_value>"
-                street_name_post_mod: "<your_own_value>"
-                street_name_pre_mod: "<your_own_value>"
-                street_suffix: "<your_own_value>"
-                sub_branch_road: "<your_own_value>"
-                trailing_str_suffix: "<your_own_value>"
-                unit: "<your_own_value>"
-                zip: "<your_own_value>"
-            coordinates:
-                altitude: "<your_own_value>"
-                altitude_unit: "m"
-                datum: "WGS84"
-                latitude: "<your_own_value>"
-                longitude: "<your_own_value>"
-            elin_number:
-                elin_number: "<your_own_value>"
-            name: "default_name_45"
-    
+              address_civic:
+                  additional: "<your_own_value>"
+                  additional_code: "<your_own_value>"
+                  block: "<your_own_value>"
+                  branch_road: "<your_own_value>"
+                  building: "<your_own_value>"
+                  city: "<your_own_value>"
+                  city_division: "<your_own_value>"
+                  country: "<your_own_value>"
+                  country_subdivision: "<your_own_value>"
+                  county: "<your_own_value>"
+                  direction: "<your_own_value>"
+                  floor: "<your_own_value>"
+                  landmark: "<your_own_value>"
+                  language: "<your_own_value>"
+                  name: "default_name_18"
+                  number: "<your_own_value>"
+                  number_suffix: "<your_own_value>"
+                  place_type: "<your_own_value>"
+                  post_office_box: "<your_own_value>"
+                  postal_community: "<your_own_value>"
+                  primary_road: "<your_own_value>"
+                  road_section: "<your_own_value>"
+                  room: "<your_own_value>"
+                  script: "<your_own_value>"
+                  seat: "<your_own_value>"
+                  street: "<your_own_value>"
+                  street_name_post_mod: "<your_own_value>"
+                  street_name_pre_mod: "<your_own_value>"
+                  street_suffix: "<your_own_value>"
+                  sub_branch_road: "<your_own_value>"
+                  trailing_str_suffix: "<your_own_value>"
+                  unit: "<your_own_value>"
+                  zip: "<your_own_value>"
+              coordinates:
+                  altitude: "<your_own_value>"
+                  altitude_unit: "m"
+                  datum: "WGS84"
+                  latitude: "<your_own_value>"
+                  longitude: "<your_own_value>"
+              elin_number:
+                  elin_number: "<your_own_value>"
+              name: "default_name_45"
 
 
 Return Values

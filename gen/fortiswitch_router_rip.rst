@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_rip</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -233,140 +206,130 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: RIP configuration.
-        fortiswitch_router_rip:
+    - name: RIP configuration.
+      fortinet.fortiswitch.fortiswitch_router_rip:
           router_rip:
-            bfd: "enable"
-            default_information_originate: "enable"
-            default_metric: "5"
-            distance:
-             -
-                access_list: "<your_own_value> (source router.access_list.name)"
-                distance: "8"
-                id:  "9"
-                prefix: "<your_own_value>"
-            distribute_list:
-             -
-                direction: "in"
-                id:  "13"
-                interface: "<your_own_value> (source system.interface.name)"
-                listname: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
-                status: "enable"
-            garbage_timer: "17"
-            interface:
-             -
-                auth_keychain: "<your_own_value> (source router.key_chain.name)"
-                auth_mode: "none"
-                auth_string: "<your_own_value>"
-                flags: "22"
-                name: "default_name_23 (source system.interface.name)"
-                receive_version: "global"
-                send_version: "global"
-                send_version2_broadcast: "disable"
-                split_horizon: "poisoned"
-                split_horizon_status: "enable"
-            name: "default_name_29"
-            neighbor:
-             -
-                id:  "31"
-                ip: "<your_own_value>"
-            network:
-             -
-                id:  "34"
-                prefix: "<your_own_value>"
-            offset_list:
-             -
-                access_list: "<your_own_value> (source router.access_list.name)"
-                direction: "in"
-                id:  "39"
-                interface: "<your_own_value> (source system.interface.name)"
-                offset: "41"
-                status: "enable"
-            passive_interface:
-             -
-                name: "default_name_44 (source system.interface.name)"
-            recv_buffer_size: "45"
-            redistribute:
-             -
-                flags: "47"
-                metric: "48"
-                name: "default_name_49"
-                routemap: "<your_own_value> (source router.route_map.name)"
-                status: "enable"
-            timeout_timer: "52"
-            update_timer: "53"
-            version: "1"
-            vrf:
-             -
-                default_information_originate: "enable"
-                default_metric: "57"
-                distance:
-                 -
-                    access_list: "<your_own_value> (source router.access_list.name)"
-                    distance: "60"
-                    id:  "61"
-                    prefix: "<your_own_value>"
-                distribute_list:
-                 -
-                    direction: "in"
-                    id:  "65"
-                    interface: "<your_own_value> (source system.interface.name)"
-                    listname: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
-                    status: "enable"
-                garbage_timer: "69"
-                interface:
-                 -
-                    auth_keychain: "<your_own_value> (source router.key_chain.name)"
-                    auth_mode: "none"
-                    auth_string: "<your_own_value>"
-                    flags: "74"
-                    name: "default_name_75 (source system.interface.name)"
-                    receive_version: "global"
-                    send_version: "global"
-                    send_version2_broadcast: "disable"
-                    split_horizon: "poisoned"
-                    split_horizon_status: "enable"
-                name: "default_name_81 (source router.vrf.name)"
-                neighbor:
-                 -
-                    id:  "83"
-                    ip: "<your_own_value>"
-                network:
-                 -
-                    id:  "86"
-                    prefix: "<your_own_value>"
-                offset_list:
-                 -
-                    access_list: "<your_own_value> (source router.access_list.name)"
-                    direction: "in"
-                    id:  "91"
-                    interface: "<your_own_value> (source system.interface.name)"
-                    offset: "93"
-                    status: "enable"
-                passive_interface:
-                 -
-                    name: "default_name_96 (source system.interface.name)"
-                recv_buffer_size: "97"
-                redistribute:
-                 -
-                    flags: "99"
-                    metric: "100"
-                    name: "default_name_101"
-                    routemap: "<your_own_value> (source router.route_map.name)"
-                    status: "enable"
-                timeout_timer: "104"
-                update_timer: "105"
-                version: "1"
-    
+              bfd: "enable"
+              default_information_originate: "enable"
+              default_metric: "5"
+              distance:
+                  -
+                      access_list: "<your_own_value> (source router.access-list.name)"
+                      distance: "8"
+                      id: "9"
+                      prefix: "<your_own_value>"
+              distribute_list:
+                  -
+                      direction: "in"
+                      id: "13"
+                      interface: "<your_own_value> (source system.interface.name)"
+                      listname: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                      status: "enable"
+              garbage_timer: "17"
+              interface:
+                  -
+                      auth_keychain: "<your_own_value> (source router.key-chain.name)"
+                      auth_mode: "none"
+                      auth_string: "<your_own_value>"
+                      flags: "22"
+                      name: "default_name_23 (source system.interface.name)"
+                      receive_version: "global"
+                      send_version: "global"
+                      send_version2_broadcast: "disable"
+                      split_horizon: "poisoned"
+                      split_horizon_status: "enable"
+              name: "default_name_29"
+              neighbor:
+                  -
+                      id: "31"
+                      ip: "<your_own_value>"
+              network:
+                  -
+                      id: "34"
+                      prefix: "<your_own_value>"
+              offset_list:
+                  -
+                      access_list: "<your_own_value> (source router.access-list.name)"
+                      direction: "in"
+                      id: "39"
+                      interface: "<your_own_value> (source system.interface.name)"
+                      offset: "41"
+                      status: "enable"
+              passive_interface:
+                  -
+                      name: "default_name_44 (source system.interface.name)"
+              recv_buffer_size: "45"
+              redistribute:
+                  -
+                      flags: "47"
+                      metric: "48"
+                      name: "default_name_49"
+                      routemap: "<your_own_value> (source router.route-map.name)"
+                      status: "enable"
+              timeout_timer: "52"
+              update_timer: "53"
+              version: "1"
+              vrf:
+                  -
+                      default_information_originate: "enable"
+                      default_metric: "57"
+                      distance:
+                          -
+                              access_list: "<your_own_value> (source router.access-list.name)"
+                              distance: "60"
+                              id: "61"
+                              prefix: "<your_own_value>"
+                      distribute_list:
+                          -
+                              direction: "in"
+                              id: "65"
+                              interface: "<your_own_value> (source system.interface.name)"
+                              listname: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                              status: "enable"
+                      garbage_timer: "69"
+                      interface:
+                          -
+                              auth_keychain: "<your_own_value> (source router.key-chain.name)"
+                              auth_mode: "none"
+                              auth_string: "<your_own_value>"
+                              flags: "74"
+                              name: "default_name_75 (source system.interface.name)"
+                              receive_version: "global"
+                              send_version: "global"
+                              send_version2_broadcast: "disable"
+                              split_horizon: "poisoned"
+                              split_horizon_status: "enable"
+                      name: "default_name_81 (source router.vrf.name)"
+                      neighbor:
+                          -
+                              id: "83"
+                              ip: "<your_own_value>"
+                      network:
+                          -
+                              id: "86"
+                              prefix: "<your_own_value>"
+                      offset_list:
+                          -
+                              access_list: "<your_own_value> (source router.access-list.name)"
+                              direction: "in"
+                              id: "91"
+                              interface: "<your_own_value> (source system.interface.name)"
+                              offset: "93"
+                              status: "enable"
+                      passive_interface:
+                          -
+                              name: "default_name_96 (source system.interface.name)"
+                      recv_buffer_size: "97"
+                      redistribute:
+                          -
+                              flags: "99"
+                              metric: "100"
+                              name: "default_name_101"
+                              routemap: "<your_own_value> (source router.route-map.name)"
+                              status: "enable"
+                      timeout_timer: "104"
+                      update_timer: "105"
+                      version: "1"
 
 
 Return Values

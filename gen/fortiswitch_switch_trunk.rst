@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_trunk</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -113,11 +86,11 @@ Parameters
             <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
         <li> <span class="li-head">min_bundle</span> - Minimum size of bundle. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">mode</span> - Link Aggreation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, lacp_passive, lacp_active, fortinet_trunk</span> </li>
+        <li> <span class="li-head">mode</span> - Link Aggreation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, lacp-passive, lacp-active, fortinet-trunk</span> </li>
         <li> <span class="li-head">name</span> - Trunk name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">port_extension</span> - Port extension enable. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">port_extension_trigger</span> - Number of failed port to trigger the whole trunk down. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">port_selection_criteria</span> - Algorithm for aggregate port selection. <span class="li-normal">type: str</span> <span class="li-normal">choices: src_mac, dst_mac, src_dst_mac, src_ip, dst_ip, src_dst_ip</span> </li>
+        <li> <span class="li-head">port_selection_criteria</span> - Algorithm for aggregate port selection. <span class="li-normal">type: str</span> <span class="li-normal">choices: src-mac, dst-mac, src-dst-mac, src-ip, dst-ip, src-dst-ip</span> </li>
         <li> <span class="li-head">restricted</span> - Restricted ISL ICL trunk. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">static_isl</span> - Static ISL. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">static_isl_auto_vlan</span> - User ISL auto VLAN. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -131,54 +104,44 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Link-aggregation.
-        fortiswitch_switch_trunk:
+    - name: Link-aggregation.
+      fortinet.fortiswitch.fortiswitch_switch_trunk:
           state: "present"
           switch_trunk:
-            aggregator_mode: "bandwidth"
-            auto_isl: "4"
-            bundle: "enable"
-            description: "<your_own_value>"
-            fallback_port: "<your_own_value>"
-            fortilink: "8"
-            hb_dst_ip: "<your_own_value>"
-            hb_dst_udp_port: "10"
-            hb_in_vlan: "11"
-            hb_out_vlan: "12"
-            hb_src_ip: "<your_own_value>"
-            hb_src_udp_port: "14"
-            hb_verify: "enable"
-            isl_fortilink: "16"
-            lacp_speed: "slow"
-            max_bundle: "18"
-            max_miss_heartbeats: "19"
-            mclag: "enable"
-            mclag_icl: "enable"
-            mclag_mac_address: "<your_own_value>"
-            member_withdrawal_behavior: "forward"
-            members:
-             -
-                member_name: "<your_own_value> (source switch.physical_port.name)"
-            min_bundle: "26"
-            mode: "static"
-            name: "default_name_28"
-            port_extension: "enable"
-            port_extension_trigger: "30"
-            port_selection_criteria: "src-mac"
-            restricted: "32"
-            static_isl: "enable"
-            static_isl_auto_vlan: "enable"
-            trunk_id: "35"
-    
+              aggregator_mode: "bandwidth"
+              auto_isl: "4"
+              bundle: "enable"
+              description: "<your_own_value>"
+              fallback_port: "<your_own_value>"
+              fortilink: "8"
+              hb_dst_ip: "<your_own_value>"
+              hb_dst_udp_port: "10"
+              hb_in_vlan: "11"
+              hb_out_vlan: "12"
+              hb_src_ip: "<your_own_value>"
+              hb_src_udp_port: "14"
+              hb_verify: "enable"
+              isl_fortilink: "16"
+              lacp_speed: "slow"
+              max_bundle: "18"
+              max_miss_heartbeats: "19"
+              mclag: "enable"
+              mclag_icl: "enable"
+              mclag_mac_address: "<your_own_value>"
+              member_withdrawal_behavior: "forward"
+              members:
+                  -
+                      member_name: "<your_own_value> (source switch.physical-port.name)"
+              min_bundle: "26"
+              mode: "static"
+              name: "default_name_28"
+              port_extension: "enable"
+              port_extension_trigger: "30"
+              port_selection_criteria: "src-mac"
+              restricted: "32"
+              static_isl: "enable"
+              static_isl_auto_vlan: "enable"
+              trunk_id: "35"
 
 
 Return Values

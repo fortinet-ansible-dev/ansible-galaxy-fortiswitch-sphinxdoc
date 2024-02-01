@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_ip_mac_binding</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -89,7 +62,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">ip</span> - Source ip and mask for this rule. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">mac</span> - MAC address value. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">seq_num</span> - Entry No. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">status</span> - Is the binding now enabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>
@@ -100,24 +73,14 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Ip-mac-binding table.
-        fortiswitch_switch_ip_mac_binding:
+    - name: Ip-mac-binding table.
+      fortinet.fortiswitch.fortiswitch_switch_ip_mac_binding:
           state: "present"
           switch_ip_mac_binding:
-            ip: "<your_own_value>"
-            mac: "<your_own_value>"
-            seq_num: "5"
-            status: "enable"
-    
+              ip: "<your_own_value>"
+              mac: "<your_own_value>"
+              seq_num: "5"
+              status: "enable"
 
 
 Return Values

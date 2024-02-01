@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_qos_qos_policy</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -90,7 +63,7 @@ Parameters
         <li> <span class="li-head">cos_queue</span> - COS queue configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">description</span> - Description of the COS queue. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">drop_policy</span> - COS queue drop policy. <span class="li-normal">type: str</span> <span class="li-normal">choices: taildrop, weighted_random_early_detection</span> </li>
+            <li> <span class="li-head">drop_policy</span> - COS queue drop policy. <span class="li-normal">type: str</span> <span class="li-normal">choices: taildrop, weighted-random-early-detection</span> </li>
             <li> <span class="li-head">ecn</span> - Update frame IP ECN field in lieu of packet drop. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">max_rate</span> - Maximum rate (kbps). 0 to disable. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">max_rate_percent</span> - Maximum rate (% of link speed). <span class="li-normal">type: int</span> </li>
@@ -102,7 +75,7 @@ Parameters
             </ul>
         <li> <span class="li-head">name</span> - QOS policy name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">rate_by</span> - COS queue rate by kbps or percent. <span class="li-normal">type: str</span> <span class="li-normal">choices: kbps, percent</span> </li>
-        <li> <span class="li-head">schedule</span> - COS queue scheduling. <span class="li-normal">type: str</span> <span class="li-normal">choices: strict, round_robin, weighted</span> </li>
+        <li> <span class="li-head">schedule</span> - COS queue scheduling. <span class="li-normal">type: str</span> <span class="li-normal">choices: strict, round-robin, weighted</span> </li>
         </ul>
     </ul>
 
@@ -112,35 +85,25 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: QOS egress policy.
-        fortiswitch_switch_qos_qos_policy:
+    - name: QOS egress policy.
+      fortinet.fortiswitch.fortiswitch_switch_qos_qos_policy:
           state: "present"
           switch_qos_qos_policy:
-            cos_queue:
-             -
-                description: "<your_own_value>"
-                drop_policy: "taildrop"
-                ecn: "disable"
-                max_rate: "7"
-                max_rate_percent: "8"
-                min_rate: "9"
-                min_rate_percent: "10"
-                name: "default_name_11"
-                weight: "12"
-                wred_slope: "13"
-            name: "default_name_14"
-            rate_by: "kbps"
-            schedule: "strict"
-    
+              cos_queue:
+                  -
+                      description: "<your_own_value>"
+                      drop_policy: "taildrop"
+                      ecn: "disable"
+                      max_rate: "7"
+                      max_rate_percent: "8"
+                      min_rate: "9"
+                      min_rate_percent: "10"
+                      name: "default_name_11"
+                      weight: "12"
+                      wred_slope: "13"
+              name: "default_name_14"
+              rate_by: "kbps"
+              schedule: "strict"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_user_peer</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -90,7 +63,7 @@ Parameters
         <li> <span class="li-head">ca</span> - peer certificate CA (CA name in local) <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cn</span> - peer certificate common name <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cn_type</span> - peer certificate common name type <span class="li-normal">type: str</span> <span class="li-normal">choices: string, email, FQDN, ipv4, ipv6</span> </li>
-        <li> <span class="li-head">ldap_mode</span> - peer ldap mode <span class="li-normal">type: str</span> <span class="li-normal">choices: password, principal_name</span> </li>
+        <li> <span class="li-head">ldap_mode</span> - peer ldap mode <span class="li-normal">type: str</span> <span class="li-normal">choices: password, principal-name</span> </li>
         <li> <span class="li-head">ldap_password</span> - password for LDAP server bind <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ldap_server</span> - LDAP server for access rights check <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ldap_username</span> - username for LDAP server bind <span class="li-normal">type: str</span> </li>
@@ -108,32 +81,22 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: config peer user
-        fortiswitch_user_peer:
+    - name: config peer user
+      fortinet.fortiswitch.fortiswitch_user_peer:
           state: "present"
           user_peer:
-            ca: "<your_own_value> (source system.certificate.ca.name)"
-            cn: "<your_own_value>"
-            cn_type: "string"
-            ldap_mode: "password"
-            ldap_password: "<your_own_value>"
-            ldap_server: "<your_own_value> (source user.ldap.name)"
-            ldap_username: "<your_own_value>"
-            mandatory_ca_verify: "enable"
-            name: "default_name_11"
-            passwd: "<your_own_value>"
-            subject: "<your_own_value>"
-            two_factor: "enable"
-    
+              ca: "<your_own_value> (source system.certificate.ca.name)"
+              cn: "<your_own_value>"
+              cn_type: "string"
+              ldap_mode: "password"
+              ldap_password: "<your_own_value>"
+              ldap_server: "<your_own_value> (source user.ldap.name)"
+              ldap_username: "<your_own_value>"
+              mandatory_ca_verify: "enable"
+              name: "default_name_11"
+              passwd: "<your_own_value>"
+              subject: "<your_own_value>"
+              two_factor: "enable"
 
 
 Return Values

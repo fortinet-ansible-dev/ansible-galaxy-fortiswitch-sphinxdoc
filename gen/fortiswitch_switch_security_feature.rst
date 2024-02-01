@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_security_feature</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -106,30 +79,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Switch security feature control nobs.
-        fortiswitch_switch_security_feature:
+    - name: Switch security feature control nobs.
+      fortinet.fortiswitch.fortiswitch_switch_security_feature:
           switch_security_feature:
-            allow_mcast_sa: "disable"
-            allow_sa_mac_all_zero: "disable"
-            macsa_eq_macda: "disable"
-            sip_eq_dip: "disable"
-            tcp_flag: "disable"
-            tcp_flag_FUP: "disable"
-            tcp_flag_SF: "disable"
-            tcp_hdr_partial: "disable"
-            tcp_port_eq: "disable"
-            udp_port_eq: "disable"
-            v4_first_frag: "disable"
-    
+              allow_mcast_sa: "disable"
+              allow_sa_mac_all_zero: "disable"
+              macsa_eq_macda: "disable"
+              sip_eq_dip: "disable"
+              tcp_flag: "disable"
+              tcp_flag_FUP: "disable"
+              tcp_flag_SF: "disable"
+              tcp_hdr_partial: "disable"
+              tcp_port_eq: "disable"
+              udp_port_eq: "disable"
+              v4_first_frag: "disable"
 
 
 Return Values

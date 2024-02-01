@@ -40,8 +40,8 @@ device’s hostname:
      connection: httpapi
      gather_facts: 'no'
      vars:
-       ansible_httpapi_use_ssl: 'yes'
-       ansible_httpapi_validate_certs: 'no'
+       ansible_httpapi_use_ssl: true
+       ansible_httpapi_validate_certs: false
        ansible_httpapi_port: 443
      tasks:
      - name: Only https allow access to the device.
@@ -50,7 +50,7 @@ device’s hostname:
          system_interface:
            name: internal
            vdom: root
-           allowaccess: 
+           allowaccess:
              - https
              - http
              - ssh
@@ -73,4 +73,4 @@ Run the playbook
 you can also observe the verbose output by adding option at the tail:
 ``-vvv``.
 
-.. _FortiOS API Spec: https://fndn.fortinet.net/index.php?/fortiapi/44-fortiswitch/
+.. _FortiSwitch API Spec: https://fndn.fortinet.net/index.php?/fortiapi/44-fortiswitch/

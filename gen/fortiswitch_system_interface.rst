@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_interface</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -88,7 +61,7 @@ Parameters
     <li> <span class="li-head">system_interface</span> - Configure interfaces. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">alias</span> - Alias. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius_acct</span> </li>
+        <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
         <li> <span class="li-head">auth_type</span> - PPP authentication type. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, pap, chap, mschapv1, mschapv2</span> </li>
         <li> <span class="li-head">bfd</span> - Bidirectional Forwarding Detection (BFD). <span class="li-normal">type: str</span> <span class="li-normal">choices: global, enable, disable</span> </li>
         <li> <span class="li-head">bfd_desired_min_tx</span> - BFD desired minimal transmit interval. <span class="li-normal">type: int</span> </li>
@@ -97,7 +70,7 @@ Parameters
         <li> <span class="li-head">cli_conn_status</span> - CLI connection status. <span class="li-normal">type: str</span> <span class="li-normal">choices: initial, connecting, connected, failed</span> </li>
         <li> <span class="li-head">defaultgw</span> - Enable/disable default gateway. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
+        <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
         <li> <span class="li-head">detectserver</span> - IP address to PING for gateway detection. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dhcp_client_identifier</span> - DHCP client identifier. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dhcp_client_status</span> - DHCP client connection status. <span class="li-normal">type: str</span> <span class="li-normal">choices: initial, stopped, connected, rebooting, selecting, requesting, binding, renewing, rebinding</span> </li>
@@ -122,7 +95,7 @@ Parameters
             <li> <span class="li-head">autoconf</span> - Enable/disable address automatic config. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">dhcp6_information_request</span> - Enable/disable DHCPv6 information request. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_address</span> - Primary IPv6 address prefix of interface. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: list</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius_acct</span> </li>
+            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
             <li> <span class="li-head">ip6_default_life</span> - IPv6 default life (sec). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">ip6_dns_server_override</span> - Enable/disable using the DNS server acquired by DHCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_extra_addr</span> - Extra IPv6 address prefixes of interface. <span class="li-normal">type: list</span> </li>
@@ -176,8 +149,8 @@ Parameters
         <li> <span class="li-head">secondary_IP</span> - Enable/disable use of secondary IP address. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">secondaryip</span> - Second IP address of interface. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius_acct</span> </li>
-            <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp_echo, udp_echo</span> </li>
+            <li> <span class="li-head">allowaccess</span> - Interface management access. <span class="li-normal">type: list</span> <span class="li-normal">choices: ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
+            <li> <span class="li-head">detectprotocol</span> - Protocol to use for gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
             <li> <span class="li-head">detectserver</span> - IP address to PING for gateway detection. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">gwdetect</span> - Enable/disable gateway detection. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ha_priority</span> - PING server HA election priority (1 - 50). <span class="li-normal">type: int</span> </li>
@@ -195,7 +168,7 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">member_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
             </ul>
-        <li> <span class="li-head">type</span> - Interface type. <span class="li-normal">type: str</span> <span class="li-normal">choices: physical, vlan, tunnel, loopback, switch, hard_switch, vap_switch, hdlc, vxlan</span> </li>
+        <li> <span class="li-head">type</span> - Interface type. <span class="li-normal">type: str</span> <span class="li-normal">choices: physical, vlan, tunnel, loopback, switch, hard-switch, vap-switch, hdlc, vxlan</span> </li>
         <li> <span class="li-head">vdom</span> - Virtual domain name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vlanforward</span> - Enable/disable VLAN forwarding. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">vlanid</span> - VLAN ID. <span class="li-normal">type: int</span> </li>
@@ -225,141 +198,131 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure interfaces.
-        fortiswitch_system_interface:
+    - name: Configure interfaces.
+      fortinet.fortiswitch.fortiswitch_system_interface:
           state: "present"
           system_interface:
-            alias: "<your_own_value>"
-            allowaccess: "ping"
-            auth_type: "auto"
-            bfd: "global"
-            bfd_desired_min_tx: "7"
-            bfd_detect_mult: "8"
-            bfd_required_min_rx: "9"
-            cli_conn_status: "initial"
-            defaultgw: "enable"
-            description: "<your_own_value>"
-            detectprotocol: "ping"
-            detectserver: "<your_own_value>"
-            dhcp_client_identifier:  "myId_15"
-            dhcp_client_status: "initial"
-            dhcp_relay_ip: "<your_own_value>"
-            dhcp_relay_option82: "disable"
-            dhcp_relay_service: "disable"
-            dhcp_vendor_specific_option: "<your_own_value>"
-            dhcp_expire: "21"
-            distance: "22"
-            dns_server_override: "enable"
-            dynamic_dns1: "<your_own_value>"
-            dynamic_dns2: "<your_own_value>"
-            dynamicgw: "<your_own_value>"
-            forward_domain: "27"
-            gwdetect: "enable"
-            ha_priority: "29"
-            icmp_redirect: "enable"
-            interface: "<your_own_value> (source system.interface.name)"
-            ip: "<your_own_value>"
-            ipv6:
-                autoconf: "enable"
-                dhcp6_information_request: "enable"
-                ip6_address: "<your_own_value>"
-                ip6_allowaccess: "any"
-                ip6_default_life: "38"
-                ip6_dns_server_override: "enable"
-                ip6_extra_addr:
-                 -
-                    prefix: "<your_own_value>"
-                ip6_hop_limit: "42"
-                ip6_link_mtu: "43"
-                ip6_manage_flag: "enable"
-                ip6_max_interval: "45"
-                ip6_min_interval: "46"
-                ip6_mode: "static"
-                ip6_other_flag: "enable"
-                ip6_prefix_list:
-                 -
-                    autonomous_flag: "enable"
-                    onlink_flag: "enable"
-                    preferred_life_time: "52"
-                    prefix: "<your_own_value>"
-                    valid_life_time: "54"
-                ip6_reachable_time: "55"
-                ip6_retrans_time: "56"
-                ip6_send_adv: "enable"
-                ip6_unknown_mcast_to_cpu: "enable"
-                vrip6_link_local: "<your_own_value>"
-                vrrp_virtual_mac6: "enable"
-                vrrp6:
-                 -
-                    accept_mode: "enable"
-                    adv_interval: "63"
-                    preempt: "enable"
-                    priority: "65"
-                    start_time: "66"
-                    status: "enable"
-                    vrdst6: "<your_own_value>"
-                    vrgrp: "69"
-                    vrid: "70"
-                    vrip6: "<your_own_value>"
-            l2_interface: "<your_own_value> (source switch.interface.name)"
-            macaddr: "<your_own_value>"
-            mode: "static"
-            mtu: "75"
-            mtu_override: "enable"
-            name: "default_name_77"
-            ping_serv_status: "78"
-            priority: "79"
-            remote_ip: "<your_own_value>"
-            secondary_IP: "enable"
-            secondaryip:
-             -
-                allowaccess: "ping"
-                detectprotocol: "ping"
-                detectserver: "<your_own_value>"
-                gwdetect: "enable"
-                ha_priority: "87"
-                id:  "88"
-                ip: "<your_own_value>"
-                ping_serv_status: "90"
-            snmp_index: "91"
-            speed: "auto"
-            src_check: "disable"
-            src_check_allow_default: "enable"
-            status: "up"
-            switch: "<your_own_value>"
-            switch_members:
-             -
-                member_name: "<your_own_value> (source switch.interface.name)"
-            type: "physical"
-            vdom: "<your_own_value> (source system.vdom.name)"
-            vlanforward: "enable"
-            vlanid: "102"
-            vrf: "<your_own_value> (source router.vrf.name)"
-            vrrp:
-             -
-                adv_interval: "105"
-                backup_vmac_fwd: "enable"
-                preempt: "enable"
-                priority: "108"
-                start_time: "109"
-                status: "enable"
-                version: "2"
-                vrdst: "<your_own_value>"
-                vrgrp: "113"
-                vrid: "114"
-                vrip: "<your_own_value>"
-            vrrp_virtual_mac: "enable"
-            weight: "117"
-    
+              alias: "<your_own_value>"
+              allowaccess: "ping"
+              auth_type: "auto"
+              bfd: "global"
+              bfd_desired_min_tx: "7"
+              bfd_detect_mult: "8"
+              bfd_required_min_rx: "9"
+              cli_conn_status: "initial"
+              defaultgw: "enable"
+              description: "<your_own_value>"
+              detectprotocol: "ping"
+              detectserver: "<your_own_value>"
+              dhcp_client_identifier: "myId_15"
+              dhcp_client_status: "initial"
+              dhcp_expire: "17"
+              dhcp_relay_ip: "<your_own_value>"
+              dhcp_relay_option82: "disable"
+              dhcp_relay_service: "disable"
+              dhcp_vendor_specific_option: "<your_own_value>"
+              distance: "22"
+              dns_server_override: "enable"
+              dynamic_dns1: "<your_own_value>"
+              dynamic_dns2: "<your_own_value>"
+              dynamicgw: "<your_own_value>"
+              forward_domain: "27"
+              gwdetect: "enable"
+              ha_priority: "29"
+              icmp_redirect: "enable"
+              interface: "<your_own_value> (source system.interface.name)"
+              ip: "<your_own_value>"
+              ipv6:
+                  autoconf: "enable"
+                  dhcp6_information_request: "enable"
+                  ip6_address: "<your_own_value>"
+                  ip6_allowaccess: "any"
+                  ip6_default_life: "38"
+                  ip6_dns_server_override: "enable"
+                  ip6_extra_addr:
+                      -
+                          prefix: "<your_own_value>"
+                  ip6_hop_limit: "42"
+                  ip6_link_mtu: "43"
+                  ip6_manage_flag: "enable"
+                  ip6_max_interval: "45"
+                  ip6_min_interval: "46"
+                  ip6_mode: "static"
+                  ip6_other_flag: "enable"
+                  ip6_prefix_list:
+                      -
+                          autonomous_flag: "enable"
+                          onlink_flag: "enable"
+                          preferred_life_time: "52"
+                          prefix: "<your_own_value>"
+                          valid_life_time: "54"
+                  ip6_reachable_time: "55"
+                  ip6_retrans_time: "56"
+                  ip6_send_adv: "enable"
+                  ip6_unknown_mcast_to_cpu: "enable"
+                  vrip6_link_local: "<your_own_value>"
+                  vrrp6:
+                      -
+                          accept_mode: "enable"
+                          adv_interval: "62"
+                          preempt: "enable"
+                          priority: "64"
+                          start_time: "65"
+                          status: "enable"
+                          vrdst6: "<your_own_value>"
+                          vrgrp: "68"
+                          vrid: "69"
+                          vrip6: "<your_own_value>"
+                  vrrp_virtual_mac6: "enable"
+              l2_interface: "<your_own_value> (source switch.interface.name)"
+              macaddr: "<your_own_value>"
+              mode: "static"
+              mtu: "75"
+              mtu_override: "enable"
+              name: "default_name_77"
+              ping_serv_status: "78"
+              priority: "79"
+              remote_ip: "<your_own_value>"
+              secondary_IP: "enable"
+              secondaryip:
+                  -
+                      allowaccess: "ping"
+                      detectprotocol: "ping"
+                      detectserver: "<your_own_value>"
+                      gwdetect: "enable"
+                      ha_priority: "87"
+                      id: "88"
+                      ip: "<your_own_value>"
+                      ping_serv_status: "90"
+              snmp_index: "91"
+              speed: "auto"
+              src_check: "disable"
+              src_check_allow_default: "enable"
+              status: "up"
+              switch: "<your_own_value>"
+              switch_members:
+                  -
+                      member_name: "<your_own_value> (source switch.interface.name)"
+              type: "physical"
+              vdom: "<your_own_value> (source system.vdom.name)"
+              vlanforward: "enable"
+              vlanid: "102"
+              vrf: "<your_own_value> (source router.vrf.name)"
+              vrrp:
+                  -
+                      adv_interval: "105"
+                      backup_vmac_fwd: "enable"
+                      preempt: "enable"
+                      priority: "108"
+                      start_time: "109"
+                      status: "enable"
+                      version: "2"
+                      vrdst: "<your_own_value>"
+                      vrgrp: "113"
+                      vrid: "114"
+                      vrip: "<your_own_value>"
+              vrrp_virtual_mac: "enable"
+              weight: "117"
 
 
 Return Values

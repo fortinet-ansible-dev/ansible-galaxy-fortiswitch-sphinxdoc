@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_alertemail_setting</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -128,52 +101,42 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Alertemail setting configuration.
-        fortiswitch_alertemail_setting:
+    - name: Alertemail setting configuration.
+      fortinet.fortiswitch.fortiswitch_alertemail_setting:
           alertemail_setting:
-            admin_login_logs: "enable"
-            alert_interval: "4"
-            amc_interface_bypass_mode: "enable"
-            antivirus_logs: "enable"
-            configuration_changes_logs: "enable"
-            critical_interval: "8"
-            debug_interval: "9"
-            email_interval: "10"
-            emergency_interval: "11"
-            error_interval: "12"
-            FDS_license_expiring_days: "13"
-            FDS_license_expiring_warning: "enable"
-            FDS_update_logs: "enable"
-            filter_mode: "category"
-            firewall_authentication_failure_logs: "enable"
-            fortiguard_log_quota_warning: "enable"
-            HA_logs: "enable"
-            information_interval: "20"
-            IPS_logs: "enable"
-            IPsec_errors_logs: "enable"
-            local_disk_usage: "23"
-            log_disk_usage_warning: "enable"
-            mailto1: "<your_own_value>"
-            mailto2: "<your_own_value>"
-            mailto3: "<your_own_value>"
-            notification_interval: "28"
-            PPP_errors_logs: "enable"
-            severity: "emergency"
-            sslvpn_authentication_errors_logs: "enable"
-            username: "<your_own_value>"
-            violation_traffic_logs: "enable"
-            warning_interval: "34"
-            webfilter_logs: "enable"
-    
+              admin_login_logs: "enable"
+              alert_interval: "4"
+              amc_interface_bypass_mode: "enable"
+              antivirus_logs: "enable"
+              configuration_changes_logs: "enable"
+              critical_interval: "8"
+              debug_interval: "9"
+              email_interval: "10"
+              emergency_interval: "11"
+              error_interval: "12"
+              FDS_license_expiring_days: "13"
+              FDS_license_expiring_warning: "enable"
+              FDS_update_logs: "enable"
+              filter_mode: "category"
+              firewall_authentication_failure_logs: "enable"
+              fortiguard_log_quota_warning: "enable"
+              HA_logs: "enable"
+              information_interval: "20"
+              IPS_logs: "enable"
+              IPsec_errors_logs: "enable"
+              local_disk_usage: "23"
+              log_disk_usage_warning: "enable"
+              mailto1: "<your_own_value>"
+              mailto2: "<your_own_value>"
+              mailto3: "<your_own_value>"
+              notification_interval: "28"
+              PPP_errors_logs: "enable"
+              severity: "emergency"
+              sslvpn_authentication_errors_logs: "enable"
+              username: "<your_own_value>"
+              violation_traffic_logs: "enable"
+              warning_interval: "34"
+              webfilter_logs: "enable"
 
 
 Return Values

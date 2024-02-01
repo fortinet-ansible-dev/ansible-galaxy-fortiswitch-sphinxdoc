@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_phy_mode</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -88,7 +61,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">port53_phy_mode</span> - Split-mode configuration. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1x40G, 4x10G</span> </li>
         <li> <span class="li-head">port54_phy_mode</span> - Split-mode configuration. <span class="li-normal">type: str</span> <span class="li-normal">choices: 1x40G, 4x10G</span> </li>
-        <li> <span class="li-head">port_configuration</span> - Port configurations for supporting different split-mode options. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, disable_port54, disable_port41_48</span> </li>
+        <li> <span class="li-head">port_configuration</span> - Port configurations for supporting different split-mode options. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, disable-port54, disable-port41-48</span> </li>
         </ul>
     </ul>
 
@@ -98,22 +71,12 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: PHY configuration.
-        fortiswitch_switch_phy_mode:
+    - name: PHY configuration.
+      fortinet.fortiswitch.fortiswitch_switch_phy_mode:
           switch_phy_mode:
-            port_configuration: "default"
-            port53_phy_mode: "1x40G"
-            port54_phy_mode: "1x40G"
-    
+              port53_phy_mode: "1x40G"
+              port54_phy_mode: "1x40G"
+              port_configuration: "default"
 
 
 Return Values

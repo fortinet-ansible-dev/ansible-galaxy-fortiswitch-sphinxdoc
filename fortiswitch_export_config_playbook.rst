@@ -156,15 +156,15 @@ Parameters
         <li><span class="li-normal">router_multicast-flow</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">router_ospf</span> </li>
         <li><span class="li-normal">router_ospf6</span> </li>
-        <li><span class="li-normal">router_policy</span>  <span class="li-required">param: seq_num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">router_policy</span>  <span class="li-required">param: seq-num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">router_prefix-list</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">router_prefix-list6</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">router_rip</span> </li>
         <li><span class="li-normal">router_ripng</span> </li>
         <li><span class="li-normal">router_route-map</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">router_setting</span> </li>
-        <li><span class="li-normal">router_static</span>  <span class="li-required">param: seq_num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
-        <li><span class="li-normal">router_static6</span>  <span class="li-required">param: seq_num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">router_static</span>  <span class="li-required">param: seq-num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">router_static6</span>  <span class="li-required">param: seq-num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">router_vrf</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch-controller_global</span> </li>
         <li><span class="li-normal">switch.acl.service_custom</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
@@ -193,14 +193,14 @@ Parameters
         <li><span class="li-normal">switch_domain</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_global</span> </li>
         <li><span class="li-normal">switch_interface</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
-        <li><span class="li-normal">switch_ip-mac-binding</span>  <span class="li-required">param: seq_num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">switch_ip-mac-binding</span>  <span class="li-required">param: seq-num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_mirror</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_phy-mode</span> </li>
         <li><span class="li-normal">switch_physical-port</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_quarantine</span>  <span class="li-required">param: mac</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_raguard-policy</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_security-feature</span> </li>
-        <li><span class="li-normal">switch_static-mac</span>  <span class="li-required">param: seq_num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">switch_static-mac</span>  <span class="li-required">param: seq-num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_storm-control</span> </li>
         <li><span class="li-normal">switch_trunk</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_virtual-wire</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
@@ -270,7 +270,7 @@ Parameters
         <li><span class="li-normal">system_session-ttl</span> </li>
         <li><span class="li-normal">system_settings</span> </li>
         <li><span class="li-normal">system_sflow</span> </li>
-        <li><span class="li-normal">system_sniffer-profile</span>  <span class="li-required">param: profile_name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">system_sniffer-profile</span>  <span class="li-required">param: profile-name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system_tos-based-priority</span>  <span class="li-required">param: id</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system_vdom</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system_vdom-dns</span> </li>
@@ -342,13 +342,13 @@ Common return values are documented: https://docs.ansible.com/ansible/latest/ref
     <ul>
 
     <li> <span class="li-return">build</span> - Build number of the fortiswitch image <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: 1547</span></li>
-    <li> <span class="li-return">http_method</span> - Last method used to provision the content into FortiGate <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: GET</span></li>
+    <li> <span class="li-return">http_method</span> - Last method used to provision the content into FortiSwitch <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: GET</span></li>
     <li> <span class="li-return">name</span> - Name of the table used to fulfill the request <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: firmware</span></li>
     <li> <span class="li-return">path</span> - Path of the table used to fulfill the request <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: system</span></li>
     <li> <span class="li-return">results</span> - Object list retrieved from device. <span class="li-normal">returned: always</span> <span class="li-normal">type: list</span></li>
     <li> <span class="li-return">serial</span> - Serial number of the unit <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: FGVMEVYYQT3AB5352</span></li>
     <li> <span class="li-return">status</span> - Indication of the operation's result <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: success</span></li>
-    <li> <span class="li-return">version</span> - Version of the FortiGate <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: v5.6.3</span></li>
+    <li> <span class="li-return">version</span> - Version of the FortiSwitch <span class="li-normal">returned: always</span> <span class="li-normal">type: str</span> <span class="li-normal">sample: v5.6.3</span></li>
     <li> <span class="li-return">ansible_facts</span> - The list of fact subsets collected from the device <span class="li-normal">returned: always</span> <span class="li-normal">type: dict</span></li>
     </ul>
 

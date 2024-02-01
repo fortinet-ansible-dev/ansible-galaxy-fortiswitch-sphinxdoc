@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_log_fortianalyzer_override_setting</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -87,7 +60,7 @@ Parameters
     <li> <span class="li-head">log_fortianalyzer_override_setting</span> - Setting for FortiAnalyzer. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">__change_ip</span> - Hidden attribute. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">address_mode</span> - FortiAnalyzer IP addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, auto_discovery</span> </li>
+        <li> <span class="li-head">address_mode</span> - FortiAnalyzer IP addressing mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: static, auto-discovery</span> </li>
         <li> <span class="li-head">buffer_max_send</span> - Maximum log transmission rate for buffered logs. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">conn_timeout</span> - FortiAnalyzer connection time-out in seconds (for status and log buffer). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">enc_algorithm</span> - Whether to send FortiAnalyzer log data with SSL encryption. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, high, low, disable</span> </li>
@@ -113,37 +86,27 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Setting for FortiAnalyzer.
-        fortiswitch_log_fortianalyzer_override_setting:
+    - name: Setting for FortiAnalyzer.
+      fortinet.fortiswitch.fortiswitch_log_fortianalyzer_override_setting:
           log_fortianalyzer_override_setting:
-            __change_ip: "3"
-            address_mode: "static"
-            buffer_max_send: "5"
-            conn_timeout: "6"
-            enc_algorithm: "default"
-            encrypt: "disable"
-            fdp_device: "<your_own_value>"
-            fdp_interface: "<your_own_value> (source system.interface.name)"
-            hmac_algorithm: "sha256"
-            ips_archive: "enable"
-            localid: "<your_own_value>"
-            max_buffer_size: "14"
-            mgmt_name: "<your_own_value>"
-            override: "enable"
-            psksecret: "<your_own_value>"
-            server: "192.168.100.40"
-            source_ip: "84.230.14.43"
-            status: "enable"
-    
+              __change_ip: "3"
+              address_mode: "static"
+              buffer_max_send: "5"
+              conn_timeout: "6"
+              enc_algorithm: "default"
+              encrypt: "disable"
+              fdp_device: "<your_own_value>"
+              fdp_interface: "<your_own_value> (source system.interface.name)"
+              hmac_algorithm: "sha256"
+              ips_archive: "enable"
+              localid: "<your_own_value>"
+              max_buffer_size: "14"
+              mgmt_name: "<your_own_value>"
+              override: "enable"
+              psksecret: "<your_own_value>"
+              server: "192.168.100.40"
+              source_ip: "<your_own_value>"
+              status: "enable"
 
 
 Return Values

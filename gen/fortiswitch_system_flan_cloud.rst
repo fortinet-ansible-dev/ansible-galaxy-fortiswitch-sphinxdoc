@@ -34,34 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_flan_cloud</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.3 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -83,6 +62,7 @@ Parameters
         <li> <span class="li-head">interval</span> - Service name resolution time interval (3-300sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">name</span> - Fully qualified domain name or IP address of FortiLAN-cloud service. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">port</span> - Port Number. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">service_type</span> - Configure the flan manager service type. <span class="li-normal">type: str</span> <span class="li-normal">choices: flan-cloud, fortilink-https</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable FortiLAN-cloud service. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>
@@ -93,23 +73,14 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: FortiLAN cloud manager configuration.
-        fortiswitch_system_flan_cloud:
+    - name: FortiLAN cloud manager configuration.
+      fortinet.fortiswitch.fortiswitch_system_flan_cloud:
           system_flan_cloud:
-            interval: "3"
-            name: "default_name_4"
-            port: "5"
-            status: "enable"
-    
+              interval: "3"
+              name: "default_name_4"
+              port: "5"
+              service_type: "flan-cloud"
+              status: "enable"
 
 
 Return Values

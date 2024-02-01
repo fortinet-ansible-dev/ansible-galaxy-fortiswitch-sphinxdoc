@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_sysinfo</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -106,30 +79,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: SNMP system info configuration.
-        fortiswitch_system_snmp_sysinfo:
+    - name: SNMP system info configuration.
+      fortinet.fortiswitch.fortiswitch_system_snmp_sysinfo:
           system_snmp_sysinfo:
-            contact_info: "<your_own_value>"
-            description: "<your_own_value>"
-            engine_id: "<your_own_value>"
-            location: "<your_own_value>"
-            status: "enable"
-            trap_high_cpu_interval: "1min"
-            trap_high_cpu_threshold: "9"
-            trap_log_full_threshold: "10"
-            trap_low_memory_threshold: "11"
-            trap_temp_alarm_threshold: "12"
-            trap_temp_warning_threshold: "13"
-    
+              contact_info: "<your_own_value>"
+              description: "<your_own_value>"
+              engine_id: "<your_own_value>"
+              location: "<your_own_value>"
+              status: "enable"
+              trap_high_cpu_interval: "1min"
+              trap_high_cpu_threshold: "9"
+              trap_log_full_threshold: "10"
+              trap_low_memory_threshold: "11"
+              trap_temp_alarm_threshold: "12"
+              trap_temp_warning_threshold: "13"
 
 
 Return Values

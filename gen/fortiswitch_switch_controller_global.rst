@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_controller_global</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -101,6 +74,7 @@ Parameters
         <li> <span class="li-head">location</span> - Location. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">max_discoveries</span> - The maximum <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">max_retransmit</span> - The maximum <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">mgmt_mode</span> - FortiLink management mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: capwap, https</span> </li>
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">tunnel_mode</span> - Compatible/strict tunnel mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: compatible, strict</span> </li>
         </ul>
@@ -112,35 +86,26 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Switch-controller global configuration.
-        fortiswitch_switch_controller_global:
+    - name: Switch-controller global configuration.
+      fortinet.fortiswitch.fortiswitch_switch_controller_global:
           switch_controller_global:
-            ac_data_port: "3"
-            ac_dhcp_option_code: "4"
-            ac_discovery_mc_addr: "<your_own_value>"
-            ac_discovery_type: "static"
-            ac_list:
-             -
-                id:  "8"
-                ipv4_address: "<your_own_value>"
-                ipv6_address: "<your_own_value>"
-            ac_port: "11"
-            echo_interval: "12"
-            location: "<your_own_value>"
-            max_discoveries: "14"
-            max_retransmit: "15"
-            name: "default_name_16"
-            tunnel_mode: "compatible"
-    
+              ac_data_port: "3"
+              ac_dhcp_option_code: "4"
+              ac_discovery_mc_addr: "<your_own_value>"
+              ac_discovery_type: "static"
+              ac_list:
+                  -
+                      id: "8"
+                      ipv4_address: "<your_own_value>"
+                      ipv6_address: "<your_own_value>"
+              ac_port: "11"
+              echo_interval: "12"
+              location: "<your_own_value>"
+              max_discoveries: "14"
+              max_retransmit: "15"
+              mgmt_mode: "capwap"
+              name: "default_name_17"
+              tunnel_mode: "compatible"
 
 
 Return Values

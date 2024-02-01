@@ -4,6 +4,24 @@ Release Notes
 
 |
 
+Release Galaxy 1.2.3
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.2.3 is based on 1.2.2
+
+Features
+^^^^^^^^^^^^^^^
+- Support new FortiSwitch versions 7.4.2
+- Update supported fortiswitch versions and parameters with version ranges instead of fixed versions
+
+Bug Fixes
+^^^^^^^^^^^^^^^
+- Fix Github issues #6
+- Fix errors in sanity-test and ansible-lint
+
 Release Galaxy 1.2.2
 --------------------
 

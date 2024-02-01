@@ -34,26 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_vxlan</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -74,7 +61,7 @@ Parameters
     <li> <span class="li-head">system_vxlan</span> - Configure VXLAN devices. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">interface</span> - Interface binding for tunnel initiator (source IP) / termination. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">ip_version</span> - IP version to use for the VXLAN interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: ipv4_unicast, ipv4_multicast</span> </li>
+        <li> <span class="li-head">ip_version</span> - IP version to use for the VXLAN interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: ipv4-unicast, ipv4-multicast</span> </li>
         <li> <span class="li-head">multicast_ttl</span> - VXLAN multicast TTL (1-255). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">name</span> - VXLAN interface name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">remote_ip</span> - IPv4 address of the VXLAN interface. <span class="li-normal">type: list</span> </li>
@@ -93,30 +80,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure VXLAN devices.
-        fortiswitch_system_vxlan:
+    - name: Configure VXLAN devices.
+      fortinet.fortiswitch.fortiswitch_system_vxlan:
           state: "present"
           system_vxlan:
-            interface: "<your_own_value> (source system.interface.name)"
-            ip_version: "ipv4-unicast"
-            multicast_ttl: "5"
-            name: "default_name_6"
-            remote_ip:
-             -
-                ip: "<your_own_value>"
-            tagged_vlans: "<your_own_value>"
-            vlanid: "10"
-            vni: "11"
-    
+              interface: "<your_own_value> (source system.interface.name)"
+              ip_version: "ipv4-unicast"
+              multicast_ttl: "5"
+              name: "default_name_6"
+              remote_ip:
+                  -
+                      ip: "<your_own_value>"
+              tagged_vlans: "<your_own_value>"
+              vlanid: "10"
+              vni: "11"
 
 
 Return Values

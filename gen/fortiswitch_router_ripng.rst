@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_ripng</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -139,58 +112,48 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: router ripng configuration
-        fortiswitch_router_ripng:
+    - name: router ripng configuration
+      fortinet.fortiswitch.fortiswitch_router_ripng:
           router_ripng:
-            aggregate_address:
-             -
-                id:  "4"
-                prefix6: "<your_own_value>"
-            bfd: "enable"
-            default_information_originate: "enable"
-            default_metric: "8"
-            distribute_list:
-             -
-                direction: "in"
-                id:  "11"
-                interface: "<your_own_value> (source system.interface.name)"
-                listname: "<your_own_value> (source router.access_list6.name router.prefix_list6.name)"
-                status: "enable"
-            garbage_timer: "15"
-            interface:
-             -
-                flags: "17"
-                name: "default_name_18 (source system.interface.name)"
-                passive: "enable"
-                split_horizon: "poisoned"
-                split_horizon_status: "enable"
-            offset_list:
-             -
-                access_list6: "<your_own_value> (source router.access_list6.name)"
-                direction: "in"
-                id:  "25"
-                interface: "<your_own_value> (source system.interface.name)"
-                offset: "27"
-                status: "enable"
-            redistribute:
-             -
-                flags: "30"
-                metric: "31"
-                name: "default_name_32"
-                routemap: "<your_own_value> (source router.route_map.name)"
-                status: "enable"
-            timeout_timer: "35"
-            update_timer: "36"
-    
+              aggregate_address:
+                  -
+                      id: "4"
+                      prefix6: "<your_own_value>"
+              bfd: "enable"
+              default_information_originate: "enable"
+              default_metric: "8"
+              distribute_list:
+                  -
+                      direction: "in"
+                      id: "11"
+                      interface: "<your_own_value> (source system.interface.name)"
+                      listname: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
+                      status: "enable"
+              garbage_timer: "15"
+              interface:
+                  -
+                      flags: "17"
+                      name: "default_name_18 (source system.interface.name)"
+                      passive: "enable"
+                      split_horizon: "poisoned"
+                      split_horizon_status: "enable"
+              offset_list:
+                  -
+                      access_list6: "<your_own_value> (source router.access-list6.name)"
+                      direction: "in"
+                      id: "25"
+                      interface: "<your_own_value> (source system.interface.name)"
+                      offset: "27"
+                      status: "enable"
+              redistribute:
+                  -
+                      flags: "30"
+                      metric: "31"
+                      name: "default_name_32"
+                      routemap: "<your_own_value> (source router.route-map.name)"
+                      status: "enable"
+              timeout_timer: "35"
+              update_timer: "36"
 
 
 Return Values

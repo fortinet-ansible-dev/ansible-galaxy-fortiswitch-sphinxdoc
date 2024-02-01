@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_qos_ip_dscp_map</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -93,7 +66,7 @@ Parameters
             <li> <span class="li-head">cos_queue</span> - COS queue number. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">diffserv</span> - Differentiated service. <span class="li-normal">type: str</span> <span class="li-normal">choices: CS0, CS1, AF11, AF12, AF13, CS2, AF21, AF22, AF23, CS3, AF31, AF32, AF33, CS4, AF41, AF42, AF43, CS5, EF, CS6, CS7</span> </li>
             <li> <span class="li-head">entry_name</span> - Mapping entry. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">ip_precedence</span> - IP precedence. <span class="li-normal">type: str</span> <span class="li-normal">choices: Network_Control, Internetwork_Control, Critic/ECP, FlashOverride, Flash, Immediate, Priority, Routine</span> </li>
+            <li> <span class="li-head">ip_precedence</span> - IP precedence. <span class="li-normal">type: str</span> <span class="li-normal">choices: Network-Control, Internetwork-Control, Critic/ECP, FlashOverride, Flash, Immediate, Priority, Routine</span> </li>
             <li> <span class="li-head">type</span> - type <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">value</span> - Raw values of DSCP (0 - 63). <span class="li-normal">type: str</span> </li>
             </ul>
@@ -107,30 +80,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: QOS IP precedence/DSCP configuration.
-        fortiswitch_switch_qos_ip_dscp_map:
+    - name: QOS IP precedence/DSCP configuration.
+      fortinet.fortiswitch.fortiswitch_switch_qos_ip_dscp_map:
           state: "present"
           switch_qos_ip_dscp_map:
-            description: "<your_own_value>"
-            map:
-             -
-                cos_queue: "5"
-                diffserv: "CS0"
-                entry_name: "<your_own_value>"
-                ip_precedence: "Network-Control"
-                type: "9"
-                value: "<your_own_value>"
-            name: "default_name_11"
-    
+              description: "<your_own_value>"
+              map:
+                  -
+                      cos_queue: "5"
+                      diffserv: "CS0"
+                      entry_name: "<your_own_value>"
+                      ip_precedence: "Network-Control"
+                      type: "9"
+                      value: "<your_own_value>"
+              name: "default_name_11"
 
 
 Return Values

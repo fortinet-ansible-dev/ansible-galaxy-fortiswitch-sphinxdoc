@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_macsec_profile</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -87,7 +60,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_macsec_profile</span> - MACsec configuration profiles. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">cipher_suite</span> - MACsec cipher suite. <span class="li-normal">type: str</span> <span class="li-normal">choices: GCM_AES_128</span> </li>
+        <li> <span class="li-head">cipher_suite</span> - MACsec cipher suite. <span class="li-normal">type: str</span> <span class="li-normal">choices: GCM-AES-128</span> </li>
         <li> <span class="li-head">confident_offset</span> - Choose different confident offset bytes. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0, 30, 50</span> </li>
         <li> <span class="li-head">eap_tls_ca_cert</span> - CA certificate for MACSEC CAK EAP-TLS. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">eap_tls_cert</span> - Client certificate for MACSEC CAK EAP-TLS. <span class="li-normal">type: str</span> </li>
@@ -96,7 +69,7 @@ Parameters
         <li> <span class="li-head">encrypt_traffic</span> - Enable/disable Encryption of MACsec traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">include_macsec_sci</span> - Include MACsec TX SCI. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">include_mka_icv_ind</span> - Include MKA ICV indicator. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable</span> </li>
-        <li> <span class="li-head">macsec_mode</span> - Set mode of the MACsec Profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: static_cak, dynamic_cak, fortilink</span> </li>
+        <li> <span class="li-head">macsec_mode</span> - Set mode of the MACsec Profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: static-cak, dynamic-cak, fortilink</span> </li>
         <li> <span class="li-head">macsec_validate</span> - Choose different MACsec validate mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: strict</span> </li>
         <li> <span class="li-head">mka_priority</span> - MACsec MKA priority. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mka_psk</span> - MACsec MKA pre-shared key configuration. <span class="li-normal">type: list</span> </li>
@@ -115,7 +88,7 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">exclude_protocol</span> - Exclude protocols that should not be MACsec-secured. <span class="li-normal">type: str</span> <span class="li-normal">choices: ipv4, ipv6, dot1q, qinq, fortilink, arp, stp, lldp, lacp</span> </li>
             <li> <span class="li-head">name</span> - Traffic policy type name. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">security_policy</span> - Must/Should secure the traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: must_secure</span> </li>
+            <li> <span class="li-head">security_policy</span> - Must/Should secure the traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: must-secure</span> </li>
             <li> <span class="li-head">status</span> - Enable/disable this Traffic policy. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable</span> </li>
             </ul>
         </ul>
@@ -126,50 +99,40 @@ Examples
 --------
 
 .. code-block:: yaml+jinja
-
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: MACsec configuration profiles.
-        fortiswitch_switch_macsec_profile:
+    
+    - name: MACsec configuration profiles.
+      fortinet.fortiswitch.fortiswitch_switch_macsec_profile:
           state: "present"
           switch_macsec_profile:
-            cipher_suite: "GCM-AES-128"
-            confident_offset: "0"
-            eap_tls_ca_cert: "<your_own_value>"
-            eap_tls_cert: "<your_own_value>"
-            eap_tls_identity: "<your_own_value>"
-            eap_tls_radius_server: "<your_own_value>"
-            encrypt_traffic: "enable"
-            include_macsec_sci: "enable"
-            include_mka_icv_ind: "enable"
-            macsec_mode: "static-cak"
-            macsec_validate: "strict"
-            mka_priority: "15"
-            mka_psk:
-             -
-                crypto_alg: "AES_128_CMAC"
-                mka_cak: "<your_own_value>"
-                mka_ckn: "<your_own_value>"
-                name: "default_name_20"
-                status: "active"
-            name: "default_name_22"
-            replay_protect: "enable"
-            replay_window: "24"
-            status: "enable"
-            traffic_policy:
-             -
-                exclude_protocol: "ipv4"
-                name: "default_name_28"
-                security_policy: "must-secure"
-                status: "enable"
-
+              cipher_suite: "GCM-AES-128"
+              confident_offset: "0"
+              eap_tls_ca_cert: "<your_own_value>"
+              eap_tls_cert: "<your_own_value>"
+              eap_tls_identity: "<your_own_value>"
+              eap_tls_radius_server: "<your_own_value>"
+              encrypt_traffic: "enable"
+              include_macsec_sci: "enable"
+              include_mka_icv_ind: "enable"
+              macsec_mode: "static-cak"
+              macsec_validate: "strict"
+              mka_priority: "14"
+              mka_psk:
+                  -
+                      crypto_alg: "AES_128_CMAC"
+                      mka_cak: "<your_own_value>"
+                      mka_ckn: "<your_own_value>"
+                      name: "default_name_19"
+                      status: "active"
+              name: "default_name_21"
+              replay_protect: "enable"
+              replay_window: "23"
+              status: "enable"
+              traffic_policy:
+                  -
+                      exclude_protocol: "ipv4"
+                      name: "default_name_27"
+                      security_policy: "must-secure"
+                      status: "enable"
 
 
 Return Values

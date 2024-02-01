@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_accprofile</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -87,22 +60,22 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_accprofile</span> - Configure system administrative access group. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">admingrp</span> - Administrative access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
+        <li> <span class="li-head">admingrp</span> - Administrative access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
         <li> <span class="li-head">alias_commands</span> - Alias commands (or groups of commands) that can be used by this profile. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">command_name</span> - Alias command or group name. <span class="li-normal">type: str</span> </li>
             </ul>
-        <li> <span class="li-head">exec_alias_grp</span> - Permission to execute alias commands. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">loggrp</span> - Logging access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write, w, r, rw</span> </li>
-        <li> <span class="li-head">mntgrp</span> - Critical system maintenance access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
+        <li> <span class="li-head">exec_alias_grp</span> - Permission to execute alias commands. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">loggrp</span> - Logging access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write, w, r, rw</span> </li>
+        <li> <span class="li-head">mntgrp</span> - Critical system maintenance access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
         <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">netgrp</span> - Network access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">pktmongrp</span> - Packet and flow capture functionality. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">routegrp</span> - Routing access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">swcoregrp</span> - Switch core access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">swmonguardgrp</span> - Switch monitor and guard feature permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">sysgrp</span> - System access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
-        <li> <span class="li-head">utilgrp</span> - Utilities access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read_write</span> </li>
+        <li> <span class="li-head">netgrp</span> - Network access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">pktmongrp</span> - Packet and flow capture functionality. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">routegrp</span> - Routing access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">swcoregrp</span> - Switch core access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">swmonguardgrp</span> - Switch monitor and guard feature permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">sysgrp</span> - System access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
+        <li> <span class="li-head">utilgrp</span> - Utilities access permission. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, read, read-write</span> </li>
         </ul>
     </ul>
 
@@ -112,35 +85,25 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure system administrative access group.
-        fortiswitch_system_accprofile:
+    - name: Configure system administrative access group.
+      fortinet.fortiswitch.fortiswitch_system_accprofile:
           state: "present"
           system_accprofile:
-            admingrp: "none"
-            alias_commands:
-             -
-                command_name: "<your_own_value> (source system.alias.command.name system.alias.group.name)"
-            exec_alias_grp: "none"
-            loggrp: "none"
-            mntgrp: "none"
-            name: "default_name_9"
-            netgrp: "none"
-            pktmongrp: "none"
-            routegrp: "none"
-            swcoregrp: "none"
-            swmonguardgrp: "none"
-            sysgrp: "none"
-            utilgrp: "none"
-    
+              admingrp: "none"
+              alias_commands:
+                  -
+                      command_name: "<your_own_value> (source system.alias.command.name system.alias.group.name)"
+              exec_alias_grp: "none"
+              loggrp: "none"
+              mntgrp: "none"
+              name: "default_name_9"
+              netgrp: "none"
+              pktmongrp: "none"
+              routegrp: "none"
+              swcoregrp: "none"
+              swmonguardgrp: "none"
+              sysgrp: "none"
+              utilgrp: "none"
 
 
 Return Values

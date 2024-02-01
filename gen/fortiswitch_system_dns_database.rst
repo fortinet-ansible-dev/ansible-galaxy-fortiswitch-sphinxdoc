@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_dns_database</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -121,44 +94,34 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Dns-database.
-        fortiswitch_system_dns_database:
+    - name: Dns-database.
+      fortinet.fortiswitch.fortiswitch_system_dns_database:
           state: "present"
           system_dns_database:
-            allow_transfer: "<your_own_value>"
-            authoritative: "enable"
-            contact: "<your_own_value>"
-            dns_entry:
-             -
-                canonical_name: "<your_own_value>"
-                hostname: "myhostname"
-                id:  "9"
-                ip: "<your_own_value>"
-                ipv6: "<your_own_value>"
-                preference: "12"
-                status: "enable"
-                ttl: "14"
-                type: "A"
-            domain: "<your_own_value>"
-            forwarder: "<your_own_value>"
-            ip_master: "<your_own_value>"
-            name: "default_name_19"
-            primary_name: "<your_own_value>"
-            source_ip: "84.230.14.43"
-            status: "enable"
-            ttl: "23"
-            type: "master"
-            view: "shadow"
-    
+              allow_transfer: "<your_own_value>"
+              authoritative: "enable"
+              contact: "<your_own_value>"
+              dns_entry:
+                  -
+                      canonical_name: "<your_own_value>"
+                      hostname: "myhostname"
+                      id: "9"
+                      ip: "<your_own_value>"
+                      ipv6: "<your_own_value>"
+                      preference: "12"
+                      status: "enable"
+                      ttl: "14"
+                      type: "A"
+              domain: "<your_own_value>"
+              forwarder: "<your_own_value>"
+              ip_master: "<your_own_value>"
+              name: "default_name_19"
+              primary_name: "<your_own_value>"
+              source_ip: "<your_own_value>"
+              status: "enable"
+              ttl: "23"
+              type: "master"
+              view: "shadow"
 
 
 Return Values

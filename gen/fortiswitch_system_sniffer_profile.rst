@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_sniffer_profile</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -90,7 +63,7 @@ Parameters
         <li> <span class="li-head">filter</span> - Flexible logical filters for sniffer (or "none") <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">max_pkt_count</span> - Maximum number of packet to be captured on the interface  (1-INT_MAX). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">max_pkt_len</span> - Maximum packet length to be captured on the interface  (64-1534). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">profile_name</span> - Give name to the sniffer profile. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">profile_name</span> - Give name to the sniffer profile. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">switch_interface</span> - Select switch-interface name on which packets are to be captured. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">system_interface</span> - Select system-interface name on which packets are to be captured. <span class="li-normal">type: str</span> </li>
         </ul>
@@ -102,26 +75,16 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Show packet sniffer configuration.
-        fortiswitch_system_sniffer_profile:
+    - name: Show packet sniffer configuration.
+      fortinet.fortiswitch.fortiswitch_system_sniffer_profile:
           state: "present"
           system_sniffer_profile:
-            filter: "<your_own_value>"
-            max_pkt_count: "4"
-            max_pkt_len: "5"
-            profile_name: "<your_own_value>"
-            switch_interface: "<your_own_value> (source switch.interface.name)"
-            system_interface: "<your_own_value> (source system.interface.name)"
-    
+              filter: "<your_own_value>"
+              max_pkt_count: "4"
+              max_pkt_len: "5"
+              profile_name: "<your_own_value>"
+              switch_interface: "<your_own_value> (source switch.interface.name)"
+              system_interface: "<your_own_value> (source system.interface.name)"
 
 
 Return Values

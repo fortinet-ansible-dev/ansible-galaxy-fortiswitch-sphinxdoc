@@ -34,26 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_email_server</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -80,7 +67,7 @@ Parameters
         <li> <span class="li-head">server</span> - Set SMTP server IP address or hostname. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip</span> - Set SMTP server IPv4 source IP. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip6</span> - Set SMTP server IPv6 source IP. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">ssl_min_proto_version</span> - Set minimum supported protocol version for SSL/TLS connections . <span class="li-normal">type: str</span> <span class="li-normal">choices: SSLv3, TLSv1, TLSv1_1, TLSv1_2, TLSv1_3</span> </li>
+        <li> <span class="li-head">ssl_min_proto_version</span> - Set minimum supported protocol version for SSL/TLS connections . <span class="li-normal">type: str</span> <span class="li-normal">choices: SSLv3, TLSv1, TLSv1-1, TLSv1-2, TLSv1-3</span> </li>
         <li> <span class="li-head">username</span> - Set SMTP server user name for authentication. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">validate_server</span> - Enable/disable validation of server certificate. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
@@ -92,30 +79,20 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Email server configuration.
-        fortiswitch_system_email_server:
+    - name: Email server configuration.
+      fortinet.fortiswitch.fortiswitch_system_email_server:
           system_email_server:
-            authenticate: "enable"
-            password: "<your_own_value>"
-            port: "5"
-            reply_to: "<your_own_value>"
-            security: "none"
-            server: "192.168.100.40"
-            source_ip: "84.230.14.43"
-            source_ip6: "<your_own_value>"
-            ssl_min_proto_version: "SSLv3"
-            username: "<your_own_value>"
-            validate_server: "enable"
-    
+              authenticate: "enable"
+              password: "<your_own_value>"
+              port: "5"
+              reply_to: "<your_own_value>"
+              security: "none"
+              server: "192.168.100.40"
+              source_ip: "<your_own_value>"
+              source_ip6: "<your_own_value>"
+              ssl_min_proto_version: "SSLv3"
+              username: "<your_own_value>"
+              validate_server: "enable"
 
 
 Return Values

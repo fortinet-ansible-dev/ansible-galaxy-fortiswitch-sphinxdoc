@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_global</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -88,10 +61,10 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">admin_concurrent</span> - Enable/disable concurrent login of adminstrative users. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">admin_https_pki_required</span> - Enable/disable HTTPS login page when PKI is enabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">admin_https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1_0, tlsv1_1, tlsv1_2, tlsv1_3</span> </li>
+        <li> <span class="li-head">admin_https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1-0, tlsv1-1, tlsv1-2, tlsv1-3</span> </li>
         <li> <span class="li-head">admin_lockout_duration</span> - Lockout duration for FortiSwitch administration (1 - 2147483647 sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_lockout_threshold</span> - Lockout threshold for FortiSwitch administration. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">admin_password_hash</span> - Admin password hash algorithm. (sha1, sha256, pbkdf2) <span class="li-normal">type: str</span> <span class="li-normal">choices: sha1, sha256, pbkdf2, pbkdf2_high</span> </li>
+        <li> <span class="li-head">admin_password_hash</span> - Admin password hash algorithm. (sha1, sha256, pbkdf2) <span class="li-normal">type: str</span> <span class="li-normal">choices: sha1, sha256, pbkdf2, pbkdf2-high</span> </li>
         <li> <span class="li-head">admin_port</span> - Administrative access HTTP port (1 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_scp</span> - Enable/disable downloading of system configuraiton using SCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">admin_server_cert</span> - Administrative HTTPS server certificate. <span class="li-normal">type: str</span> </li>
@@ -122,7 +95,7 @@ Parameters
         <li> <span class="li-head">dhcp_option_format</span> - DHCP Option format string. <span class="li-normal">type: str</span> <span class="li-normal">choices: legacy, ascii</span> </li>
         <li> <span class="li-head">dhcp_remote_id</span> - List the parameters to be included in remote-id field. <span class="li-normal">type: str</span> <span class="li-normal">choices: mac, hostname, ip</span> </li>
         <li> <span class="li-head">dhcp_server_access_list</span> - Enable/Disable trusted DHCP Server list. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">dhcp_snoop_client_req</span> - Client DHCP packet broadcast mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: forward_untrusted, drop_untrusted</span> </li>
+        <li> <span class="li-head">dhcp_snoop_client_req</span> - Client DHCP packet broadcast mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: forward-untrusted, drop-untrusted</span> </li>
         <li> <span class="li-head">dhcps_db_exp</span> - Expiry time for dhcp-snoop server-db entry (300-259200 sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dhcps_db_per_port_learn_limit</span> - Per Interface dhcp-server entries learn limit . <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dst</span> - Enable/disable daylight saving time. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -154,7 +127,7 @@ Parameters
         <li> <span class="li-head">tcp_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tcp_options</span> - Enable/disable TCP options (timestamps, SACK, window scaling). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">tftp</span> - Enable/disable TFTP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">timezone</span> - Time zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76</span> </li>
+        <li> <span class="li-head">timezone</span> - Time zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76, 88, 89, 90, 91, 92</span> </li>
         </ul>
     </ul>
 
@@ -164,88 +137,78 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure global range attributes.
-        fortiswitch_system_global:
+    - name: Configure global range attributes.
+      fortinet.fortiswitch.fortiswitch_system_global:
           system_global:
-            802.1x_ca_certificate: "<your_own_value>"
-            802.1x_certificate: "<your_own_value>"
-            admin_concurrent: "enable"
-            admin_https_pki_required: "enable"
-            admin_https_ssl_versions: "tlsv1-0"
-            admin_lockout_duration: "8"
-            admin_lockout_threshold: "9"
-            admin_password_hash: "sha1"
-            admin_port: "11"
-            admin_scp: "enable"
-            admin_server_cert: "<your_own_value>"
-            admin_sport: "14"
-            admin_ssh_grace_time: "15"
-            admin_ssh_port: "16"
-            admin_ssh_v1: "enable"
-            admin_telnet_port: "18"
-            admintimeout: "19"
-            alert_interval: "20"
-            alertd_relog: "enable"
-            allow_subnet_overlap: "enable"
-            arp_timeout: "23"
-            asset_tag: "<your_own_value>"
-            auto_isl: "enable"
-            cfg_revert_timeout: "26"
-            cfg_save: "automatic"
-            clt_cert_req: "enable"
-            csr_ca_attribute: "enable"
-            daily_restart: "enable"
-            delaycli_timeout_cleanup: "31"
-            detect_ip_conflict: "enable"
-            dh_params: "33"
-            dhcp_circuit_id: "intfname"
-            dhcp_client_location: "intfname"
-            dhcp_option_format: "legacy"
-            dhcp_remote_id: "mac"
-            dhcp_server_access_list: "enable"
-            dhcp_snoop_client_req: "forward-untrusted"
-            dhcps_db_exp: "40"
-            dhcps_db_per_port_learn_limit: "41"
-            dst: "enable"
-            failtime: "43"
-            fortilink_auto_discovery: "enable"
-            hostname: "myhostname"
-            image_rotation: "disable"
-            interval: "47"
-            ip_conflict_ignore_default: "enable"
-            ipv6_accept_dad: "49"
-            ipv6_all_forwarding: "enable"
-            kernel_crashlog: "enable"
-            kernel_devicelog: "enable"
-            l3_host_expiry: "enable"
-            language: "browser"
-            ldapconntimeout: "55"
-            post_login_banner: "<your_own_value>"
-            pre_login_banner: "<your_own_value>"
-            private_data_encryption: "disable"
-            radius_coa_port: "59"
-            radius_port: "60"
-            remoteauthtimeout: "61"
-            restart_time: "<your_own_value>"
-            revision_backup_on_logout: "enable"
-            revision_backup_on_upgrade: "enable"
-            strong_crypto: "enable"
-            switch_mgmt_mode: "local"
-            tcp_mss_min: "67"
-            tcp_options: "enable"
-            tcp6_mss_min: "69"
-            tftp: "enable"
-            timezone: "01"
-    
+              802.1x_ca_certificate: "<your_own_value>"
+              802.1x_certificate: "<your_own_value>"
+              admin_concurrent: "enable"
+              admin_https_pki_required: "enable"
+              admin_https_ssl_versions: "tlsv1-0"
+              admin_lockout_duration: "8"
+              admin_lockout_threshold: "9"
+              admin_password_hash: "sha1"
+              admin_port: "11"
+              admin_scp: "enable"
+              admin_server_cert: "<your_own_value>"
+              admin_sport: "14"
+              admin_ssh_grace_time: "15"
+              admin_ssh_port: "16"
+              admin_ssh_v1: "enable"
+              admin_telnet_port: "18"
+              admintimeout: "19"
+              alert_interval: "20"
+              alertd_relog: "enable"
+              allow_subnet_overlap: "enable"
+              arp_timeout: "23"
+              asset_tag: "<your_own_value>"
+              auto_isl: "enable"
+              cfg_revert_timeout: "26"
+              cfg_save: "automatic"
+              clt_cert_req: "enable"
+              csr_ca_attribute: "enable"
+              daily_restart: "enable"
+              delaycli_timeout_cleanup: "31"
+              detect_ip_conflict: "enable"
+              dh_params: "33"
+              dhcp_circuit_id: "intfname"
+              dhcp_client_location: "intfname"
+              dhcp_option_format: "legacy"
+              dhcp_remote_id: "mac"
+              dhcp_server_access_list: "enable"
+              dhcp_snoop_client_req: "forward-untrusted"
+              dhcps_db_exp: "40"
+              dhcps_db_per_port_learn_limit: "41"
+              dst: "enable"
+              failtime: "43"
+              fortilink_auto_discovery: "enable"
+              hostname: "myhostname"
+              image_rotation: "disable"
+              interval: "47"
+              ip_conflict_ignore_default: "enable"
+              ipv6_accept_dad: "49"
+              ipv6_all_forwarding: "enable"
+              kernel_crashlog: "enable"
+              kernel_devicelog: "enable"
+              l3_host_expiry: "enable"
+              language: "browser"
+              ldapconntimeout: "55"
+              post_login_banner: "<your_own_value>"
+              pre_login_banner: "<your_own_value>"
+              private_data_encryption: "disable"
+              radius_coa_port: "59"
+              radius_port: "60"
+              remoteauthtimeout: "61"
+              restart_time: "<your_own_value>"
+              revision_backup_on_logout: "enable"
+              revision_backup_on_upgrade: "enable"
+              strong_crypto: "enable"
+              switch_mgmt_mode: "local"
+              tcp6_mss_min: "67"
+              tcp_mss_min: "68"
+              tcp_options: "enable"
+              tftp: "enable"
+              timezone: "01"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_community</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -87,7 +60,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_snmp_community</span> - SNMP community configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">events</span> - Trap snmp events. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu_high, mem_low, log_full, intf_ip, ent_conf_change, llv, l2mac, sensor_fault, sensor_alarm, fan_detect, psu_status, ip_conflict, tkmem_hb_oo_sync</span> </li>
+        <li> <span class="li-head">events</span> - Trap snmp events. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv, l2mac, sensor-fault, sensor-alarm, fan-detect, psu-status, ip-conflict, tkmem-hb-oo-sync</span> </li>
         <li> <span class="li-head">hosts</span> - Allow hosts configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Host entry id. <span class="li-normal">type: int</span> </li>
@@ -124,46 +97,36 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: SNMP community configuration.
-        fortiswitch_system_snmp_community:
+    - name: SNMP community configuration.
+      fortinet.fortiswitch.fortiswitch_system_snmp_community:
           state: "present"
           system_snmp_community:
-            events: "cpu-high"
-            hosts:
-             -
-                id:  "5"
-                interface: "<your_own_value> (source system.interface.name)"
-                ip: "<your_own_value>"
-                source_ip: "84.230.14.43"
-            hosts6:
-             -
-                id:  "10"
-                interface: "<your_own_value> (source system.interface.name)"
-                ipv6: "<your_own_value>"
-                source_ipv6: "<your_own_value>"
-            id:  "14"
-            name: "default_name_15"
-            query_v1_port: "16"
-            query_v1_status: "enable"
-            query_v2c_port: "18"
-            query_v2c_status: "enable"
-            status: "enable"
-            trap_v1_lport: "21"
-            trap_v1_rport: "22"
-            trap_v1_status: "enable"
-            trap_v2c_lport: "24"
-            trap_v2c_rport: "25"
-            trap_v2c_status: "enable"
-    
+              events: "cpu-high"
+              hosts:
+                  -
+                      id: "5"
+                      interface: "<your_own_value> (source system.interface.name)"
+                      ip: "<your_own_value>"
+                      source_ip: "<your_own_value>"
+              hosts6:
+                  -
+                      id: "10"
+                      interface: "<your_own_value> (source system.interface.name)"
+                      ipv6: "<your_own_value>"
+                      source_ipv6: "<your_own_value>"
+              id: "14"
+              name: "default_name_15"
+              query_v1_port: "16"
+              query_v1_status: "enable"
+              query_v2c_port: "18"
+              query_v2c_status: "enable"
+              status: "enable"
+              trap_v1_lport: "21"
+              trap_v1_rport: "22"
+              trap_v1_status: "enable"
+              trap_v2c_lport: "24"
+              trap_v2c_rport: "25"
+              trap_v2c_status: "enable"
 
 
 Return Values

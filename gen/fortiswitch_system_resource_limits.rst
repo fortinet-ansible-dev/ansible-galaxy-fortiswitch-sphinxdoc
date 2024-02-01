@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_resource_limits</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -110,34 +83,24 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Resource limits configuration.
-        fortiswitch_system_resource_limits:
+    - name: Resource limits configuration.
+      fortinet.fortiswitch.fortiswitch_system_resource_limits:
           system_resource_limits:
-            custom_service: "3"
-            dialup_tunnel: "4"
-            firewall_address: "5"
-            firewall_addrgrp: "6"
-            firewall_policy: "7"
-            ipsec_phase1: "8"
-            ipsec_phase2: "9"
-            log_disk_quota: "10"
-            onetime_schedule: "11"
-            proxy: "12"
-            recurring_schedule: "13"
-            service_group: "14"
-            session: "15"
-            user: "16"
-            user_group: "17"
-    
+              custom_service: "3"
+              dialup_tunnel: "4"
+              firewall_address: "5"
+              firewall_addrgrp: "6"
+              firewall_policy: "7"
+              ipsec_phase1: "8"
+              ipsec_phase2: "9"
+              log_disk_quota: "10"
+              onetime_schedule: "11"
+              proxy: "12"
+              recurring_schedule: "13"
+              service_group: "14"
+              session: "15"
+              user: "16"
+              user_group: "17"
 
 
 Return Values

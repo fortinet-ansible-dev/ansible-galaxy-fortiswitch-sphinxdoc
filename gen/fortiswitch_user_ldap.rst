@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_user_ldap</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -90,7 +63,7 @@ Parameters
         <li> <span class="li-head">ca_cert</span> - CA certificate name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cnid</span> - Common Name identifier . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">dn</span> - Distinguished name. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">group_member_check</span> - Group member checking options. <span class="li-normal">type: str</span> <span class="li-normal">choices: user_attr, group_object</span> </li>
+        <li> <span class="li-head">group_member_check</span> - Group member checking options. <span class="li-normal">type: str</span> <span class="li-normal">choices: user-attr, group-object</span> </li>
         <li> <span class="li-head">group_object_filter</span> - Group searching filter. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">member_attr</span> - Name of attribute from which to get group membership. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - LDAP server entry name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
@@ -111,35 +84,25 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: LDAP server entry configuration.
-        fortiswitch_user_ldap:
+    - name: LDAP server entry configuration.
+      fortinet.fortiswitch.fortiswitch_user_ldap:
           state: "present"
           user_ldap:
-            ca_cert: "<your_own_value> (source system.certificate.ca.name)"
-            cnid: "<your_own_value>"
-            dn: "<your_own_value>"
-            group_member_check: "user-attr"
-            group_object_filter: "<your_own_value>"
-            member_attr: "<your_own_value>"
-            name: "default_name_9"
-            password: "<your_own_value>"
-            password_expiry_warning: "enable"
-            password_renewal: "enable"
-            port: "13"
-            secure: "disable"
-            server: "192.168.100.40"
-            type: "simple"
-            username: "<your_own_value>"
-    
+              ca_cert: "<your_own_value> (source system.certificate.ca.name)"
+              cnid: "<your_own_value>"
+              dn: "<your_own_value>"
+              group_member_check: "user-attr"
+              group_object_filter: "<your_own_value>"
+              member_attr: "<your_own_value>"
+              name: "default_name_9"
+              password: "<your_own_value>"
+              password_expiry_warning: "enable"
+              password_renewal: "enable"
+              port: "13"
+              secure: "disable"
+              server: "192.168.100.40"
+              type: "simple"
+              username: "<your_own_value>"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_link_monitor</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -101,6 +74,10 @@ Parameters
         <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: list</span> <span class="li-normal">choices: arp, ping, ping6</span> </li>
         <li> <span class="li-head">recoverytime</span> - Number of retry attempts before bringing server up. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">security_mode</span> - Twamp controller security mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, authentication</span> </li>
+        <li> <span class="li-head">server</span> - Server address(es). <span class="li-normal">type: list</span> </li>
+            <ul class="ul-self">
+            <li> <span class="li-head">address</span> - Server address. <span class="li-normal">type: str</span> </li>
+            </ul>
         <li> <span class="li-head">source_ip</span> - Source IP used in packet to the server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip6</span> - Source IPv6 address used in packet to the server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">srcintf</span> - Interface where the monitor traffic is sent. <span class="li-normal">type: str</span> </li>
@@ -117,41 +94,34 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure Link Health Monitor.
-        fortiswitch_system_link_monitor:
+    - name: Configure Link Health Monitor.
+      fortinet.fortiswitch.fortiswitch_system_link_monitor:
           state: "present"
           system_link_monitor:
-            addr_mode: "ipv4"
-            failtime: "4"
-            gateway_ip: "<your_own_value>"
-            gateway_ip6: "<your_own_value>"
-            http_get: "<your_own_value>"
-            http_match: "<your_own_value>"
-            interval: "9"
-            name: "default_name_10"
-            packet_size: "11"
-            password: "<your_own_value>"
-            port: "13"
-            protocol: "arp"
-            recoverytime: "15"
-            security_mode: "none"
-            source_ip: "84.230.14.43"
-            source_ip6: "<your_own_value>"
-            srcintf: "<your_own_value> (source system.interface.name)"
-            status: "enable"
-            timeout: "21"
-            update_cascade_interface: "enable"
-            update_static_route: "enable"
-    
+              addr_mode: "ipv4"
+              failtime: "4"
+              gateway_ip: "<your_own_value>"
+              gateway_ip6: "<your_own_value>"
+              http_get: "<your_own_value>"
+              http_match: "<your_own_value>"
+              interval: "9"
+              name: "default_name_10"
+              packet_size: "11"
+              password: "<your_own_value>"
+              port: "13"
+              protocol: "arp"
+              recoverytime: "15"
+              security_mode: "none"
+              server:
+                  -
+                      address: "<your_own_value>"
+              source_ip: "<your_own_value>"
+              source_ip6: "<your_own_value>"
+              srcintf: "<your_own_value> (source system.interface.name)"
+              status: "enable"
+              timeout: "23"
+              update_cascade_interface: "enable"
+              update_static_route: "enable"
 
 
 Return Values

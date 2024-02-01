@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_policy</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -123,7 +96,7 @@ Parameters
                 </ul>
             </ul>
         <li> <span class="li-head">protocol</span> - Protocol number. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">seq_num</span> - Sequence number. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">seq_num</span> - Sequence number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">src</span> - Source ip and mask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">start_port</span> - Start port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tos</span> - Terms of service bit pattern. <span class="li-normal">type: str</span> </li>
@@ -137,56 +110,46 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Policy routing configuration.
-        fortiswitch_router_policy:
+    - name: Policy routing configuration.
+      fortinet.fortiswitch.fortiswitch_router_policy:
           state: "present"
           router_policy:
-            comments: "<your_own_value>"
-            dst: "<your_own_value>"
-            end_port: "5"
-            gateway: "<your_own_value>"
-            input_device: "<your_own_value> (source system.interface.name)"
-            interface:
-             -
-                name: "default_name_9 (source system.interface.name)"
-                pbr_map_name: "<your_own_value>"
-            nexthop_group:
-             -
-                name: "default_name_12"
-                nexthop:
-                 -
-                    id:  "14"
-                    nexthop_ip: "<your_own_value>"
-                    nexthop_vrf_name: "<your_own_value> (source router.vrf.name)"
-            output_device: "<your_own_value> (source system.interface.name)"
-            pbr_map:
-             -
-                comments: "<your_own_value>"
-                name: "default_name_20"
-                rule:
-                 -
-                    dst: "<your_own_value>"
-                    nexthop_group_name: "<your_own_value>"
-                    nexthop_ip: "<your_own_value>"
-                    nexthop_vrf_name: "<your_own_value> (source router.vrf.name)"
-                    seq_num: "26"
-                    src: "<your_own_value>"
-            protocol: "28"
-            seq_num: "29"
-            src: "<your_own_value>"
-            start_port: "31"
-            tos: "<your_own_value>"
-            tos_mask: "<your_own_value>"
-    
+              comments: "<your_own_value>"
+              dst: "<your_own_value>"
+              end_port: "5"
+              gateway: "<your_own_value>"
+              input_device: "<your_own_value> (source system.interface.name)"
+              interface:
+                  -
+                      name: "default_name_9 (source system.interface.name)"
+                      pbr_map_name: "<your_own_value>"
+              nexthop_group:
+                  -
+                      name: "default_name_12"
+                      nexthop:
+                          -
+                              id: "14"
+                              nexthop_ip: "<your_own_value>"
+                              nexthop_vrf_name: "<your_own_value> (source router.vrf.name)"
+              output_device: "<your_own_value> (source system.interface.name)"
+              pbr_map:
+                  -
+                      comments: "<your_own_value>"
+                      name: "default_name_20"
+                      rule:
+                          -
+                              dst: "<your_own_value>"
+                              nexthop_group_name: "<your_own_value>"
+                              nexthop_ip: "<your_own_value>"
+                              nexthop_vrf_name: "<your_own_value> (source router.vrf.name)"
+                              seq_num: "26"
+                              src: "<your_own_value>"
+              protocol: "28"
+              seq_num: "29"
+              src: "<your_own_value>"
+              start_port: "31"
+              tos: "<your_own_value>"
+              tos_mask: "<your_own_value>"
 
 
 Return Values

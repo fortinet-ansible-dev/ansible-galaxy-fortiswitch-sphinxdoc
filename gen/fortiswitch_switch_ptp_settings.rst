@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_ptp_settings</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -86,7 +59,7 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_ptp_settings</span> - Global PTP configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">mode</span> - Disable/enable PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, transparent_e2e, transparent_p2p</span> </li>
+        <li> <span class="li-head">mode</span> - Disable/enable PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, transparent-e2e, transparent-p2p</span> </li>
         <li> <span class="li-head">profile</span> - Selected PTP Profile <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Select PTP status. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         </ul>
@@ -98,22 +71,12 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Global PTP configuration.
-        fortiswitch_switch_ptp_settings:
+    - name: Global PTP configuration.
+      fortinet.fortiswitch.fortiswitch_switch_ptp_settings:
           switch_ptp_settings:
-            mode: "disable"
-            profile: "<your_own_value> (source system.ptp.profile.name)"
-            status: "disable"
-    
+              mode: "disable"
+              profile: "<your_own_value> (source system.ptp.profile.name)"
+              status: "disable"
 
 
 Return Values

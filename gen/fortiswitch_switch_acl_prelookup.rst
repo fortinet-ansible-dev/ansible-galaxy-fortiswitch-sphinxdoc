@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_prelookup</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -126,45 +99,35 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Prelookup Policy configuration.
-        fortiswitch_switch_acl_prelookup:
+    - name: Prelookup Policy configuration.
+      fortinet.fortiswitch.fortiswitch_switch_acl_prelookup:
           state: "present"
           switch_acl_prelookup:
-            action:
-                cos_queue: "4"
-                count: "enable"
-                drop: "enable"
-                outer_vlan_tag: "7"
-                remark_cos: "8"
-            classifier:
-                cos: "10"
-                dscp: "11"
-                dst_ip_prefix: "<your_own_value>"
-                dst_mac: "<your_own_value>"
-                ether_type: "14"
-                service: "<your_own_value> (source switch.acl.service.custom.name)"
-                src_ip_prefix: "<your_own_value>"
-                src_mac: "<your_own_value>"
-                vlan_id: "18"
-            description: "<your_own_value>"
-            group: "20"
-            id:  "21"
-            interface: "<your_own_value> (source switch.physical_port.name)"
-            interface_all: "enable"
-            schedule:
-             -
-                schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
-            status: "active"
-    
+              action:
+                  cos_queue: "4"
+                  count: "enable"
+                  drop: "enable"
+                  outer_vlan_tag: "7"
+                  remark_cos: "8"
+              classifier:
+                  cos: "10"
+                  dscp: "11"
+                  dst_ip_prefix: "<your_own_value>"
+                  dst_mac: "<your_own_value>"
+                  ether_type: "14"
+                  service: "<your_own_value> (source switch.acl.service.custom.name)"
+                  src_ip_prefix: "<your_own_value>"
+                  src_mac: "<your_own_value>"
+                  vlan_id: "18"
+              description: "<your_own_value>"
+              group: "20"
+              id: "21"
+              interface: "<your_own_value> (source switch.physical-port.name)"
+              interface_all: "enable"
+              schedule:
+                  -
+                      schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
+              status: "active"
 
 
 Return Values

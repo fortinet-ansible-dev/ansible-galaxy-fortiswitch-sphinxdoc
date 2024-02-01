@@ -34,26 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_automation_trigger</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -73,7 +60,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_automation_trigger</span> - Trigger for automation stitches. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">event_type</span> - Event type. <span class="li-normal">type: str</span> <span class="li-normal">choices: config_change, event_log, reboot</span> </li>
+        <li> <span class="li-head">event_type</span> - Event type. <span class="li-normal">type: str</span> <span class="li-normal">choices: config-change, event-log, reboot</span> </li>
         <li> <span class="li-head">fields</span> - Customized trigger field settings. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Entry ID. <span class="li-normal">type: int</span> </li>
@@ -86,7 +73,7 @@ Parameters
         <li> <span class="li-head">trigger_frequency</span> - Scheduled trigger frequency . <span class="li-normal">type: str</span> <span class="li-normal">choices: hourly, daily, weekly, monthly</span> </li>
         <li> <span class="li-head">trigger_hour</span> - Hour of the day on which to trigger (0 - 23). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">trigger_minute</span> - Minute of the hour on which to trigger (0 - 59). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">trigger_type</span> - Trigger type. <span class="li-normal">type: str</span> <span class="li-normal">choices: event_based, scheduled</span> </li>
+        <li> <span class="li-head">trigger_type</span> - Trigger type. <span class="li-normal">type: str</span> <span class="li-normal">choices: event-based, scheduled</span> </li>
         <li> <span class="li-head">trigger_weekday</span> - Day of week for trigger. <span class="li-normal">type: str</span> <span class="li-normal">choices: sunday, monday, tuesday, wednesday, thursday, friday, saturday</span> </li>
         </ul>
     </ul>
@@ -97,34 +84,24 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Trigger for automation stitches.
-        fortiswitch_system_automation_trigger:
+    - name: Trigger for automation stitches.
+      fortinet.fortiswitch.fortiswitch_system_automation_trigger:
           state: "present"
           system_automation_trigger:
-            event_type: "config-change"
-            fields:
-             -
-                id:  "5"
-                name: "default_name_6"
-                value: "<your_own_value>"
-            logid: "<your_own_value>"
-            name: "default_name_9"
-            trigger_day: "10"
-            trigger_frequency: "hourly"
-            trigger_hour: "12"
-            trigger_minute: "13"
-            trigger_type: "event-based"
-            trigger_weekday: "sunday"
-    
+              event_type: "config-change"
+              fields:
+                  -
+                      id: "5"
+                      name: "default_name_6"
+                      value: "<your_own_value>"
+              logid: "<your_own_value>"
+              name: "default_name_9"
+              trigger_day: "10"
+              trigger_frequency: "hourly"
+              trigger_hour: "12"
+              trigger_minute: "13"
+              trigger_type: "event-based"
+              trigger_weekday: "sunday"
 
 
 Return Values

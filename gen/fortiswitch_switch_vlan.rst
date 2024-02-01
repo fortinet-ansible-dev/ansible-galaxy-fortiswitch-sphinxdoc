@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_vlan</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -89,6 +62,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">access_vlan</span> - Block port-to-port traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">arp_inspection</span> - Enable/Disable Dynamic ARP Inspection. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
+        <li> <span class="li-head">assignment_priority</span> - 802.1x Radius (Tunnel-Private-Group-Id) vlanid assign-by-name priority (smaller is higher). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">community_vlans</span> - Communities within this private VLAN. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cos_queue</span> - Set cos(0-7) on the VLAN traffic or unset to disable. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
@@ -191,104 +165,95 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure optional per-VLAN settings.
-        fortiswitch_switch_vlan:
+    - name: Configure optional per-VLAN settings.
+      fortinet.fortiswitch.fortiswitch_switch_vlan:
           state: "present"
           switch_vlan:
-            access_vlan: "disable"
-            arp_inspection: "disable"
-            community_vlans: "<your_own_value>"
-            cos_queue: "6"
-            description: "<your_own_value>"
-            dhcp_server_access_list:
-             -
-                name: "default_name_9"
-                server_ip: "<your_own_value>"
-                server_ip6: "<your_own_value>"
-            dhcp_snooping: "disable"
-            dhcp_snooping_option82: "disable"
-            dhcp_snooping_static_client:
-             -
-                ip_addr: "<your_own_value>"
-                mac_addr: "<your_own_value>"
-                name: "default_name_17"
-                switch_interface: "<your_own_value>"
-            dhcp_snooping_verify_mac: "disable"
-            dhcp6_snooping: "disable"
-            id:  "21"
-            igmp_snooping: "enable"
-            igmp_snooping_fast_leave: "enable"
-            igmp_snooping_proxy: "enable"
-            igmp_snooping_querier: "enable"
-            igmp_snooping_querier_addr: "<your_own_value>"
-            igmp_snooping_querier_version: "27"
-            igmp_snooping_static_group:
-             -
-                ignore_reports: "enable"
-                mcast_addr: "<your_own_value>"
-                members:
-                 -
-                    member_name: "<your_own_value> (source switch.interface.name)"
-                name: "default_name_33"
-            isolated_vlan: "34"
-            lan_segment: "enable"
-            lan_segment_primary_vlan: "36"
-            lan_segment_type: "37"
-            lan_subvlans: "<your_own_value>"
-            learning: "disable"
-            learning_limit: "40"
-            member_by_ipv4:
-             -
-                address: "<your_own_value>"
-                description: "<your_own_value>"
-                id:  "44"
-            member_by_ipv6:
-             -
-                description: "<your_own_value>"
-                id:  "47"
-                prefix: "<your_own_value>"
-            member_by_mac:
-             -
-                description: "<your_own_value>"
-                id:  "51"
-                mac: "<your_own_value>"
-            member_by_proto:
-             -
-                description: "<your_own_value>"
-                frametypes: "ethernet2"
-                id:  "56"
-                protocol: "57"
-            mld_snooping: "enable"
-            mld_snooping_fast_leave: "enable"
-            mld_snooping_proxy: "enable"
-            mld_snooping_querier: "enable"
-            mld_snooping_querier_addr: "<your_own_value>"
-            mld_snooping_static_group:
-             -
-                ignore_reports: "enable"
-                mcast_addr: "<your_own_value>"
-                members:
-                 -
-                    member_name: "<your_own_value> (source switch.interface.name)"
-                name: "default_name_68"
-            mrouter_ports:
-             -
-                member_name: "<your_own_value>"
-            policer: "71 (source switch.acl.policer.id)"
-            primary_vlan: "72"
-            private_vlan: "enable"
-            private_vlan_type: "74"
-            rspan_mode: "enable"
-    
+              access_vlan: "disable"
+              arp_inspection: "disable"
+              assignment_priority: "5"
+              community_vlans: "<your_own_value>"
+              cos_queue: "7"
+              description: "<your_own_value>"
+              dhcp6_snooping: "disable"
+              dhcp_server_access_list:
+                  -
+                      name: "default_name_11"
+                      server_ip: "<your_own_value>"
+                      server_ip6: "<your_own_value>"
+              dhcp_snooping: "disable"
+              dhcp_snooping_option82: "disable"
+              dhcp_snooping_static_client:
+                  -
+                      ip_addr: "<your_own_value>"
+                      mac_addr: "<your_own_value>"
+                      name: "default_name_19"
+                      switch_interface: "<your_own_value>"
+              dhcp_snooping_verify_mac: "disable"
+              id: "22"
+              igmp_snooping: "enable"
+              igmp_snooping_fast_leave: "enable"
+              igmp_snooping_proxy: "enable"
+              igmp_snooping_querier: "enable"
+              igmp_snooping_querier_addr: "<your_own_value>"
+              igmp_snooping_querier_version: "28"
+              igmp_snooping_static_group:
+                  -
+                      ignore_reports: "enable"
+                      mcast_addr: "<your_own_value>"
+                      members:
+                          -
+                              member_name: "<your_own_value> (source switch.interface.name)"
+                      name: "default_name_34"
+              isolated_vlan: "35"
+              lan_segment: "enable"
+              lan_segment_primary_vlan: "37"
+              lan_segment_type: "38"
+              lan_subvlans: "<your_own_value>"
+              learning: "disable"
+              learning_limit: "41"
+              member_by_ipv4:
+                  -
+                      address: "<your_own_value>"
+                      description: "<your_own_value>"
+                      id: "45"
+              member_by_ipv6:
+                  -
+                      description: "<your_own_value>"
+                      id: "48"
+                      prefix: "<your_own_value>"
+              member_by_mac:
+                  -
+                      description: "<your_own_value>"
+                      id: "52"
+                      mac: "<your_own_value>"
+              member_by_proto:
+                  -
+                      description: "<your_own_value>"
+                      frametypes: "ethernet2"
+                      id: "57"
+                      protocol: "58"
+              mld_snooping: "enable"
+              mld_snooping_fast_leave: "enable"
+              mld_snooping_proxy: "enable"
+              mld_snooping_querier: "enable"
+              mld_snooping_querier_addr: "<your_own_value>"
+              mld_snooping_static_group:
+                  -
+                      ignore_reports: "enable"
+                      mcast_addr: "<your_own_value>"
+                      members:
+                          -
+                              member_name: "<your_own_value> (source switch.interface.name)"
+                      name: "default_name_69"
+              mrouter_ports:
+                  -
+                      member_name: "<your_own_value>"
+              policer: "72 (source switch.acl.policer.id)"
+              primary_vlan: "73"
+              private_vlan: "enable"
+              private_vlan_type: "75"
+              rspan_mode: "enable"
 
 
 Return Values

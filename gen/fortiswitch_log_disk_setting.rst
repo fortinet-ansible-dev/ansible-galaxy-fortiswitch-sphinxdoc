@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_log_disk_setting</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -101,7 +74,7 @@ Parameters
         <li> <span class="li-head">status</span> - Enable/disable local disk log. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">upload</span> - Whether to upload the log file when rolling. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">upload_delete_files</span> - Delete log files after uploading . <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">upload_destination</span> - Server type. <span class="li-normal">type: str</span> <span class="li-normal">choices: ftp_server</span> </li>
+        <li> <span class="li-head">upload_destination</span> - Server type. <span class="li-normal">type: str</span> <span class="li-normal">choices: ftp-server</span> </li>
         <li> <span class="li-head">upload_format</span> - Upload compact/text logs. <span class="li-normal">type: str</span> <span class="li-normal">choices: compact, text</span> </li>
         <li> <span class="li-head">upload_ssl_conn</span> - Enable/disable SSL communication when uploading. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, high, low, disable</span> </li>
         <li> <span class="li-head">uploaddir</span> - Log file uploading remote directory. <span class="li-normal">type: str</span> </li>
@@ -110,7 +83,7 @@ Parameters
         <li> <span class="li-head">uploadport</span> - Port of the log uploading server. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">uploadsched</span> - Scheduled upload (disable=upload when rolling). <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">uploadtime</span> - Time of scheduled upload. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">uploadtype</span> - Types of log files that need to be uploaded. <span class="li-normal">type: str</span> <span class="li-normal">choices: traffic, event, virus, webfilter, attack, spamfilter, dlp_archive, dlp, app_ctrl</span> </li>
+        <li> <span class="li-head">uploadtype</span> - Types of log files that need to be uploaded. <span class="li-normal">type: str</span> <span class="li-normal">choices: traffic, event, virus, webfilter, attack, spamfilter, dlp-archive, dlp, app-ctrl</span> </li>
         <li> <span class="li-head">uploaduser</span> - User account in the uploading server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">uploadzip</span> - Compress upload logs. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         </ul>
@@ -122,46 +95,36 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Settings for local disk logging.
-        fortiswitch_log_disk_setting:
+    - name: Settings for local disk logging.
+      fortinet.fortiswitch.fortiswitch_log_disk_setting:
           log_disk_setting:
-            diskfull: "overwrite"
-            drive_standby_time: "4"
-            full_final_warning_threshold: "5"
-            full_first_warning_threshold: "6"
-            full_second_warning_threshold: "7"
-            log_quota: "8"
-            max_log_file_size: "9"
-            report_quota: "10"
-            roll_day: "sunday"
-            roll_schedule: "daily"
-            roll_time: "<your_own_value>"
-            source_ip: "84.230.14.43"
-            status: "enable"
-            upload: "enable"
-            upload_delete_files: "enable"
-            upload_destination: "ftp-server"
-            upload_format: "compact"
-            upload_ssl_conn: "default"
-            uploaddir: "<your_own_value>"
-            uploadip: "<your_own_value>"
-            uploadpass: "<your_own_value>"
-            uploadport: "24"
-            uploadsched: "disable"
-            uploadtime: "26"
-            uploadtype: "traffic"
-            uploaduser: "<your_own_value>"
-            uploadzip: "disable"
-    
+              diskfull: "overwrite"
+              drive_standby_time: "4"
+              full_final_warning_threshold: "5"
+              full_first_warning_threshold: "6"
+              full_second_warning_threshold: "7"
+              log_quota: "8"
+              max_log_file_size: "9"
+              report_quota: "10"
+              roll_day: "sunday"
+              roll_schedule: "daily"
+              roll_time: "<your_own_value>"
+              source_ip: "<your_own_value>"
+              status: "enable"
+              upload: "enable"
+              upload_delete_files: "enable"
+              upload_destination: "ftp-server"
+              upload_format: "compact"
+              upload_ssl_conn: "default"
+              uploaddir: "<your_own_value>"
+              uploadip: "<your_own_value>"
+              uploadpass: "<your_own_value>"
+              uploadport: "24"
+              uploadsched: "disable"
+              uploadtime: "26"
+              uploadtype: "traffic"
+              uploaduser: "<your_own_value>"
+              uploadzip: "disable"
 
 
 Return Values

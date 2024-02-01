@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_egress</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -128,47 +101,37 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Egress Policy configuration.
-        fortiswitch_switch_acl_egress:
+    - name: Egress Policy configuration.
+      fortinet.fortiswitch.fortiswitch_switch_acl_egress:
           state: "present"
           switch_acl_egress:
-            action:
-                count: "enable"
-                count_type: "all"
-                drop: "enable"
-                mirror: "<your_own_value> (source switch.mirror.name)"
-                outer_vlan_tag: "8"
-                policer: "9 (source switch.acl.policer.id)"
-                redirect: "<your_own_value> (source switch.physical_port.name switch.trunk.name)"
-                remark_dscp: "11"
-            classifier:
-                cos: "13"
-                dscp: "14"
-                dst_ip_prefix: "<your_own_value>"
-                dst_mac: "<your_own_value>"
-                ether_type: "17"
-                service: "<your_own_value> (source switch.acl.service.custom.name)"
-                src_ip_prefix: "<your_own_value>"
-                src_mac: "<your_own_value>"
-                vlan_id: "21"
-            description: "<your_own_value>"
-            group: "23"
-            id:  "24"
-            interface: "<your_own_value> (source switch.physical_port.name)"
-            schedule:
-             -
-                schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
-            status: "active"
-    
+              action:
+                  count: "enable"
+                  count_type: "all"
+                  drop: "enable"
+                  mirror: "<your_own_value> (source switch.mirror.name)"
+                  outer_vlan_tag: "8"
+                  policer: "9 (source switch.acl.policer.id)"
+                  redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
+                  remark_dscp: "11"
+              classifier:
+                  cos: "13"
+                  dscp: "14"
+                  dst_ip_prefix: "<your_own_value>"
+                  dst_mac: "<your_own_value>"
+                  ether_type: "17"
+                  service: "<your_own_value> (source switch.acl.service.custom.name)"
+                  src_ip_prefix: "<your_own_value>"
+                  src_mac: "<your_own_value>"
+                  vlan_id: "21"
+              description: "<your_own_value>"
+              group: "23"
+              id: "24"
+              interface: "<your_own_value> (source switch.physical-port.name)"
+              schedule:
+                  -
+                      schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
+              status: "active"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_route_map</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -148,67 +121,57 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Route map configuration.
-        fortiswitch_router_route_map:
+    - name: Route map configuration.
+      fortinet.fortiswitch.fortiswitch_router_route_map:
           state: "present"
           router_route_map:
-            comments: "<your_own_value>"
-            name: "default_name_4"
-            protocol: "ospf"
-            rule:
-             -
-                action: "permit"
-                id:  "8"
-                match_as_path: "<your_own_value> (source router.aspath_list.name)"
-                match_community: "<your_own_value> (source router.community_list.name)"
-                match_community_exact: "enable"
-                match_flags: "12"
-                match_interface: "<your_own_value> (source system.interface.name)"
-                match_ip_address: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
-                match_ip_nexthop: "<your_own_value> (source router.access_list.name router.prefix_list.name)"
-                match_ip6_address: "<your_own_value> (source router.access_list6.name router.prefix_list6.name)"
-                match_metric: "17"
-                match_origin: "none"
-                match_route_type: "1"
-                match_tag: "20"
-                set_aggregator_as: "21"
-                set_aggregator_ip: "<your_own_value>"
-                set_aspath:
-                 -
-                    as: "<your_own_value>"
-                set_atomic_aggregate: "enable"
-                set_community:
-                 -
-                    community: "<your_own_value>"
-                set_community_additive: "enable"
-                set_community_delete: "<your_own_value> (source router.community_list.name)"
-                set_extcommunity_rt:
-                 -
-                    community: "<your_own_value>"
-                set_extcommunity_soo:
-                 -
-                    community: "<your_own_value>"
-                set_flags: "34"
-                set_ip_nexthop: "<your_own_value>"
-                set_ip6_nexthop: "<your_own_value>"
-                set_ip6_nexthop_local: "<your_own_value>"
-                set_local_preference: "38"
-                set_metric: "39"
-                set_metric_type: "1"
-                set_origin: "none"
-                set_originator_id: "<your_own_value>"
-                set_tag: "43"
-                set_weight: "44"
-    
+              comments: "<your_own_value>"
+              name: "default_name_4"
+              protocol: "ospf"
+              rule:
+                  -
+                      action: "permit"
+                      id: "8"
+                      match_as_path: "<your_own_value> (source router.aspath-list.name)"
+                      match_community: "<your_own_value> (source router.community-list.name)"
+                      match_community_exact: "enable"
+                      match_flags: "12"
+                      match_interface: "<your_own_value> (source system.interface.name)"
+                      match_ip6_address: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
+                      match_ip_address: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                      match_ip_nexthop: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
+                      match_metric: "17"
+                      match_origin: "none"
+                      match_route_type: "1"
+                      match_tag: "20"
+                      set_aggregator_as: "21"
+                      set_aggregator_ip: "<your_own_value>"
+                      set_aspath:
+                          -
+                              as: "<your_own_value>"
+                      set_atomic_aggregate: "enable"
+                      set_community:
+                          -
+                              community: "<your_own_value>"
+                      set_community_additive: "enable"
+                      set_community_delete: "<your_own_value> (source router.community-list.name)"
+                      set_extcommunity_rt:
+                          -
+                              community: "<your_own_value>"
+                      set_extcommunity_soo:
+                          -
+                              community: "<your_own_value>"
+                      set_flags: "34"
+                      set_ip6_nexthop: "<your_own_value>"
+                      set_ip6_nexthop_local: "<your_own_value>"
+                      set_ip_nexthop: "<your_own_value>"
+                      set_local_preference: "38"
+                      set_metric: "39"
+                      set_metric_type: "1"
+                      set_origin: "none"
+                      set_originator_id: "<your_own_value>"
+                      set_tag: "43"
+                      set_weight: "44"
 
 
 Return Values

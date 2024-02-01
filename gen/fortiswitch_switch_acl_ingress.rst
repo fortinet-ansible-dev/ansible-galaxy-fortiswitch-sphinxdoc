@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_acl_ingress</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -147,63 +120,53 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Ingress Policy configuration.
-        fortiswitch_switch_acl_ingress:
+    - name: Ingress Policy configuration.
+      fortinet.fortiswitch.fortiswitch_switch_acl_ingress:
           state: "present"
           switch_acl_ingress:
-            action:
-                cos_queue: "4"
-                count: "enable"
-                count_type: "all"
-                cpu_cos_queue: "7"
-                drop: "enable"
-                egress_mask:
-                 -
-                    member_name: "<your_own_value> (source switch.physical_port.name)"
-                mirror: "<your_own_value> (source switch.mirror.name)"
-                outer_vlan_tag: "12"
-                policer: "13 (source switch.acl.policer.id)"
-                redirect: "<your_own_value> (source switch.physical_port.name switch.trunk.name)"
-                redirect_bcast_cpu: "enable"
-                redirect_bcast_no_cpu: "enable"
-                redirect_physical_port:
-                 -
-                    member_name: "<your_own_value> (source switch.physical_port.name)"
-                remark_cos: "19"
-                remark_dscp: "20"
-            classifier:
-                cos: "22"
-                dscp: "23"
-                dst_ip_prefix: "<your_own_value>"
-                dst_ip6_prefix: "<your_own_value>"
-                dst_mac: "<your_own_value>"
-                ether_type: "27"
-                service: "<your_own_value> (source switch.acl.service.custom.name)"
-                src_ip_prefix: "<your_own_value>"
-                src_ip6_prefix: "<your_own_value>"
-                src_mac: "<your_own_value>"
-                vlan_id: "32"
-            description: "<your_own_value>"
-            group: "34"
-            id:  "35"
-            ingress_interface:
-             -
-                member_name: "<your_own_value> (source switch.physical_port.name switch.trunk.name)"
-            ingress_interface_all: "enable"
-            schedule:
-             -
-                schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
-            status: "active"
-    
+              action:
+                  cos_queue: "4"
+                  count: "enable"
+                  count_type: "all"
+                  cpu_cos_queue: "7"
+                  drop: "enable"
+                  egress_mask:
+                      -
+                          member_name: "<your_own_value> (source switch.physical-port.name)"
+                  mirror: "<your_own_value> (source switch.mirror.name)"
+                  outer_vlan_tag: "12"
+                  policer: "13 (source switch.acl.policer.id)"
+                  redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
+                  redirect_bcast_cpu: "enable"
+                  redirect_bcast_no_cpu: "enable"
+                  redirect_physical_port:
+                      -
+                          member_name: "<your_own_value> (source switch.physical-port.name)"
+                  remark_cos: "19"
+                  remark_dscp: "20"
+              classifier:
+                  cos: "22"
+                  dscp: "23"
+                  dst_ip6_prefix: "<your_own_value>"
+                  dst_ip_prefix: "<your_own_value>"
+                  dst_mac: "<your_own_value>"
+                  ether_type: "27"
+                  service: "<your_own_value> (source switch.acl.service.custom.name)"
+                  src_ip6_prefix: "<your_own_value>"
+                  src_ip_prefix: "<your_own_value>"
+                  src_mac: "<your_own_value>"
+                  vlan_id: "32"
+              description: "<your_own_value>"
+              group: "34"
+              id: "35"
+              ingress_interface:
+                  -
+                      member_name: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
+              ingress_interface_all: "enable"
+              schedule:
+                  -
+                      schedule_name: "<your_own_value> (source system.schedule.onetime.name system.schedule.recurring.name system.schedule.group.name)"
+              status: "active"
 
 
 Return Values

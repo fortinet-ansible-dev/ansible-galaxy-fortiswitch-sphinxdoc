@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_password_policy</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -86,7 +59,7 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_password_policy</span> - Config password policy. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">apply_to</span> - Apply password policy to. <span class="li-normal">type: str</span> <span class="li-normal">choices: admin_password</span> </li>
+        <li> <span class="li-head">apply_to</span> - Apply password policy to. <span class="li-normal">type: str</span> <span class="li-normal">choices: admin-password</span> </li>
         <li> <span class="li-head">change_4_characters</span> - Enable/disable changing at least 4 characters for new password. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">expire_day</span> - Set number of days after which admin users" password will expire. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">expire_status</span> - Enable/disable the password expiration. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -105,29 +78,19 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Config password policy.
-        fortiswitch_system_password_policy:
+    - name: Config password policy.
+      fortinet.fortiswitch.fortiswitch_system_password_policy:
           system_password_policy:
-            apply_to: "admin-password"
-            change_4_characters: "enable"
-            expire_day: "5"
-            expire_status: "enable"
-            min_lower_case_letter: "7"
-            min_non_alphanumeric: "8"
-            min_number: "9"
-            min_upper_case_letter: "10"
-            minimum_length: "11"
-            status: "enable"
-    
+              apply_to: "admin-password"
+              change_4_characters: "enable"
+              expire_day: "5"
+              expire_status: "enable"
+              min_lower_case_letter: "7"
+              min_non_alphanumeric: "8"
+              min_number: "9"
+              min_upper_case_letter: "10"
+              minimum_length: "11"
+              status: "enable"
 
 
 Return Values

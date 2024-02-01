@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_domain</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -87,8 +60,8 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_domain</span> - Switch forwarding domains. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">ha_block</span> - Select port types to be blocked if domain becomes ha slave. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor_ports, blade_ports, misc_ports</span> </li>
-        <li> <span class="li-head">ha_L2_clear_on_role_change</span> - Select port types have their L2 tables cleared when changing HA roles. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor_ports, blade_ports, misc_ports</span> </li>
+        <li> <span class="li-head">ha_block</span> - Select port types to be blocked if domain becomes ha slave. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor-ports, blade-ports, misc-ports</span> </li>
+        <li> <span class="li-head">ha_L2_clear_on_role_change</span> - Select port types have their L2 tables cleared when changing HA roles. <span class="li-normal">type: str</span> <span class="li-normal">choices: monitor-ports, blade-ports, misc-ports</span> </li>
         <li> <span class="li-head">inter_front_panel_traffic</span> - Traffic flow between front panel ports (eg. f1<->f2). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">name</span> - Domain name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">priority</span> - Priority value(0-255). <span class="li-normal">type: int</span> </li>
@@ -102,26 +75,16 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Switch forwarding domains.
-        fortiswitch_switch_domain:
+    - name: Switch forwarding domains.
+      fortinet.fortiswitch.fortiswitch_switch_domain:
           state: "present"
           switch_domain:
-            ha_block: "monitor-ports"
-            ha_L2_clear_on_role_change: "monitor-ports"
-            inter_front_panel_traffic: "enable"
-            name: "default_name_6"
-            priority: "7"
-            vcluster_id: "8"
-    
+              ha_block: "monitor-ports"
+              ha_L2_clear_on_role_change: "monitor-ports"
+              inter_front_panel_traffic: "enable"
+              name: "default_name_6"
+              priority: "7"
+              vcluster_id: "8"
 
 
 Return Values

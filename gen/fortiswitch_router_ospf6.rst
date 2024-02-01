@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_ospf6</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -101,7 +74,7 @@ Parameters
                 <li> <span class="li-head">id</span> - Range entry id. <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">prefix6</span> - <prefix6>   IPv6 prefix <span class="li-normal">type: str</span> </li>
                 </ul>
-            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no_summary, summary</span> </li>
+            <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
             <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, stub</span> </li>
             </ul>
         <li> <span class="li-head">interface</span> - OSPF6 interface configuration. <span class="li-normal">type: list</span> </li>
@@ -138,57 +111,47 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Router OSPF6 configuration.
-        fortiswitch_router_ospf6:
+    - name: Router OSPF6 configuration.
+      fortinet.fortiswitch.fortiswitch_router_ospf6:
           router_ospf6:
-            area:
-             -
-                filter_list:
-                 -
-                    direction: "in"
-                    id:  "6"
-                    list: "<your_own_value> (source router.access_list6.name router.prefix_list6.name)"
-                id:  "8"
-                range:
-                 -
-                    advertise: "disable"
-                    id:  "11"
-                    prefix6: "<your_own_value>"
-                stub_type: "no-summary"
-                type: "regular"
-            interface:
-             -
-                area_id: "<your_own_value>"
-                bfd: "enable"
-                cost: "18"
-                dead_interval: "19"
-                hello_interval: "20"
-                name: "default_name_21 (source system.interface.name)"
-                passive: "enable"
-                priority: "23"
-                retransmit_interval: "24"
-                status: "disable"
-                transmit_delay: "26"
-            log_neighbor_changes: "enable"
-            redistribute:
-             -
-                metric: "29"
-                metric_type: "1"
-                name: "default_name_31"
-                routemap: "<your_own_value> (source router.route_map.name)"
-                status: "enable"
-            router_id: "<your_own_value>"
-            spf_timers: "<your_own_value>"
-    
+              area:
+                  -
+                      filter_list:
+                          -
+                              direction: "in"
+                              id: "6"
+                              list: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
+                      id: "8"
+                      range:
+                          -
+                              advertise: "disable"
+                              id: "11"
+                              prefix6: "<your_own_value>"
+                      stub_type: "no-summary"
+                      type: "regular"
+              interface:
+                  -
+                      area_id: "<your_own_value>"
+                      bfd: "enable"
+                      cost: "18"
+                      dead_interval: "19"
+                      hello_interval: "20"
+                      name: "default_name_21 (source system.interface.name)"
+                      passive: "enable"
+                      priority: "23"
+                      retransmit_interval: "24"
+                      status: "disable"
+                      transmit_delay: "26"
+              log_neighbor_changes: "enable"
+              redistribute:
+                  -
+                      metric: "29"
+                      metric_type: "1"
+                      name: "default_name_31"
+                      routemap: "<your_own_value> (source router.route-map.name)"
+                      status: "enable"
+              router_id: "<your_own_value>"
+              spf_timers: "<your_own_value>"
 
 
 Return Values

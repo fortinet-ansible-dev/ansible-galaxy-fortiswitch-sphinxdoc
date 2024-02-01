@@ -34,26 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_automation_action</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -74,7 +61,7 @@ Parameters
     <li> <span class="li-head">system_automation_action</span> - Action for automation stitches. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">accprofile</span> - Access profile for CLI script action to access FortiSwitch features. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">action_type</span> - Action type. <span class="li-normal">type: str</span> <span class="li-normal">choices: email, alert, cli_script, snmp_trap, webhook</span> </li>
+        <li> <span class="li-head">action_type</span> - Action type. <span class="li-normal">type: str</span> <span class="li-normal">choices: email, alert, cli-script, snmp-trap, webhook</span> </li>
         <li> <span class="li-head">alicloud_access_key_id</span> - AliCloud AccessKey ID. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">alicloud_access_key_secret</span> - AliCloud AccessKey secret. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">alicloud_account_id</span> - AliCloud account ID. <span class="li-normal">type: str</span> </li>
@@ -117,7 +104,7 @@ Parameters
         <li> <span class="li-head">port</span> - Protocol port. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">protocol</span> - Request protocol. <span class="li-normal">type: str</span> <span class="li-normal">choices: http, https</span> </li>
         <li> <span class="li-head">script</span> - CLI script. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">snmp_trap</span> - SNMP trap. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu_high, mem_low, syslog_full, test_trap</span> </li>
+        <li> <span class="li-head">snmp_trap</span> - SNMP trap. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, syslog-full, test-trap</span> </li>
         <li> <span class="li-head">uri</span> - Request API URI. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
@@ -128,64 +115,54 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Action for automation stitches.
-        fortiswitch_system_automation_action:
+    - name: Action for automation stitches.
+      fortinet.fortiswitch.fortiswitch_system_automation_action:
           state: "present"
           system_automation_action:
-            accprofile: "<your_own_value> (source system.accprofile.name)"
-            action_type: "email"
-            alicloud_access_key_id: "<your_own_value>"
-            alicloud_access_key_secret: "<your_own_value>"
-            alicloud_account_id: "<your_own_value>"
-            alicloud_function: "<your_own_value>"
-            alicloud_function_authorization: "anonymous"
-            alicloud_function_domain: "<your_own_value>"
-            alicloud_region: "<your_own_value>"
-            alicloud_service: "<your_own_value>"
-            alicloud_version: "<your_own_value>"
-            aws_api_id: "<your_own_value>"
-            aws_api_key: "<your_own_value>"
-            aws_api_path: "<your_own_value>"
-            aws_api_stage: "<your_own_value>"
-            aws_domain: "<your_own_value>"
-            aws_region: "<your_own_value>"
-            azure_api_key: "<your_own_value>"
-            azure_app: "<your_own_value>"
-            azure_domain: "<your_own_value>"
-            azure_function: "<your_own_value>"
-            azure_function_authorization: "anonymous"
-            email_body: "<your_own_value>"
-            email_from: "<your_own_value>"
-            email_subject: "<your_own_value>"
-            email_to:
-             -
-                name: "default_name_29"
-            gcp_function: "<your_own_value>"
-            gcp_function_domain: "<your_own_value>"
-            gcp_function_region: "<your_own_value>"
-            gcp_project: "<your_own_value>"
-            headers:
-             -
-                header: "<your_own_value>"
-            http_body: "<your_own_value>"
-            method: "post"
-            minimum_interval: "38"
-            name: "default_name_39"
-            port: "40"
-            protocol: "http"
-            script: "<your_own_value>"
-            snmp_trap: "cpu-high"
-            uri: "<your_own_value>"
-    
+              accprofile: "<your_own_value> (source system.accprofile.name)"
+              action_type: "email"
+              alicloud_access_key_id: "<your_own_value>"
+              alicloud_access_key_secret: "<your_own_value>"
+              alicloud_account_id: "<your_own_value>"
+              alicloud_function: "<your_own_value>"
+              alicloud_function_authorization: "anonymous"
+              alicloud_function_domain: "<your_own_value>"
+              alicloud_region: "<your_own_value>"
+              alicloud_service: "<your_own_value>"
+              alicloud_version: "<your_own_value>"
+              aws_api_id: "<your_own_value>"
+              aws_api_key: "<your_own_value>"
+              aws_api_path: "<your_own_value>"
+              aws_api_stage: "<your_own_value>"
+              aws_domain: "<your_own_value>"
+              aws_region: "<your_own_value>"
+              azure_api_key: "<your_own_value>"
+              azure_app: "<your_own_value>"
+              azure_domain: "<your_own_value>"
+              azure_function: "<your_own_value>"
+              azure_function_authorization: "anonymous"
+              email_body: "<your_own_value>"
+              email_from: "<your_own_value>"
+              email_subject: "<your_own_value>"
+              email_to:
+                  -
+                      name: "default_name_29"
+              gcp_function: "<your_own_value>"
+              gcp_function_domain: "<your_own_value>"
+              gcp_function_region: "<your_own_value>"
+              gcp_project: "<your_own_value>"
+              headers:
+                  -
+                      header: "<your_own_value>"
+              http_body: "<your_own_value>"
+              method: "post"
+              minimum_interval: "38"
+              name: "default_name_39"
+              port: "40"
+              protocol: "http"
+              script: "<your_own_value>"
+              snmp_trap: "cpu-high"
+              uri: "<your_own_value>"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_router_static6</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -95,7 +68,7 @@ Parameters
         <li> <span class="li-head">distance</span> - Administrative distance (1-255). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">dst</span> - Destination IPv6 prefix for this route. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">gateway</span> - Gateway IPv6 address for this route. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">seq_num</span> - entry No. <span class="li-normal">type: int</span> <span class="li-required">required: true</span> </li>
+        <li> <span class="li-head">seq_num</span> - entry No. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">status</span> - Status. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">vrf</span> - VRF. <span class="li-normal">type: str</span> </li>
         </ul>
@@ -107,31 +80,21 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Ipv6 static routes configuration.
-        fortiswitch_router_static6:
+    - name: Ipv6 static routes configuration.
+      fortinet.fortiswitch.fortiswitch_router_static6:
           state: "present"
           router_static6:
-            bfd: "enable"
-            blackhole: "enable"
-            comment: "comment"
-            device: "<your_own_value> (source system.interface.name)"
-            devindex: "7"
-            distance: "8"
-            dst: "<your_own_value>"
-            gateway: "<your_own_value>"
-            seq_num: "11"
-            status: "enable"
-            vrf: "<your_own_value> (source router.vrf.name)"
-    
+              bfd: "enable"
+              blackhole: "enable"
+              comment: "comment"
+              device: "<your_own_value> (source system.interface.name)"
+              devindex: "7"
+              distance: "8"
+              dst: "<your_own_value>"
+              gateway: "<your_own_value>"
+              seq_num: "11"
+              status: "enable"
+              vrf: "<your_own_value> (source router.vrf.name)"
 
 
 Return Values

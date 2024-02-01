@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_raguard_policy</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -105,29 +78,19 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: IPV6 RA Guard policy.
-        fortiswitch_switch_raguard_policy:
+    - name: IPV6 RA Guard policy.
+      fortinet.fortiswitch.fortiswitch_switch_raguard_policy:
           state: "present"
           switch_raguard_policy:
-            device_role: "host"
-            managed_flag: "on"
-            match_prefix: "<your_own_value> (source router.prefix_list6.name)"
-            match_src_addr: "<your_own_value> (source router.access_list6.name)"
-            max_hop_limit: "7"
-            max_router_preference: "high"
-            min_hop_limit: "9"
-            name: "default_name_10"
-            other_flag: "on"
-    
+              device_role: "host"
+              managed_flag: "on"
+              match_prefix: "<your_own_value> (source router.prefix-list6.name)"
+              match_src_addr: "<your_own_value> (source router.access-list6.name)"
+              max_hop_limit: "7"
+              max_router_preference: "high"
+              min_hop_limit: "9"
+              name: "default_name_10"
+              other_flag: "on"
 
 
 Return Values

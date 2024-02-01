@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_dhcp_server</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -145,7 +118,7 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">tftp_server</span> - TFTP server. <span class="li-normal">type: str</span> </li>
             </ul>
-        <li> <span class="li-head">timezone</span> - Select the time zone to be assigned to DHCP clients. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76</span> </li>
+        <li> <span class="li-head">timezone</span> - Select the time zone to be assigned to DHCP clients. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76, 88, 89, 90, 91, 92</span> </li>
         <li> <span class="li-head">timezone_option</span> - Options for the DHCP server to set the client"s time zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, default, specify</span> </li>
         <li> <span class="li-head">vci_match</span> - Enable/disable vendor class identifier (VCI) matching. When enabled only DHCP requests with a matching VCI are served. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">vci_string</span> - One or more VCI strings in quotes separated by spaces. <span class="li-normal">type: list</span> </li>
@@ -166,84 +139,74 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Configure DHCP servers.
-        fortiswitch_system_dhcp_server:
+    - name: Configure DHCP servers.
+      fortinet.fortiswitch.fortiswitch_system_dhcp_server:
           state: "present"
           system_dhcp_server:
-            auto_configuration: "disable"
-            conflicted_ip_timeout: "4"
-            default_gateway: "<your_own_value>"
-            dns_server1: "<your_own_value>"
-            dns_server2: "<your_own_value>"
-            dns_server3: "<your_own_value>"
-            dns_service: "local"
-            domain: "<your_own_value>"
-            exclude_range:
-             -
-                end_ip: "<your_own_value>"
-                id:  "13"
-                start_ip: "<your_own_value>"
-            filename: "<your_own_value>"
-            id:  "16"
-            interface: "<your_own_value> (source system.interface.name)"
-            ip_mode: "range"
-            ip_range:
-             -
-                end_ip: "<your_own_value>"
-                id:  "21"
-                start_ip: "<your_own_value>"
-            lease_time: "23"
-            netmask: "<your_own_value>"
-            next_server: "<your_own_value>"
-            ntp_server1: "<your_own_value>"
-            ntp_server2: "<your_own_value>"
-            ntp_server3: "<your_own_value>"
-            ntp_service: "local"
-            options:
-             -
-                code: "31"
-                id:  "32"
-                ip: "<your_own_value>"
-                type: "hex"
-                value: "<your_own_value>"
-            reserved_address:
-             -
-                action: "assign"
-                circuit_id: "<your_own_value>"
-                circuit_id_type: "hex"
-                description: "<your_own_value>"
-                id:  "41"
-                ip: "<your_own_value>"
-                mac: "<your_own_value>"
-                remote_id: "<your_own_value>"
-                remote_id_type: "hex"
-                type: "mac"
-            server_type: "regular"
-            status: "disable"
-            tftp_server:
-             -
-                tftp_server: "<your_own_value>"
-            timezone: "01"
-            timezone_option: "disable"
-            vci_match: "disable"
-            vci_string:
-             -
-                vci_string: "<your_own_value>"
-            wifi_ac1: "<your_own_value>"
-            wifi_ac2: "<your_own_value>"
-            wifi_ac3: "<your_own_value>"
-            wins_server1: "<your_own_value>"
-            wins_server2: "<your_own_value>"
-    
+              auto_configuration: "disable"
+              conflicted_ip_timeout: "4"
+              default_gateway: "<your_own_value>"
+              dns_server1: "<your_own_value>"
+              dns_server2: "<your_own_value>"
+              dns_server3: "<your_own_value>"
+              dns_service: "local"
+              domain: "<your_own_value>"
+              exclude_range:
+                  -
+                      end_ip: "<your_own_value>"
+                      id: "13"
+                      start_ip: "<your_own_value>"
+              filename: "<your_own_value>"
+              id: "16"
+              interface: "<your_own_value> (source system.interface.name)"
+              ip_mode: "range"
+              ip_range:
+                  -
+                      end_ip: "<your_own_value>"
+                      id: "21"
+                      start_ip: "<your_own_value>"
+              lease_time: "23"
+              netmask: "<your_own_value>"
+              next_server: "<your_own_value>"
+              ntp_server1: "<your_own_value>"
+              ntp_server2: "<your_own_value>"
+              ntp_server3: "<your_own_value>"
+              ntp_service: "local"
+              options:
+                  -
+                      code: "31"
+                      id: "32"
+                      ip: "<your_own_value>"
+                      type: "hex"
+                      value: "<your_own_value>"
+              reserved_address:
+                  -
+                      action: "assign"
+                      circuit_id: "<your_own_value>"
+                      circuit_id_type: "hex"
+                      description: "<your_own_value>"
+                      id: "41"
+                      ip: "<your_own_value>"
+                      mac: "<your_own_value>"
+                      remote_id: "<your_own_value>"
+                      remote_id_type: "hex"
+                      type: "mac"
+              server_type: "regular"
+              status: "disable"
+              tftp_server:
+                  -
+                      tftp_server: "<your_own_value>"
+              timezone: "01"
+              timezone_option: "disable"
+              vci_match: "disable"
+              vci_string:
+                  -
+                      vci_string: "<your_own_value>"
+              wifi_ac1: "<your_own_value>"
+              wifi_ac2: "<your_own_value>"
+              wifi_ac3: "<your_own_value>"
+              wins_server1: "<your_own_value>"
+              wins_server2: "<your_own_value>"
 
 
 Return Values

@@ -34,40 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.0.0 </code></td>
- <td><code class="docutils literal notranslate">v7.0.1 </code></td>
- <td><code class="docutils literal notranslate">v7.0.2 </code></td>
- <td><code class="docutils literal notranslate">v7.0.3 </code></td>
- <td><code class="docutils literal notranslate">v7.0.4 </code></td>
- <td><code class="docutils literal notranslate">v7.0.5 </code></td>
- <td><code class="docutils literal notranslate">v7.0.6 </code></td>
- <td><code class="docutils literal notranslate">v7.2.1 </code></td>
- <td><code class="docutils literal notranslate">v7.2.2 </code></td>
- <td><code class="docutils literal notranslate">v7.2.3 </code></td>
- <td><code class="docutils literal notranslate">v7.2.4 </code></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_vdom_property</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -113,37 +86,27 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: Vdom-property configuration.
-        fortiswitch_system_vdom_property:
+    - name: Vdom-property configuration.
+      fortinet.fortiswitch.fortiswitch_system_vdom_property:
           state: "present"
           system_vdom_property:
-            custom_service: "<your_own_value>"
-            description: "<your_own_value>"
-            dialup_tunnel: "<your_own_value>"
-            firewall_address: "<your_own_value>"
-            firewall_addrgrp: "<your_own_value>"
-            firewall_policy: "<your_own_value>"
-            ipsec_phase1: "<your_own_value>"
-            ipsec_phase2: "<your_own_value>"
-            log_disk_quota: "<your_own_value>"
-            name: "default_name_12 (source system.vdom.name)"
-            onetime_schedule: "<your_own_value>"
-            proxy: "<your_own_value>"
-            recurring_schedule: "<your_own_value>"
-            service_group: "<your_own_value>"
-            session: "<your_own_value>"
-            user: "<your_own_value>"
-            user_group: "<your_own_value>"
-    
+              custom_service: "<your_own_value>"
+              description: "<your_own_value>"
+              dialup_tunnel: "<your_own_value>"
+              firewall_address: "<your_own_value>"
+              firewall_addrgrp: "<your_own_value>"
+              firewall_policy: "<your_own_value>"
+              ipsec_phase1: "<your_own_value>"
+              ipsec_phase2: "<your_own_value>"
+              log_disk_quota: "<your_own_value>"
+              name: "default_name_12 (source system.vdom.name)"
+              onetime_schedule: "<your_own_value>"
+              proxy: "<your_own_value>"
+              recurring_schedule: "<your_own_value>"
+              service_group: "<your_own_value>"
+              session: "<your_own_value>"
+              user: "<your_own_value>"
+              user_group: "<your_own_value>"
 
 
 Return Values

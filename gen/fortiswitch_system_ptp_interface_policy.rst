@@ -34,18 +34,13 @@ FortiSW Version Compatibility
 .. raw:: html
 
  <br>
- <table>
+ <table border="1">
  <tr>
- <td></td>
- <td><code class="docutils literal notranslate">v7.2.5 </code></td>
- <td><code class="docutils literal notranslate">v7.4.0 </code></td>
- <td><code class="docutils literal notranslate">v7.4.1 </code></td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_ptp_interface_policy</td>
- <td>yes</td>
- <td>yes</td>
- <td>yes</td>
+ <td><code class="docutils literal notranslate">v7.4.0 -> latest </code></td>
  </tr>
  </table>
  <p>
@@ -78,24 +73,14 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - hosts: fortiswitch01
-      collections:
-        - fortinet.fortiswitch
-      connection: httpapi
-      vars:
-       ansible_httpapi_use_ssl: yes
-       ansible_httpapi_validate_certs: no
-       ansible_httpapi_port: 443
-      tasks:
-      - name: PTP policy configuration.
-        fortiswitch_system_ptp_interface_policy:
+    - name: PTP policy configuration.
+      fortinet.fortiswitch.fortiswitch_system_ptp_interface_policy:
           state: "present"
           system_ptp_interface_policy:
-            description: "<your_own_value>"
-            name: "default_name_4"
-            vlan: "5"
-            vlan_pri: "6"
-    
+              description: "<your_own_value>"
+              name: "default_name_4"
+              vlan: "5"
+              vlan_pri: "6"
 
 
 Return Values
