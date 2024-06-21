@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_global</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -66,6 +66,7 @@ Parameters
         <li> <span class="li-head">admin_lockout_threshold</span> - Lockout threshold for FortiSwitch administration. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">admin_password_hash</span> - Admin password hash algorithm. (sha1, sha256, pbkdf2) <span class="li-normal">type: str</span> <span class="li-normal">choices: sha1, sha256, pbkdf2, pbkdf2-high</span> </li>
         <li> <span class="li-head">admin_port</span> - Administrative access HTTP port (1 - 65535). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">admin_restrict_local</span> - Enable/disable local admin authentication restriction when remote authenticator is up and running. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">admin_scp</span> - Enable/disable downloading of system configuraiton using SCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">admin_server_cert</span> - Administrative HTTPS server certificate. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">admin_sport</span> - Administrative access HTTPS port (1 - 65535). <span class="li-normal">type: int</span> </li>
@@ -77,6 +78,7 @@ Parameters
         <li> <span class="li-head">alert_interval</span> - Interval between each syslog entry when a sensor is out-of-range with respect to its threshold (in mins). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">alertd_relog</span> - Enable/disable re-logs when a sensor exceeds it"s threshold. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">allow_subnet_overlap</span> - Enable/disable subnet overlap. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">arp_inspection_monitor_timeout</span> - Timeout used when MAC-VLAN-IP learned from ARP traffic. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">arp_timeout</span> - ARP timeout value in seconds. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">asset_tag</span> - Asset tag. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">auto_isl</span> - Enable/disable automatic inter-switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -118,6 +120,7 @@ Parameters
         <li> <span class="li-head">radius_coa_port</span> - RADIUS CoA port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">radius_port</span> - RADIUS server port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">remoteauthtimeout</span> - Remote authentication (RADIUS/LDAP) time-out (0 - 300). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">reset_button</span> - When disabled, reset is ignored while the OS is running. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">restart_time</span> - Daily restart time <hh:mm>. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">revision_backup_on_logout</span> - Enable/disable automatic revision backup upon logout. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">revision_backup_on_upgrade</span> - Enable/disable automatic revision backup upon upgrade of system image. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -149,63 +152,66 @@ Examples
               admin_lockout_threshold: "9"
               admin_password_hash: "sha1"
               admin_port: "11"
+              admin_restrict_local: "enable"
               admin_scp: "enable"
               admin_server_cert: "<your_own_value>"
-              admin_sport: "14"
-              admin_ssh_grace_time: "15"
-              admin_ssh_port: "16"
+              admin_sport: "15"
+              admin_ssh_grace_time: "16"
+              admin_ssh_port: "17"
               admin_ssh_v1: "enable"
-              admin_telnet_port: "18"
-              admintimeout: "19"
-              alert_interval: "20"
+              admin_telnet_port: "19"
+              admintimeout: "20"
+              alert_interval: "21"
               alertd_relog: "enable"
               allow_subnet_overlap: "enable"
-              arp_timeout: "23"
+              arp_inspection_monitor_timeout: "24"
+              arp_timeout: "25"
               asset_tag: "<your_own_value>"
               auto_isl: "enable"
-              cfg_revert_timeout: "26"
+              cfg_revert_timeout: "28"
               cfg_save: "automatic"
               clt_cert_req: "enable"
               csr_ca_attribute: "enable"
               daily_restart: "enable"
-              delaycli_timeout_cleanup: "31"
+              delaycli_timeout_cleanup: "33"
               detect_ip_conflict: "enable"
-              dh_params: "33"
+              dh_params: "35"
               dhcp_circuit_id: "intfname"
               dhcp_client_location: "intfname"
               dhcp_option_format: "legacy"
               dhcp_remote_id: "mac"
               dhcp_server_access_list: "enable"
               dhcp_snoop_client_req: "forward-untrusted"
-              dhcps_db_exp: "40"
-              dhcps_db_per_port_learn_limit: "41"
+              dhcps_db_exp: "42"
+              dhcps_db_per_port_learn_limit: "43"
               dst: "enable"
-              failtime: "43"
+              failtime: "45"
               fortilink_auto_discovery: "enable"
               hostname: "myhostname"
               image_rotation: "disable"
-              interval: "47"
+              interval: "49"
               ip_conflict_ignore_default: "enable"
-              ipv6_accept_dad: "49"
+              ipv6_accept_dad: "51"
               ipv6_all_forwarding: "enable"
               kernel_crashlog: "enable"
               kernel_devicelog: "enable"
               l3_host_expiry: "enable"
               language: "browser"
-              ldapconntimeout: "55"
+              ldapconntimeout: "57"
               post_login_banner: "<your_own_value>"
               pre_login_banner: "<your_own_value>"
               private_data_encryption: "disable"
-              radius_coa_port: "59"
-              radius_port: "60"
-              remoteauthtimeout: "61"
+              radius_coa_port: "61"
+              radius_port: "62"
+              remoteauthtimeout: "63"
+              reset_button: "enable"
               restart_time: "<your_own_value>"
               revision_backup_on_logout: "enable"
               revision_backup_on_upgrade: "enable"
               strong_crypto: "enable"
               switch_mgmt_mode: "local"
-              tcp6_mss_min: "67"
-              tcp_mss_min: "68"
+              tcp6_mss_min: "70"
+              tcp_mss_min: "71"
               tcp_options: "enable"
               tftp: "enable"
               timezone: "01"
@@ -247,4 +253,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

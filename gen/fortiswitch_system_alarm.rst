@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_alarm</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -161,4 +161,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

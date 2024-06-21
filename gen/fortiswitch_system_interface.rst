@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_interface</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -95,7 +95,7 @@ Parameters
             <li> <span class="li-head">autoconf</span> - Enable/disable address automatic config. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">dhcp6_information_request</span> - Enable/disable DHCPv6 information request. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_address</span> - Primary IPv6 address prefix of interface. <span class="li-normal">type: str</span> </li>
-            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
+            <li> <span class="li-head">ip6_allowaccess</span> - Allow management access to the interface. <span class="li-normal">type: list</span> <span class="li-normal">choices: any, ping, https, http, ssh, snmp, telnet, radius-acct</span> </li>
             <li> <span class="li-head">ip6_default_life</span> - IPv6 default life (sec). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">ip6_dns_server_override</span> - Enable/disable using the DNS server acquired by DHCP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">ip6_extra_addr</span> - Extra IPv6 address prefixes of interface. <span class="li-normal">type: list</span> </li>
@@ -197,7 +197,7 @@ Examples
 --------
 
 .. code-block:: yaml+jinja
-    
+
     - name: Configure interfaces.
       fortinet.fortiswitch.fortiswitch_system_interface:
           state: "present"
@@ -361,4 +361,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

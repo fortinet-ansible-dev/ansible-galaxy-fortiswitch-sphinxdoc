@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_automation_action</td>
- <td><code class="docutils literal notranslate">v7.2.1 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -104,7 +104,7 @@ Parameters
         <li> <span class="li-head">port</span> - Protocol port. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">protocol</span> - Request protocol. <span class="li-normal">type: str</span> <span class="li-normal">choices: http, https</span> </li>
         <li> <span class="li-head">script</span> - CLI script. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">snmp_trap</span> - SNMP trap. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, syslog-full, test-trap</span> </li>
+        <li> <span class="li-head">snmp_trap</span> - SNMP trap. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, syslog-full, test-trap, fsStitchTrap1, fsStitchTrap2, fsStitchTrap3, fsStitchTrap4, fsStitchTrap5</span> </li>
         <li> <span class="li-head">uri</span> - Request API URI. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
@@ -201,4 +201,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

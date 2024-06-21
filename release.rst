@@ -4,6 +4,24 @@ Release Notes
 
 |
 
+Release Galaxy 1.2.4
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.2.4 is based on 1.2.3
+
+Features
+^^^^^^^^^^^^^^^
+- Support new FortiSwitch versions 7.4.3.
+- Update the supported version for the module with version number instead of latest.
+- Improve the no_log logic to expose all the non-sensitive data to users.
+- Add warning on the document for the module `fortiswitch_system_proxy_arp` to indicate that the module is not used for production purpose.
+- Update the required Ansible version to 2.15.
+- Support multiple valus for the parameter of `ip6_allowaccess` in the module of `fortiswitch_system_interface`.
+- Support Ansible 2.17.
+
 Release Galaxy 1.2.3
 --------------------
 

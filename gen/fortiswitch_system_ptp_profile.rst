@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_ptp_profile</td>
- <td><code class="docutils literal notranslate">v7.4.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.4.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -60,12 +60,18 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_ptp_profile</span> - PTP policy configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
+        <li> <span class="li-head">announce_interval</span> - Announce interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
+        <li> <span class="li-head">announce_timeout</span> - PTP Announce timeout (2-10) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">domain</span> - PTP domain (0-255) <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">min_delay_req_interval</span> - Min Delay Request interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
         <li> <span class="li-head">mode</span> - Select PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: transparent-e2e</span> </li>
         <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">pdelay_req_interval</span> - PDelay Request interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
-        <li> <span class="li-head">ptp_profile</span> - Select PTP profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: C37.238-2017</span> </li>
+        <li> <span class="li-head">priority1</span> - PTP priority1 (0-255) <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">priority2</span> - PTP priority2 (0-255) <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">ptp_profile</span> - Select PTP profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: C37.238-2017, default</span> </li>
+        <li> <span class="li-head">sync_interval</span> - Sync interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
         <li> <span class="li-head">transport</span> - Select PTP transport. <span class="li-normal">type: str</span> <span class="li-normal">choices: l2-mcast</span> </li>
         </ul>
     </ul>
@@ -80,12 +86,18 @@ Examples
       fortinet.fortiswitch.fortiswitch_system_ptp_profile:
           state: "present"
           system_ptp_profile:
+              announce_interval: "0.25sec"
+              announce_timeout: "4"
               description: "<your_own_value>"
-              domain: "4"
+              domain: "6"
+              min_delay_req_interval: "0.25sec"
               mode: "transparent-e2e"
-              name: "default_name_6"
+              name: "default_name_9"
               pdelay_req_interval: "0.25sec"
+              priority1: "11"
+              priority2: "12"
               ptp_profile: "C37.238-2017"
+              sync_interval: "0.25sec"
               transport: "l2-mcast"
 
 
@@ -125,4 +137,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

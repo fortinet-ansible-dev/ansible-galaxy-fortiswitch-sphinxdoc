@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_switch_vlan</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -61,7 +61,7 @@ Parameters
     <li> <span class="li-head">switch_vlan</span> - Configure optional per-VLAN settings. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">access_vlan</span> - Block port-to-port traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
-        <li> <span class="li-head">arp_inspection</span> - Enable/Disable Dynamic ARP Inspection. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
+        <li> <span class="li-head">arp_inspection</span> - Enable/Disable Dynamic ARP Inspection. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable, monitor</span> </li>
         <li> <span class="li-head">assignment_priority</span> - 802.1x Radius (Tunnel-Private-Group-Id) vlanid assign-by-name priority (smaller is higher). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">community_vlans</span> - Communities within this private VLAN. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">cos_queue</span> - Set cos(0-7) on the VLAN traffic or unset to disable. <span class="li-normal">type: int</span> </li>
@@ -292,4 +292,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

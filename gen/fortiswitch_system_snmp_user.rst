@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_user</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -62,7 +62,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">auth_proto</span> - Authentication protocol. <span class="li-normal">type: str</span> <span class="li-normal">choices: md5, sha1, sha224, sha256, sha384, sha512</span> </li>
         <li> <span class="li-head">auth_pwd</span> - Password for authentication protocol. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">events</span> - SNMP notifications (traps) to send. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv, l2mac, sensor-fault, sensor-alarm, fan-detect, psu-status, ip-conflict, tkmem-hb-oo-sync</span> </li>
+        <li> <span class="li-head">events</span> - SNMP notifications (traps) to send. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv, l2mac, sensor-fault, sensor-alarm, fan-detect, psu-status, ip-conflict, tkmem-hb-oo-sync, fsTrapStitch1, fsTrapStitch2, fsTrapStitch3, fsTrapStitch4, fsTrapStitch5, storm-control</span> </li>
         <li> <span class="li-head">name</span> - SNMP user name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">notify_hosts</span> - Send notifications (traps) to these hosts. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">priv_proto</span> - Privacy (encryption) protocol. <span class="li-normal">type: str</span> <span class="li-normal">choices: aes128, aes192, aes192c, aes256, aes256c, des</span> </li>
@@ -131,4 +131,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

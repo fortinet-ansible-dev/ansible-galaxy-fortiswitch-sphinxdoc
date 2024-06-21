@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_snmp_community</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -60,7 +60,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_snmp_community</span> - SNMP community configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">events</span> - Trap snmp events. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv, l2mac, sensor-fault, sensor-alarm, fan-detect, psu-status, ip-conflict, tkmem-hb-oo-sync</span> </li>
+        <li> <span class="li-head">events</span> - Trap snmp events. <span class="li-normal">type: str</span> <span class="li-normal">choices: cpu-high, mem-low, log-full, intf-ip, ent-conf-change, llv, l2mac, sensor-fault, sensor-alarm, fan-detect, psu-status, ip-conflict, tkmem-hb-oo-sync, fsTrapStitch1, fsTrapStitch2, fsTrapStitch3, fsTrapStitch4, fsTrapStitch5, storm-control</span> </li>
         <li> <span class="li-head">hosts</span> - Allow hosts configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">id</span> - Host entry id. <span class="li-normal">type: int</span> </li>
@@ -165,4 +165,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.

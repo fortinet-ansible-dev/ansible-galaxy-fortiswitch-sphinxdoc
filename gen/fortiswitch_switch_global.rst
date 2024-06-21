@@ -24,11 +24,11 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.14
+- ansible>=2.15
 
 
-FortiSW Version Compatibility
------------------------------
+FortiSwitch Version Compatibility
+---------------------------------
 
 
 .. raw:: html
@@ -40,7 +40,7 @@ FortiSW Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_switch_global</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> latest </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
  </tr>
  </table>
  <p>
@@ -114,6 +114,9 @@ Parameters
             <li> <span class="li-head">reauth_period</span> - 802.1X/MAB reauthentication period ( minute ). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">tx_period</span> - 802.1X tx period ( second ). <span class="li-normal">type: int</span> </li>
             </ul>
+        <li> <span class="li-head">storm_control_high_rate</span> - Storm control high rate. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">storm_control_monitor</span> - Enable/disable storm control monitor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">storm_control_rate_filter</span> - Storm control rate filter. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">trunk_hash_mode</span> - Trunk hash mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: default, enhanced</span> </li>
         <li> <span class="li-head">trunk_hash_unicast_src_port</span> - Enable/disable source port in Unicast trunk hashing. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">trunk_hash_unkunicast_src_dst</span> - Enable/disable trunk hash for unknown unicast src-dst. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -188,13 +191,16 @@ Examples
                   quarantine_vlan: "disable"
                   reauth_period: "54"
                   tx_period: "55"
+              storm_control_high_rate: "56"
+              storm_control_monitor: "enable"
+              storm_control_rate_filter: "58"
               trunk_hash_mode: "default"
               trunk_hash_unicast_src_port: "enable"
               trunk_hash_unkunicast_src_dst: "enable"
-              virtual_wire_tpid: "59"
-              vxlan_dport: "60"
-              vxlan_port: "61"
-              vxlan_sport: "62"
+              virtual_wire_tpid: "62"
+              vxlan_dport: "63"
+              vxlan_port: "64"
+              vxlan_sport: "65"
               vxlan_stp_virtual_mac: "<your_own_value>"
               vxlan_stp_virtual_root: "enable"
 
@@ -235,4 +241,4 @@ Authors
 
 
 .. hint::
-    If you notice any issues in this documentation, you can create a pull request to improve it.
+    If you notice any issues in this documentation, feel free to create a pull request to improve it.
