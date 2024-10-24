@@ -68,18 +68,19 @@ Parameters
         <li> <span class="li-head">eap_tls_radius_server</span> - Radius Server for MACSEC CAK EAP-TLS. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">encrypt_traffic</span> - Enable/disable Encryption of MACsec traffic. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">include_macsec_sci</span> - Include MACsec TX SCI. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
-        <li> <span class="li-head">include_mka_icv_ind</span> - Include MKA ICV indicator. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable</span> </li>
+        <li> <span class="li-head">include_mka_icv_ind</span> - Include MKA ICV indicator. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">macsec_mode</span> - Set mode of the MACsec Profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: static-cak, dynamic-cak, fortilink</span> </li>
         <li> <span class="li-head">macsec_validate</span> - Choose different MACsec validate mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: strict</span> </li>
         <li> <span class="li-head">mka_priority</span> - MACsec MKA priority. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mka_psk</span> - MACsec MKA pre-shared key configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
-            <li> <span class="li-head">crypto_alg</span> - PSK crypto algorithm. <span class="li-normal">type: str</span> <span class="li-normal">choices: AES_128_CMAC</span> </li>
+            <li> <span class="li-head">crypto_alg</span> - PSK crypto algorithm. <span class="li-normal">type: str</span> <span class="li-normal">choices: AES_128_CMAC, AES_256_CMAC</span> </li>
             <li> <span class="li-head">mka_cak</span> - MKA CAK pre-shared key hex string. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">mka_ckn</span> - MKA CKN pre-shared key hex string. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">name</span> - pre-shared-key name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">status</span> - Status of this PSK. <span class="li-normal">type: str</span> <span class="li-normal">choices: active</span> </li>
             </ul>
+        <li> <span class="li-head">mka_sak_rekey_time</span> - MACsec MKA Session SAK rekey timer. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">replay_protect</span> - Enable/disable MACsec replay protection. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">replay_window</span> - MACsec replay window size. <span class="li-normal">type: int</span> </li>
@@ -123,14 +124,15 @@ Examples
                       mka_ckn: "<your_own_value>"
                       name: "default_name_19"
                       status: "active"
-              name: "default_name_21"
+              mka_sak_rekey_time: "21"
+              name: "default_name_22"
               replay_protect: "enable"
-              replay_window: "23"
+              replay_window: "24"
               status: "enable"
               traffic_policy:
                   -
                       exclude_protocol: "ipv4"
-                      name: "default_name_27"
+                      name: "default_name_28"
                       security_policy: "must-secure"
                       status: "enable"
 

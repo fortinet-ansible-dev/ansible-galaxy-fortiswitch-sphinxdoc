@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Ansible Galaxy FortiSwitch Collection Documentation 1.2.4!
+Welcome to Ansible Galaxy FortiSwitch Collection Documentation 1.2.5!
 ============================================================================
 
 The FortiSwitch Ansible Collection provides Ansible modules for configuring FortiSwitch appliances.
@@ -35,6 +35,7 @@ The FortiSwitch Ansible Collection provides Ansible modules for configuring Fort
    fact.rst
    export.rst
    execute-modules.rst
+   generic.rst
 
 .. toctree::
    :glob:

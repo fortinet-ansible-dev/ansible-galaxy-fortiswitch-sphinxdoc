@@ -4,6 +4,27 @@ Release Notes
 
 |
 
+Release Galaxy 1.2.5
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.2.5 is based on 1.2.4
+
+Bug Fixes
+^^^^^^^^^^^^^^^
+- Fix the issue while unsetting allowaccess in `fortiswitch_system_interface`.
+- Fix the issue that the session max out while running multiple playboks.
+
+Features
+^^^^^^^^^^^^^^^
+- Support new version 7.6.0
+- Update README.md to satisfy the latest Ansible collection requirements.
+- Improve the code logic to send GET request and then POST or PUT request.
+- Add `fortiswitch_json_generic` module.
+- Support check_mode and diff feature for all the configuration modules.
+
 Release Galaxy 1.2.4
 --------------------
 

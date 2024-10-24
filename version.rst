@@ -30,7 +30,9 @@ are expected to find the version compatibility information for each module and i
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 | unified       | 1.2.3               | 2024/1/31      | ``ansible-galaxy collection install fortinet.fortiswitch:1.2.3``    |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
-| unified       | 1.2.4 latest        | 2024/6/21      | ``ansible-galaxy collection install fortinet.fortiswitch:1.2.4``    |
+| unified       | 1.2.4               | 2024/6/21      | ``ansible-galaxy collection install fortinet.fortiswitch:1.2.4``    |
++---------------+---------------------+----------------+---------------------------------------------------------------------+
+| unified       | 1.2.5 latest        | 2024/10/23     | ``ansible-galaxy collection install fortinet.fortiswitch:1.2.5``    |
 +---------------+---------------------+----------------+---------------------------------------------------------------------+
 
 

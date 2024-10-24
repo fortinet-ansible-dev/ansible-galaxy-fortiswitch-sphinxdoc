@@ -141,6 +141,7 @@ Parameters
             <li> <span class="li-head">capability_default_originate</span> - Enable/disable advertise default IPv4 route to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">capability_default_originate6</span> - Enable/disable advertise default IPv6 route to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">capability_dynamic</span> - Enable/disable advertise dynamic capability to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">capability_extended_nexthop</span> - Enable/disable extended nexthop capability. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">capability_orf</span> - Accept/Send IPv4 ORF lists to/from this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, receive, send, both</span> </li>
             <li> <span class="li-head">capability_orf6</span> - Accept/Send IPv6 ORF lists to/from this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, receive, send, both</span> </li>
             <li> <span class="li-head">connect_timer</span> - Interval (seconds) for connect timer. <span class="li-normal">type: int</span> </li>
@@ -180,6 +181,94 @@ Parameters
             <li> <span class="li-head">prefix_list_out</span> - IPv4 Outbound filter for updates to this neighbor. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">prefix_list_out6</span> - IPv6 Outbound filter for updates to this neighbor. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">remote_as</span> - AS number of neighbor. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">remove_private_as</span> - Enable/disable remove private AS number from IPv4 outbound updates. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">remove_private_as6</span> - Enable/disable remove private AS number from IPv6 outbound updates. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">route_map_in</span> - IPv4 Inbound route map filter. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_map_in6</span> - IPv6 Inbound route map filter. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_map_in_evpn</span> - EVPN Inbound route map filter. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_map_out</span> - IPv4 outbound route map filter. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_map_out6</span> - IPv6 Outbound route map filter. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_map_out_evpn</span> - EVPN outbound route map filter. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">route_reflector_client</span> - Enable/disable IPv4 AS route reflector client. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">route_reflector_client6</span> - Enable/disable IPv6 AS route reflector client. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">route_reflector_client_evpn</span> - Enable/disable EVPN AS route reflector client. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">route_server_client</span> - Enable/disable IPv4 AS route server client. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">route_server_client6</span> - Enable/disable IPv6 AS route server client. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">send_community</span> - IPv4 Send community attribute to neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: standard, extended, both, disable</span> </li>
+            <li> <span class="li-head">send_community6</span> - IPv6 Send community attribute to neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: standard, extended, both, disable</span> </li>
+            <li> <span class="li-head">shutdown</span> - Enable/disable shutdown this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">soft_reconfiguration</span> - Enable/disable allow IPv4 inbound soft reconfiguration. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">soft_reconfiguration6</span> - Enable/disable allow IPv6 inbound soft reconfiguration. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">soft_reconfiguration_evpn</span> - Enable/disable allow EVPN inbound soft reconfiguration. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">strict_capability_match</span> - Enable/disable strict capability matching. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">unsuppress_map</span> - IPv4 Route map to selectively unsuppress suppressed routes. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">unsuppress_map6</span> - IPv6 Route map to selectively unsuppress suppressed routes. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">update_source</span> - Interface to use as source IP/IPv6 address of TCP connections. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">weight</span> - Neighbor weight. <span class="li-normal">type: int</span> </li>
+            </ul>
+        <li> <span class="li-head">neighbor_group</span> - BGP neighbor group table. <span class="li-normal">type: list</span> </li>
+            <ul class="ul-self">
+            <li> <span class="li-head">activate</span> - Enable/disable address family IPv4 for this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">activate6</span> - Enable/disable address family IPv6 for this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">activate_evpn</span> - Enable/disable address family evpn for this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">advertisement_interval</span> - Minimum interval (seconds) between sending updates. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">allowas_in</span> - IPv4 The maximum number of occurrence of my AS number allowed. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">allowas_in6</span> - IPv6 The maximum number of occurrence of my AS number allowed. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">allowas_in_enable</span> - Enable/disable IPv4 Enable to allow my AS in AS path. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">allowas_in_enable6</span> - Enable/disable IPv6 - Enable to allow my AS in AS path. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">allowas_in_enable_evpn</span> - Enable/disable EVPN Enable to allow my AS in AS path. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">as_override</span> - Enable/disable replace peer AS with own AS for IPv4. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">as_override6</span> - Enable/disable replace peer AS with own AS for IPv6. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">attribute_unchanged</span> - IPv4 List of attributes that should be unchanged. <span class="li-normal">type: str</span> <span class="li-normal">choices: as-path, med, next-hop</span> </li>
+            <li> <span class="li-head">attribute_unchanged6</span> - IPv6 List of attributes that should be unchanged. <span class="li-normal">type: str</span> <span class="li-normal">choices: as-path, med, next-hop</span> </li>
+            <li> <span class="li-head">attribute_unchanged_evpn</span> - EVPN List of attributes that should be unchanged. <span class="li-normal">type: str</span> <span class="li-normal">choices: as-path, med</span> </li>
+            <li> <span class="li-head">bfd</span> - Enable/disable BFD for this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">capability_default_originate</span> - Enable/disable advertise default IPv4 route to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">capability_default_originate6</span> - Enable/disable advertise default IPv6 route to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">capability_dynamic</span> - Enable/disable advertise dynamic capability to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">capability_extended_nexthop</span> - Enable/disable extended nexthop capability. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">capability_orf</span> - Accept/Send IPv4 ORF lists to/from this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, receive, send, both</span> </li>
+            <li> <span class="li-head">capability_orf6</span> - Accept/Send IPv6 ORF lists to/from this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, receive, send, both</span> </li>
+            <li> <span class="li-head">connect_timer</span> - Interval (seconds) for connect timer. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">default_originate_routemap</span> - Route map to specify criteria to originate IPv4 default. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">default_originate_routemap6</span> - Route map to specify criteria to originate IPv6 default. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">distribute_list_in</span> - Filter for IPv4 updates from this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">distribute_list_in6</span> - Filter for IPv6 updates from this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">distribute_list_out</span> - Filter for IPv4 updates to this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">distribute_list_out6</span> - Filter for IPv6 updates to this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">dont_capability_negotiate</span> - Don"t negotiate capabilities with this neighbor <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">ebgp_enforce_multihop</span> - Enable/disable allow multi-hop next-hops from EBGP neighbors. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">ebgp_multihop_ttl</span> - EBGP multihop TTL for this peer. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">ebgp_ttl_security_hops</span> - Specify the maximum number of hops to the EBGP peer. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">enforce_first_as</span> - Enable/disable  - Enable to enforce first AS for all(IPV4/IPV6) EBGP routes. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">filter_list_in</span> - BGP aspath filter for IPv4 inbound routes. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">filter_list_in6</span> - BGP filter for IPv6 inbound routes. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">filter_list_out</span> - BGP aspath filter for IPv4 outbound routes. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">filter_list_out6</span> - BGP filter for IPv6 outbound routes. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">holdtime_timer</span> - Interval (seconds) before peer considered dead. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">interface</span> - Interface(s). <span class="li-normal">type: list</span> </li>
+                <ul class="ul-self">
+                <li> <span class="li-head">interface_name</span> - RVI interface name(s). <span class="li-normal">type: str</span> </li>
+                </ul>
+            <li> <span class="li-head">keep_alive_timer</span> - Keepalive timer interval (seconds). <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">maximum_prefix</span> - Maximum number of IPv4 prefixes to accept from this peer. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">maximum_prefix6</span> - Maximum number of IPv6 prefixes to accept from this peer. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">maximum_prefix_threshold</span> - Maximum IPv4 prefix threshold value (1-100 percent). <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">maximum_prefix_threshold6</span> - Maximum IPv6 prefix threshold value (1-100 percent) <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">maximum_prefix_warning_only</span> - Enable/disable IPv4 Only give warning message when threshold is exceeded. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">maximum_prefix_warning_only6</span> - Enable/disable IPv6 Only give warning message when threshold is exceeded. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">name</span> - Neighbor group name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">next_hop_self</span> - Enable/disable IPv4 next-hop calculation for this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">next_hop_self6</span> - Enable/disable IPv6 next-hop calculation for this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">override_capability</span> - Enable/disable override result of capability negotiation. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">passive</span> - Enable/disable sending of open messages to this neighbor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">password</span> - Password used in MD5 authentication. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">prefix_list_in</span> - IPv4 Inbound filter for updates from this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">prefix_list_in6</span> - IPv6 Inbound filter for updates from this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">prefix_list_out</span> - IPv4 Outbound filter for updates to this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">prefix_list_out6</span> - IPv6 Outbound filter for updates to this neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">remote_as</span> - AS number of neighbor. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">remove_private_as</span> - Enable/disable remove private AS number from IPv4 outbound updates. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">remove_private_as6</span> - Enable/disable remove private AS number from IPv6 outbound updates. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">route_map_in</span> - IPv4 Inbound route map filter. <span class="li-normal">type: str</span> </li>
@@ -322,9 +411,10 @@ Examples
                       capability_default_originate: "enable"
                       capability_default_originate6: "enable"
                       capability_dynamic: "enable"
+                      capability_extended_nexthop: "enable"
                       capability_orf: "none"
                       capability_orf6: "none"
-                      connect_timer: "76"
+                      connect_timer: "77"
                       default_originate_routemap: "<your_own_value> (source router.route-map.name)"
                       default_originate_routemap6: "<your_own_value> (source router.route-map.name)"
                       description: "<your_own_value>"
@@ -334,21 +424,21 @@ Examples
                       distribute_list_out6: "<your_own_value> (source router.access-list6.name)"
                       dont_capability_negotiate: "enable"
                       ebgp_enforce_multihop: "enable"
-                      ebgp_multihop_ttl: "86"
-                      ebgp_ttl_security_hops: "87"
+                      ebgp_multihop_ttl: "87"
+                      ebgp_ttl_security_hops: "88"
                       enforce_first_as: "enable"
                       filter_list_in: "<your_own_value> (source router.aspath-list.name)"
                       filter_list_in6: "<your_own_value> (source router.aspath-list.name)"
                       filter_list_out: "<your_own_value> (source router.aspath-list.name)"
                       filter_list_out6: "<your_own_value> (source router.aspath-list.name)"
-                      holdtime_timer: "93"
+                      holdtime_timer: "94"
                       interface: "<your_own_value> (source system.interface.name)"
                       ip: "<your_own_value>"
-                      keep_alive_timer: "96"
-                      maximum_prefix: "97"
-                      maximum_prefix6: "98"
-                      maximum_prefix_threshold: "99"
-                      maximum_prefix_threshold6: "100"
+                      keep_alive_timer: "97"
+                      maximum_prefix: "98"
+                      maximum_prefix6: "99"
+                      maximum_prefix_threshold: "100"
+                      maximum_prefix_threshold6: "101"
                       maximum_prefix_warning_only: "enable"
                       maximum_prefix_warning_only6: "enable"
                       next_hop_self: "enable"
@@ -360,7 +450,7 @@ Examples
                       prefix_list_in6: "<your_own_value> (source router.prefix-list6.name)"
                       prefix_list_out: "<your_own_value> (source router.prefix-list.name)"
                       prefix_list_out6: "<your_own_value> (source router.prefix-list6.name)"
-                      remote_as: "112"
+                      remote_as: "113"
                       remove_private_as: "enable"
                       remove_private_as6: "enable"
                       route_map_in: "<your_own_value> (source router.route-map.name)"
@@ -384,31 +474,117 @@ Examples
                       unsuppress_map: "<your_own_value> (source router.route-map.name)"
                       unsuppress_map6: "<your_own_value> (source router.route-map.name)"
                       update_source: "<your_own_value> (source system.interface.name)"
-                      weight: "136"
+                      weight: "137"
+              neighbor_group:
+                  -
+                      activate: "enable"
+                      activate6: "enable"
+                      activate_evpn: "enable"
+                      advertisement_interval: "142"
+                      allowas_in: "143"
+                      allowas_in6: "144"
+                      allowas_in_enable: "enable"
+                      allowas_in_enable6: "enable"
+                      allowas_in_enable_evpn: "enable"
+                      as_override: "enable"
+                      as_override6: "enable"
+                      attribute_unchanged: "as-path"
+                      attribute_unchanged6: "as-path"
+                      attribute_unchanged_evpn: "as-path"
+                      bfd: "enable"
+                      capability_default_originate: "enable"
+                      capability_default_originate6: "enable"
+                      capability_dynamic: "enable"
+                      capability_extended_nexthop: "enable"
+                      capability_orf: "none"
+                      capability_orf6: "none"
+                      connect_timer: "160"
+                      default_originate_routemap: "<your_own_value> (source router.route-map.name)"
+                      default_originate_routemap6: "<your_own_value> (source router.route-map.name)"
+                      description: "<your_own_value>"
+                      distribute_list_in: "<your_own_value> (source router.access-list.name)"
+                      distribute_list_in6: "<your_own_value> (source router.access-list6.name)"
+                      distribute_list_out: "<your_own_value> (source router.access-list.name)"
+                      distribute_list_out6: "<your_own_value> (source router.access-list6.name)"
+                      dont_capability_negotiate: "enable"
+                      ebgp_enforce_multihop: "enable"
+                      ebgp_multihop_ttl: "170"
+                      ebgp_ttl_security_hops: "171"
+                      enforce_first_as: "enable"
+                      filter_list_in: "<your_own_value> (source router.aspath-list.name)"
+                      filter_list_in6: "<your_own_value> (source router.aspath-list.name)"
+                      filter_list_out: "<your_own_value> (source router.aspath-list.name)"
+                      filter_list_out6: "<your_own_value> (source router.aspath-list.name)"
+                      holdtime_timer: "177"
+                      interface:
+                          -
+                              interface_name: "<your_own_value> (source system.interface.name)"
+                      keep_alive_timer: "180"
+                      maximum_prefix: "181"
+                      maximum_prefix6: "182"
+                      maximum_prefix_threshold: "183"
+                      maximum_prefix_threshold6: "184"
+                      maximum_prefix_warning_only: "enable"
+                      maximum_prefix_warning_only6: "enable"
+                      name: "default_name_187"
+                      next_hop_self: "enable"
+                      next_hop_self6: "enable"
+                      override_capability: "enable"
+                      passive: "enable"
+                      password: "<your_own_value>"
+                      prefix_list_in: "<your_own_value> (source router.prefix-list.name)"
+                      prefix_list_in6: "<your_own_value> (source router.prefix-list6.name)"
+                      prefix_list_out: "<your_own_value> (source router.prefix-list.name)"
+                      prefix_list_out6: "<your_own_value> (source router.prefix-list6.name)"
+                      remote_as: "<your_own_value>"
+                      remove_private_as: "enable"
+                      remove_private_as6: "enable"
+                      route_map_in: "<your_own_value> (source router.route-map.name)"
+                      route_map_in6: "<your_own_value> (source router.route-map.name)"
+                      route_map_in_evpn: "<your_own_value> (source router.route-map.name)"
+                      route_map_out: "<your_own_value> (source router.route-map.name)"
+                      route_map_out6: "<your_own_value> (source router.route-map.name)"
+                      route_map_out_evpn: "<your_own_value> (source router.route-map.name)"
+                      route_reflector_client: "enable"
+                      route_reflector_client6: "enable"
+                      route_reflector_client_evpn: "enable"
+                      route_server_client: "enable"
+                      route_server_client6: "enable"
+                      send_community: "standard"
+                      send_community6: "standard"
+                      shutdown: "enable"
+                      soft_reconfiguration: "enable"
+                      soft_reconfiguration6: "enable"
+                      soft_reconfiguration_evpn: "enable"
+                      strict_capability_match: "enable"
+                      unsuppress_map: "<your_own_value> (source router.route-map.name)"
+                      unsuppress_map6: "<your_own_value> (source router.route-map.name)"
+                      update_source: "<your_own_value> (source system.interface.name)"
+                      weight: "221"
               network:
                   -
                       backdoor: "enable"
-                      id: "139"
+                      id: "224"
                       prefix: "<your_own_value>"
                       route_map: "<your_own_value> (source router.route-map.name)"
               network6:
                   -
-                      id: "143"
+                      id: "228"
                       prefix6: "<your_own_value>"
                       route_map: "<your_own_value> (source router.route-map.name)"
               redistribute:
                   -
-                      name: "default_name_147"
+                      name: "default_name_232"
                       route_map: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
               redistribute6:
                   -
-                      name: "default_name_151"
+                      name: "default_name_236"
                       route_map: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
               route_reflector_allow_outbound_policy: "enable"
               router_id: "<your_own_value>"
-              scan_time: "156"
+              scan_time: "241"
 
 
 Return Values
