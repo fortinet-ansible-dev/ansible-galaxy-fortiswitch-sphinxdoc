@@ -73,7 +73,7 @@ Examples
     - name: Auto network.
       fortinet.fortiswitch.fortiswitch_switch_auto_network:
           switch_auto_network:
-              mgmt_vlan: "3"
+              mgmt_vlan: "2047"
               status: "enable"
 
 

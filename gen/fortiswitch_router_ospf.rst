@@ -289,7 +289,7 @@ Examples
               abr_type: "cisco"
               area:
                   -
-                      default_cost: "5"
+                      default_cost: "1073741823"
                       filter_list:
                           -
                               direction: "in"
@@ -322,7 +322,7 @@ Examples
                               retransmit_interval: "31"
                               transmit_delay: "32"
               database_overflow: "enable"
-              database_overflow_max_external_lsa: "34"
+              database_overflow_max_external_lsa: "1073741823"
               database_overflow_time_to_recover: "35"
               default_information_metric: "36"
               default_information_metric_type: "1"
@@ -355,7 +355,7 @@ Examples
                       priority: "61"
                       retransmit_interval: "62"
                       transmit_delay: "63"
-                      ttl: "64"
+                      ttl: "127"
                       ucast_ttl: "65"
               log_neighbour_changes: "enable"
               name: "default_name_67"
@@ -374,7 +374,7 @@ Examples
                       name: "default_name_77"
                       routemap: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
-                      tag: "80"
+                      tag: "1073741823"
               rfc1583_compatible: "enable"
               router_id: "<your_own_value>"
               spf_timers: "<your_own_value>"
@@ -382,13 +382,13 @@ Examples
                   -
                       id: "85"
                       prefix: "<your_own_value>"
-                      tag: "87"
+                      tag: "1073741823"
               vrf:
                   -
                       abr_type: "cisco"
                       area:
                           -
-                              default_cost: "91"
+                              default_cost: "1073741823"
                               filter_list:
                                   -
                                       direction: "in"
@@ -417,7 +417,7 @@ Examples
                                       retransmit_interval: "114"
                                       transmit_delay: "115"
                       database_overflow: "enable"
-                      database_overflow_max_external_lsa: "117"
+                      database_overflow_max_external_lsa: "1073741823"
                       database_overflow_time_to_recover: "118"
                       default_information_metric: "119"
                       default_information_metric_type: "1"
@@ -449,7 +449,7 @@ Examples
                               priority: "143"
                               retransmit_interval: "144"
                               transmit_delay: "145"
-                              ttl: "146"
+                              ttl: "127"
                               ucast_ttl: "147"
                       log_neighbour_changes: "enable"
                       name: "default_name_149 (source router.vrf.name)"
@@ -468,7 +468,7 @@ Examples
                               name: "default_name_159"
                               routemap: "<your_own_value> (source router.route-map.name)"
                               status: "enable"
-                              tag: "162"
+                              tag: "1073741823"
                       rfc1583_compatible: "enable"
                       router_id: "<your_own_value>"
                       spf_timers: "<your_own_value>"
@@ -476,7 +476,7 @@ Examples
                           -
                               id: "167"
                               prefix: "<your_own_value>"
-                              tag: "169"
+                              tag: "1073741823"
 
 
 Return Values

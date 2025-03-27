@@ -79,10 +79,10 @@ Examples
       fortinet.fortiswitch.fortiswitch_system_auto_script:
           state: "present"
           system_auto_script:
-              interval: "3"
+              interval: "15778800"
               name: "default_name_4"
-              output_size: "5"
-              repeat: "6"
+              output_size: "512"
+              repeat: "32767"
               script: "<your_own_value>"
               start: "manual"
 

@@ -4,6 +4,25 @@ Release Notes
 
 |
 
+Release Galaxy 1.2.6
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.2.6 is based on 1.2.5
+
+Bug Fixes
+^^^^^^^^^^^^^^^
+- Corrected the value of `dns_cache_ttl` in `fortiswitch_system_dns` in the documentation.
+- Fixed the issue that all non-sensitive data shows as sensitive in meta data.
+- Fixed sanity-test errors.
+
+Features
+^^^^^^^^^^^^^^^
+- Supported new version 7.6.1
+- Improved the documentation for all the parameters with min and max values in all the modules.
+
 Release Galaxy 1.2.5
 --------------------
 

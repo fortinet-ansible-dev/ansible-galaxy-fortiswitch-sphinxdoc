@@ -116,7 +116,7 @@ Examples
               include_mka_icv_ind: "enable"
               macsec_mode: "static-cak"
               macsec_validate: "strict"
-              mka_priority: "14"
+              mka_priority: "127"
               mka_psk:
                   -
                       crypto_alg: "AES_128_CMAC"
@@ -124,10 +124,10 @@ Examples
                       mka_ckn: "<your_own_value>"
                       name: "default_name_19"
                       status: "active"
-              mka_sak_rekey_time: "21"
+              mka_sak_rekey_time: "500000"
               name: "default_name_22"
               replay_protect: "enable"
-              replay_window: "24"
+              replay_window: "8388607"
               status: "enable"
               traffic_policy:
                   -

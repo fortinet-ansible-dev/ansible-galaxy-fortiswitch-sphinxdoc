@@ -86,14 +86,14 @@ Examples
           system_vxlan:
               interface: "<your_own_value> (source system.interface.name)"
               ip_version: "ipv4-unicast"
-              multicast_ttl: "5"
+              multicast_ttl: "127"
               name: "default_name_6"
               remote_ip:
                   -
                       ip: "<your_own_value>"
               tagged_vlans: "<your_own_value>"
-              vlanid: "10"
-              vni: "11"
+              vlanid: "2047"
+              vni: "8388607"
 
 
 Return Values

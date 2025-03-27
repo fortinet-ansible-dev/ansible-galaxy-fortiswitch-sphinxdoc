@@ -121,6 +121,7 @@ Parameters
         <li> <span class="li-head">trunk_hash_unicast_src_port</span> - Enable/disable source port in Unicast trunk hashing. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">trunk_hash_unkunicast_src_dst</span> - Enable/disable trunk hash for unknown unicast src-dst. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">virtual_wire_tpid</span> - TPID value used by virtual-wires. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">vlan_pruning</span> - Enable/disable VLAN pruning. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">vxlan_dport</span> - VXLAN destination UDP port. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">vxlan_port</span> - VXLAN destination UDP port. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">vxlan_sport</span> - VXLAN source UDP port (0 - 65535). <span class="li-normal">type: int</span> </li>
@@ -198,9 +199,10 @@ Examples
               trunk_hash_unicast_src_port: "enable"
               trunk_hash_unkunicast_src_dst: "enable"
               virtual_wire_tpid: "62"
-              vxlan_dport: "63"
-              vxlan_port: "64"
-              vxlan_sport: "65"
+              vlan_pruning: "enable"
+              vxlan_dport: "64"
+              vxlan_port: "65"
+              vxlan_sport: "32767"
               vxlan_stp_virtual_mac: "<your_own_value>"
               vxlan_stp_virtual_root: "enable"
 

@@ -140,11 +140,11 @@ Examples
                       match_ip6_address: "<your_own_value> (source router.access-list6.name router.prefix-list6.name)"
                       match_ip_address: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
                       match_ip_nexthop: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
-                      match_metric: "17"
+                      match_metric: "1073741823"
                       match_origin: "none"
                       match_route_type: "1"
-                      match_tag: "20"
-                      set_aggregator_as: "21"
+                      match_tag: "1073741823"
+                      set_aggregator_as: "2147483647"
                       set_aggregator_ip: "<your_own_value>"
                       set_aspath:
                           -
@@ -166,12 +166,12 @@ Examples
                       set_ip6_nexthop_local: "<your_own_value>"
                       set_ip_nexthop: "<your_own_value>"
                       set_local_preference: "38"
-                      set_metric: "39"
+                      set_metric: "1073741823"
                       set_metric_type: "1"
                       set_origin: "none"
                       set_originator_id: "<your_own_value>"
-                      set_tag: "43"
-                      set_weight: "44"
+                      set_tag: "1073741823"
+                      set_weight: "1073741823"
 
 
 Return Values

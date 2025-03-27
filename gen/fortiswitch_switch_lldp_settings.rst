@@ -61,6 +61,7 @@ Parameters
         <ul class="ul-self">
         <li> <span class="li-head">device_detection</span> - Enable/disable dynamic updates of LLDP neighbor devices to fortilink. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">fast_start_interval</span> - Frequency of LLDP PDU transmit for the first 4 packets on link up(seconds). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">forward_profinet_packet</span> - Enable/disable profinet packet forwarding. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">management_address</span> - Advertise IPv4 and/or IPv6 address. <span class="li-normal">type: str</span> <span class="li-normal">choices: ipv4, ipv6, none</span> </li>
         <li> <span class="li-head">management_interface</span> - Primary management interface to be advertised. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable LLDP. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
@@ -80,11 +81,12 @@ Examples
           switch_lldp_settings:
               device_detection: "disable"
               fast_start_interval: "4"
+              forward_profinet_packet: "disable"
               management_address: "ipv4"
               management_interface: "<your_own_value> (source system.interface.name)"
               status: "disable"
               tx_hold: "8"
-              tx_interval: "9"
+              tx_interval: "2047"
 
 
 Return Values

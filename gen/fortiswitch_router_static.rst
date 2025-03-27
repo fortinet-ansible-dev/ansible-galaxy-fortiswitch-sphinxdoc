@@ -97,10 +97,10 @@ Examples
               gateway: "<your_own_value>"
               gw_l2_switch: "enable"
               priority: "12"
-              seq_num: "13"
+              seq_num: "<you_own_value>"
               status: "enable"
               vrf: "<your_own_value> (source router.vrf.name)"
-              weight: "16"
+              weight: "127"
 
 
 Return Values

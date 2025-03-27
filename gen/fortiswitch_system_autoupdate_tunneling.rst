@@ -78,7 +78,7 @@ Examples
           system_autoupdate_tunneling:
               address: "<your_own_value>"
               password: "<your_own_value>"
-              port: "5"
+              port: "32767"
               status: "enable"
               username: "<your_own_value>"
 

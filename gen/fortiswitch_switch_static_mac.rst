@@ -84,7 +84,7 @@ Examples
               description: "<your_own_value>"
               interface: "<your_own_value> (source switch.interface.name)"
               mac: "<your_own_value>"
-              seq_num: "7"
+              seq_num: "<you_own_value>"
               type: "static"
               vlan_id: "9"
 

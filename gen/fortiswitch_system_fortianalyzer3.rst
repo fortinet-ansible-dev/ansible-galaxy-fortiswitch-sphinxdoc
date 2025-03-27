@@ -84,7 +84,7 @@ Examples
           system_fortianalyzer3:
               __change_ip: "3"
               address_mode: "static"
-              conn_timeout: "5"
+              conn_timeout: "1073741823"
               encrypt: "disable"
               fdp_device: "<your_own_value>"
               fdp_interface: "<your_own_value>"

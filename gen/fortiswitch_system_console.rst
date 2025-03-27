@@ -77,7 +77,7 @@ Examples
       fortinet.fortiswitch.fortiswitch_system_console:
           system_console:
               baudrate: "9600"
-              hostname_display_length: "4"
+              hostname_display_length: "17"
               login: "enable"
               mode: "batch"
               output: "standard"

@@ -171,9 +171,9 @@ Examples
           switch_vlan:
               access_vlan: "disable"
               arp_inspection: "disable"
-              assignment_priority: "5"
+              assignment_priority: "127"
               community_vlans: "<your_own_value>"
-              cos_queue: "7"
+              cos_queue: "3"
               description: "<your_own_value>"
               dhcp6_snooping: "disable"
               dhcp_server_access_list:
@@ -232,7 +232,7 @@ Examples
                       description: "<your_own_value>"
                       frametypes: "ethernet2"
                       id: "57"
-                      protocol: "58"
+                      protocol: "32767"
               mld_snooping: "enable"
               mld_snooping_fast_leave: "enable"
               mld_snooping_proxy: "enable"

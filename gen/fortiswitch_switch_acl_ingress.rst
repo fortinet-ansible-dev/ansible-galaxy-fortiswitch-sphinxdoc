@@ -92,6 +92,7 @@ Parameters
             <li> <span class="li-head">dst_ip_prefix</span> - Destination-ip address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">dst_mac</span> - Destination mac address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ether_type</span> - Ether type to be matched. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">l3_interface</span> - l3 interface name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">service</span> - Service name. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_ip6_prefix</span> - Source-ip6 address to be matched. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">src_ip_prefix</span> - Source-ip address to be matched. <span class="li-normal">type: str</span> </li>
@@ -125,16 +126,16 @@ Examples
           state: "present"
           switch_acl_ingress:
               action:
-                  cos_queue: "4"
+                  cos_queue: "3"
                   count: "enable"
                   count_type: "all"
-                  cpu_cos_queue: "7"
+                  cpu_cos_queue: "12"
                   drop: "enable"
                   egress_mask:
                       -
                           member_name: "<your_own_value> (source switch.physical-port.name)"
                   mirror: "<your_own_value> (source switch.mirror.name)"
-                  outer_vlan_tag: "12"
+                  outer_vlan_tag: "2047"
                   policer: "13 (source switch.acl.policer.id)"
                   redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
                   redirect_bcast_cpu: "enable"
@@ -142,23 +143,24 @@ Examples
                   redirect_physical_port:
                       -
                           member_name: "<your_own_value> (source switch.physical-port.name)"
-                  remark_cos: "19"
-                  remark_dscp: "20"
+                  remark_cos: "3"
+                  remark_dscp: "31"
               classifier:
-                  cos: "22"
-                  dscp: "23"
+                  cos: "3"
+                  dscp: "31"
                   dst_ip6_prefix: "<your_own_value>"
                   dst_ip_prefix: "<your_own_value>"
                   dst_mac: "<your_own_value>"
-                  ether_type: "27"
+                  ether_type: "32767"
+                  l3_interface: "<your_own_value> (source system.interface.name)"
                   service: "<your_own_value> (source switch.acl.service.custom.name)"
                   src_ip6_prefix: "<your_own_value>"
                   src_ip_prefix: "<your_own_value>"
                   src_mac: "<your_own_value>"
-                  vlan_id: "32"
+                  vlan_id: "2047"
               description: "<your_own_value>"
-              group: "34"
-              id: "35"
+              group: "35"
+              id: "36"
               ingress_interface:
                   -
                       member_name: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"

@@ -116,7 +116,7 @@ Examples
           router_policy:
               comments: "<your_own_value>"
               dst: "<your_own_value>"
-              end_port: "5"
+              end_port: "32767"
               gateway: "<your_own_value>"
               input_device: "<your_own_value> (source system.interface.name)"
               interface:
@@ -142,12 +142,12 @@ Examples
                               nexthop_group_name: "<your_own_value>"
                               nexthop_ip: "<your_own_value>"
                               nexthop_vrf_name: "<your_own_value> (source router.vrf.name)"
-                              seq_num: "26"
+                              seq_num: "<you_own_value>"
                               src: "<your_own_value>"
-              protocol: "28"
-              seq_num: "29"
+              protocol: "127"
+              seq_num: "<you_own_value>"
               src: "<your_own_value>"
-              start_port: "31"
+              start_port: "32767"
               tos: "<your_own_value>"
               tos_mask: "<your_own_value>"
 

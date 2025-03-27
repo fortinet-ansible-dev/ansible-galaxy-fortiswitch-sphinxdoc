@@ -87,7 +87,7 @@ Examples
       fortinet.fortiswitch.fortiswitch_user_group:
           state: "present"
           user_group:
-              authtimeout: "3"
+              authtimeout: "240"
               group_type: "firewall"
               http_digest_realm: "<your_own_value>"
               match:

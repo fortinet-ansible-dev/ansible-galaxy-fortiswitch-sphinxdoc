@@ -144,7 +144,7 @@ Examples
           state: "present"
           system_dhcp_server:
               auto_configuration: "disable"
-              conflicted_ip_timeout: "4"
+              conflicted_ip_timeout: "4320000"
               default_gateway: "<your_own_value>"
               dns_server1: "<your_own_value>"
               dns_server2: "<your_own_value>"
@@ -174,7 +174,7 @@ Examples
               ntp_service: "local"
               options:
                   -
-                      code: "31"
+                      code: "127"
                       id: "32"
                       ip: "<your_own_value>"
                       type: "hex"

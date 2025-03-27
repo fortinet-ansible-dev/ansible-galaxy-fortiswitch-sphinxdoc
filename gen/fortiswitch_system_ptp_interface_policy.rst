@@ -79,8 +79,8 @@ Examples
           system_ptp_interface_policy:
               description: "<your_own_value>"
               name: "default_name_4"
-              vlan: "5"
-              vlan_pri: "6"
+              vlan: "2047"
+              vlan_pri: "3"
 
 
 Return Values

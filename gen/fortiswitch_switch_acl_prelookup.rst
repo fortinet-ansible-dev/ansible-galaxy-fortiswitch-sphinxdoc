@@ -104,11 +104,11 @@ Examples
           state: "present"
           switch_acl_prelookup:
               action:
-                  cos_queue: "4"
+                  cos_queue: "3"
                   count: "enable"
                   drop: "enable"
                   outer_vlan_tag: "7"
-                  remark_cos: "8"
+                  remark_cos: "3"
               classifier:
                   cos: "10"
                   dscp: "11"

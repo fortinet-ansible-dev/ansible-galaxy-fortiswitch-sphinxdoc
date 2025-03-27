@@ -205,6 +205,7 @@ Parameters
         <li><span class="li-normal">switch_trunk</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_virtual-wire</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_vlan</span>  <span class="li-required">param: id</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">switch_vlan-pruning</span> </li>
         <li><span class="li-normal">switch_vlan-tpid</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system.alias_command</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system.alias_group</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
@@ -240,6 +241,7 @@ Parameters
         <li><span class="li-normal">system_bug-report</span> </li>
         <li><span class="li-normal">system_central-management</span> </li>
         <li><span class="li-normal">system_console</span> </li>
+        <li><span class="li-normal">system_debug</span> </li>
         <li><span class="li-normal">system_dns</span> </li>
         <li><span class="li-normal">system_dns-database</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system_dns-server</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>

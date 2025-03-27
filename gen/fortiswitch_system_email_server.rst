@@ -84,7 +84,7 @@ Examples
           system_email_server:
               authenticate: "enable"
               password: "<your_own_value>"
-              port: "5"
+              port: "32767"
               reply_to: "<your_own_value>"
               security: "none"
               server: "192.168.100.40"

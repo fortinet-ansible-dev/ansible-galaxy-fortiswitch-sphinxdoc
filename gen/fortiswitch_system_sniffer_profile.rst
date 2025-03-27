@@ -80,8 +80,8 @@ Examples
           state: "present"
           system_sniffer_profile:
               filter: "<your_own_value>"
-              max_pkt_count: "4"
-              max_pkt_len: "5"
+              max_pkt_count: "1073741823"
+              max_pkt_len: "767"
               profile_name: "<your_own_value>"
               switch_interface: "<your_own_value> (source switch.interface.name)"
               system_interface: "<your_own_value> (source system.interface.name)"

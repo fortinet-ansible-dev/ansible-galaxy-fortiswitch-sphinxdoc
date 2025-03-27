@@ -99,18 +99,18 @@ Examples
           state: "present"
           system_link_monitor:
               addr_mode: "ipv4"
-              failtime: "4"
+              failtime: "5"
               gateway_ip: "<your_own_value>"
               gateway_ip6: "<your_own_value>"
               http_get: "<your_own_value>"
               http_match: "<your_own_value>"
-              interval: "9"
+              interval: "1800"
               name: "default_name_10"
-              packet_size: "11"
+              packet_size: "512"
               password: "<your_own_value>"
-              port: "13"
+              port: "32767"
               protocol: "arp"
-              recoverytime: "15"
+              recoverytime: "5"
               security_mode: "none"
               server:
                   -
@@ -119,7 +119,7 @@ Examples
               source_ip6: "<your_own_value>"
               srcintf: "<your_own_value> (source system.interface.name)"
               status: "enable"
-              timeout: "23"
+              timeout: "127"
               update_cascade_interface: "enable"
               update_static_route: "enable"
 

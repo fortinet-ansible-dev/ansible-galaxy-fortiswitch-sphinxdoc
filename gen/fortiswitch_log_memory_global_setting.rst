@@ -76,9 +76,9 @@ Examples
     - name: Global settings for memory log.
       fortinet.fortiswitch.fortiswitch_log_memory_global_setting:
           log_memory_global_setting:
-              full_final_warning_threshold: "3"
-              full_first_warning_threshold: "4"
-              full_second_warning_threshold: "5"
+              full_final_warning_threshold: "50"
+              full_first_warning_threshold: "49"
+              full_second_warning_threshold: "49"
               hourly_upload: "enable"
               max_size: "7"
 

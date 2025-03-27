@@ -84,7 +84,7 @@ Examples
               authorization: "enable"
               key: "<your_own_value>"
               name: "default_name_6"
-              port: "7"
+              port: "32767"
               server: "192.168.100.40"
               source_ip: "<your_own_value>"
 

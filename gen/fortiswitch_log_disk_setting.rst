@@ -100,9 +100,9 @@ Examples
           log_disk_setting:
               diskfull: "overwrite"
               drive_standby_time: "4"
-              full_final_warning_threshold: "5"
-              full_first_warning_threshold: "6"
-              full_second_warning_threshold: "7"
+              full_final_warning_threshold: "50"
+              full_first_warning_threshold: "49"
+              full_second_warning_threshold: "49"
               log_quota: "8"
               max_log_file_size: "9"
               report_quota: "10"

@@ -89,10 +89,10 @@ Examples
               comment: "comment"
               device: "<your_own_value> (source system.interface.name)"
               devindex: "7"
-              distance: "8"
+              distance: "127"
               dst: "<your_own_value>"
               gateway: "<your_own_value>"
-              seq_num: "11"
+              seq_num: "<you_own_value>"
               status: "enable"
               vrf: "<your_own_value> (source router.vrf.name)"
 

@@ -78,7 +78,7 @@ Examples
           system_tos_based_priority:
               id: "3"
               priority: "low"
-              tos: "5"
+              tos: "7"
 
 
 Return Values

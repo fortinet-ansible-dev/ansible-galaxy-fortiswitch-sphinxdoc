@@ -87,7 +87,7 @@ Examples
               description: "<your_own_value>"
               map:
                   -
-                      cos_queue: "5"
+                      cos_queue: "3"
                       diffserv: "CS0"
                       entry_name: "<your_own_value>"
                       ip_precedence: "Network-Control"

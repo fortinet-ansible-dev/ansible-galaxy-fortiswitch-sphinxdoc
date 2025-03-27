@@ -96,10 +96,10 @@ Examples
                       value: "<your_own_value>"
               logid: "<your_own_value>"
               name: "default_name_9"
-              trigger_day: "10"
+              trigger_day: "15"
               trigger_frequency: "hourly"
-              trigger_hour: "12"
-              trigger_minute: "13"
+              trigger_hour: "11"
+              trigger_minute: "29"
               trigger_type: "event-based"
               trigger_weekday: "sunday"
 

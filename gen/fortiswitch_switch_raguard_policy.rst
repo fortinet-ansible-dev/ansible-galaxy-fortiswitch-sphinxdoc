@@ -86,9 +86,9 @@ Examples
               managed_flag: "on"
               match_prefix: "<your_own_value> (source router.prefix-list6.name)"
               match_src_addr: "<your_own_value> (source router.access-list6.name)"
-              max_hop_limit: "7"
+              max_hop_limit: "127"
               max_router_preference: "high"
-              min_hop_limit: "9"
+              min_hop_limit: "127"
               name: "default_name_10"
               other_flag: "on"
 

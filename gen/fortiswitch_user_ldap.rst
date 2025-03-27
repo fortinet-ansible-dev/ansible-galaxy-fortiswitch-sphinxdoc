@@ -73,6 +73,7 @@ Parameters
         <li> <span class="li-head">port</span> - LDAP server port number (1 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">secure</span> - SSL connection. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, starttls, ldaps</span> </li>
         <li> <span class="li-head">server</span> - LDAP server domain name or IP address. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">server_identity_check</span> - Enable/disable LDAP server identity check (verify server domain name/IP address against the server certificate). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">type</span> - LDAP binding type. <span class="li-normal">type: str</span> <span class="li-normal">choices: simple, anonymous, regular</span> </li>
         <li> <span class="li-head">username</span> - Username (full DN) for initial binding. <span class="li-normal">type: str</span> </li>
         </ul>
@@ -98,9 +99,10 @@ Examples
               password: "<your_own_value>"
               password_expiry_warning: "enable"
               password_renewal: "enable"
-              port: "13"
+              port: "32767"
               secure: "disable"
               server: "192.168.100.40"
+              server_identity_check: "enable"
               type: "simple"
               username: "<your_own_value>"
 

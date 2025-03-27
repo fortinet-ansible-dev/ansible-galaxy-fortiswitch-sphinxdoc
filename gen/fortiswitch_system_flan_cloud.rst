@@ -76,9 +76,9 @@ Examples
     - name: FortiLAN cloud manager configuration.
       fortinet.fortiswitch.fortiswitch_system_flan_cloud:
           system_flan_cloud:
-              interval: "3"
+              interval: "150"
               name: "default_name_4"
-              port: "5"
+              port: "32767"
               service_type: "flan-cloud"
               status: "enable"
 

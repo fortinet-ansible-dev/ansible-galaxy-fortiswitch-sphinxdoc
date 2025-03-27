@@ -82,7 +82,7 @@ Examples
                   -
                       ip: "<your_own_value>"
                       name: "default_name_5"
-                      port: "6"
+                      port: "32767"
               dummy: "7"
 
 

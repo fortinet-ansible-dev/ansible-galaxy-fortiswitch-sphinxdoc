@@ -83,7 +83,7 @@ Examples
               ha_L2_clear_on_role_change: "monitor-ports"
               inter_front_panel_traffic: "enable"
               name: "default_name_6"
-              priority: "7"
+              priority: "127"
               vcluster_id: "8"
 
 

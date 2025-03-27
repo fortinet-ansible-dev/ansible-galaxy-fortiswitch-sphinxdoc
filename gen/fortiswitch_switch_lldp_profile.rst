@@ -118,18 +118,18 @@ Examples
               auto_isl_auth_encrypt: "none"
               auto_isl_auth_identity: "<your_own_value>"
               auto_isl_auth_macsec_profile: "<your_own_value> (source switch.macsec.profile.name)"
-              auto_isl_auth_reauth: "10"
+              auto_isl_auth_reauth: "1800"
               auto_isl_auth_user: "<your_own_value> (source system.certificate.local.name)"
-              auto_isl_hello_timer: "12"
-              auto_isl_port_group: "13"
-              auto_isl_receive_timeout: "14"
+              auto_isl_hello_timer: "15"
+              auto_isl_port_group: "4"
+              auto_isl_receive_timeout: "150"
               auto_mclag_icl: "enable"
               custom_tlvs:
                   -
                       information_string: "<your_own_value>"
                       name: "default_name_18"
                       oui: "<your_own_value>"
-                      subtype: "20"
+                      subtype: "127"
               med_location_service:
                   -
                       name: "default_name_22"
@@ -138,11 +138,11 @@ Examples
               med_network_policy:
                   -
                       assign_vlan: "disable"
-                      dscp: "27"
+                      dscp: "31"
                       name: "default_name_28"
-                      priority: "29"
+                      priority: "3"
                       status: "disable"
-                      vlan: "31"
+                      vlan: "2047"
               med_tlvs: "inventory-management"
               name: "default_name_33"
               vlan_name_map: "<your_own_value>"

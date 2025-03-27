@@ -82,7 +82,7 @@ Examples
           system_dns:
               cache_notfound_responses: "disable"
               dns_cache_limit: "4"
-              dns_cache_ttl: "5"
+              dns_cache_ttl: "43200"
               domain: "<your_own_value>"
               ip6_primary: "<your_own_value>"
               ip6_secondary: "<your_own_value>"

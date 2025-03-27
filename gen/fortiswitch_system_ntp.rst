@@ -109,7 +109,7 @@ Examples
               server_mode: "enable"
               source_ip: "<your_own_value>"
               source_ip6: "<your_own_value>"
-              syncinterval: "20"
+              syncinterval: "720"
 
 
 Return Values

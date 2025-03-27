@@ -79,7 +79,7 @@ Examples
           switch_ip_mac_binding:
               ip: "<your_own_value>"
               mac: "<your_own_value>"
-              seq_num: "5"
+              seq_num: "<you_own_value>"
               status: "enable"
 
 

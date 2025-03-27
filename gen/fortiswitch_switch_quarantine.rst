@@ -80,7 +80,7 @@ Examples
           state: "present"
           switch_quarantine:
               acl_id: "3 (source switch.acl.ingress.id)"
-              cos_queue: "4"
+              cos_queue: "3"
               description: "<your_own_value>"
               drop: "disable"
               mac: "<your_own_value>"

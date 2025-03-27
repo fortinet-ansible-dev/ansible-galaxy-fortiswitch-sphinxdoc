@@ -1,11 +1,11 @@
-:source: fortiswitch_router_gwdetect.py
+:source: fortiswitch_switch_vlan_pruning.py
 
 :orphan:
 
-.. fortiswitch_router_gwdetect:
+.. fortiswitch_switch_vlan_pruning:
 
-fortiswitch_router_gwdetect -- Gwdetect in Fortinet's FortiSwitch
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fortiswitch_switch_vlan_pruning -- Vlan Pruning in Fortinet's FortiSwitch
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. versionadded:: 1.0.0
 
@@ -16,7 +16,7 @@ fortiswitch_router_gwdetect -- Gwdetect in Fortinet's FortiSwitch
 
 Synopsis
 --------
-- This module is able to configure a FortiSwitch device by allowing the user to set and modify router feature and gwdetect category. Examples include all parameters and values need to be adjusted to datasources before usage. Tested with FOS v7.0.0
+- This module is able to configure a FortiSwitch device by allowing the user to set and modify switch feature and vlan_pruning category. Examples include all parameters and values need to be adjusted to datasources before usage. Tested with FOS v7.0.0
 
 
 
@@ -36,11 +36,10 @@ FortiSwitch Version Compatibility
  <br>
  <table border="1">
  <tr>
- <td></td><td colspan="1">Supported Version Ranges</td>
+ <td></td><td colspan="0">Supported Version Ranges</td>
  </tr>
  <tr>
- <td>fortiswitch_router_gwdetect</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
+ <td>fortiswitch_switch_vlan_pruning</td>
  </tr>
  </table>
  <p>
@@ -57,20 +56,10 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
-    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
-    <li> <span class="li-head">router_gwdetect</span> - Gwdetect. <span class="li-normal">type: dict</span> </li>
+    <li> <span class="li-head">switch_vlan_pruning</span> - Vlan Pruning. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
-        <li> <span class="li-head">failtime</span> - Fail-times for ping server lost . <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">ha_priority</span> - HA election priority (1-50). <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">interface</span> - Interface name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
-        <li> <span class="li-head">interval</span> - Detection interval. <span class="li-normal">type: int</span> </li>
-        <li> <span class="li-head">protocol</span> - Protocols used to detect the server. <span class="li-normal">type: str</span> <span class="li-normal">choices: ping, tcp-echo, udp-echo</span> </li>
-        <li> <span class="li-head">server</span> - Server address(es). <span class="li-normal">type: list</span> </li>
-            <ul class="ul-self">
-            <li> <span class="li-head">address</span> - Server address. <span class="li-normal">type: str</span> </li>
-            </ul>
-        <li> <span class="li-head">source_ip</span> - Source IP used to ping the server. <span class="li-normal">type: str</span> </li>
-        <li> <span class="li-head">status</span> - Server status. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">join_timer</span> - Vlan Pruning Join Timer (in millisecond). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">leave_timer</span> - Vlan Pruning Leave Timer (in millisecond). <span class="li-normal">type: int</span> </li>
         </ul>
     </ul>
 
@@ -80,20 +69,11 @@ Examples
 
 .. code-block:: yaml+jinja
     
-    - name: Gwdetect.
-      fortinet.fortiswitch.fortiswitch_router_gwdetect:
-          state: "present"
-          router_gwdetect:
-              failtime: "1073741823"
-              ha_priority: "25"
-              interface: "<your_own_value> (source system.interface.name)"
-              interval: "1073741823"
-              protocol: "ping"
-              server:
-                  -
-                      address: "<your_own_value>"
-              source_ip: "<your_own_value>"
-              status: "11"
+    - name: Vlan Pruning.
+      fortinet.fortiswitch.fortiswitch_switch_vlan_pruning:
+          switch_vlan_pruning:
+              join_timer: "500"
+              leave_timer: "1500"
 
 
 Return Values

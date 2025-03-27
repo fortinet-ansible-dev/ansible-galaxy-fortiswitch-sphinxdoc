@@ -67,8 +67,11 @@ Parameters
         <li> <span class="li-head">name</span> - Custom service name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">protocol</span> - Protocol type. <span class="li-normal">type: str</span> <span class="li-normal">choices: TCP/UDP/SCTP, ICMP, IP</span> </li>
         <li> <span class="li-head">protocol_number</span> - IP protocol number. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">sctp_portmask</span> - Sctp port mask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">sctp_portrange</span> - Multiple sctp port ranges. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">tcp_portmask</span> - Tcp port mask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">tcp_portrange</span> - Multiple tcp port ranges. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">udp_portmask</span> - Udp port mask. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">udp_portrange</span> - Multiple udp port ranges. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
@@ -83,15 +86,18 @@ Examples
       fortinet.fortiswitch.fortiswitch_switch_acl_service_custom:
           state: "present"
           switch_acl_service_custom:
-              color: "3"
+              color: "16"
               comment: "Comments."
               icmpcode: "5"
               icmptype: "6"
               name: "default_name_7"
               protocol: "TCP/UDP/SCTP"
               protocol_number: "9"
+              sctp_portmask: "<your_own_value>"
               sctp_portrange: "<your_own_value>"
+              tcp_portmask: "<your_own_value>"
               tcp_portrange: "<your_own_value>"
+              udp_portmask: "<your_own_value>"
               udp_portrange: "<your_own_value>"
 
 

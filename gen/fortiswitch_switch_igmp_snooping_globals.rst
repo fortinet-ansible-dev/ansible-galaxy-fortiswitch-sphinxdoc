@@ -76,11 +76,11 @@ Examples
     - name: Configure igmp-snooping on Switch.
       fortinet.fortiswitch.fortiswitch_switch_igmp_snooping_globals:
           switch_igmp_snooping_globals:
-              aging_time: "3"
-              leave_response_timeout: "4"
-              proxy_report_interval: "5"
-              query_interval: "6"
-              query_max_response_timeout: "7"
+              aging_time: "1800"
+              leave_response_timeout: "10"
+              proxy_report_interval: "130"
+              query_interval: "600"
+              query_max_response_timeout: "16384"
 
 
 Return Values

@@ -113,7 +113,7 @@ Examples
                   outer_vlan_tag: "8"
                   policer: "9 (source switch.acl.policer.id)"
                   redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
-                  remark_dscp: "11"
+                  remark_dscp: "31"
               classifier:
                   cos: "13"
                   dscp: "14"

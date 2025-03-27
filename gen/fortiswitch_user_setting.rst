@@ -86,18 +86,18 @@ Examples
     - name: User authentication setting.
       fortinet.fortiswitch.fortiswitch_user_setting:
           user_setting:
-              auth_blackout_time: "3"
+              auth_blackout_time: "1800"
               auth_cert: "<your_own_value>"
               auth_http_basic: "enable"
-              auth_invalid_max: "6"
+              auth_invalid_max: "50"
               auth_multi_group: "enable"
               auth_ports:
                   -
                       id: "9"
-                      port: "10"
+                      port: "32767"
                       type: "http"
               auth_secure_http: "enable"
-              auth_timeout: "13"
+              auth_timeout: "240"
               auth_timeout_type: "idle-timeout"
               auth_type: "http"
 

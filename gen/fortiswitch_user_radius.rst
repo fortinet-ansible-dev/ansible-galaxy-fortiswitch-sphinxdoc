@@ -102,8 +102,8 @@ Examples
       fortinet.fortiswitch.fortiswitch_user_radius:
           state: "present"
           user_radius:
-              acct_fast_framedip_detect: "3"
-              acct_interim_interval: "4"
+              acct_fast_framedip_detect: "300"
+              acct_interim_interval: "43200"
               acct_server:
                   -
                       id: "6"
@@ -114,9 +114,9 @@ Examples
               addr_mode: "ipv4"
               all_usergroup: "disable"
               auth_type: "auto"
-              frame_mtu_size: "14"
+              frame_mtu_size: "750"
               link_monitor: "disable"
-              link_monitor_interval: "16"
+              link_monitor_interval: "60"
               name: "default_name_17"
               nas_ip: "<your_own_value>"
               nas_ip6: "<your_own_value>"

@@ -260,7 +260,7 @@ Examples
               passive_interface:
                   -
                       name: "default_name_45 (source system.interface.name)"
-              recv_buffer_size: "46"
+              recv_buffer_size: "1073741823"
               redistribute:
                   -
                       flags: "48"
@@ -321,7 +321,7 @@ Examples
                       passive_interface:
                           -
                               name: "default_name_97 (source system.interface.name)"
-                      recv_buffer_size: "98"
+                      recv_buffer_size: "1073741823"
                       redistribute:
                           -
                               flags: "100"

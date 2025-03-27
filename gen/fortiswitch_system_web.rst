@@ -78,9 +78,9 @@ Examples
       fortinet.fortiswitch.fortiswitch_system_web:
           system_web:
               gui_language: "browser"
-              http_port: "4"
+              http_port: "32767"
               https_pki_required: "enable"
-              https_port: "6"
+              https_port: "32767"
               https_server_cert: "<your_own_value>"
               https_ssl_versions: "tlsv1-0"
 

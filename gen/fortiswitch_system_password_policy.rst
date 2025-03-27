@@ -83,13 +83,13 @@ Examples
           system_password_policy:
               apply_to: "admin-password"
               change_4_characters: "enable"
-              expire_day: "5"
+              expire_day: "499"
               expire_status: "enable"
-              min_lower_case_letter: "7"
-              min_non_alphanumeric: "8"
-              min_number: "9"
-              min_upper_case_letter: "10"
-              minimum_length: "11"
+              min_lower_case_letter: "32"
+              min_non_alphanumeric: "32"
+              min_number: "32"
+              min_upper_case_letter: "32"
+              minimum_length: "32"
               status: "enable"
 
 

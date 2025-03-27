@@ -83,7 +83,7 @@ Examples
               destination:
                   -
                       name: "default_name_4"
-              ha_group_id: "5"
+              ha_group_id: "127"
               name: "default_name_6"
               type: "fortigate"
 

@@ -75,9 +75,9 @@ Examples
     - name: FortiSwitch cloud manager configuration.
       fortinet.fortiswitch.fortiswitch_system_fsw_cloud:
           system_fsw_cloud:
-              interval: "3"
+              interval: "150"
               name: "default_name_4"
-              port: "5"
+              port: "32767"
               status: "enable"
 
 

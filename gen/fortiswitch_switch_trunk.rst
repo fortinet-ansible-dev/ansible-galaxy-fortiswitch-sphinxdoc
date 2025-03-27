@@ -138,7 +138,7 @@ Examples
               port_extension: "enable"
               port_extension_trigger: "30"
               port_selection_criteria: "src-mac"
-              restricted: "32"
+              restricted: "0"
               static_isl: "enable"
               static_isl_auto_vlan: "enable"
               trunk_id: "35"

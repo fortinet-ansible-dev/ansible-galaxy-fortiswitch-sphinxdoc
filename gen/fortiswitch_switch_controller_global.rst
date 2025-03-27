@@ -89,7 +89,7 @@ Examples
     - name: Switch-controller global configuration.
       fortinet.fortiswitch.fortiswitch_switch_controller_global:
           switch_controller_global:
-              ac_data_port: "3"
+              ac_data_port: "24575"
               ac_dhcp_option_code: "4"
               ac_discovery_mc_addr: "<your_own_value>"
               ac_discovery_type: "static"
@@ -98,11 +98,11 @@ Examples
                       id: "8"
                       ipv4_address: "<your_own_value>"
                       ipv6_address: "<your_own_value>"
-              ac_port: "11"
-              echo_interval: "12"
+              ac_port: "24575"
+              echo_interval: "300"
               location: "<your_own_value>"
-              max_discoveries: "14"
-              max_retransmit: "15"
+              max_discoveries: "32"
+              max_retransmit: "32"
               mgmt_mode: "capwap"
               name: "default_name_17"
               tunnel_mode: "compatible"
