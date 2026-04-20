@@ -4,6 +4,22 @@ Release Notes
 
 |
 
+Release Galaxy 1.3.0
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.3.0 is based on 1.2.6
+
+Bug Fixes
+^^^^^^^^^^^^^^^
+- Fixed an issue where list-type data was displayed incorrectly when using check mode to view diffs.
+
+Features
+^^^^^^^^^^^^^^^
+- Support new versions 7.6.2, 7.6.3, and 7.6.4.
+
 Release Galaxy 1.2.6
 --------------------
 

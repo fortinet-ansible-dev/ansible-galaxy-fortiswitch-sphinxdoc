@@ -24,7 +24,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ansible>=2.15
+- ansible>=2.16
 
 
 FortiSwitch Version Compatibility
@@ -197,7 +197,7 @@ Examples
 --------
 
 .. code-block:: yaml+jinja
-
+    
     - name: Configure interfaces.
       fortinet.fortiswitch.fortiswitch_system_interface:
           state: "present"
