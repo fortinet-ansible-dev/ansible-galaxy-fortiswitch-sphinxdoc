@@ -57,8 +57,10 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_multicast</span> - Router multicast configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
+        <li> <span class="li-head">comments</span> - Description/comments. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">interface</span> - Pim interfaces. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">dr_priority</span> - DR election priority. <span class="li-normal">type: int</span> </li>
@@ -84,16 +86,18 @@ Examples
     
     - name: Router multicast configuration.
       fortinet.fortiswitch.fortiswitch_router_multicast:
+          state: "present"
           router_multicast:
+              comments: "<your_own_value>"
               interface:
                   -
-                      dr_priority: "4"
-                      hello_interval: "5"
+                      dr_priority: "5"
+                      hello_interval: "6"
                       igmp:
-                          query_interval: "7"
-                          query_max_response_time: "8"
+                          query_interval: "8"
+                          query_max_response_time: "9"
                       multicast_flow: "<your_own_value> (source router.multicast-flow.name)"
-                      name: "default_name_10 (source system.interface.name)"
+                      name: "default_name_11 (source system.interface.name)"
                       pim_mode: "ssm-mode"
               multicast_routing: "enable"
 

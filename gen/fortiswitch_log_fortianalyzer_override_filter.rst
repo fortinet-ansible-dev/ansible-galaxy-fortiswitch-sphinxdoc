@@ -40,7 +40,7 @@ FortiSwitch Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_log_fortianalyzer_override_filter</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> v8.0.0 </code></td>
  </tr>
  </table>
  <p>

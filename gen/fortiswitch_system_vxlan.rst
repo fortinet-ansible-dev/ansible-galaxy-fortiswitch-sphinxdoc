@@ -40,7 +40,7 @@ FortiSwitch Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_vxlan</td>
- <td><code class="docutils literal notranslate">v7.2.1 -> 7.4.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.2.1 -> v7.6.0 </code></td>
  </tr>
  </table>
  <p>

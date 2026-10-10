@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_global</span> - Configure global range attributes. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">admin_concurrent</span> - Enable/disable concurrent login of adminstrative users. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -119,6 +120,7 @@ Parameters
         <li> <span class="li-head">private_data_encryption</span> - Enable/disable private data encryption using an AES 128-bit key. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">radius_coa_port</span> - RADIUS CoA port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">radius_port</span> - RADIUS server port number. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">radsec_coa_port</span> - RADSEC CoA port number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">remoteauthtimeout</span> - Remote authentication (RADIUS/LDAP) time-out (0 - 300). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">reset_button</span> - When disabled, reset is ignored while the OS is running. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">restart_time</span> - Daily restart time <hh:mm>. <span class="li-normal">type: str</span> </li>
@@ -126,11 +128,15 @@ Parameters
         <li> <span class="li-head">revision_backup_on_upgrade</span> - Enable/disable automatic revision backup upon upgrade of system image. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">strong_crypto</span> - Enable/disable strong cryptography for HTTPS/SSH access. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">switch_mgmt_mode</span> - Switch mode setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: local, fortilink</span> </li>
+        <li> <span class="li-head">system_time_mode</span> - Set system time mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: ntp, ptp, local, auto</span> </li>
         <li> <span class="li-head">tcp6_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tcp_mss_min</span> - Minimum allowed TCP MSS value in bytes. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">tcp_options</span> - Enable/disable TCP options (timestamps, SACK, window scaling). <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">tftp</span> - Enable/disable TFTP. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">timezone</span> - Time zone. <span class="li-normal">type: str</span> <span class="li-normal">choices: 01, 02, 03, 04, 05, 81, 06, 07, 08, 09, 10, 11, 12, 13, 74, 14, 77, 15, 87, 16, 17, 18, 19, 20, 75, 21, 22, 23, 24, 80, 79, 25, 26, 27, 28, 78, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 83, 84, 40, 85, 41, 42, 43, 39, 44, 46, 47, 51, 48, 45, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 61, 64, 65, 66, 67, 68, 69, 70, 71, 72, 00, 82, 73, 86, 76, 88, 89, 90, 91, 92</span> </li>
+        <li> <span class="li-head">utc_offset</span> - Set utc-offset in seconds [-100 - 100] (number of seconds to subtracted from the time source to get UTC). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">utc_offset_mode</span> - From source or override. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, override</span> </li>
+        <li> <span class="li-head">verify_config</span> - CMDB configuration file verification level. <span class="li-normal">type: str</span> <span class="li-normal">choices: log, reject</span> </li>
         </ul>
     </ul>
 
@@ -142,6 +148,7 @@ Examples
     
     - name: Configure global range attributes.
       fortinet.fortiswitch.fortiswitch_system_global:
+          state: "present"
           system_global:
               802.1x_ca_certificate: "<your_own_value>"
               802.1x_certificate: "<your_own_value>"
@@ -203,6 +210,7 @@ Examples
               private_data_encryption: "disable"
               radius_coa_port: "61"
               radius_port: "62"
+              radsec_coa_port: "63"
               remoteauthtimeout: "150"
               reset_button: "enable"
               restart_time: "<your_own_value>"
@@ -210,11 +218,15 @@ Examples
               revision_backup_on_upgrade: "enable"
               strong_crypto: "enable"
               switch_mgmt_mode: "local"
-              tcp6_mss_min: "70"
-              tcp_mss_min: "71"
+              system_time_mode: "ntp"
+              tcp6_mss_min: "72"
+              tcp_mss_min: "73"
               tcp_options: "enable"
               tftp: "enable"
               timezone: "01"
+              utc_offset: "77"
+              utc_offset_mode: "auto"
+              verify_config: "log"
 
 
 Return Values

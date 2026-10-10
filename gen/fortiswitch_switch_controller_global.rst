@@ -40,7 +40,7 @@ FortiSwitch Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_switch_controller_global</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> v8.0.0 </code></td>
  </tr>
  </table>
  <p>
@@ -76,7 +76,12 @@ Parameters
         <li> <span class="li-head">max_retransmit</span> - The maximum <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mgmt_mode</span> - FortiLink management mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: capwap, https</span> </li>
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">sase_mode</span> - FortiSwitchSASE mode. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">sase_turbo</span> - FortiSwitchSASE mode. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">source_ip</span> - Source IPv4 for communication to FGT. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">source_ip6</span> - Source IPv6 for communication to FGT. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">tunnel_mode</span> - Compatible/strict tunnel mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: compatible, strict</span> </li>
+        <li> <span class="li-head">turbo_ip</span> - Resolved SASE turbo ip. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
 
@@ -105,7 +110,12 @@ Examples
               max_retransmit: "32"
               mgmt_mode: "capwap"
               name: "default_name_17"
+              sase_mode: "0"
+              sase_turbo: "<your_own_value>"
+              source_ip: "<your_own_value>"
+              source_ip6: "<your_own_value>"
               tunnel_mode: "compatible"
+              turbo_ip: "<your_own_value>"
 
 
 Return Values

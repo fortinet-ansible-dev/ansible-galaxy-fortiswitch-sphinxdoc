@@ -40,7 +40,7 @@ FortiSwitch Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_switch_ip_mac_binding</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> v7.6.4 </code></td>
  </tr>
  </table>
  <p>

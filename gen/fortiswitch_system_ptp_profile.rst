@@ -65,14 +65,14 @@ Parameters
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">domain</span> - PTP domain (0-255) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">min_delay_req_interval</span> - Min Delay Request interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
-        <li> <span class="li-head">mode</span> - Select PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: transparent-e2e</span> </li>
+        <li> <span class="li-head">mode</span> - Select PTP mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: transparent-e2e, transparent-p2p, boundary-e2e, boundary-p2p</span> </li>
         <li> <span class="li-head">name</span> - Profile name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">pdelay_req_interval</span> - PDelay Request interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
         <li> <span class="li-head">priority1</span> - PTP priority1 (0-255) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">priority2</span> - PTP priority2 (0-255) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ptp_profile</span> - Select PTP profile. <span class="li-normal">type: str</span> <span class="li-normal">choices: C37.238-2017, default</span> </li>
         <li> <span class="li-head">sync_interval</span> - Sync interval. <span class="li-normal">type: str</span> <span class="li-normal">choices: 0.25sec, 0.5sec, 1sec, 2sec, 4sec</span> </li>
-        <li> <span class="li-head">transport</span> - Select PTP transport. <span class="li-normal">type: str</span> <span class="li-normal">choices: l2-mcast</span> </li>
+        <li> <span class="li-head">transport</span> - Select PTP transport. <span class="li-normal">type: str</span> <span class="li-normal">choices: l2-mcast, ipv4-UDP-mcast</span> </li>
         </ul>
     </ul>
 

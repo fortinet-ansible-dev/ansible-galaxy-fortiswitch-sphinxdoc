@@ -103,6 +103,7 @@ Parameters
             <li> <span class="li-head">set_flags</span> - Set-flags. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">set_ip6_nexthop</span> - Set ipv6 global address of next hop. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_ip6_nexthop_local</span> - Set ipv6 local address of next hop. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">set_ip6_nexthop_prefer_global</span> - BGP prefer global IPv6 nexthop. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">set_ip_nexthop</span> - Set ip address of next hop. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">set_local_preference</span> - Set BGP local preference path attribute. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">set_metric</span> - Set the metric value. <span class="li-normal">type: int</span> </li>
@@ -164,8 +165,9 @@ Examples
                       set_flags: "34"
                       set_ip6_nexthop: "<your_own_value>"
                       set_ip6_nexthop_local: "<your_own_value>"
+                      set_ip6_nexthop_prefer_global: "enable"
                       set_ip_nexthop: "<your_own_value>"
-                      set_local_preference: "38"
+                      set_local_preference: "39"
                       set_metric: "1073741823"
                       set_metric_type: "1"
                       set_origin: "none"

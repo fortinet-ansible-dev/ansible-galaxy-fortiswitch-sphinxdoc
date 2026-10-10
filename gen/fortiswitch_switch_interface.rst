@@ -79,12 +79,13 @@ Parameters
         <li> <span class="li-head">dhcp_snoop_option82_trust</span> - Enable/Disable (allow/disallow) dhcp pkt with option82 on untrusted interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dhcp_snooping</span> - DHCP snooping interface (trusted or untrusted). <span class="li-normal">type: str</span> <span class="li-normal">choices: trusted, untrusted</span> </li>
         <li> <span class="li-head">discard_mode</span> - Configure discard mode for interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, all-tagged, all-untagged</span> </li>
-        <li> <span class="li-head">edge_port</span> - Enable/disable interface as edge port. <span class="li-normal">type: str</span> <span class="li-normal">choices: enabled, disabled</span> </li>
+        <li> <span class="li-head">edge_port</span> - Enable/disable interface as edge port. <span class="li-normal">type: str</span> <span class="li-normal">choices: enabled, disabled, fast</span> </li>
         <li> <span class="li-head">filter_sub_vlans</span> - Private VLAN or sub-VLAN based port type. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">fortilink_l3_mode</span> - FortiLink L3 uplink port. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">igmp_snooping_flood_reports</span> - Enable/disable flooding of IGMP snooping reports to this interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">interface_mode</span> - Set interface mode - L2 or L3. <span class="li-normal">type: str</span> <span class="li-normal">choices: L2, L3</span> </li>
         <li> <span class="li-head">ip_mac_binding</span> - Enable/disable ip-mac-binding on this interaface. <span class="li-normal">type: str</span> <span class="li-normal">choices: global, enable, disable</span> </li>
+        <li> <span class="li-head">ip_source_guard</span> - Enable/disable source-guard on this interaface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">learning_limit</span> - Limit the number of dynamic MAC addresses on this port. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">learning_limit_action</span> - Enable/disable turning off this interface on learn limit violation. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, shutdown</span> </li>
         <li> <span class="li-head">log_mac_event</span> - Enable/disable logging for dynamic MAC address events. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -112,6 +113,7 @@ Parameters
             <li> <span class="li-head">authserver_timeout_tagged_vlanid</span> - Set authserver_timeout tagged vlanid. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">authserver_timeout_vlan</span> - Enable/disable authserver_timeout vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">authserver_timeout_vlanid</span> - Set authserver_timeout vlanid. <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">client_limit</span> - Set MAX number of devices can accept in MAC mode. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">dacl</span> - Enable/disable dynamic access control list mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">eap_auto_untagged_vlans</span> - Enable/disable EAP auto-untagged-vlans mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
             <li> <span class="li-head">eap_egress_tagged</span> - Enable/disable Egress frame tag. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
@@ -232,41 +234,43 @@ Examples
               igmp_snooping_flood_reports: "enable"
               interface_mode: "L2"
               ip_mac_binding: "global"
-              learning_limit: "26"
+              ip_source_guard: "enable"
+              learning_limit: "27"
               learning_limit_action: "none"
               log_mac_event: "enable"
               loop_guard: "enabled"
-              loop_guard_mac_move_threshold: "30"
-              loop_guard_timeout: "31"
+              loop_guard_mac_move_threshold: "31"
+              loop_guard_timeout: "32"
               mcast_snooping_flood_traffic: "enable"
               mld_snooping_flood_reports: "enable"
               nac: "enable"
-              name: "default_name_35"
-              native_vlan: "36"
-              packet_sample_rate: "37"
+              name: "default_name_36"
+              native_vlan: "37"
+              packet_sample_rate: "38"
               packet_sampler: "enabled"
               port_security:
                   allow_mac_move: "disable"
                   allow_mac_move_to: "disable"
                   auth_fail_vlan: "disable"
-                  auth_fail_vlanid: "43"
+                  auth_fail_vlanid: "44"
                   auth_order: "dot1x-MAB"
                   auth_priority: "legacy"
-                  authserver_timeout_period: "46"
+                  authserver_timeout_period: "47"
                   authserver_timeout_tagged: "disable"
-                  authserver_timeout_tagged_lldp_voice_vlanid: "48"
-                  authserver_timeout_tagged_vlanid: "49"
+                  authserver_timeout_tagged_lldp_voice_vlanid: "49"
+                  authserver_timeout_tagged_vlanid: "50"
                   authserver_timeout_vlan: "disable"
-                  authserver_timeout_vlanid: "51"
+                  authserver_timeout_vlanid: "52"
+                  client_limit: "10"
                   dacl: "disable"
                   eap_auto_untagged_vlans: "disable"
                   eap_egress_tagged: "disable"
                   eap_passthru: "disable"
                   framevid_apply: "disable"
-                  guest_auth_delay: "57"
+                  guest_auth_delay: "59"
                   guest_vlan: "disable"
-                  guest_vlanid: "59"
-                  mab_eapol_request: "60"
+                  guest_vlanid: "61"
+                  mab_eapol_request: "62"
                   mac_auth_bypass: "disable"
                   macsec_pae_mode: "none"
                   macsec_profile: "<your_own_value> (source switch.macsec.profile.name)"
@@ -274,9 +278,9 @@ Examples
                   port_security_mode: "none"
                   quarantine_vlan: "disable"
                   radius_timeout_overwrite: "disable"
-              primary_vlan: "68 (source switch.vlan.id)"
+              primary_vlan: "70 (source switch.vlan.id)"
               private_vlan: "disable"
-              private_vlan_port_type: "70"
+              private_vlan_port_type: "72"
               ptp_policy: "<your_own_value> (source switch.ptp.policy.name)"
               ptp_status: "enable"
               qnq:
@@ -293,30 +297,30 @@ Examples
                   vlan_mapping:
                       -
                           description: "<your_own_value>"
-                          id: "86"
+                          id: "88"
                           match_c_vlan: "2047"
                           new_s_vlan: "2047"
                   vlan_mapping_miss_drop: "disable"
               qos_policy: "<your_own_value> (source switch.qos.qos-policy.name)"
               raguard:
                   -
-                      id: "92"
+                      id: "94"
                       raguard_policy: "<your_own_value> (source switch.raguard-policy.name)"
                       vlan_list: "<your_own_value>"
               rpvst_port: "enabled"
               sample_direction: "tx"
               security_groups:
                   -
-                      name: "default_name_98"
+                      name: "default_name_100"
               sflow_counter_interval: "127"
-              snmp_index: "100"
+              snmp_index: "102"
               sticky_mac: "enable"
               stp_bpdu_guard: "enabled"
-              stp_bpdu_guard_timeout: "103"
+              stp_bpdu_guard_timeout: "105"
               stp_loop_protection: "enabled"
               stp_root_guard: "enabled"
               stp_state: "enabled"
-              sub_vlan: "107 (source switch.vlan.id)"
+              sub_vlan: "109 (source switch.vlan.id)"
               switch_port_mode: "disable"
               trust_dot1p_map: "<your_own_value> (source switch.qos.dot1p-map.name)"
               trust_ip_dscp_map: "<your_own_value> (source switch.qos.ip-dscp-map.name)"
@@ -327,7 +331,7 @@ Examples
                       action: "add"
                       description: "<your_own_value>"
                       direction: "ingress"
-                      id: "117"
+                      id: "119"
                       match_c_vlan: "2047"
                       match_s_vlan: "2047"
                       new_s_vlan: "2047"

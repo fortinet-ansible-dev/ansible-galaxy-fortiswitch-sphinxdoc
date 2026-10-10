@@ -57,12 +57,14 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_flan_cloud</span> - FortiLAN cloud manager configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">interval</span> - Service name resolution time interval (3-300sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">name</span> - Fully qualified domain name or IP address of FortiLAN-cloud service. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">port</span> - Port Number. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">service_type</span> - Configure the flan manager service type. <span class="li-normal">type: str</span> <span class="li-normal">choices: flan-cloud, fortilink-https</span> </li>
+        <li> <span class="li-head">source_ip</span> - Source IPv4 for communication to FGT. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">status</span> - Enable/disable FortiLAN-cloud service. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         </ul>
     </ul>
@@ -75,11 +77,13 @@ Examples
     
     - name: FortiLAN cloud manager configuration.
       fortinet.fortiswitch.fortiswitch_system_flan_cloud:
+          state: "present"
           system_flan_cloud:
               interval: "150"
               name: "default_name_4"
               port: "32767"
               service_type: "flan-cloud"
+              source_ip: "<your_own_value>"
               status: "enable"
 
 

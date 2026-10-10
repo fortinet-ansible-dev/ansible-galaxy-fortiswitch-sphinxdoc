@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_settings</span> - Settings. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">allow_subnet_overlap</span> - Allow one interface subnet overlap with other interfaces. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -101,6 +102,7 @@ Examples
     
     - name: Settings.
       fortinet.fortiswitch.fortiswitch_system_settings:
+          state: "present"
           system_settings:
               allow_subnet_overlap: "enable"
               asymroute: "enable"

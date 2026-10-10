@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_certificate_ocsp</span> - Ocsp configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">cert</span> - OCSP server certificate. <span class="li-normal">type: str</span> </li>
@@ -73,6 +74,7 @@ Examples
     
     - name: Ocsp configuration.
       fortinet.fortiswitch.fortiswitch_system_certificate_ocsp:
+          state: "present"
           system_certificate_ocsp:
               cert: "<your_own_value> (source system.certificate.remote.name system.certificate.ca.name)"
               unavail_action: "revoke"

@@ -40,7 +40,7 @@ FortiSwitch Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_vdom_dns</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> v8.0.0 </code></td>
  </tr>
  </table>
  <p>
@@ -62,6 +62,7 @@ Parameters
         <li> <span class="li-head">ip6_primary</span> - Vdom IPv6 primary dns ip. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip6_secondary</span> - Vdom IPv6 seondary dns ip. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">primary</span> - Vdom primary dns ip. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">protocol</span> - Vdom dns protocol. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">secondary</span> - Vdom secondary dns ip. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip</span> - Source IP for communications to DNS server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">vdom_dns</span> - Enable/Disable dns per vdom. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -80,6 +81,7 @@ Examples
               ip6_primary: "<your_own_value>"
               ip6_secondary: "<your_own_value>"
               primary: "<your_own_value>"
+              protocol: "6"
               secondary: "<your_own_value>"
               source_ip: "<your_own_value>"
               vdom_dns: "enable"

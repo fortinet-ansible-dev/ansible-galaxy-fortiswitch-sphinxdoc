@@ -82,6 +82,16 @@ Parameters
         <li> <span class="li-head">radius_coa</span> - Enable/disable RADIUS CoA services from this server. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">radius_coa_secret</span> - Secret key to access the local Radius CoA server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">radius_port</span> - Local RADIUS service port number. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">radsec_cert_cn_dns</span> - Radsec certificate CN or DNS string. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">radsec_cert_validate</span> - Enable/disable RADSEC TLS peer certificate check. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
+        <li> <span class="li-head">radsec_client_cert</span> - Client certificate for Radsec Client. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">radsec_connect_timeout</span> - Server Radsec connection timeout 1 to 5 seconds. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">radsec_dtls_min_ver</span> - Radsec ( Radius Security ) DTLS min version. <span class="li-normal">type: str</span> <span class="li-normal">choices: DTLSv1, DTLSv1-2</span> </li>
+        <li> <span class="li-head">radsec_idle_timeout</span> - Server Radsec Idle timout 60 to 3600 seconds. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">radsec_oper_mode</span> - Radsec ( Radius Security ) TLS operation mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: TLS-X.509</span> </li>
+        <li> <span class="li-head">radsec_port</span> - Server Radsec service port number. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">radsec_server_ca_cert</span> - CA certificate for Radsec Server. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">radsec_tls_min_ver</span> - Radsec ( Radius Security ) TLS min version. <span class="li-normal">type: str</span> <span class="li-normal">choices: TLSv1, TLSv1-1, TLSv1-2, TLSv1-3</span> </li>
         <li> <span class="li-head">secondary_secret</span> - Secret key to access the secondary server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">secondary_server</span> - Secondary RADIUS domain name or IP address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">secret</span> - Secret key to access the primary server. <span class="li-normal">type: str</span> </li>
@@ -89,6 +99,7 @@ Parameters
         <li> <span class="li-head">service_type</span> - Radius Service Type. <span class="li-normal">type: str</span> <span class="li-normal">choices: login, framed, callback-login, callback-framed, outbound, administrative, nas-prompt, authenticate-only, callback-nas-prompt, call-check, callback-administrative</span> </li>
         <li> <span class="li-head">source_ip</span> - Source IPv4 for communications to RADIUS server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip6</span> - Source IPv6 for communications to RADIUS server. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">transport_type</span> - Enable/disable Radsec ( Radius Security ) services with different protocol from this server. <span class="li-normal">type: str</span> <span class="li-normal">choices: UDP, TLS, DTLS</span> </li>
         </ul>
     </ul>
 
@@ -123,6 +134,16 @@ Examples
               radius_coa: "disable"
               radius_coa_secret: "<your_own_value>"
               radius_port: "22"
+              radsec_cert_cn_dns: "<your_own_value>"
+              radsec_cert_validate: "disable"
+              radsec_client_cert: "<your_own_value>"
+              radsec_connect_timeout: "2"
+              radsec_dtls_min_ver: "DTLSv1"
+              radsec_idle_timeout: "1800"
+              radsec_oper_mode: "TLS-X.509"
+              radsec_port: "30"
+              radsec_server_ca_cert: "<your_own_value>"
+              radsec_tls_min_ver: "TLSv1"
               secondary_secret: "<your_own_value>"
               secondary_server: "<your_own_value>"
               secret: "<your_own_value>"
@@ -130,6 +151,7 @@ Examples
               service_type: "login"
               source_ip: "<your_own_value>"
               source_ip6: "<your_own_value>"
+              transport_type: "UDP"
 
 
 Return Values

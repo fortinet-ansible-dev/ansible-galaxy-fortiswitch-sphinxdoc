@@ -36,10 +36,11 @@ FortiSwitch Version Compatibility
  <br>
  <table border="1">
  <tr>
- <td></td><td colspan="0">Supported Version Ranges</td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_switch_vlan_pruning</td>
+ <td><code class="docutils literal notranslate">v7.6.1 -> v8.0.0 </code></td>
  </tr>
  </table>
  <p>

@@ -37,7 +37,7 @@ Parameters
     <li><span class="li-head">json_generic</span> - json generic <span class="li-normal">default: null</span> <span class="li-normal">type: dict</span></li>
             <ul class="ul-self">
             <li><span class="li-head">dictbody</span> - Body with YAML list of key/value format <span class="li-normal">type: dict</span></li>
-            <li><span class="li-head">jsonbody</span> - Body with JSON string format, will always give priority to jsonbody <span class="li-normal">type: str</span></li>
+            <li><span class="li-head">jsonbody</span> - Body with JSON or YAML string format, will always give priority to jsonbody <span class="li-normal">type: str</span></li>
             <li><span class="li-head">method</span> - HTTP methods <span class="li-normal">type: str</span> <span class="li-normal">choices: GET,  PUT,  POST,  DELETE</span></li>
             <li><span class="li-head">path</span> - URL path, e.g./api/v2/cmdb/firewall/address <span class="li-normal">type: str</span></li>
             <li><span class="li-head">specialparams</span> - Extra URL parameters, e.g.start=1&count=10 <span class="li-normal">type: str</span>
@@ -60,6 +60,10 @@ Examples
 
     [fortiswitches:vars]
     ansible_network_os=fortinet.fortiswitch.fortiswitch
+
+    # Quote or escape passwords with # when set inline on an INI host line:
+    # ansible_password="abc#123"
+    # ansible_password=abc\#123
 
 
 **sample1.yml**

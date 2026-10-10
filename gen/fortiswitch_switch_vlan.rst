@@ -73,7 +73,7 @@ Parameters
             <li> <span class="li-head">server_ip</span> - IP address for DHCP Server. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">server_ip6</span> - IP address for DHCPv6 Server. <span class="li-normal">type: str</span> </li>
             </ul>
-        <li> <span class="li-head">dhcp_snooping</span> - Enable/Disable dhcp snooping on this vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
+        <li> <span class="li-head">dhcp_snooping</span> - Enable/Disable dhcp snooping on this vlan. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable, monitor</span> </li>
         <li> <span class="li-head">dhcp_snooping_option82</span> - Enable/Disable inserting option82. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">dhcp_snooping_static_client</span> - DHCP Snooping static clients. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">

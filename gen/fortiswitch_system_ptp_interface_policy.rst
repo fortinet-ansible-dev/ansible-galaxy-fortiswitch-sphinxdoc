@@ -60,6 +60,7 @@ Parameters
     <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_ptp_interface_policy</span> - PTP policy configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
+        <li> <span class="li-head">bmc_selection</span> - Possible roles for the port when in BC mode (0=auto 1=master-only 2=slave-only) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">description</span> - Description. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">name</span> - Policy name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">vlan</span> - PTP Vlan (0-4094) <span class="li-normal">type: int</span> </li>
@@ -77,8 +78,9 @@ Examples
       fortinet.fortiswitch.fortiswitch_system_ptp_interface_policy:
           state: "present"
           system_ptp_interface_policy:
+              bmc_selection: "1"
               description: "<your_own_value>"
-              name: "default_name_4"
+              name: "default_name_5"
               vlan: "2047"
               vlan_pri: "3"
 

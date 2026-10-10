@@ -57,10 +57,15 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_ntp</span> - Ntp system info configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">allow_unsync_source</span> - Enable/disable allowance of unsynchronized NTP server source. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">authentication</span> - Enable/disable authentication. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">interface</span> - FortiSwitch interface(s) with NTP server mode enabled. Devices on your network can contact these interfaces for NTP services. <span class="li-normal">type: list</span> </li>
+            <ul class="ul-self">
+            <li> <span class="li-head">interface_name</span> - Interface name. <span class="li-normal">type: str</span> </li>
+            </ul>
         <li> <span class="li-head">key</span> - Key for authentication. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">key_id</span> - Key ID for authentication. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">key_type</span> - Key type for authentication (MD5, SHA1). <span class="li-normal">type: str</span> <span class="li-normal">choices: MD5, SHA1</span> </li>
@@ -90,19 +95,23 @@ Examples
     
     - name: Ntp system info configuration.
       fortinet.fortiswitch.fortiswitch_system_ntp:
+          state: "present"
           system_ntp:
               allow_unsync_source: "enable"
               authentication: "enable"
+              interface:
+                  -
+                      interface_name: "<your_own_value> (source system.interface.name)"
               key: "<your_own_value>"
-              key_id: "6"
+              key_id: "8"
               key_type: "MD5"
               log_time_adjustments: "enable"
               ntpserver:
                   -
                       authentication: "enable"
-                      id: "11"
+                      id: "13"
                       key: "<your_own_value>"
-                      key_id: "13"
+                      key_id: "15"
                       ntpv3: "enable"
                       server: "192.168.100.40"
               ntpsync: "enable"

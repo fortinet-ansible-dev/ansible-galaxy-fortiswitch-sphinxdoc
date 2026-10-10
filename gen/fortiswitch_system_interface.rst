@@ -126,6 +126,7 @@ Parameters
                 <ul class="ul-self">
                 <li> <span class="li-head">accept_mode</span> - Enable/disable accept mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 <li> <span class="li-head">adv_interval</span> - Advertisement interval (1 - 255 seconds). <span class="li-normal">type: int</span> </li>
+                <li> <span class="li-head">backup_vmac_fwd</span> - Enable/disable backup-vmac-fwd. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 <li> <span class="li-head">preempt</span> - Enable/disable preempt mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
                 <li> <span class="li-head">priority</span> - Priority of the virtual router (1 - 255). <span class="li-normal">type: int</span> </li>
                 <li> <span class="li-head">start_time</span> - Startup time (1 - 255 seconds). <span class="li-normal">type: int</span> </li>
@@ -145,6 +146,7 @@ Parameters
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> </li>
         <li> <span class="li-head">ping_serv_status</span> - PING server status. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">priority</span> - Priority of learned routes. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">ptp_status</span> - Interface PTP status. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">remote_ip</span> - Remote IP address of tunnel. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">secondary_IP</span> - Enable/disable use of secondary IP address. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">secondaryip</span> - Second IP address of interface. <span class="li-normal">type: list</span> </li>
@@ -177,6 +179,7 @@ Parameters
             <ul class="ul-self">
             <li> <span class="li-head">adv_interval</span> - Advertisement interval (1 - 255 seconds). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">backup_vmac_fwd</span> - Enable/disable backup-vmac-fwd. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">netmask</span> - Netmask of the virtual router. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">preempt</span> - Enable/disable preempt mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">priority</span> - Priority of the virtual router (1 - 255). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">start_time</span> - Startup time (1 - 255 seconds). <span class="li-normal">type: int</span> </li>
@@ -265,6 +268,7 @@ Examples
                       -
                           accept_mode: "enable"
                           adv_interval: "127"
+                          backup_vmac_fwd: "enable"
                           preempt: "enable"
                           priority: "127"
                           start_time: "127"
@@ -277,11 +281,12 @@ Examples
               l2_interface: "<your_own_value> (source switch.interface.name)"
               macaddr: "<your_own_value>"
               mode: "static"
-              mtu: "75"
+              mtu: "76"
               mtu_override: "enable"
-              name: "default_name_77"
-              ping_serv_status: "78"
-              priority: "79"
+              name: "default_name_78"
+              ping_serv_status: "79"
+              priority: "80"
+              ptp_status: "disable"
               remote_ip: "<your_own_value>"
               secondary_IP: "enable"
               secondaryip:
@@ -291,10 +296,10 @@ Examples
                       detectserver: "<your_own_value>"
                       gwdetect: "enable"
                       ha_priority: "25"
-                      id: "88"
+                      id: "90"
                       ip: "<your_own_value>"
-                      ping_serv_status: "90"
-              snmp_index: "91"
+                      ping_serv_status: "92"
+              snmp_index: "93"
               speed: "auto"
               src_check: "disable"
               src_check_allow_default: "enable"
@@ -306,12 +311,13 @@ Examples
               type: "physical"
               vdom: "<your_own_value> (source system.vdom.name)"
               vlanforward: "enable"
-              vlanid: "102"
+              vlanid: "104"
               vrf: "<your_own_value> (source router.vrf.name)"
               vrrp:
                   -
                       adv_interval: "127"
                       backup_vmac_fwd: "enable"
+                      netmask: "<your_own_value>"
                       preempt: "enable"
                       priority: "127"
                       start_time: "127"

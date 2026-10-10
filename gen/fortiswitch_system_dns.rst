@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_dns</span> - Configure DNS. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">cache_notfound_responses</span> - Enable/disable caching of NOTFOUND responses from DNS server. <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
@@ -66,7 +67,9 @@ Parameters
         <li> <span class="li-head">ip6_primary</span> - IPv6 address for primary DNS server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip6_secondary</span> - IPv6 address for secondary DNS server. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">primary</span> - IP address for primary DNS server. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">protocol</span> - DNS transport protocols. <span class="li-normal">type: str</span> <span class="li-normal">choices: cleartext, dot</span> </li>
         <li> <span class="li-head">secondary</span> - IP address for secondary DNS server. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">server_ca_cert</span> - DoT server CA certificate. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">source_ip</span> - Source IP for DNS queries. <span class="li-normal">type: str</span> </li>
         </ul>
     </ul>
@@ -79,6 +82,7 @@ Examples
     
     - name: Configure DNS.
       fortinet.fortiswitch.fortiswitch_system_dns:
+          state: "present"
           system_dns:
               cache_notfound_responses: "disable"
               dns_cache_limit: "4"
@@ -87,7 +91,9 @@ Examples
               ip6_primary: "<your_own_value>"
               ip6_secondary: "<your_own_value>"
               primary: "<your_own_value>"
+              protocol: "cleartext"
               secondary: "<your_own_value>"
+              server_ca_cert: "<your_own_value>"
               source_ip: "<your_own_value>"
 
 

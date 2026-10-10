@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_ospf</span> - OSPF configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">abr_type</span> - Area border router type. <span class="li-normal">type: str</span> <span class="li-normal">choices: cisco, ibm, shortcut, standard</span> </li>
@@ -99,6 +100,7 @@ Parameters
                 <li> <span class="li-head">transmit_delay</span> - Link state transmit delay. <span class="li-normal">type: int</span> </li>
                 </ul>
             </ul>
+        <li> <span class="li-head">auto_cost_ref_bandwidth</span> - Reference bandwidth in terms of megabits per second. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">database_overflow</span> - Enable/disable database overflow. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">database_overflow_max_external_lsa</span> - Database overflow maximum External LSAs. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">database_overflow_time_to_recover</span> - Database overflow time to recover (sec). <span class="li-normal">type: int</span> </li>
@@ -132,6 +134,7 @@ Parameters
             <li> <span class="li-head">mtu</span> - Interface MTU. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">mtu_ignore</span> - Disable MTU mismatch detection on this interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">name</span> - Interface entry name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">network_type</span> - Network type. <span class="li-normal">type: str</span> <span class="li-normal">choices: broadcast, point-to-point, point-to-multipoint</span> </li>
             <li> <span class="li-head">priority</span> - Router priority. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">retransmit_interval</span> - Time between retransmitting lost link state advertisements. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">transmit_delay</span> - Link state transmit delay. <span class="li-normal">type: int</span> </li>
@@ -285,6 +288,7 @@ Examples
     
     - name: OSPF configuration.
       fortinet.fortiswitch.fortiswitch_router_ospf:
+          state: "present"
           router_ospf:
               abr_type: "cisco"
               area:
@@ -321,57 +325,59 @@ Examples
                               peer: "<your_own_value>"
                               retransmit_interval: "31"
                               transmit_delay: "32"
+              auto_cost_ref_bandwidth: "2147483"
               database_overflow: "enable"
               database_overflow_max_external_lsa: "1073741823"
-              database_overflow_time_to_recover: "35"
-              default_information_metric: "36"
+              database_overflow_time_to_recover: "36"
+              default_information_metric: "37"
               default_information_metric_type: "1"
               default_information_originate: "enable"
-              distance: "39"
-              distance_external: "40"
-              distance_inter_area: "41"
-              distance_intra_area: "42"
+              distance: "40"
+              distance_external: "41"
+              distance_inter_area: "42"
+              distance_intra_area: "43"
               distribute_list:
                   -
                       access_list: "<your_own_value> (source router.access-list.name)"
-                      id: "45"
+                      id: "46"
                       protocol: "connected"
               interface:
                   -
                       authentication: "none"
                       authentication_key: "<your_own_value>"
                       bfd: "enable"
-                      cost: "51"
-                      dead_interval: "52"
-                      hello_interval: "53"
-                      hello_multiplier: "54"
+                      cost: "52"
+                      dead_interval: "53"
+                      hello_interval: "54"
+                      hello_multiplier: "55"
                       md5_keys:
                           -
-                              id: "56"
+                              id: "57"
                               key: "<your_own_value>"
-                      mtu: "58"
+                      mtu: "59"
                       mtu_ignore: "enable"
-                      name: "default_name_60 (source system.interface.name)"
-                      priority: "61"
-                      retransmit_interval: "62"
-                      transmit_delay: "63"
+                      name: "default_name_61 (source system.interface.name)"
+                      network_type: "broadcast"
+                      priority: "63"
+                      retransmit_interval: "64"
+                      transmit_delay: "65"
                       ttl: "127"
-                      ucast_ttl: "65"
+                      ucast_ttl: "67"
               log_neighbour_changes: "enable"
-              name: "default_name_67"
+              name: "default_name_69"
               network:
                   -
                       area: "<your_own_value>"
-                      id: "70"
+                      id: "72"
                       prefix: "<your_own_value>"
               passive_interface:
                   -
-                      name: "default_name_73 (source system.interface.name)"
+                      name: "default_name_75 (source system.interface.name)"
               redistribute:
                   -
-                      metric: "75"
+                      metric: "1073741823"
                       metric_type: "1"
-                      name: "default_name_77"
+                      name: "default_name_79"
                       routemap: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
                       tag: "1073741823"
@@ -380,7 +386,7 @@ Examples
               spf_timers: "<your_own_value>"
               summary_address:
                   -
-                      id: "85"
+                      id: "87"
                       prefix: "<your_own_value>"
                       tag: "1073741823"
               vrf:
@@ -392,14 +398,14 @@ Examples
                               filter_list:
                                   -
                                       direction: "in"
-                                      id: "94"
+                                      id: "96"
                                       list: "<your_own_value> (source router.access-list.name router.prefix-list.name)"
-                              id: "96"
+                              id: "98"
                               nssa_translator_role: "candidate"
                               range:
                                   -
                                       advertise: "disable"
-                                      id: "100"
+                                      id: "102"
                                       prefix: "<your_own_value>"
                                       substitute: "<your_own_value>"
                                       substitute_status: "enable"
@@ -410,62 +416,62 @@ Examples
                                   -
                                       authentication: "none"
                                       authentication_key: "<your_own_value>"
-                                      dead_interval: "110"
-                                      hello_interval: "111"
-                                      name: "default_name_112"
+                                      dead_interval: "112"
+                                      hello_interval: "113"
+                                      name: "default_name_114"
                                       peer: "<your_own_value>"
-                                      retransmit_interval: "114"
-                                      transmit_delay: "115"
+                                      retransmit_interval: "116"
+                                      transmit_delay: "117"
                       database_overflow: "enable"
                       database_overflow_max_external_lsa: "1073741823"
-                      database_overflow_time_to_recover: "118"
-                      default_information_metric: "119"
+                      database_overflow_time_to_recover: "120"
+                      default_information_metric: "121"
                       default_information_metric_type: "1"
                       default_information_originate: "enable"
-                      distance: "122"
-                      distance_external: "123"
-                      distance_inter_area: "124"
-                      distance_intra_area: "125"
+                      distance: "124"
+                      distance_external: "125"
+                      distance_inter_area: "126"
+                      distance_intra_area: "127"
                       distribute_list:
                           -
                               access_list: "<your_own_value> (source router.access-list.name)"
-                              id: "128"
+                              id: "130"
                               protocol: "connected"
                       interface:
                           -
                               authentication: "none"
                               authentication_key: "<your_own_value>"
-                              cost: "133"
-                              dead_interval: "134"
-                              hello_interval: "135"
-                              hello_multiplier: "136"
+                              cost: "135"
+                              dead_interval: "136"
+                              hello_interval: "137"
+                              hello_multiplier: "138"
                               md5_keys:
                                   -
-                                      id: "138"
+                                      id: "140"
                                       key: "<your_own_value>"
-                              mtu: "140"
+                              mtu: "142"
                               mtu_ignore: "enable"
-                              name: "default_name_142 (source system.interface.name)"
-                              priority: "143"
-                              retransmit_interval: "144"
-                              transmit_delay: "145"
+                              name: "default_name_144 (source system.interface.name)"
+                              priority: "145"
+                              retransmit_interval: "146"
+                              transmit_delay: "147"
                               ttl: "127"
-                              ucast_ttl: "147"
+                              ucast_ttl: "149"
                       log_neighbour_changes: "enable"
-                      name: "default_name_149 (source router.vrf.name)"
+                      name: "default_name_151 (source router.vrf.name)"
                       network:
                           -
                               area: "<your_own_value>"
-                              id: "152"
+                              id: "154"
                               prefix: "<your_own_value>"
                       passive_interface:
                           -
-                              name: "default_name_155 (source system.interface.name)"
+                              name: "default_name_157 (source system.interface.name)"
                       redistribute:
                           -
-                              metric: "157"
+                              metric: "159"
                               metric_type: "1"
-                              name: "default_name_159"
+                              name: "default_name_161"
                               routemap: "<your_own_value> (source router.route-map.name)"
                               status: "enable"
                               tag: "1073741823"
@@ -474,7 +480,7 @@ Examples
                       spf_timers: "<your_own_value>"
                       summary_address:
                           -
-                              id: "167"
+                              id: "169"
                               prefix: "<your_own_value>"
                               tag: "1073741823"
 

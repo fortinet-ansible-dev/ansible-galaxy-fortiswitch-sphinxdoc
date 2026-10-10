@@ -179,6 +179,8 @@ Parameters
         <li><span class="li-normal">switch.lldp_settings</span> </li>
         <li><span class="li-normal">switch.macsec_profile</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch.mld-snooping_globals</span> </li>
+        <li><span class="li-normal">switch.mrp_profile</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">switch.mrp_settings</span>  <span class="li-required">param: id</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch.network-monitor_directed</span>  <span class="li-required">param: id</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch.network-monitor_settings</span> </li>
         <li><span class="li-normal">switch.ptp_policy</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
@@ -194,6 +196,7 @@ Parameters
         <li><span class="li-normal">switch_global</span> </li>
         <li><span class="li-normal">switch_interface</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_ip-mac-binding</span>  <span class="li-required">param: seq-num</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
+        <li><span class="li-normal">switch_ip-source-guard</span>  <span class="li-required">param: interface-name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_mirror</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">switch_phy-mode</span> </li>
         <li><span class="li-normal">switch_physical-port</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
@@ -269,6 +272,7 @@ Parameters
         <li><span class="li-normal">system_port-pair</span>  <span class="li-required">param: name</span>  <span class="li-required">type: str</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system_proxy-arp</span>  <span class="li-required">param: id</span>  <span class="li-required">type: int</span> <span class="li-required">required: True </span></li>
         <li><span class="li-normal">system_resource-limits</span> </li>
+        <li><span class="li-normal">system_security</span> </li>
         <li><span class="li-normal">system_session-ttl</span> </li>
         <li><span class="li-normal">system_settings</span> </li>
         <li><span class="li-normal">system_sflow</span> </li>

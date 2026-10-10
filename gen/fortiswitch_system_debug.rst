@@ -36,10 +36,11 @@ FortiSwitch Version Compatibility
  <br>
  <table border="1">
  <tr>
- <td></td><td colspan="0">Supported Version Ranges</td>
+ <td></td><td colspan="1">Supported Version Ranges</td>
  </tr>
  <tr>
  <td>fortiswitch_system_debug</td>
+ <td><code class="docutils literal notranslate">v7.6.1 -> v8.0.0 </code></td>
  </tr>
  </table>
  <p>
@@ -58,6 +59,7 @@ Parameters
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_debug</span> - Application and CLI debug values to set at startup and retain over reboot. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
+        <li> <span class="li-head">access_vlan</span> - Access VLAN debug. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">alertd</span> - Monitor and Alert daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">apache</span> - Apache. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">auto_script</span> - Auto script. <span class="li-normal">type: int</span> </li>
@@ -100,6 +102,7 @@ Parameters
         <li> <span class="li-head">macsec_srv</span> - MKA/Fortilink macsec cak server daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mcast_snooping</span> - Multicast Snooping debug. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">miglogd</span> - Log daemon. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">mrpd</span> - Media Redundancy Protocol (MRP) daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ntpd</span> - Network Time Protocol (NTP) daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">nwmcfgd</span> - Network monitor daemon responsible for handling configuration. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">nwmonitord</span> - Network monitor daemon responsible for packet handling and parsing. <span class="li-normal">type: int</span> </li>
@@ -108,6 +111,7 @@ Parameters
         <li> <span class="li-head">pbrd</span> - Policy Based Routing (PBR) routing daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">pimd</span> - Protocol Independent Multicast (PIM) daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">portspeedd</span> - Port speed daemon. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">ptp4l</span> - Precision Time Protocol for Linux (PTP4L) daemon <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">radius_das</span> - Radius CoA daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">radvd</span> - router adv daemon <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">raguard</span> - raguard daemon <span class="li-normal">type: int</span> </li>
@@ -115,9 +119,11 @@ Parameters
         <li> <span class="li-head">ripngd</span> - Routing Information Protocol NG (RIPNG) daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">router_launcher</span> - Routing system launcher daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">rsyslogd</span> - Remote SYSLOG daemon. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">rvi_daemon</span> - Multicast Snooping debug. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">scep</span> - SCEP <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">sflowd</span> - sFlow collection and export daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">snmpd</span> - Simple Network Managment Protocol (SNMP) daemon. <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">srcguardd</span> - Source guard daemon responsible for source guard violation. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">sshd</span> - Secure Sockets Shell(SSH) daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">staticd</span> - Static route daemon. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">statsd</span> - Stats collection daemon. <span class="li-normal">type: int</span> </li>
@@ -140,76 +146,81 @@ Examples
     - name: Application and CLI debug values to set at startup and retain over reboot.
       fortinet.fortiswitch.fortiswitch_system_debug:
           system_debug:
-              alertd: "3"
-              apache: "4"
-              auto_script: "5"
-              autod: "6"
-              bfdd: "7"
-              bgpd: "8"
+              access_vlan: "3"
+              alertd: "4"
+              apache: "5"
+              auto_script: "6"
+              autod: "7"
+              bfdd: "8"
+              bgpd: "9"
               cli: "4"
-              ctrld: "10"
-              cu_swtpd: "11"
-              delayclid: "12"
-              dhcp6c: "13"
-              dhcpc: "14"
-              dhcprelay: "15"
-              dhcps: "16"
-              dmid: "17"
-              dnsproxy: "18"
-              eap_proxy: "19"
-              email_server: "20"
-              erspan_auto_mgr: "21"
-              flan_mgr: "22"
-              flcmdd: "23"
-              flow_export: "24"
-              fnbamd: "25"
-              fortilinkd: "26"
-              fpmd: "27"
-              gratarp: "28"
-              gui: "29"
-              gvrpd: "30"
-              httpsd: "31"
-              ip6addrd: "32"
-              ipconflictd: "33"
-              isisd: "34"
-              l2d: "35"
-              l2dbg: "36"
-              l3: "37"
-              lacpd: "38"
-              libswitchd: "39"
-              link_monitor: "40"
-              lldpmedd: "41"
-              macsec_srv: "42"
-              mcast_snooping: "43"
-              miglogd: "44"
-              ntpd: "45"
-              nwmcfgd: "46"
-              nwmonitord: "47"
-              ospf6d: "48"
-              ospfd: "49"
-              pbrd: "50"
-              pimd: "51"
-              portspeedd: "52"
-              radius_das: "53"
-              radvd: "54"
-              raguard: "55"
-              ripd: "56"
-              ripngd: "57"
-              router_launcher: "58"
-              rsyslogd: "59"
-              scep: "60"
-              sflowd: "61"
-              snmpd: "62"
-              sshd: "63"
-              staticd: "64"
-              statsd: "65"
-              stpd: "66"
-              switch_launcher: "67"
-              trunkd: "68"
-              vrrpd: "69"
-              wiredap: "70"
-              wpa_supp: "71"
-              zebra: "72"
+              ctrld: "11"
+              cu_swtpd: "12"
+              delayclid: "13"
+              dhcp6c: "14"
+              dhcpc: "15"
+              dhcprelay: "16"
+              dhcps: "17"
+              dmid: "18"
+              dnsproxy: "19"
+              eap_proxy: "20"
+              email_server: "21"
+              erspan_auto_mgr: "22"
+              flan_mgr: "23"
+              flcmdd: "24"
+              flow_export: "25"
+              fnbamd: "26"
+              fortilinkd: "27"
+              fpmd: "28"
+              gratarp: "29"
+              gui: "30"
+              gvrpd: "31"
+              httpsd: "32"
+              ip6addrd: "33"
+              ipconflictd: "34"
+              isisd: "35"
+              l2d: "36"
+              l2dbg: "37"
+              l3: "38"
+              lacpd: "39"
+              libswitchd: "40"
+              link_monitor: "41"
+              lldpmedd: "42"
+              macsec_srv: "43"
+              mcast_snooping: "44"
+              miglogd: "45"
+              mrpd: "46"
+              ntpd: "47"
+              nwmcfgd: "48"
+              nwmonitord: "49"
+              ospf6d: "50"
+              ospfd: "51"
+              pbrd: "52"
+              pimd: "53"
+              portspeedd: "54"
+              ptp4l: "55"
+              radius_das: "56"
+              radvd: "57"
+              raguard: "58"
+              ripd: "59"
+              ripngd: "60"
+              router_launcher: "61"
+              rsyslogd: "62"
+              rvi_daemon: "63"
+              scep: "64"
+              sflowd: "65"
+              snmpd: "66"
+              srcguardd: "67"
+              sshd: "68"
+              staticd: "69"
+              statsd: "70"
+              stpd: "71"
+              switch_launcher: "72"
+              trunkd: "73"
+              vrrpd: "74"
+              wiredap: "75"
+              wpa_supp: "76"
+              zebra: "77"
 
 
 Return Values

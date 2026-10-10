@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_isis</span> - ISIS configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">auth_keychain_area</span> - IS-IS area authentication key-chain. Applicable when area"s auth mode is md5. <span class="li-normal">type: str</span> </li>
@@ -160,6 +161,7 @@ Examples
     
     - name: ISIS configuration.
       fortinet.fortiswitch.fortiswitch_router_isis:
+          state: "present"
           router_isis:
               auth_keychain_area: "<your_own_value> (source router.key-chain.name)"
               auth_keychain_domain: "<your_own_value> (source router.key-chain.name)"

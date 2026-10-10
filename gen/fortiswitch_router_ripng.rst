@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_ripng</span> - router ripng configuration <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">aggregate_address</span> - Set aggregate RIPng route announcement. <span class="li-normal">type: list</span> </li>
@@ -114,6 +115,7 @@ Examples
     
     - name: router ripng configuration
       fortinet.fortiswitch.fortiswitch_router_ripng:
+          state: "present"
           router_ripng:
               aggregate_address:
                   -
@@ -143,12 +145,12 @@ Examples
                       direction: "in"
                       id: "25"
                       interface: "<your_own_value> (source system.interface.name)"
-                      offset: "27"
+                      offset: "8"
                       status: "enable"
               redistribute:
                   -
                       flags: "30"
-                      metric: "31"
+                      metric: "1073741823"
                       name: "default_name_32"
                       routemap: "<your_own_value> (source router.route-map.name)"
                       status: "enable"

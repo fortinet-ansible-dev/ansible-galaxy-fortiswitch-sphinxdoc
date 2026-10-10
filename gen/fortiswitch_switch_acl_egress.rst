@@ -69,6 +69,7 @@ Parameters
             <li> <span class="li-head">outer_vlan_tag</span> - Outer vlan tag. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">policer</span> - Policer id. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">redirect</span> - Redirect interface name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">remark_cos</span> - Remark COS value (0 - 7), or unset to disable. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">remark_dscp</span> - Remark DSCP value (0 - 63), or unset to disable. <span class="li-normal">type: int</span> </li>
             </ul>
         <li> <span class="li-head">classifier</span> - Match-conditions for the policy. <span class="li-normal">type: dict</span> </li>
@@ -113,20 +114,21 @@ Examples
                   outer_vlan_tag: "8"
                   policer: "9 (source switch.acl.policer.id)"
                   redirect: "<your_own_value> (source switch.physical-port.name switch.trunk.name)"
+                  remark_cos: "3"
                   remark_dscp: "31"
               classifier:
-                  cos: "13"
-                  dscp: "14"
+                  cos: "14"
+                  dscp: "15"
                   dst_ip_prefix: "<your_own_value>"
                   dst_mac: "<your_own_value>"
-                  ether_type: "17"
+                  ether_type: "18"
                   service: "<your_own_value> (source switch.acl.service.custom.name)"
                   src_ip_prefix: "<your_own_value>"
                   src_mac: "<your_own_value>"
-                  vlan_id: "21"
+                  vlan_id: "22"
               description: "<your_own_value>"
-              group: "23"
-              id: "24"
+              group: "24"
+              id: "25"
               interface: "<your_own_value> (source switch.physical-port.name)"
               schedule:
                   -

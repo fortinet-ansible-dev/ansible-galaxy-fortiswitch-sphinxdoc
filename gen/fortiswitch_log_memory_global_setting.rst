@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">log_memory_global_setting</span> - Global settings for memory log. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">full_final_warning_threshold</span> - Log full final warning threshold(3-100), the default is 95. <span class="li-normal">type: int</span> </li>
@@ -75,6 +76,7 @@ Examples
     
     - name: Global settings for memory log.
       fortinet.fortiswitch.fortiswitch_log_memory_global_setting:
+          state: "present"
           log_memory_global_setting:
               full_final_warning_threshold: "50"
               full_first_warning_threshold: "49"

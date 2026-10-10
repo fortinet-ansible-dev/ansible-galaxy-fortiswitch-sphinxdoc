@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_ospf6</span> - Router OSPF6 configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">area</span> - OSPF6 area configuration. <span class="li-normal">type: list</span> </li>
@@ -77,6 +78,7 @@ Parameters
             <li> <span class="li-head">stub_type</span> - Stub summary setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: no-summary, summary</span> </li>
             <li> <span class="li-head">type</span> - Area type setting. <span class="li-normal">type: str</span> <span class="li-normal">choices: regular, stub</span> </li>
             </ul>
+        <li> <span class="li-head">auto_cost_ref_bandwidth</span> - the reference bandwidth in terms of Mbits per second (1..4294967) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">interface</span> - OSPF6 interface configuration. <span class="li-normal">type: list</span> </li>
             <ul class="ul-self">
             <li> <span class="li-head">area_id</span> - A.B.C.D, in IPv4 address format. <span class="li-normal">type: str</span> </li>
@@ -85,6 +87,7 @@ Parameters
             <li> <span class="li-head">dead_interval</span> - Dead interval. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">hello_interval</span> - Hello interval. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">name</span> - Interface name. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">network_type</span> - Network type. <span class="li-normal">type: str</span> <span class="li-normal">choices: broadcast, point-to-point, point-to-multipoint</span> </li>
             <li> <span class="li-head">passive</span> - Enable/disable passive interface. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">priority</span> - Router priority. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">retransmit_interval</span> - Time between retransmitting lost link state advertisements. <span class="li-normal">type: int</span> </li>
@@ -113,6 +116,7 @@ Examples
     
     - name: Router OSPF6 configuration.
       fortinet.fortiswitch.fortiswitch_router_ospf6:
+          state: "present"
           router_ospf6:
               area:
                   -
@@ -129,25 +133,27 @@ Examples
                               prefix6: "<your_own_value>"
                       stub_type: "no-summary"
                       type: "regular"
+              auto_cost_ref_bandwidth: "2147483"
               interface:
                   -
                       area_id: "<your_own_value>"
                       bfd: "enable"
-                      cost: "18"
-                      dead_interval: "19"
-                      hello_interval: "20"
-                      name: "default_name_21 (source system.interface.name)"
+                      cost: "19"
+                      dead_interval: "20"
+                      hello_interval: "21"
+                      name: "default_name_22 (source system.interface.name)"
+                      network_type: "broadcast"
                       passive: "enable"
-                      priority: "23"
-                      retransmit_interval: "24"
+                      priority: "25"
+                      retransmit_interval: "26"
                       status: "disable"
-                      transmit_delay: "26"
+                      transmit_delay: "28"
               log_neighbor_changes: "enable"
               redistribute:
                   -
-                      metric: "29"
+                      metric: "1073741823"
                       metric_type: "1"
-                      name: "default_name_31"
+                      name: "default_name_33"
                       routemap: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
               router_id: "<your_own_value>"

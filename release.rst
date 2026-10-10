@@ -4,6 +4,25 @@ Release Notes
 
 |
 
+Release Galaxy 1.4.0
+--------------------
+
+Release Targets
+^^^^^^^^^^^^^^^
+
+FortiSwitch Galaxy 1.4.0 is based on 1.3.0
+
+Bug Fixes
+^^^^^^^^^^^^^^^
+- Fixed execute modules that exposed invalid hyphenated argument names, such as `job-id`.
+- Fixed sensitive field handling for MFA token fields in `fortiswitch_system_admin`.
+- Fixed `fortiswitch_json_generic` so YAML-style string bodies can be parsed when strict JSON parsing fails.
+- Updated documentation for using special characters in passwords in inventory files.
+
+Features
+^^^^^^^^^^^^^^^
+- Support new versions 8.0.0 and 8.0.1.
+
 Release Galaxy 1.3.0
 --------------------
 

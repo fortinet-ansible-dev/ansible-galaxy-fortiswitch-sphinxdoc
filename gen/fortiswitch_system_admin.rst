@@ -67,6 +67,13 @@ Parameters
         <li> <span class="li-head">email_address</span> - Email address. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">first_name</span> - First name. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">force_password_change</span> - Enable/disable forcing of password change on next login. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">gui_mfa_tokens</span> - GUI Multi-factor Authentication Tokens. <span class="li-normal">type: list</span> </li>
+            <ul class="ul-self">
+            <li> <span class="li-head">description</span> - Token description. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">domain</span> - FQDN of the FortiSwitch. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">id</span> - GUI multi-factor authentication id <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">token</span> - Public key. <span class="li-normal">type: str</span> </li>
+            </ul>
         <li> <span class="li-head">hidden</span> - Administrative user hidden attribute. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">ip6_trusthost1</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">ip6_trusthost10</span> - Trusted host one IP address . <span class="li-normal">type: str</span> </li>
@@ -127,7 +134,13 @@ Examples
               Email address.: "<your_own_value>"
               First name.: "<your_own_value>"
               force_password_change: "enable"
-              hidden: "10"
+              gui_mfa_tokens:
+                  -
+                      description: "<your_own_value>"
+                      domain: "<your_own_value>"
+                      id: "13"
+                      token: "<your_own_value>"
+              hidden: "15"
               ip6_trusthost1: "<your_own_value>"
               ip6_trusthost10: "<your_own_value>"
               ip6_trusthost2: "<your_own_value>"
@@ -138,10 +151,10 @@ Examples
               ip6_trusthost7: "<your_own_value>"
               ip6_trusthost8: "<your_own_value>"
               ip6_trusthost9: "<your_own_value>"
-              is_admin: "21"
+              is_admin: "26"
               Last name.: "<your_own_value>"
               Mobile number.: "<your_own_value>"
-              name: "default_name_24"
+              name: "default_name_29"
               Pager number.: "<your_own_value>"
               password: "<your_own_value>"
               password_expire: "<your_own_value>"

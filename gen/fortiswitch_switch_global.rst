@@ -57,12 +57,14 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_global</span> - Configure global settings. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">access_vlan_mode</span> - Intra VLAN traffic behavior with loss of connection to the FortiGate. <span class="li-normal">type: str</span> <span class="li-normal">choices: legacy, fail-open, fail-close</span> </li>
         <li> <span class="li-head">auto_fortilink_discovery</span> - Enable/disable automatic FortiLink discovery. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_isl</span> - Enable/Disable automatic inter switch LAG. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_isl_port_group</span> - Configure global automatic inter-switch link port groups (overrides port level port groups). <span class="li-normal">type: int</span> </li>
+        <li> <span class="li-head">auto_stp_cost</span> - Automatic assignment of STP cost for tier1 and tier2 switches. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">auto_stp_priority</span> - Automatic assignment of STP priority for tier1 and tier2 switches. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">bpdu_learn</span> - Enable/disable BPDU learn. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">dhcp_snooping_database_export</span> - Enable/disable DHCP snoop database export to file. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -79,6 +81,7 @@ Parameters
         <li> <span class="li-head">l2_memory_check</span> - Enable/disable L2 memory check, default interval is 120 seconds. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">l2_memory_check_interval</span> - User defined interval to check L2 memory(second). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">log_mac_limit_violations</span> - Enable/disable logs for Learning Limit Violations globally. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">log_source_guard_violations</span> - Enable/disable logs for source guard violations globally. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">loop_guard_tx_interval</span> - Loop guard packet Tx interval (sec). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mac_address</span> - Manually configured MAC address when mac-address-algorithm is set to manual. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">mac_address_algorithm</span> - Method to configure the fifth byte of the MAC address <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, manual</span> </li>
@@ -94,6 +97,7 @@ Parameters
         <li> <span class="li-head">mclag_stp_aware</span> - MCLAG STP aware. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">mirror_qos</span> - QOS value for locally mirrored traffic. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">name</span> - Name. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">neighbor_discovery_to_cpu</span> - Enable/disable forwarding IPv6 neighbor discovery packets to CPU. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">poe_alarm_threshold</span> - Threshold (% of total power budget) above which an alarm event is generated. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">poe_guard_band</span> - Reserves power (W) in case of a spike in PoE consumption. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">poe_power_budget</span> - Set/override maximum power budget. <span class="li-normal">type: int</span> </li>
@@ -114,6 +118,8 @@ Parameters
             <li> <span class="li-head">reauth_period</span> - 802.1X/MAB reauthentication period ( minute ). <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">tx_period</span> - 802.1X tx period ( second ). <span class="li-normal">type: int</span> </li>
             </ul>
+        <li> <span class="li-head">reserved_mcast_to_cpu</span> - Enable/disable forwarding reserved multicast packets to CPU. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+        <li> <span class="li-head">source_guard_violation_timer</span> - Set a global timeout for source guard violations (0 - 1500 min, 0 = disabled). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">storm_control_high_rate</span> - Storm control high rate. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">storm_control_monitor</span> - Enable/disable storm control monitor. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">storm_control_rate_filter</span> - Storm control rate filter. <span class="li-normal">type: int</span> </li>
@@ -138,11 +144,13 @@ Examples
     
     - name: Configure global settings.
       fortinet.fortiswitch.fortiswitch_switch_global:
+          state: "present"
           switch_global:
               access_vlan_mode: "legacy"
               auto_fortilink_discovery: "enable"
               auto_isl: "enable"
               auto_isl_port_group: "6"
+              auto_stp_cost: "enable"
               auto_stp_priority: "enable"
               bpdu_learn: "enable"
               dhcp_snooping_database_export: "enable"
@@ -151,32 +159,34 @@ Examples
               flood_unknown_multicast: "enable"
               flood_vtp: "enable"
               forti_trunk_dmac: "<your_own_value>"
-              fortilink_heartbeat_timeout: "15"
-              fortilink_p2p_native_vlan: "16"
-              fortilink_p2p_tpid: "17"
+              fortilink_heartbeat_timeout: "16"
+              fortilink_p2p_native_vlan: "17"
+              fortilink_p2p_tpid: "18"
               fortilink_vlan_optimization: "enable"
               ip_mac_binding: "enable"
               l2_memory_check: "enable"
-              l2_memory_check_interval: "21"
+              l2_memory_check_interval: "22"
               log_mac_limit_violations: "enable"
-              loop_guard_tx_interval: "23"
-              mac_address: "24"
+              log_source_guard_violations: "enable"
+              loop_guard_tx_interval: "25"
+              mac_address: "26"
               mac_address_algorithm: "auto"
-              mac_aging_interval: "26"
-              mac_violation_timer: "27"
-              max_path_in_ecmp_group: "28"
+              mac_aging_interval: "28"
+              mac_violation_timer: "29"
+              max_path_in_ecmp_group: "30"
               mclag_igmpsnooping_aware: "enable"
-              mclag_peer_info_timeout: "30"
-              mclag_port_base: "31"
+              mclag_peer_info_timeout: "32"
+              mclag_port_base: "33"
               mclag_split_brain_all_ports_down: "disable"
               mclag_split_brain_detect: "enable"
-              mclag_split_brain_priority: "34"
+              mclag_split_brain_priority: "36"
               mclag_stp_aware: "enable"
-              mirror_qos: "36"
-              name: "default_name_37"
-              poe_alarm_threshold: "38"
-              poe_guard_band: "39"
-              poe_power_budget: "40"
+              mirror_qos: "38"
+              name: "default_name_39"
+              neighbor_discovery_to_cpu: "enable"
+              poe_alarm_threshold: "41"
+              poe_guard_band: "42"
+              poe_power_budget: "43"
               poe_power_mode: "priority"
               poe_pre_standard_detect: "enable"
               port_security:
@@ -188,20 +198,22 @@ Examples
                   mac_case: "uppercase"
                   mac_password_delimiter: "hyphen"
                   mac_username_delimiter: "hyphen"
-                  max_reauth_attempt: "52"
+                  max_reauth_attempt: "55"
                   quarantine_vlan: "disable"
-                  reauth_period: "54"
-                  tx_period: "55"
-              storm_control_high_rate: "56"
+                  reauth_period: "57"
+                  tx_period: "58"
+              reserved_mcast_to_cpu: "enable"
+              source_guard_violation_timer: "60"
+              storm_control_high_rate: "61"
               storm_control_monitor: "enable"
-              storm_control_rate_filter: "58"
+              storm_control_rate_filter: "63"
               trunk_hash_mode: "default"
               trunk_hash_unicast_src_port: "enable"
               trunk_hash_unkunicast_src_dst: "enable"
-              virtual_wire_tpid: "62"
+              virtual_wire_tpid: "67"
               vlan_pruning: "enable"
-              vxlan_dport: "64"
-              vxlan_port: "65"
+              vxlan_dport: "69"
+              vxlan_port: "70"
               vxlan_sport: "32767"
               vxlan_stp_virtual_mac: "<your_own_value>"
               vxlan_stp_virtual_root: "enable"

@@ -25,6 +25,12 @@ in our case we create a file named ``hosts``:
    [fortiswitches:vars]
    ansible_network_os=fortinet.fortiswitch.fortiswitch
 
+When setting ``ansible_password`` inline on an INI inventory host line, quote or
+escape passwords that contain ``#``, for example ``ansible_password="abc#123"``
+or ``ansible_password=abc\#123``. Without quotes or escaping, inline host
+variable parsing treats ``#`` as the start of a comment and sends only the part
+before it.
+
 
 Write the playbook
 ~~~~~~~~~~~~~~~~~~

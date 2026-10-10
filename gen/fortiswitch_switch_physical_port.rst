@@ -89,14 +89,17 @@ Parameters
         <li> <span class="li-head">owning_interface</span> - Trunk interface. <span class="li-normal">type: str</span> </li>
         <li> <span class="li-head">pause_meter_rate</span> - Configure ingress metering rate. In kbits. 0 = disabled. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">pause_resume</span> - Resume threshold for resuming reception on pause metering of an ingress port. <span class="li-normal">type: str</span> <span class="li-normal">choices: 75%, 50%, 25%</span> </li>
+        <li> <span class="li-head">poe_disconnection_type</span> - poe: select disconnection type <span class="li-normal">type: str</span> <span class="li-normal">choices: AC, DC, DC-delay</span> </li>
+        <li> <span class="li-head">poe_max_power_mode</span> - poe: set max power mode <span class="li-normal">type: str</span> <span class="li-normal">choices: class-based, 30W</span> </li>
         <li> <span class="li-head">poe_port_mode</span> - IEEE802.3AF/IEEE802.3AT <span class="li-normal">type: str</span> <span class="li-normal">choices: IEEE802_3AF, IEEE802_3AT</span> </li>
-        <li> <span class="li-head">poe_port_priority</span> - Configure port priority <span class="li-normal">type: str</span> <span class="li-normal">choices: low-priority, high-priority, critical-priority</span> </li>
+        <li> <span class="li-head">poe_port_priority</span> - Configure port priority <span class="li-normal">type: str</span> <span class="li-normal">choices: low-priority, high-priority, critical-priority, medium-priority</span> </li>
+        <li> <span class="li-head">poe_pre_standard_detection</span> - poe: disable or enable poe-pre-standard-detection <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">poe_status</span> - Enable/disable PSE. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">port_index</span> - Port index. <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">priority_based_flow_control</span> - Enable / disable priority-based flow control. 802.3 flow control will be applied when disabled <span class="li-normal">type: str</span> <span class="li-normal">choices: disable, enable</span> </li>
         <li> <span class="li-head">qsfp_low_power_mode</span> - Enable/Disable QSFP low power mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: enabled, disabled</span> </li>
         <li> <span class="li-head">security_mode</span> - Security mode. <span class="li-normal">type: str</span> <span class="li-normal">choices: none, macsec</span> </li>
-        <li> <span class="li-head">speed</span> - Configure interface speed and duplex. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, 10half, 10full, 100half, 100full, 100FX-half, 100FX-full, 1000full, 2500auto, 5000auto, 10000full, 10000cr, 10000sr, 40000full, 40000sr4, 40000cr4, 100000full, 100000cr4, 100000sr4, auto-module, 1000full-fiber, 1000auto, 25000full, 25000cr, 25000sr, 50000full, 50000cr, 50000sr, 2500full, 40000auto</span> </li>
+        <li> <span class="li-head">speed</span> - Configure interface speed and duplex. <span class="li-normal">type: str</span> <span class="li-normal">choices: auto, 10half, 10full, 100half, 100full, 100FX-half, 100FX-full, 1000full, 2500auto, 5000auto, 10000full, 10000cr, 10000sr, 40000full, 40000sr4, 40000cr4, 100000full, 100000cr4, 100000sr4, auto-module, 1000full-fiber, 1000auto, 25000full, 25000cr, 25000sr, 50000full, 50000cr, 50000sr, 2500full, 40000auto, sgmii-auto, detect-by-module</span> </li>
         <li> <span class="li-head">status</span> - Administrative status. <span class="li-normal">type: str</span> <span class="li-normal">choices: up, down</span> </li>
         <li> <span class="li-head">storm_control</span> - Storm control. <span class="li-normal">type: dict</span> </li>
             <ul class="ul-self">
@@ -149,10 +152,13 @@ Examples
               owning_interface: "<your_own_value>"
               pause_meter_rate: "30"
               pause_resume: "75%"
+              poe_disconnection_type: "AC"
+              poe_max_power_mode: "class-based"
               poe_port_mode: "IEEE802_3AF"
               poe_port_priority: "low-priority"
+              poe_pre_standard_detection: "enable"
               poe_status: "enable"
-              port_index: "35"
+              port_index: "38"
               priority_based_flow_control: "disable"
               qsfp_low_power_mode: "enabled"
               security_mode: "none"
@@ -160,8 +166,8 @@ Examples
               status: "up"
               storm_control:
                   broadcast: "enable"
-                  burst_size_level: "43"
-                  rate: "44"
+                  burst_size_level: "46"
+                  rate: "47"
                   unknown_multicast: "enable"
                   unknown_unicast: "enable"
               storm_control_mode: "global"

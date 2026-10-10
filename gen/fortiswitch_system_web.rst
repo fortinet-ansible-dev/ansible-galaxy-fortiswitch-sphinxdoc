@@ -57,13 +57,16 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">system_web</span> - Configure web attributes. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">gui_language</span> - Web display language. <span class="li-normal">type: str</span> <span class="li-normal">choices: browser, english, simch, japanese, korean, spanish, trach, french, portuguese, german</span> </li>
+        <li> <span class="li-head">http_https_connection_limit</span> - Number of connections on HTTP/HTTPS port.(8-256, 0-disabled) <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">http_port</span> - Administrative access HTTP port (1 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">https_pki_required</span> - Enable/disable HTTPS login page when PKI is enabled. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
         <li> <span class="li-head">https_port</span> - Administrative access HTTPS port (1 - 65535). <span class="li-normal">type: int</span> </li>
         <li> <span class="li-head">https_server_cert</span> - Administrative HTTPS server certificate. <span class="li-normal">type: str</span> </li>
+        <li> <span class="li-head">https_ssl_log_level</span> - Log level severity setting for Web Server logs. <span class="li-normal">type: str</span> <span class="li-normal">choices: emergency, alert, critical, error, warning, notification , information, debug</span> </li>
         <li> <span class="li-head">https_ssl_versions</span> - Allowed SSL/TLS versions for web administration. <span class="li-normal">type: str</span> <span class="li-normal">choices: tlsv1-0, tlsv1-1, tlsv1-2, tlsv1-3</span> </li>
         </ul>
     </ul>
@@ -76,12 +79,15 @@ Examples
     
     - name: Configure web attributes.
       fortinet.fortiswitch.fortiswitch_system_web:
+          state: "present"
           system_web:
               gui_language: "browser"
+              http_https_connection_limit: "4"
               http_port: "32767"
               https_pki_required: "enable"
               https_port: "32767"
               https_server_cert: "<your_own_value>"
+              https_ssl_log_level: "emergency"
               https_ssl_versions: "tlsv1-0"
 
 

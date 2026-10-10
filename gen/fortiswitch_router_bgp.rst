@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">router_bgp</span> - BGP configuration. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">admin_distance</span> - Administrative distance modifications. <span class="li-normal">type: list</span> </li>
@@ -165,6 +166,9 @@ Parameters
             <li> <span class="li-head">interface</span> - Interface. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">ip</span> - IP/IPv6 address of neighbor. <span class="li-normal">type: str</span> </li>
             <li> <span class="li-head">keep_alive_timer</span> - Keepalive timer interval (seconds). <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">local_as</span> - Local AS number of neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">local_as_no_prepend</span> - Enable/disable do not prepend local-as to updates from ebgp peers. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">local_as_replace</span> - Enable/disable replace real AS with local-as in outgoing updates. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">maximum_prefix</span> - Maximum number of IPv4 prefixes to accept from this peer. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">maximum_prefix6</span> - Maximum number of IPv6 prefixes to accept from this peer. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">maximum_prefix_threshold</span> - Maximum IPv4 prefix threshold value (1-100 percent). <span class="li-normal">type: int</span> </li>
@@ -252,6 +256,9 @@ Parameters
                 <li> <span class="li-head">interface_name</span> - RVI interface name(s). <span class="li-normal">type: str</span> </li>
                 </ul>
             <li> <span class="li-head">keep_alive_timer</span> - Keepalive timer interval (seconds). <span class="li-normal">type: int</span> </li>
+            <li> <span class="li-head">local_as</span> - Local AS number of neighbor. <span class="li-normal">type: str</span> </li>
+            <li> <span class="li-head">local_as_no_prepend</span> - Enable/disable do not prepend local-as to updates from ebgp peers. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
+            <li> <span class="li-head">local_as_replace</span> - Enable/disable replace real AS with local-as in outgoing updates. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
             <li> <span class="li-head">maximum_prefix</span> - Maximum number of IPv4 prefixes to accept from this peer. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">maximum_prefix6</span> - Maximum number of IPv6 prefixes to accept from this peer. <span class="li-normal">type: int</span> </li>
             <li> <span class="li-head">maximum_prefix_threshold</span> - Maximum IPv4 prefix threshold value (1-100 percent). <span class="li-normal">type: int</span> </li>
@@ -333,6 +340,7 @@ Examples
     
     - name: BGP configuration.
       fortinet.fortiswitch.fortiswitch_router_bgp:
+          state: "present"
           router_bgp:
               admin_distance:
                   -
@@ -435,10 +443,13 @@ Examples
                       interface: "<your_own_value> (source system.interface.name)"
                       ip: "<your_own_value>"
                       keep_alive_timer: "97"
-                      maximum_prefix: "98"
-                      maximum_prefix6: "99"
-                      maximum_prefix_threshold: "100"
-                      maximum_prefix_threshold6: "101"
+                      local_as: "<your_own_value>"
+                      local_as_no_prepend: "enable"
+                      local_as_replace: "enable"
+                      maximum_prefix: "101"
+                      maximum_prefix6: "102"
+                      maximum_prefix_threshold: "103"
+                      maximum_prefix_threshold6: "104"
                       maximum_prefix_warning_only: "enable"
                       maximum_prefix_warning_only6: "enable"
                       next_hop_self: "enable"
@@ -474,15 +485,15 @@ Examples
                       unsuppress_map: "<your_own_value> (source router.route-map.name)"
                       unsuppress_map6: "<your_own_value> (source router.route-map.name)"
                       update_source: "<your_own_value> (source system.interface.name)"
-                      weight: "137"
+                      weight: "140"
               neighbor_group:
                   -
                       activate: "enable"
                       activate6: "enable"
                       activate_evpn: "enable"
-                      advertisement_interval: "142"
-                      allowas_in: "143"
-                      allowas_in6: "144"
+                      advertisement_interval: "145"
+                      allowas_in: "146"
+                      allowas_in6: "147"
                       allowas_in_enable: "enable"
                       allowas_in_enable6: "enable"
                       allowas_in_enable_evpn: "enable"
@@ -498,7 +509,7 @@ Examples
                       capability_extended_nexthop: "enable"
                       capability_orf: "none"
                       capability_orf6: "none"
-                      connect_timer: "160"
+                      connect_timer: "163"
                       default_originate_routemap: "<your_own_value> (source router.route-map.name)"
                       default_originate_routemap6: "<your_own_value> (source router.route-map.name)"
                       description: "<your_own_value>"
@@ -508,25 +519,28 @@ Examples
                       distribute_list_out6: "<your_own_value> (source router.access-list6.name)"
                       dont_capability_negotiate: "enable"
                       ebgp_enforce_multihop: "enable"
-                      ebgp_multihop_ttl: "170"
-                      ebgp_ttl_security_hops: "171"
+                      ebgp_multihop_ttl: "173"
+                      ebgp_ttl_security_hops: "174"
                       enforce_first_as: "enable"
                       filter_list_in: "<your_own_value> (source router.aspath-list.name)"
                       filter_list_in6: "<your_own_value> (source router.aspath-list.name)"
                       filter_list_out: "<your_own_value> (source router.aspath-list.name)"
                       filter_list_out6: "<your_own_value> (source router.aspath-list.name)"
-                      holdtime_timer: "177"
+                      holdtime_timer: "180"
                       interface:
                           -
                               interface_name: "<your_own_value> (source system.interface.name)"
-                      keep_alive_timer: "180"
-                      maximum_prefix: "181"
-                      maximum_prefix6: "182"
-                      maximum_prefix_threshold: "183"
-                      maximum_prefix_threshold6: "184"
+                      keep_alive_timer: "183"
+                      local_as: "<your_own_value>"
+                      local_as_no_prepend: "enable"
+                      local_as_replace: "enable"
+                      maximum_prefix: "187"
+                      maximum_prefix6: "188"
+                      maximum_prefix_threshold: "189"
+                      maximum_prefix_threshold6: "190"
                       maximum_prefix_warning_only: "enable"
                       maximum_prefix_warning_only6: "enable"
-                      name: "default_name_187"
+                      name: "default_name_193"
                       next_hop_self: "enable"
                       next_hop_self6: "enable"
                       override_capability: "enable"
@@ -560,31 +574,31 @@ Examples
                       unsuppress_map: "<your_own_value> (source router.route-map.name)"
                       unsuppress_map6: "<your_own_value> (source router.route-map.name)"
                       update_source: "<your_own_value> (source system.interface.name)"
-                      weight: "221"
+                      weight: "227"
               network:
                   -
                       backdoor: "enable"
-                      id: "224"
+                      id: "230"
                       prefix: "<your_own_value>"
                       route_map: "<your_own_value> (source router.route-map.name)"
               network6:
                   -
-                      id: "228"
+                      id: "234"
                       prefix6: "<your_own_value>"
                       route_map: "<your_own_value> (source router.route-map.name)"
               redistribute:
                   -
-                      name: "default_name_232"
+                      name: "default_name_238"
                       route_map: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
               redistribute6:
                   -
-                      name: "default_name_236"
+                      name: "default_name_242"
                       route_map: "<your_own_value> (source router.route-map.name)"
                       status: "enable"
               route_reflector_allow_outbound_policy: "enable"
               router_id: "<your_own_value>"
-              scan_time: "241"
+              scan_time: "247"
 
 
 Return Values

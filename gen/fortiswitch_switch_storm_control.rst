@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_storm_control</span> - Configure excess switch traffic (storm control). <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">broadcast</span> - Enable/disable broadcast storm control. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -75,6 +76,7 @@ Examples
     
     - name: Configure excess switch traffic (storm control).
       fortinet.fortiswitch.fortiswitch_switch_storm_control:
+          state: "present"
           switch_storm_control:
               broadcast: "enable"
               burst_size_level: "4"

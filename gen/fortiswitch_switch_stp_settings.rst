@@ -57,6 +57,7 @@ Parameters
     <li> <span class="li-head">enable_log</span> - Enable/Disable logging for task. <span class="li-normal">type: bool</span> <span class="li-required">required: false</span> <span class="li-normal">default: False</span> </li>
     <li> <span class="li-head">member_path</span> - Member attribute path to operate on. <span class="li-normal">type: str</span> </li>
     <li> <span class="li-head">member_state</span> - Add or delete a member under specified attribute path. <span class="li-normal">type: str</span> <span class="li-normal">choices: present, absent</span> </li>
+    <li> <span class="li-head">state</span> - Indicates whether to create or remove the object. <span class="li-normal">type: str</span> <span class="li-required">required: true</span> <span class="li-normal">choices: present, absent</span> </li>
     <li> <span class="li-head">switch_stp_settings</span> - Switch-global stp settings. <span class="li-normal">type: dict</span> </li>
         <ul class="ul-self">
         <li> <span class="li-head">flood</span> - Enable/disable stp bpdu flood. <span class="li-normal">type: str</span> <span class="li-normal">choices: enable, disable</span> </li>
@@ -81,6 +82,7 @@ Examples
     
     - name: Switch-global stp settings.
       fortinet.fortiswitch.fortiswitch_switch_stp_settings:
+          state: "present"
           switch_stp_settings:
               flood: "enable"
               forward_time: "4"

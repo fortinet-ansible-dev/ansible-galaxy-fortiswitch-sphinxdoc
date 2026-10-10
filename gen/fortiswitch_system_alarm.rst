@@ -40,7 +40,7 @@ FortiSwitch Version Compatibility
  </tr>
  <tr>
  <td>fortiswitch_system_alarm</td>
- <td><code class="docutils literal notranslate">v7.0.0 -> 7.4.3 </code></td>
+ <td><code class="docutils literal notranslate">v7.0.0 -> v7.6.2 </code></td>
  </tr>
  </table>
  <p>
